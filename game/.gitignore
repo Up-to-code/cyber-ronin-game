@@ -1,0 +1,5 @@
+.godot/
+qa/*.png
+qa/*.json
+export_presets.cfg
+*.tmp

@@ -1,0 +1,32 @@
+[
+  {
+    "at": 0.0,
+    "cue": "light",
+    "version": "before"
+  },
+  {
+    "at": 1.2,
+    "cue": "light",
+    "version": "new"
+  },
+  {
+    "at": 2.4,
+    "cue": "heavy",
+    "version": "before"
+  },
+  {
+    "at": 3.6,
+    "cue": "heavy",
+    "version": "new"
+  },
+  {
+    "at": 4.8,
+    "cue": "slam",
+    "version": "before"
+  },
+  {
+    "at": 6.0,
+    "cue": "slam",
+    "version": "new"
+  }
+]

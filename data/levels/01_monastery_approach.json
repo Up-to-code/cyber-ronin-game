@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "key": "monastery_approach",
+  "name": "Monastery Approach",
+  "difficulty": "easy",
+  "status": "implemented",
+  "scene": "game/scenes/main.tscn",
+  "next_level": 2,
+  "exit_requires": "required_encounters_cleared",
+  "background_status": "implemented_generated_pixel_layers",
+  "enemy_placements": [],
+  "runtime_data": "game/data/campaign.gd",
+  "runtime_level": 1
+}

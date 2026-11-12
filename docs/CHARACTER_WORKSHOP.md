@@ -1,0 +1,13 @@
+# Character workshop and controls
+
+Open `tools/character_lab.html` directly in a browser. It is standalone, includes the local Pixelify font, and needs no server or network connection.
+
+The workshop shows a joint diagram, not the final textured game character. Select standing, run, kick, sword, airborne or impact, then play/pause the cycle. Joint markers can be hidden. Change lengths, widths and tint; load a JSON profile to retain custom atlas/part definitions; export a compatible character JSON.
+
+Place exported profiles in `game/data/characters/`. Launch with `--character=res://data/characters/your_profile.json` or set the player’s exported `character_profile` to select it without changing code. `RigVisual.configure("your_profile")` loads `your_profile.json`; a full `res://` or `user://` path also works. Missing lengths, widths and part definitions merge with Ronin defaults. The runtime keeps the character root at the feet. Art remains separate: swapping a single whole-body image does not automatically separate or bind its limbs. A regenerated parts atlas must keep the named parts/rectangles/pivots or supply updated definitions.
+
+Global physics is separate from a character skin. The physics export writes `physics.json` with `pixels_per_meter`, downward `gravity`, `jump_height` and `max_fall_speed`. Replace `game/data/physics.json`, then restart. The page calculates jump height from launch speed using `h = v²/(2g)`; runtime launch velocity is `−sqrt(2gh)`. Its trajectory graph is a symmetric, collision-free calculation and does not simulate platform collision or variable jump-release cuts.
+
+Current touch controls are a left directional cross (UP jumps; another tap double-jumps, DOWN crouches) and a wider central Sword button on the right, surrounded by Kick, Power and Ranged. No RUN or separate right-hand Jump remains. Labels show power costs when unaffordable, and Sword shows charge progress/READY. Buttons release together on pause and stay within the HUD safe area.
+
+Validation: Godot `tests/mobile_ui.gd` checks independent touch fingers, pause/charge cancellation, target/visual alignment, directional cross geometry, wider main sword, nonoverlapping targets and full target bounds at three window dimensions. Native capture `/tmp/new-direction-controls.png` inspected. HTML previews at 1280px and 390px report no console errors. Automated DOM checks cover slider edits, profile preset merges, profile JSON import/export preservation and compatible global physics exports. No physical-device ergonomics claim is made. Rams quick_review with via=rules was attempted for UI files and the workshop but returned ran:false because workspace credits are exhausted.

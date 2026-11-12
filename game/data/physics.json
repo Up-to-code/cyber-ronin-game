@@ -1,0 +1,86 @@
+{
+  "pixels_per_meter": 180.0,
+  "gravity": 1765.8,
+  "jump_height": 110.0,
+  "max_fall_speed": 1100.0,
+  "combat": {
+    "ground_drag": 1250.0,
+    "air_drag": 500.0,
+    "max_horizontal_speed": 460.0,
+    "max_launch_speed": 420,
+    "damage_exponent": 0.85,
+    "combo_follow_through": 0.05,
+    "enemy_resistance": {
+      "guard": 1.0,
+      "fire": 0.9,
+      "wraith": 0.8,
+      "lancer": 1.15,
+      "sentinel": 1.65
+    },
+    "hit_profiles": {
+      "sword": {
+        "reference_damage": 35,
+        "impulse_ns": [
+          60,
+          -20
+        ]
+      },
+      "double": {
+        "reference_damage": 42,
+        "impulse_ns": [
+          105,
+          -28
+        ]
+      },
+      "kick": {
+        "reference_damage": 20,
+        "impulse_ns": [
+          120,
+          -150
+        ]
+      },
+      "finisher": {
+        "reference_damage": 55,
+        "impulse_ns": [
+          180,
+          -65
+        ]
+      },
+      "charged": {
+        "reference_damage": 60,
+        "impulse_ns": [
+          200,
+          -65
+        ]
+      },
+      "power": {
+        "reference_damage": 90,
+        "impulse_ns": [
+          230,
+          -65
+        ]
+      },
+      "plunge": {
+        "reference_damage": 55,
+        "impulse_ns": [
+          180,
+          -65
+        ]
+      },
+      "ranged": {
+        "reference_damage": 40,
+        "impulse_ns": [
+          85,
+          -30
+        ]
+      },
+      "enemy": {
+        "reference_damage": 15,
+        "impulse_ns": [
+          70,
+          -30
+        ]
+      }
+    }
+  }
+}

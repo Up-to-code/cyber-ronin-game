@@ -1,0 +1,18 @@
+{
+  "id": "wraith",
+  "display_name": "Lantern Wraith",
+  "tint": [
+    0.6,
+    1.8,
+    1.65,
+    0.9
+  ],
+  "head_part": "wraith_head",
+  "widths": {
+    "torso": 23,
+    "upper_arm": 10,
+    "forearm": 9,
+    "thigh": 12,
+    "shin": 10
+  }
+}

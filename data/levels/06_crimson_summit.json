@@ -1,0 +1,14 @@
+{
+  "id": 6,
+  "key": "crimson_summit",
+  "name": "Crimson Summit",
+  "difficulty": "hard",
+  "status": "implemented",
+  "scene": "game/scenes/main.tscn",
+  "next_level": null,
+  "exit_requires": "required_encounters_cleared",
+  "background_status": "implemented_generated_pixel_layers",
+  "enemy_placements": [],
+  "runtime_data": "game/data/campaign.gd",
+  "runtime_level": 6
+}

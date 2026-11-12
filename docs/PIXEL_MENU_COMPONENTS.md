@@ -1,0 +1,11 @@
+# Reusable pixel-art menu components
+
+`game/ui/pixel_menu_components.gd` owns replaceable generated pixel artwork, nine-patch panel/button styles, image on/off toggles and a functional volume slider. It uses `game/art/pixel/ui-kit` assets directly, with existing pixel textures as fallback. The generated volume-meter image contains a baked fill and stray elements, so it is excluded from runtime; the actual slider uses generated primary/secondary frames as live track/fill with a simple pixel thumb. Its display follows the real Master volume and persists changes.
+
+HUD menus share nearest texture sampling and the non-antialiased Pixelify font. Generated panel corners retain correct nine-patch margins. Defeat's secondary action now uses the same pixel texture style instead of a flat non-art button. Start and pause have separate context: title/stolen-bell subtitle versus current route, resume and retry. Subsettings display top category icons and breadcrumbs. Touch and sound/vibration options use generated on/off art while preserving real preference handling.
+
+Validation: `mobile_ui`, `defeat_ui`, and new `pixel_menu_components` pass. New coverage includes actual toggle input, Master bus changes, saved volume round-trip, navigation and audio safe bounds at three resolutions. Native settings/audio/defeat screenshots were inspected and saved under `docs/qa/pixel-*-components.png`. Text padding was increased and long wording shortened after inspecting ornament overlap.
+
+Rams quick_review via rules was attempted on both UI files but returned ran:false because review credits are exhausted. This is not Rams approval or a physical-phone comfort result.
+
+The final volume control uses `pixel_volume_slider.gd`: native HSlider input, focus and persistence with explicit14px whole-pixel track,8px interior fill and20px thumb. Generated frame artwork surrounds the live meter. This fixes HSlider theme-dependent vertical compression. `pixel_audio_in_game` verifies real Right-arrow input in the paused game's audio screen changes the displayed/mixer preference. Native integrated screenshot inspected: `docs/qa/pixel-audio-in-game.png`. Deferred focus now ignores stale buttons safely during rapid subsettings transitions.

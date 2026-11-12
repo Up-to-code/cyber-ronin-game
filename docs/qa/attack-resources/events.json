@@ -1,0 +1,82 @@
+[
+	{
+		"cue": "jump",
+		"frame": 60
+	},
+	{
+		"cue": "swing",
+		"frame": 81
+	},
+	{
+		"cue": "land_heavy",
+		"frame": 103
+	},
+	{
+		"cue": "kick",
+		"frame": 183
+	},
+	{
+		"cue": "swing",
+		"frame": 246
+	},
+	{
+		"cue": "impact_armor",
+		"frame": 248
+	},
+	{
+		"cue": "swing_reverse",
+		"frame": 279
+	},
+	{
+		"cue": "impact_armor",
+		"frame": 280
+	},
+	{
+		"cue": "swing_finisher",
+		"frame": 321
+	},
+	{
+		"cue": "impact_armor",
+		"frame": 324
+	},
+	{
+		"cue": "kick",
+		"frame": 353
+	},
+	{
+		"cue": "kick_hit",
+		"frame": 354
+	},
+	{
+		"cue": "enemy_swing",
+		"frame": 404
+	},
+	{
+		"cue": "hurt",
+		"frame": 406
+	},
+	{
+		"cue": "energy_swing",
+		"frame": 488
+	},
+	{
+		"cue": "impact_armor",
+		"frame": 491
+	},
+	{
+		"cue": "charged_swing",
+		"frame": 547
+	},
+	{
+		"cue": "impact_armor",
+		"frame": 549
+	},
+	{
+		"cue": "power",
+		"frame": 620
+	},
+	{
+		"cue": "impact_armor",
+		"frame": 620
+	}
+]

@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-11-11",
+  "packs": [
+    {
+      "id": "cyber_ronin",
+      "source": "https://pavelekh.itch.io/cyber-ronin-sprite-pack",
+      "status": "downloaded_extracted_zip_integrity_passed",
+      "archive": "assets/source/cyber_ronin.zip",
+      "bytes": 173132154,
+      "sha256": "03eeaaf93e7a9d2ded485d98ea14b36a85c27f25cb4b791c4c3414c9b6811876",
+      "extracted_to": "assets/characters/cyber_ronin"
+    },
+    {
+      "id": "spearmen",
+      "source": "https://cyber-sausage.itch.io/20-sets-spearmet",
+      "status": "downloaded_extracted_zip_integrity_passed",
+      "archive": "assets/source/spearmen.zip",
+      "bytes": 595561,
+      "sha256": "7c9f96b6f01defaffa18c7c91f6b1ed7154657eb02346459116a83ae8e57d166",
+      "extracted_to": "assets/equipment/spearmen"
+    }
+  ],
+  "other_candidates": "See ASSETS.md; not downloaded or auditioned."
+}

@@ -1,0 +1,50 @@
+[
+	{
+		"cue": "jump",
+		"frame": 60
+	},
+	{
+		"cue": "swing",
+		"frame": 77
+	},
+	{
+		"cue": "land_heavy",
+		"frame": 103
+	},
+	{
+		"cue": "kick",
+		"frame": 181
+	},
+	{
+		"cue": "swing",
+		"frame": 243
+	},
+	{
+		"cue": "impact",
+		"frame": 248
+	},
+	{
+		"cue": "kick",
+		"frame": 310
+	},
+	{
+		"cue": "kick_hit",
+		"frame": 314
+	},
+	{
+		"cue": "enemy_swing",
+		"frame": 402
+	},
+	{
+		"cue": "hurt",
+		"frame": 406
+	},
+	{
+		"cue": "energy_swing",
+		"frame": 488
+	},
+	{
+		"cue": "impact",
+		"frame": 491
+	}
+]

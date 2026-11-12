@@ -1,0 +1,74 @@
+[
+  {
+    "start": 0,
+    "end": 1.2,
+    "cue": "jump",
+    "version": "before"
+  },
+  {
+    "start": 1.2,
+    "end": 2.4,
+    "cue": "jump",
+    "version": "after"
+  },
+  {
+    "start": 2.4,
+    "end": 3.6,
+    "cue": "kick",
+    "version": "before"
+  },
+  {
+    "start": 3.6,
+    "end": 4.8,
+    "cue": "kick",
+    "version": "after"
+  },
+  {
+    "start": 4.8,
+    "end": 6.0,
+    "cue": "swing",
+    "version": "before"
+  },
+  {
+    "start": 6.0,
+    "end": 7.2,
+    "cue": "swing",
+    "version": "after"
+  },
+  {
+    "start": 7.2,
+    "end": 8.4,
+    "cue": "kick_hit",
+    "version": "before"
+  },
+  {
+    "start": 8.4,
+    "end": 9.6,
+    "cue": "kick_hit",
+    "version": "after"
+  },
+  {
+    "start": 9.6,
+    "end": 10.8,
+    "cue": "impact",
+    "version": "before"
+  },
+  {
+    "start": 10.8,
+    "end": 12.0,
+    "cue": "impact",
+    "version": "after"
+  },
+  {
+    "start": 12.0,
+    "end": 18.0,
+    "cue": "earlier_music",
+    "version": "music comparison"
+  },
+  {
+    "start": 18.0,
+    "end": 24.0,
+    "cue": "current_music",
+    "version": "music comparison"
+  }
+]

@@ -1,0 +1,234 @@
+{
+  "id": "sentinel_pixel",
+  "display_name": "Sentinel",
+  "status": "Whole-character pixel enemy with separate movement atlas and action key poses; several generated movement drawings are near repeats, not a complete high-frame animation.",
+  "atlas": "res://art/pixel/ashen-enemies.png",
+  "scale": 2,
+  "feet_origin": [
+    64,
+    112
+  ],
+  "body_center_height": 58,
+  "max_visual_roll": 0.3,
+  "sockets": {
+    "hand": [
+      84,
+      82
+    ],
+    "foot": [
+      80,
+      108
+    ],
+    "weapon_tip": [
+      109,
+      76
+    ],
+    "chest": [
+      64,
+      73
+    ],
+    "pelvis": [
+      64,
+      87
+    ]
+  },
+  "state_map": {
+    "run": "walk",
+    "walk": "walk",
+    "charged": "windup",
+    "jump": "air",
+    "fall": "air"
+  },
+  "clips": {
+    "idle": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": true
+    },
+    "walk": {
+      "frames": [
+        {
+          "rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": true,
+      "stride_world": 76
+    },
+    "float": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": true
+    },
+    "windup": {
+      "frames": [
+        {
+          "rect": [
+            512,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": false
+    },
+    "attack": {
+      "frames": [
+        {
+          "rect": [
+            512,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            640,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            640,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        },
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": false
+    },
+    "hurt": {
+      "frames": [
+        {
+          "rect": [
+            768,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": false
+    },
+    "death": {
+      "frames": [
+        {
+          "rect": [
+            896,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": false
+    },
+    "air": {
+      "frames": [
+        {
+          "rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 80
+        }
+      ],
+      "loop": false
+    }
+  },
+  "attacks": {
+    "sword1": {
+      "clip": "attack",
+      "contact_frame": 1,
+      "active_end_frame": 1,
+      "duration": 0.58,
+      "damage": 25,
+      "reach": 105,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "kick": {
+      "clip": "attack",
+      "contact_frame": 1,
+      "active_end_frame": 1,
+      "duration": 0.58,
+      "damage": 25,
+      "reach": 105,
+      "cost": 0,
+      "provisional_contact": true
+    }
+  },
+  "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+}

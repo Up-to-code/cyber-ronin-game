@@ -1,0 +1,16 @@
+Taira Komori — TK'S FREE SOUND FX
+Source: https://taira-komori.net/jidaigeki01en.html
+Terms: https://taira-komori.net/freesounden.html
+Checked 2026-11-11. Copyright retained by Taira Komori; NOT CC0.
+
+Creator terms allow free, royalty-free use in commercial/noncommercial films,
+games, apps and other projects. They prohibit posting individual sounds for
+others to download, selling/relicensing individual sounds or libraries,
+claiming authorship, and public direct links to individual sound files.
+
+Used as edited/combined cues inside this game: sword_attack1, sword_attack2,
+cutting_with_a_katana1 and cutting_with_a_katana2. Source originals remain
+private development material under assets/audio/tk-samurai.
+extracting_a_sword1 and cutting_with_a_katana3 are reference candidates only.
+No standalone public sample library or direct audio-file links are produced.
+Credit and creator homepage link are included in the game's Credits menu.

@@ -1,0 +1,10 @@
+{
+  "rampart_surface_row": 4,
+  "platform_surface_row": 8,
+  "torch_cell": [
+    32,
+    48
+  ],
+  "torch_columns": 2,
+  "torch_frames": 8
+}

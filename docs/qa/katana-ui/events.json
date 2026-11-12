@@ -1,0 +1,128 @@
+[
+	{
+		"combo": 1,
+		"cue": "swing",
+		"frame": 125,
+		"guard_x": 448.0,
+		"heavy_x": 512.0
+	},
+	{
+		"combo": 1,
+		"cue": "impact_armor",
+		"frame": 128,
+		"guard_x": 448.0,
+		"heavy_x": 512.0
+	},
+	{
+		"combo": 2,
+		"cue": "swing_reverse",
+		"frame": 137,
+		"guard_x": 458.790161132812,
+		"heavy_x": 512.0
+	},
+	{
+		"combo": 2,
+		"cue": "impact_armor",
+		"frame": 139,
+		"guard_x": 458.790161132812,
+		"heavy_x": 512.0
+	},
+	{
+		"combo": 2,
+		"cue": "impact_armor",
+		"frame": 139,
+		"guard_x": 458.790161132812,
+		"heavy_x": 512.0
+	},
+	{
+		"combo": 3,
+		"cue": "swing_finisher",
+		"frame": 152,
+		"guard_x": 492.569061279297,
+		"heavy_x": 515.168029785156
+	},
+	{
+		"combo": 3,
+		"cue": "impact_armor",
+		"frame": 155,
+		"guard_x": 492.832946777344,
+		"heavy_x": 515.168029785156
+	},
+	{
+		"combo": 3,
+		"cue": "impact_armor",
+		"frame": 155,
+		"guard_x": 492.832946777344,
+		"heavy_x": 515.168029785156
+	},
+	{
+		"combo": 3,
+		"cue": "jump",
+		"frame": 300,
+		"guard_x": 594.002014160156,
+		"heavy_x": 529.532348632812
+	},
+	{
+		"combo": 3,
+		"cue": "air_jump",
+		"frame": 335,
+		"guard_x": 594.002014160156,
+		"heavy_x": 529.532348632812
+	},
+	{
+		"combo": 0,
+		"cue": "kick",
+		"frame": 348,
+		"guard_x": 594.002014160156,
+		"heavy_x": 529.532348632812
+	},
+	{
+		"combo": 0,
+		"cue": "land_heavy",
+		"frame": 365,
+		"guard_x": 594.002014160156,
+		"heavy_x": 529.532348632812
+	},
+	{
+		"combo": 0,
+		"cue": "energy_swing",
+		"frame": 488,
+		"guard_x": 594.002014160156,
+		"heavy_x": 529.532348632812
+	},
+	{
+		"combo": 0,
+		"cue": "impact_armor",
+		"frame": 495,
+		"guard_x": 594.002014160156,
+		"heavy_x": 529.532348632812
+	},
+	{
+		"combo": 0,
+		"cue": "charged_swing",
+		"frame": 566,
+		"guard_x": 594.002014160156,
+		"heavy_x": 536.315612792969
+	},
+	{
+		"combo": 0,
+		"cue": "impact_armor",
+		"frame": 569,
+		"guard_x": 594.002014160156,
+		"heavy_x": 536.315612792969
+	},
+	{
+		"combo": 0,
+		"cue": "power",
+		"frame": 650,
+		"guard_x": 594.002014160156,
+		"heavy_x": 553.840148925781
+	},
+	{
+		"combo": 0,
+		"cue": "impact_armor",
+		"frame": 650,
+		"guard_x": 594.002014160156,
+		"heavy_x": 553.840148925781
+	}
+]

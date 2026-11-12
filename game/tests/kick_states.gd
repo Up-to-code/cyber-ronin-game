@@ -1,0 +1,78 @@
+extends SceneTree
+func _initialize() -> void: call_deferred("_run")
+func ticks(n: int) -> void:
+	for i in range(n):
+		await physics_frame
+		await process_frame
+func tap(action: String) -> void:
+	Input.action_press(action)
+	await ticks(1)
+	Input.action_release(action)
+func _run() -> void:
+	var world := Node2D.new()
+	root.add_child(world)
+	var floor_body := StaticBody2D.new()
+	var collider := CollisionShape2D.new()
+	var shape := RectangleShape2D.new()
+	shape.size = Vector2(1800,80)
+	collider.shape = shape
+	floor_body.add_child(collider)
+	floor_body.position = Vector2(800,650)
+	world.add_child(floor_body)
+	var player: CharacterBody2D = load("res://actors/player_2d.gd").new()
+	player.position = Vector2(300,610)
+	world.add_child(player)
+	var guard: CharacterBody2D = load("res://actors/enemy_2d.gd").new()
+	guard.position = Vector2(370,610)
+	guard.health = 1000
+	world.add_child(guard)
+	guard.set_physics_process(false)
+	await ticks(10)
+	Input.action_press("move_down")
+	await ticks(2)
+	await tap("kick")
+	await ticks(7)
+	assert(player.crouching and player.crouch_collider.shape.height < player.standing_height, "Low kick must retain crouch collision clearance")
+	assert(guard.health == 980, "Crouch plus kick must damage once")
+	Input.action_release("move_down")
+	await ticks(25)
+	await tap("attack")
+	await ticks(3)
+	await tap("kick")
+	await ticks(45)
+	assert(guard.health == 925, "Kick pressed during sword recovery must execute once after sword")
+	await ticks(10)
+	player.position = Vector2(300,510)
+	player.velocity = Vector2(0,-100)
+	await ticks(2)
+	# Place the torso at the raised foot height.
+	guard.position = Vector2(370,555)
+	var before: int = guard.health
+	var vy: float = player.velocity.y
+	await tap("kick")
+	await ticks(7)
+	assert(player.attack_kind == "kick" and not player.is_on_floor(), "Air kick must remain an aerial kick")
+	assert(player.velocity.y > vy, "Gravity must continue through the kick")
+	assert(guard.health == before - 20, "Aerial foot overlapping torso must hit")
+	await ticks(50)
+	assert(player.is_on_floor(), "Aerial kick must return to ground")
+	player.position = Vector2(300,610)
+	var wall := StaticBody2D.new()
+	var wall_shape := CollisionShape2D.new()
+	var wall_rect := RectangleShape2D.new()
+	wall_rect.size = Vector2(20,120)
+	wall_shape.shape = wall_rect
+	wall.add_child(wall_shape)
+	wall.position = Vector2(345,550)
+	world.add_child(wall)
+	await ticks(3)
+	before = guard.health
+	await tap("kick")
+	await ticks(8)
+	assert(player.position.x < 300, "Wall kick must impart brief backward recoil")
+	assert(guard.health == before, "Wall must block kick damage behind it")
+	print("PASS: crouch clearance/kick, recovery buffered kick, aerial contact, continuous gravity and landing")
+	root.get_node("Audio").shutdown()
+	world.queue_free()
+	await ticks(2)
+	quit()

@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "admin-oni",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/admin-oni/admin-oni.tres",
+    "pivot": {
+      "x": 98.0,
+      "y": 204.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 41,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 42,
+        "to": 67,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 68,
+        "to": 83,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 84,
+        "to": 99,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 100,
+        "to": 115,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 116,
+        "to": 132,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 133,
+        "to": 146,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "armorer",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/armorer/armorer.tres",
+    "pivot": {
+      "x": 104.0,
+      "y": 202.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 34,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 35,
+        "to": 52,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 53,
+        "to": 66,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "throw",
+        "from": 67,
+        "to": 82,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "block",
+        "from": 83,
+        "to": 98,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 99,
+        "to": 114,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 115,
+        "to": 130,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 131,
+        "to": 142,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "beta-warden",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/beta-warden/beta-warden.tres",
+    "pivot": {
+      "x": 148.0,
+      "y": 260.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 40,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 41,
+        "to": 62,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 63,
+        "to": 78,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 79,
+        "to": 94,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 95,
+        "to": 110,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 111,
+        "to": 126,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 127,
+        "to": 140,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "drone",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/drone/drone.tres",
+    "pivot": {
+      "x": 80.0,
+      "y": 102.0
+    },
+    "animations": [
+      {
+        "name": "fly",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "hurt",
+        "from": 16,
+        "to": 31,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 32,
+        "to": 45,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "fencer",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/fencer/fencer.tres",
+    "pivot": {
+      "x": 80.0,
+      "y": 158.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 60,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 61,
+        "to": 84,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 85,
+        "to": 113,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 114,
+        "to": 146,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 147,
+        "to": 162,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 163,
+        "to": 191,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 192,
+        "to": 205,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "last-ronin",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/last-ronin/last-ronin.tres",
+    "pivot": {
+      "x": 100.0,
+      "y": 152.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 36,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 37,
+        "to": 57,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 58,
+        "to": 71,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "attack2",
+        "from": 72,
+        "to": 87,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "attack3",
+        "from": 88,
+        "to": 103,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 104,
+        "to": 132,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 133,
+        "to": 148,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 149,
+        "to": 164,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 165,
+        "to": 182,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "maglev-warden",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/maglev-warden/maglev-warden.tres",
+    "pivot": {
+      "x": 100.0,
+      "y": 270.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 39,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 40,
+        "to": 56,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 57,
+        "to": 72,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 73,
+        "to": 88,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 89,
+        "to": 104,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 105,
+        "to": 120,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 121,
+        "to": 134,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "pendulum",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/pendulum/pendulum.tres",
+    "pivot": {
+      "x": 92.0,
+      "y": 154.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 39,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 40,
+        "to": 59,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 60,
+        "to": 75,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 76,
+        "to": 91,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 92,
+        "to": 107,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 108,
+        "to": 123,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 124,
+        "to": 137,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "shield",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/shield/shield.tres",
+    "pivot": {
+      "x": 82.0,
+      "y": 140.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 46,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "walk2",
+        "from": 47,
+        "to": 73,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 74,
+        "to": 89,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 90,
+        "to": 105,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 106,
+        "to": 121,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 122,
+        "to": 137,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 138,
+        "to": 154,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 155,
+        "to": 168,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "shogun-fists",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/shogun-fists/shogun-fists.tres",
+    "pivot": {
+      "x": 128.0,
+      "y": 276.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 42,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 43,
+        "to": 68,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 69,
+        "to": 84,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 85,
+        "to": 100,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 101,
+        "to": 116,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 117,
+        "to": 132,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 133,
+        "to": 146,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      },
+      {
+        "name": "death2",
+        "from": 147,
+        "to": 160,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "shogun-sword",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/shogun-sword/shogun-sword.tres",
+    "pivot": {
+      "x": 112.0,
+      "y": 264.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 49,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 50,
+        "to": 68,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 69,
+        "to": 84,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 85,
+        "to": 100,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 101,
+        "to": 116,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 117,
+        "to": 133,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 134,
+        "to": 147,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      },
+      {
+        "name": "death2",
+        "from": 148,
+        "to": 161,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "the-double",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/the-double/the-double.tres",
+    "pivot": {
+      "x": 112.0,
+      "y": 302.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 41,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 42,
+        "to": 68,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 69,
+        "to": 96,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "attack2",
+        "from": 97,
+        "to": 112,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 113,
+        "to": 128,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 129,
+        "to": 144,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 145,
+        "to": 160,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 161,
+        "to": 174,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "thrower",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/thrower/thrower.tres",
+    "pivot": {
+      "x": 102.0,
+      "y": 144.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 45,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 46,
+        "to": 58,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "throw",
+        "from": 59,
+        "to": 74,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "block",
+        "from": 75,
+        "to": 90,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 91,
+        "to": 106,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 107,
+        "to": 122,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 123,
+        "to": 136,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "tracer",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/tracer/tracer.tres",
+    "pivot": {
+      "x": 84.0,
+      "y": 138.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 36,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 37,
+        "to": 50,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 51,
+        "to": 64,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 65,
+        "to": 80,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 81,
+        "to": 96,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 97,
+        "to": 113,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 114,
+        "to": 127,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  },
+  {
+    "id": "twin",
+    "sprite_frames": "assets/characters/cyber_ronin/CyberRonin_SpritePack/twin/twin.tres",
+    "pivot": {
+      "x": 68.0,
+      "y": 142.0
+    },
+    "animations": [
+      {
+        "name": "idle",
+        "from": 0,
+        "to": 15,
+        "direction": "forward",
+        "loop": true,
+        "fps": 8.0
+      },
+      {
+        "name": "walk",
+        "from": 16,
+        "to": 38,
+        "direction": "forward",
+        "loop": true,
+        "fps": 11.11
+      },
+      {
+        "name": "run",
+        "from": 39,
+        "to": 53,
+        "direction": "forward",
+        "loop": true,
+        "fps": 15.87
+      },
+      {
+        "name": "attack",
+        "from": 54,
+        "to": 69,
+        "direction": "forward",
+        "loop": false,
+        "fps": 16.67
+      },
+      {
+        "name": "block",
+        "from": 70,
+        "to": 85,
+        "direction": "forward",
+        "loop": false,
+        "fps": 14.29
+      },
+      {
+        "name": "jump",
+        "from": 86,
+        "to": 101,
+        "direction": "forward",
+        "loop": false,
+        "fps": 12.5
+      },
+      {
+        "name": "hurt",
+        "from": 102,
+        "to": 117,
+        "direction": "forward",
+        "loop": false,
+        "fps": 11.11
+      },
+      {
+        "name": "death",
+        "from": 118,
+        "to": 135,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      },
+      {
+        "name": "death2",
+        "from": 136,
+        "to": 149,
+        "direction": "forward",
+        "loop": false,
+        "fps": 10.0
+      }
+    ]
+  }
+]

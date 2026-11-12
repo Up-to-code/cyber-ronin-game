@@ -1,0 +1,11 @@
+{
+  "frames": 9,
+  "frame_size": [
+    96,
+    64
+  ],
+  "fps": 16,
+  "anchor": "leading tip at approximately x=88,y=32",
+  "raw": "assets/crimson-magic/spirit-flight-source.png",
+  "generated_with": "built-in imagegen"
+}

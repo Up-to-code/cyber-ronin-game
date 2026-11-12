@@ -1,0 +1,19 @@
+Attack resource replacements — retrieved 2026-11-11
+
+Swishes Sound Pack — artisticdude
+https://opengameart.org/content/swishes-sound-pack
+Source listing declares CC0. 13 WAVs (light and heavy swishes), made for Summoning Wars.
+Original archive: assets/audio/attack-candidates/swishes.zip
+Used takes: 1, 3, 5, 7, 8, 9, 11, 12, 13. Trimmed, filtered, resampled; some combined in power cue.
+
+SpritePilot — Combat, Effects and Sound Effects
+https://spritepilot.com/free-game-assets/combat
+https://spritepilot.com/free-game-assets/effects
+https://spritepilot.com/free-game-assets/sound-effects
+Creator releases assets under CC0 1.0:
+https://creativecommons.org/publicdomain/zero/1.0/
+Used: sword slash, hit spark, critical hit, shockwave, laser bolt PNG strips;
+kick, punch, sword clash, laser shot, fireball WAVs. Artwork palette remapped;
+audio trimmed, filtered, resampled; armor mixes body and steel, power mixes air and energy.
+Original PNGs: assets/pixel/combat-v2. Original WAVs: assets/audio/attack-candidates.
+No credit required by CC0; creator/source records retained for provenance.

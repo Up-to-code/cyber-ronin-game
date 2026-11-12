@@ -1,0 +1,56 @@
+{
+  "title": "The Bell That Would Not Rest",
+  "characters": {
+    "ronin": "Kuro",
+    "captain": "Ren"
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "title": "The Missing Bell",
+      "location": "Monastery Approach",
+      "body": "Kuro returns to a silent monastery.\nCaptain Ren has taken its shrine bell.\nFollow the old causeway before night closes in.",
+      "objective": "Reach the first shrine."
+    },
+    {
+      "id": 2,
+      "title": "An Order in Embers",
+      "location": "Ember Courtyard",
+      "body": "The gatekeepers still obey Ren.\nHis stolen bell commands their burning limbs.\nClear the courtyard and open the next shrine.",
+      "objective": "Break through the courtyard guard."
+    },
+    {
+      "id": 3,
+      "title": "Keepers Without Rest",
+      "location": "Bamboo Ramparts",
+      "body": "The floating spirits were shrine keepers.\nRen's binding has taken their bodies.\nTheir release lies beyond the bamboo wall.",
+      "objective": "Cross the bamboo wall."
+    },
+    {
+      "id": 4,
+      "title": "The Captain's Road",
+      "location": "Castle Rooftops",
+      "body": "Every opened shrine weakens the binding.\nKuro follows the roof path toward the keep.\nRen's last guards are waiting above.",
+      "objective": "Reach the inner keep."
+    },
+    {
+      "id": 5,
+      "title": "A Broken Oath",
+      "location": "Broken Sanctuary",
+      "body": "Ren swore to protect this sanctuary.\nHe bound its keepers to keep its fires alive.\nKuro must end the oath that became a prison.",
+      "objective": "Clear the sanctuary's last guard."
+    },
+    {
+      "id": 6,
+      "title": "Let the Bell Rest",
+      "location": "Crimson Castle Keep",
+      "body": "Ren stands between Kuro and the bell.\nDefeat the captain and break his binding.\nGive the keepers back their silence.",
+      "objective": "Defeat Ren and free the keepers."
+    }
+  ],
+  "ending": {
+    "title": "The First Quiet Morning",
+    "body": "Ren falls. The bell finally rests.\nThe keepers' flames fade into morning mist.\nKuro carries the bell home.",
+    "objective": "The keepers are free."
+  }
+}

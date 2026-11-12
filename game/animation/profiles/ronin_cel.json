@@ -1,0 +1,1497 @@
+{
+  "id": "ronin_cel",
+  "display_name": "Ashen ronin \u2014 crimson scarf",
+  "status": "Generated whole-character 64-pose sheet; shared poses for secondary actions.",
+  "atlas": "res://art/ronin-v2/actions.png",
+  "scale": 2,
+  "feet_origin": [
+    64,
+    112
+  ],
+  "body_center_height": 58,
+  "max_visual_roll": 0.35,
+  "sockets": {
+    "hand": [
+      78,
+      89
+    ],
+    "foot": [
+      74,
+      109
+    ],
+    "weapon_tip": [
+      94,
+      99
+    ],
+    "chest": [
+      65,
+      75
+    ],
+    "pelvis": [
+      64,
+      87
+    ]
+  },
+  "clips": {
+    "idle": {
+      "atlas": "res://art/ronin-v2/idle-expanded.png",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            896,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            896,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            896,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 150
+        },
+        {
+          "rect": [
+            1024,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            1152,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            1280,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            1408,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            1536,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        },
+        {
+          "rect": [
+            1664,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        }
+      ],
+      "loop": true
+    },
+    "walk": {
+      "loop": true,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            896,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        }
+      ],
+      "stride_world": 96,
+      "atlas": "res://art/concept-pass/walk.png"
+    },
+    "run": {
+      "loop": true,
+      "frames": [
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375
+        },
+        {
+          "rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375
+        },
+        {
+          "rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375
+        },
+        {
+          "rect": [
+            512,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            640,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375
+        },
+        {
+          "rect": [
+            768,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375
+        },
+        {
+          "rect": [
+            896,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 165.375
+        }
+      ],
+      "stride_world": 112,
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "block": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            384,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 2030.0
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "jump": {
+      "frames": [
+        {
+          "rect": [
+            256,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 53.333333333333336
+        },
+        {
+          "rect": [
+            384,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 53.333333333333336
+        },
+        {
+          "rect": [
+            512,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 53.333333333333336
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 25
+        },
+        {
+          "rect": [
+            128,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            256,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            384,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "death": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            512,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 450.0
+        },
+        {
+          "rect": [
+            640,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 450.0
+        },
+        {
+          "rect": [
+            768,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 450.0
+        },
+        {
+          "rect": [
+            896,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 450.0
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "sword1": {
+      "atlas": "res://art/ronin-v2/actions.png",
+      "feet_origin": [
+        64,
+        112
+      ],
+      "scale": 2,
+      "frames": [
+        {
+          "rect": [
+            0,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            256,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            384,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 55
+        },
+        {
+          "rect": [
+            512,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 45
+        },
+        {
+          "rect": [
+            640,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 25
+        },
+        {
+          "rect": [
+            896,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        }
+      ]
+    },
+    "sword2": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            256,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            384,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 55
+        },
+        {
+          "rect": [
+            512,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 45
+        },
+        {
+          "rect": [
+            640,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 25
+        },
+        {
+          "rect": [
+            896,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "sword3": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        },
+        {
+          "rect": [
+            256,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        },
+        {
+          "rect": [
+            384,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            512,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 60
+        },
+        {
+          "rect": [
+            640,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            896,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "kick": {
+      "atlas": "res://art/ronin-v2/actions.png",
+      "feet_origin": [
+        64,
+        112
+      ],
+      "scale": 2,
+      "frames": [
+        {
+          "rect": [
+            0,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            256,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            384,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 55
+        },
+        {
+          "rect": [
+            512,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 45
+        },
+        {
+          "rect": [
+            640,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 25
+        },
+        {
+          "rect": [
+            896,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        }
+      ]
+    },
+    "charge": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            128,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            256,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        }
+      ],
+      "hold_progress": 0.5,
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "fall": {
+      "frames": [
+        {
+          "rect": [
+            512,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "land": {
+      "frames": [
+        {
+          "rect": [
+            768,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "charged": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        },
+        {
+          "rect": [
+            256,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        },
+        {
+          "rect": [
+            384,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            512,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 60
+        },
+        {
+          "rect": [
+            640,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            896,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "power": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        },
+        {
+          "rect": [
+            256,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        },
+        {
+          "rect": [
+            384,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            512,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 60
+        },
+        {
+          "rect": [
+            640,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            896,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "ranged": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 32
+        },
+        {
+          "rect": [
+            128,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            256,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 18
+        },
+        {
+          "rect": [
+            384,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 55
+        },
+        {
+          "rect": [
+            512,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 45
+        },
+        {
+          "rect": [
+            640,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 30
+        },
+        {
+          "rect": [
+            768,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 25
+        },
+        {
+          "rect": [
+            896,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "crouch": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        }
+      ],
+      "hold_progress": 0,
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "dash": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        }
+      ],
+      "hold_progress": 0,
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "plunge": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            384,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 105.0
+        },
+        {
+          "rect": [
+            512,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 105.0
+        }
+      ],
+      "hold_progress": 0.5,
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "takeoff": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 40.0
+        },
+        {
+          "rect": [
+            128,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 40.0
+        },
+        {
+          "rect": [
+            256,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 40.0
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "apex": {
+      "frames": [
+        {
+          "rect": [
+            384,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ],
+      "atlas": "res://art/ronin-v2/actions.png"
+    },
+    "air_jump": {
+      "atlas": "res://art/ronin-v2/air-jump.png",
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 50
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 50
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 50
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 50
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 50
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 50
+        }
+      ]
+    }
+  },
+  "state_map": {
+    "attack": "sword1",
+    "float": "idle",
+    "fire_kick": "kick"
+  },
+  "attacks": {
+    "sword1": {
+      "clip": "sword1",
+      "contact_frame": 3,
+      "active_end_frame": 3,
+      "duration": 0.36,
+      "damage": 35,
+      "reach": 108,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "sword2": {
+      "clip": "sword2",
+      "contact_frame": 3,
+      "active_end_frame": 3,
+      "duration": 0.32,
+      "damage": 42,
+      "reach": 150,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "sword3": {
+      "clip": "sword3",
+      "contact_frame": 4,
+      "active_end_frame": 4,
+      "duration": 0.4,
+      "damage": 55,
+      "reach": 150,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "kick": {
+      "clip": "kick",
+      "contact_frame": 3,
+      "active_end_frame": 3,
+      "duration": 0.3,
+      "damage": 20,
+      "reach": 78,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "charged": {
+      "clip": "charged",
+      "contact_frame": 4,
+      "active_end_frame": 4,
+      "duration": 0.5,
+      "damage": 60,
+      "reach": 180,
+      "cost": 30,
+      "provisional_contact": true
+    },
+    "power": {
+      "clip": "power",
+      "contact_frame": 4,
+      "active_end_frame": 4,
+      "duration": 0.54,
+      "damage": 90,
+      "reach": 210,
+      "cost": 50,
+      "provisional_contact": true
+    },
+    "ranged": {
+      "clip": "ranged",
+      "contact_frame": 3,
+      "active_end_frame": 3,
+      "duration": 0.46,
+      "damage": 40,
+      "reach": 0,
+      "cost": 25,
+      "provisional_contact": true
+    }
+  }
+}

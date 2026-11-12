@@ -1,0 +1,2280 @@
+{
+  "id": "ronin_cel",
+  "display_name": "Slim ronin pixel redraw \u2014 sword/kick proof",
+  "status": "New idle/sword/kick redraw proof; movement/other actions are normalized source compatibility drawings.",
+  "atlas": "res://art/ronin-redraw/source-movement.png",
+  "scale": 2,
+  "feet_origin": [
+    64,
+    112
+  ],
+  "body_center_height": 58,
+  "max_visual_roll": 0.35,
+  "sockets": {
+    "hand": [
+      78,
+      89
+    ],
+    "foot": [
+      74,
+      109
+    ],
+    "weapon_tip": [
+      94,
+      99
+    ],
+    "chest": [
+      65,
+      75
+    ],
+    "pelvis": [
+      64,
+      87
+    ]
+  },
+  "clips": {
+    "idle": {
+      "atlas": "res://art/ronin-redraw/idle.png",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 160
+        }
+      ],
+      "loop": true
+    },
+    "walk": {
+      "loop": true,
+      "frames": [
+        {
+          "rect": [
+            0,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            128,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            256,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            384,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            512,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            640,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            768,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            896,
+            256,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            0,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            128,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            256,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            512,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            640,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            768,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            896,
+            384,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            0,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            128,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            256,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            384,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            512,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        }
+      ],
+      "stride_world": 120
+    },
+    "run": {
+      "loop": true,
+      "frames": [
+        {
+          "rect": [
+            640,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 63.0,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            768,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            896,
+            512,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            0,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            128,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            256,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            384,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            512,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            640,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            768,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            896,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0,
+          "events": [
+            "foot_contact"
+          ]
+        },
+        {
+          "rect": [
+            0,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            128,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            256,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            384,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            512,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            640,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            768,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            896,
+            768,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            0,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        },
+        {
+          "rect": [
+            128,
+            896,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        }
+      ],
+      "stride_world": 180
+    },
+    "block": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            128,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            256,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            384,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            512,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            640,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            768,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            896,
+            1664,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            0,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            128,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            256,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            384,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            512,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            640,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            768,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            896,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            0,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            128,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            256,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            384,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            512,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            640,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            768,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            896,
+            1920,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            0,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            128,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            256,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            384,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            512,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        }
+      ]
+    },
+    "jump": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            128,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            256,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            384,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            640,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            768,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            896,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            0,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            128,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            256,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            384,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            512,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            640,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            768,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            896,
+            2432,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            0,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            128,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            256,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            384,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        },
+        {
+          "rect": [
+            512,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 90.0
+        }
+      ]
+    },
+    "death": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            640,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            768,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            896,
+            2560,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            0,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            128,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            256,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            384,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            512,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            640,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            768,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            896,
+            2688,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            0,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            128,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            256,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            384,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            512,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            640,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        },
+        {
+          "rect": [
+            768,
+            2816,
+            128,
+            128
+          ],
+          "duration_ms": 100.0
+        }
+      ]
+    },
+    "sword1": {
+      "atlas": "res://art/ronin-redraw/sword.png",
+      "feet_origin": [
+        64,
+        112
+      ],
+      "scale": 2,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 25
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 110
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 45,
+          "events": [
+            "contact"
+          ],
+          "sockets": {
+            "hand": [
+              76,
+              84
+            ],
+            "weapon_tip": [
+              106,
+              97
+            ],
+            "foot": [
+              85,
+              111
+            ]
+          }
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 115
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 75
+        }
+      ]
+    },
+    "sword2": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1152,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            0,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1280,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ]
+    },
+    "sword3": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            0,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ]
+    },
+    "kick": {
+      "atlas": "res://art/ronin-redraw/kick.png",
+      "feet_origin": [
+        64,
+        112
+      ],
+      "scale": 2,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 15
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 35,
+          "events": [
+            "contact"
+          ],
+          "sockets": {
+            "foot": [
+              91,
+              79
+            ],
+            "hand": [
+              64,
+              82
+            ],
+            "weapon_tip": [
+              79,
+              98
+            ]
+          }
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 65
+        },
+        {
+          "rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 85
+        },
+        {
+          "rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 35
+        }
+      ]
+    },
+    "charge": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            384,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            512,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        },
+        {
+          "rect": [
+            640,
+            1792,
+            128,
+            128
+          ],
+          "duration_ms": 70.0
+        }
+      ],
+      "hold_progress": 0.5
+    },
+    "fall": {
+      "frames": [
+        {
+          "rect": [
+            896,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            0,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            128,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ]
+    },
+    "land": {
+      "frames": [
+        {
+          "rect": [
+            256,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            384,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            512,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ]
+    },
+    "charged": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            0,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ]
+    },
+    "power": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            0,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ]
+    },
+    "ranged": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            0,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1408,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            0,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            128,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            256,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            384,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            512,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            640,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            768,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        },
+        {
+          "rect": [
+            896,
+            1536,
+            128,
+            128
+          ],
+          "duration_ms": 60.0
+        }
+      ]
+    },
+    "crouch": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            256,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 70
+        }
+      ],
+      "hold_progress": 0
+    },
+    "dash": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            384,
+            640,
+            128,
+            128
+          ],
+          "duration_ms": 63.0
+        }
+      ],
+      "hold_progress": 0
+    },
+    "plunge": {
+      "loop": false,
+      "frames": [
+        {
+          "rect": [
+            768,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            896,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            0,
+            2304,
+            128,
+            128
+          ],
+          "duration_ms": 70
+        }
+      ],
+      "hold_progress": 0.5
+    },
+    "takeoff": {
+      "frames": [
+        {
+          "rect": [
+            640,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            768,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            896,
+            2048,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ]
+    },
+    "apex": {
+      "frames": [
+        {
+          "rect": [
+            512,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            640,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        },
+        {
+          "rect": [
+            768,
+            2176,
+            128,
+            128
+          ],
+          "duration_ms": 40
+        }
+      ]
+    }
+  },
+  "state_map": {
+    "attack": "sword1",
+    "float": "idle",
+    "fire_kick": "kick"
+  },
+  "attacks": {
+    "sword1": {
+      "clip": "sword1",
+      "contact_frame": 2,
+      "active_end_frame": 2,
+      "duration": 0.47,
+      "damage": 35,
+      "reach": 108,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "sword2": {
+      "clip": "sword2",
+      "contact_frame": 4,
+      "active_end_frame": 5,
+      "duration": 0.38,
+      "damage": 42,
+      "reach": 150,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "sword3": {
+      "clip": "sword3",
+      "contact_frame": 5,
+      "active_end_frame": 6,
+      "duration": 0.48,
+      "damage": 55,
+      "reach": 150,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "kick": {
+      "clip": "kick",
+      "contact_frame": 2,
+      "active_end_frame": 2,
+      "duration": 0.3,
+      "damage": 20,
+      "reach": 78,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "charged": {
+      "clip": "charged",
+      "contact_frame": 5,
+      "active_end_frame": 6,
+      "duration": 0.5,
+      "damage": 60,
+      "reach": 180,
+      "cost": 30,
+      "provisional_contact": true
+    },
+    "power": {
+      "clip": "power",
+      "contact_frame": 5,
+      "active_end_frame": 6,
+      "duration": 0.54,
+      "damage": 90,
+      "reach": 210,
+      "cost": 50,
+      "provisional_contact": true
+    },
+    "ranged": {
+      "clip": "ranged",
+      "contact_frame": 5,
+      "active_end_frame": 6,
+      "duration": 0.46,
+      "damage": 40,
+      "reach": 0,
+      "cost": 25,
+      "provisional_contact": true
+    }
+  }
+}

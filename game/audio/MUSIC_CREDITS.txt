@@ -1,0 +1,15 @@
+Free Music : MOMIZizm MUSiC
+https://music.storyinvention.com/en/
+
+Tracks: Mountain God's Shrine (exploration), Shamisen Samurai Rock (battle).
+Source: Free Japanese Fantasy Music Pack by Momiziba
+https://momiziba.itch.io/free-japanese-music-pack
+Downloaded 2026-11-11. Source page permits commercial use with the above attribution.
+Runtime files are the composer's supplied *_Loop.ogg versions, renamed for project integration.
+The original pack and saved source-page terms are retained privately under music_source/ (.gdignore).
+Do not distribute the music as a standalone asset collection.
+
+Current quiet-direction runtime pair (11 November 2026):
+Moonlight Japanese Harp -> moonlight_loop.ogg
+Mysterious Kyoto -> kyoto_tension_loop.ogg
+Same licensed pack and attribution above. tools/build_quiet_audio.py joins tail/head over two seconds and encodes 24kHz stereo Vorbis; startup fades in over 2.5s. Old runtime tracks remain archived but are no longer selected by audio.gd.

@@ -1,0 +1,7 @@
+{
+  "id": "guard",
+  "display_name": "Monastery Sentinel",
+  "tint": [1.20, 0.90, 0.82, 1.0],
+  "widths": {"torso": 27, "upper_arm": 13, "forearm": 11},
+  "lengths": {"thigh": 28, "shin": 29, "upper_arm": 23, "forearm": 21, "torso": 31}
+}

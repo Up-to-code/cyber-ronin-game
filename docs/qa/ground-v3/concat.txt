@@ -1,0 +1,6 @@
+file '/Users/ahmedmansour/.t3/scratch/2026-11-11-https-pavelekh-itch-io-cyber-cc091a15/docs/qa/ground-v3/light-before.wav'
+file '/Users/ahmedmansour/.t3/scratch/2026-11-11-https-pavelekh-itch-io-cyber-cc091a15/docs/qa/ground-v3/light-new.wav'
+file '/Users/ahmedmansour/.t3/scratch/2026-11-11-https-pavelekh-itch-io-cyber-cc091a15/docs/qa/ground-v3/heavy-before.wav'
+file '/Users/ahmedmansour/.t3/scratch/2026-11-11-https-pavelekh-itch-io-cyber-cc091a15/docs/qa/ground-v3/heavy-new.wav'
+file '/Users/ahmedmansour/.t3/scratch/2026-11-11-https-pavelekh-itch-io-cyber-cc091a15/docs/qa/ground-v3/slam-before.wav'
+file '/Users/ahmedmansour/.t3/scratch/2026-11-11-https-pavelekh-itch-io-cyber-cc091a15/docs/qa/ground-v3/slam-new.wav'

@@ -1,0 +1,113 @@
+{
+  "source": "https://hoveaudio.itch.io/sword-combat-sound-effects-pack-free-version",
+  "imported": [
+    "WEAPSwrd_BaseMetal_HoveAud_SwordCombat_03.wav",
+    "WEAPSwrd_BaseMetal_HoveAud_SwordCombat_06.wav",
+    "WEAPSwrd_BaseWood_HoveAud_SwordCombat_03.wav",
+    "WEAPSwrd_BaseWood_HoveAud_SwordCombat_06.wav",
+    "WEAPSwrd_MetalwWhoosh_HoveAud_SwordCombat_03.wav",
+    "WEAPSwrd_MetalwWhoosh_HoveAud_SwordCombat_06.wav",
+    "WEAPSwrd_WoodwWhoosh_HoveAud_SwordCombat_03.wav",
+    "WEAPSwrd_WoodwWhoosh_HoveAud_SwordCombat_06.wav",
+    "WEAPSwrd_SwordStab_HoveAud_SwordCombat_01.wav",
+    "WEAPSwrd_SwordStab_HoveAud_SwordCombat_11.wav",
+    "WEAPSwrd_SwordStab_HoveAud_SwordCombat_17.wav",
+    "WEAPSwrd_SwordStabCombo_HoveAud_SwordCombat_01.wav",
+    "WEAPSwrd_SwordStabCombo_HoveAud_SwordCombat_11.wav",
+    "WEAPSwrd_SwordStabCombo_HoveAud_SwordCombat_17.wav",
+    "WEAPSwrd_SwordStabCombowRing_HoveAud_SwordCombat_01.wav",
+    "WEAPSwrd_SwordStabCombowRing_HoveAud_SwordCombat_11.wav",
+    "WEAPSwrd_SwordStabCombowRing_HoveAud_SwordCombat_17.wav",
+    "WEAPSwrd_SwordStabwRing_HoveAud_SwordCombat_01.wav",
+    "WEAPSwrd_SwordStabwRing_HoveAud_SwordCombat_11.wav",
+    "WEAPSwrd_SwordStabwRing_HoveAud_SwordCombat_17.wav",
+    "GOREStab_SwordStabGore_HoveAud_SwordCombat_01.wav",
+    "GOREStab_SwordStabGore_HoveAud_SwordCombat_11.wav",
+    "GOREStab_SwordStabGore_HoveAud_SwordCombat_17.wav",
+    "WEAPSwrd_SwordStabwWhoosh_HoveAud_SwordCombat_01.wav",
+    "WEAPSwrd_SwordStabwWhoosh_HoveAud_SwordCombat_11.wav",
+    "WEAPSwrd_SwordStabwWhoosh_HoveAud_SwordCombat_17.wav",
+    "MAGShim_Ring_HoveAud_SwordCombat_01.wav",
+    "MAGShim_Ring_HoveAud_SwordCombat_11.wav",
+    "MAGShim_Ring_HoveAud_SwordCombat_17.wav",
+    "VOXEfrt_ActionGrunt_HoveAud_SwordCombat_01.wav",
+    "VOXEfrt_ActionGrunt_HoveAud_SwordCombat_07.wav",
+    "VOXEfrt_ActionGrunt_HoveAud_SwordCombat_23.wav",
+    "VOXEfrt_ActionGrunt_HoveAud_SwordCombat_29.wav",
+    "VOXEfrt_ActionGrunt_HoveAud_SwordCombat_54.wav",
+    "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_01.wav",
+    "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_13.wav",
+    "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_22.wav",
+    "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_27.wav",
+    "WHSH_Whoosh_HoveAud_SwordCombat_07.wav",
+    "WHSH_Whoosh_HoveAud_SwordCombat_26.wav"
+  ],
+  "roles": {
+    "swing": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav"
+    ],
+    "swing_reverse": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav"
+    ],
+    "swing_finisher": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav"
+    ],
+    "charged_swing": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav"
+    ],
+    "kick": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav"
+    ],
+    "enemy_swing": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav"
+    ],
+    "enemy_thrust": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav"
+    ],
+    "enemy_heavy": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav"
+    ],
+    "ranged_swing": [
+      "WHSH_Whoosh_HoveAud_SwordCombat_07.wav",
+      "WHSH_Whoosh_HoveAud_SwordCombat_26.wav"
+    ],
+    "impact": [
+      "WEAPSwrd_SwordStab_HoveAud_SwordCombat_01.wav",
+      "WEAPSwrd_SwordStab_HoveAud_SwordCombat_11.wav",
+      "WEAPSwrd_SwordStab_HoveAud_SwordCombat_17.wav"
+    ],
+    "impact_armor": [
+      "WEAPSwrd_BaseMetal_HoveAud_SwordCombat_03.wav",
+      "WEAPSwrd_BaseMetal_HoveAud_SwordCombat_06.wav"
+    ],
+    "hurt": [
+      "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_01.wav",
+      "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_13.wav",
+      "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_22.wav",
+      "VOXScrm_DamageGrunt_HoveAudio_SwordCombat_27.wav"
+    ],
+    "power": [
+      "MAGShim_Ring_HoveAud_SwordCombat_01.wav",
+      "MAGShim_Ring_HoveAud_SwordCombat_11.wav",
+      "MAGShim_Ring_HoveAud_SwordCombat_17.wav"
+    ],
+    "energy_swing": [
+      "MAGShim_Ring_HoveAud_SwordCombat_01.wav",
+      "MAGShim_Ring_HoveAud_SwordCombat_11.wav",
+      "MAGShim_Ring_HoveAud_SwordCombat_17.wav"
+    ],
+    "impact_spirit": [
+      "MAGShim_Ring_HoveAud_SwordCombat_01.wav",
+      "MAGShim_Ring_HoveAud_SwordCombat_11.wav",
+      "MAGShim_Ring_HoveAud_SwordCombat_17.wav"
+    ]
+  }
+}

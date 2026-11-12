@@ -1,0 +1,14 @@
+{
+  "id": 2,
+  "key": "outer_courtyard",
+  "name": "Outer Courtyard",
+  "difficulty": "normal",
+  "status": "implemented",
+  "scene": "game/scenes/main.tscn",
+  "next_level": 3,
+  "exit_requires": "required_encounters_cleared",
+  "background_status": "implemented_generated_pixel_layers",
+  "enemy_placements": [],
+  "runtime_data": "game/data/campaign.gd",
+  "runtime_level": 2
+}

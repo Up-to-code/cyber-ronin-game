@@ -1,0 +1,18 @@
+Ground contact palette — retrieved 2026-11-11
+
+Jump Landing Sound — MentalSanityOff (submitted by qubodup)
+https://opengameart.org/content/jump-landing-sound
+Original recording: https://freesound.org/people/MentalSanityOff/sounds/148796/
+Creator listing declares CC0. Original jumpland.wav retained in assets/audio/ground-candidates.
+
+Impact — Iwan 'qubodup' Gabovitch
+https://opengameart.org/content/impact
+Attribution requested by the creator: Impact by Iwan 'qubodup' Gabovitch
+http://opengameart.org/users/qubodup
+Creator listing declares CC0. Original qubodupImpact.7z retained, with extracted lossless stone recording.
+
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+Modified: onset silence removed, mild band limiting, end fades, mono/24 kHz conversion.
+Normal landing uses the landing recording; heavy contact mixes quieter stone;
+plunge landing and wall contact use the stone texture in different proportions.
+Walking, takeoff and other attack source packs retained separately.

@@ -1,0 +1,17 @@
+.godot/
+assets/source/
+assets/characters/cyber_ronin/
+assets/equipment/spearmen/
+.DS_Store
+
+game/art/last-ronin/
+game/art/tracer/
+game/qa/
+.pixel-tools/
+game/art/pixel/last-ronin_sheet.png
+game/art/pixel/tracer_sheet.png
+
+game/audio/music_source/
+
+# Publisher screenshots are private reference material, not game assets.
+docs/references/*.jpg

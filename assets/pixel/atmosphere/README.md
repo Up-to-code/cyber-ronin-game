@@ -1,0 +1,3 @@
+Clouds raw generated with OpenAI image generation for this project, 11 November 2026. Runtime `game/art/pixel/clouds-v2.png` is a nearest-neighbor 640×213 derivative with thresholded transparency. The cloud layer scrolls independently above the architectural backdrop. No third-party cloud artwork is included.
+
+Separated castle and mountain layers were generated as edits using the existing castle artwork reference on11November2026. Raw outputs are retained; runtime derivatives use a640×360 nearest-neighbor canvas and alpha threshold. The rejected clouds-v2 overlay remains archived but is not instantiated by the current main scene.

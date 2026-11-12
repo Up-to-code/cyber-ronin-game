@@ -1,0 +1,17 @@
+{
+  "id": "ember_fire",
+  "display_name": "Ember Disciple",
+  "tint": [
+    1.8,
+    0.87,
+    0.5,
+    1
+  ],
+  "lengths": {
+    "thigh": 29,
+    "shin": 28,
+    "upper_arm": 23,
+    "forearm": 21,
+    "torso": 31
+  }
+}

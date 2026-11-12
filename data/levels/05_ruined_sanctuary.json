@@ -1,0 +1,14 @@
+{
+  "id": 5,
+  "key": "ruined_sanctuary",
+  "name": "Ruined Sanctuary",
+  "difficulty": "normal_plus",
+  "status": "implemented",
+  "scene": "game/scenes/main.tscn",
+  "next_level": 6,
+  "exit_requires": "required_encounters_cleared",
+  "background_status": "implemented_generated_pixel_layers",
+  "enemy_placements": [],
+  "runtime_data": "game/data/campaign.gd",
+  "runtime_level": 5
+}
