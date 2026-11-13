@@ -1,0 +1,497 @@
+[
+  {
+    "level": 1,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 2,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 3,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 4,
+    "pass": false,
+    "failure": "ERROR: Sequential level4 transition3 (1250.0, 858.0) -> (1580.0, 788.0) failed player(1287.468, 726.7505)"
+  },
+  {
+    "level": 5,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 6,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 7,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 9,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 10,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 11,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 12,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 13,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 14,
+    "pass": false,
+    "failure": "ERROR: Sequential level14 transition4 (1580.0, 624.0) -> (1250.0, 549.0) failed player(1374.076, 698.9921)"
+  },
+  {
+    "level": 15,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 16,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 17,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 18,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 19,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 20,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 21,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 22,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 23,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 24,
+    "pass": false,
+    "failure": "ERROR: Sequential level24 transition3 (1250.0, 945.0) -> (1580.0, 880.0) failed player(1286.948, 814.993)"
+  },
+  {
+    "level": 25,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 26,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 27,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 28,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 29,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 30,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 31,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 32,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 33,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 34,
+    "pass": false,
+    "failure": "ERROR: Sequential level34 transition3 (1250.0, 786.0) -> (1580.0, 716.0) failed player(1287.351, 654.9675)"
+  },
+  {
+    "level": 35,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 36,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 37,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 38,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 39,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 40,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 41,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 42,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 43,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 44,
+    "pass": false,
+    "failure": "ERROR: Sequential level44 transition4 (1580.0, 552.0) -> (1250.0, 477.0) failed player(1374.002, 627.4235)"
+  },
+  {
+    "level": 45,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 46,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 47,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 48,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 49,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 50,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 51,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 52,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 53,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 54,
+    "pass": false,
+    "failure": "ERROR: Sequential level54 transition3 (1250.0, 873.0) -> (1580.0, 808.0) failed player(1286.95, 742.9895)"
+  },
+  {
+    "level": 55,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 56,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 57,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 58,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 59,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 60,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 61,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 62,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 63,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 64,
+    "pass": false,
+    "failure": "ERROR: Sequential level64 transition3 (1250.0, 714.0) -> (1580.0, 644.0) failed player(1287.444, 582.7285)"
+  },
+  {
+    "level": 65,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 66,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 67,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 68,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 69,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 70,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 71,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 72,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 73,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 74,
+    "pass": false,
+    "failure": "ERROR: Sequential level74 transition4 (1580.0, 840.0) -> (1250.0, 765.0) failed player(1374.076, 914.9965)"
+  },
+  {
+    "level": 75,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 76,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 77,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 78,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 79,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 80,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 81,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 82,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 83,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 84,
+    "pass": false,
+    "failure": "ERROR: Sequential level84 transition3 (1250.0, 801.0) -> (1580.0, 736.0) failed player(1286.95, 670.9896)"
+  },
+  {
+    "level": 85,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 86,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 87,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 88,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 89,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 90,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 91,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 92,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 93,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 94,
+    "pass": false,
+    "failure": "ERROR: Sequential level94 transition3 (1250.0, 642.0) -> (1580.0, 572.0) failed player(1287.464, 510.6803)"
+  },
+  {
+    "level": 95,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 96,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 97,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 98,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 99,
+    "pass": true,
+    "failure": ""
+  },
+  {
+    "level": 100,
+    "pass": true,
+    "failure": ""
+  }
+]

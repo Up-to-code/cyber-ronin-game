@@ -1,0 +1,96 @@
+[
+  {
+    "test": "exit_clearance",
+    "result": "pass",
+    "seconds": 0.5
+  },
+  {
+    "test": "background_coverage",
+    "result": "pass",
+    "seconds": 0.9
+  },
+  {
+    "test": "redesigned_campaign",
+    "result": "pass",
+    "seconds": 0.4
+  },
+  {
+    "test": "migration_runtime",
+    "result": "pass",
+    "seconds": 4.5
+  },
+  {
+    "test": "directed_traversal",
+    "result": "failure_or_warning",
+    "seconds": 1.6,
+    "interpretation": "89/99 routes pass independently. Ten Sun Seal routes pass all 80 transitions after required seal completion; separate route_devices input test passes all ten seals. Original bot never solves puzzle."
+  },
+  {
+    "test": "gate_runtime_audit",
+    "result": "pass",
+    "seconds": 14.6
+  },
+  {
+    "test": "platforming",
+    "result": "failure_or_warning",
+    "seconds": 0.9,
+    "interpretation": "Core fixture checks passed; integration asserts all guards are at obsolete fixed y=550. Not evidence current platforms are broken."
+  },
+  {
+    "test": "moving_sword_facing",
+    "result": "pass",
+    "seconds": 0.5
+  },
+  {
+    "test": "individual_contracts",
+    "result": "pass",
+    "seconds": 1.7
+  },
+  {
+    "test": "monster_ai_timing",
+    "result": "failure_or_warning",
+    "seconds": 14.6,
+    "interpretation": "100 AI timing cases passed (failures=0); exit leak warning; runner required literal PASS and misclassified."
+  },
+  {
+    "test": "monster_death_support",
+    "result": "pass",
+    "seconds": 2.7
+  },
+  {
+    "test": "underwater_integration",
+    "result": "pass",
+    "seconds": 1.7
+  },
+  {
+    "test": "sequence_machine",
+    "result": "pass",
+    "seconds": 0.9
+  },
+  {
+    "test": "campaign_navigation",
+    "result": "pass",
+    "seconds": 0.9
+  },
+  {
+    "test": "objective_tracker",
+    "result": "pass",
+    "seconds": 0.4
+  },
+  {
+    "test": "skill_inventory",
+    "result": "pass",
+    "seconds": 0.5
+  },
+  {
+    "test": "brood_gate",
+    "result": "pass",
+    "seconds": 0.9
+  },
+  {
+    "test": "aquatic_enemies",
+    "result": "failure_or_warning",
+    "seconds": 0.5,
+    "interpretation": "Obsolete attack_count/projectile assertions and manually stepped parent omit contract clock. Live follow-up: all three roles start actions and emit contacts."
+  }
+]

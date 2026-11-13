@@ -1,0 +1,100 @@
+1|Straw Ronin|Harvest Draw|straw|duelist|crescent|sweep|needle|fan|.62|.23|.74|118|82|150|210
+2|Ash Wolf|Hamstring Pounce|claw|wolf|claw|leap|fang|return|.48|.29|.85|145|36|108|135
+3|Paper Exorcist|Three Edicts|talisman|flyer|paper|wave|seal|drop|.88|.48|.64|205|108|92|310
+4|Iron Beetle|Carapace Breaker|horn|beetle|horn|rise|shard|fan|.91|.32|1.06|132|60|120|98
+5|Lantern Crane|Wick Spear|feather|bird|feather|drop|flame|rise|.72|.42|.88|238|135|74|390
+6|Crimson Umbrella|Ribwheel Rain|umbrella|flyer|rib|orbit|drop|rain|.83|.58|.94|160|96|132|280
+7|Bell Golem|Mourning Toll|bell|golem|ring|expand|shard|drop|1.08|.52|1.22|190|76|180|74
+8|Spear Serpent|Coil and Impale|coil|serpent|coil|orbit|spear|straight|.68|.31|.81|220|50|64|195
+9|Watching Mask|Fivefold Stare|eye|flyer|eye|fan|stone|collapse|.96|.66|1.04|252|116|80|166
+10|Spider Samurai Matriarch|Silk Execution|silk|spider|web|expand|blade|pincer|1.14|.65|1.38|275|90|220|125
+11|Ash Rabbit|Moon Heel|heel|rabbit|crescent|leap|dust|return|.39|.22|.66|152|68|88|250
+12|Chain Prisoner|Sentence Reversal|chain|heavy|chain|sweep|hook|return|.85|.57|1.12|250|48|76|110
+13|Kiln Spirit|Shattered Hearth|pottery|golem|pot|lob|ember|expand|.78|.69|.98|185|108|146|92
+14|Mushroom Monk|Sleeping Garden|spore|caster|spore|float|root|rise|1.05|.88|.76|210|56|110|330
+15|Bone Archer|Rib Piercer|bone|archer|arrow|straight|bone|rain|.71|.27|.69|310|70|44|490
+16|Blind Swordmaster|Soundless Crossing|iai|duelist|line|straight|crescent|return|1.12|.13|1.30|245|72|42|630
+17|Nineflame Fox|False Moon Chase|foxtail|fox|flame|wave|tail|pincer|.58|.72|.91|240|100|102|310
+18|Crayfish Knight|Shell Lock|pincer|crab|claw|pincer|shell|rise|.90|.35|1.16|105|45|138|125
+19|Bamboo Mantis|Green Guillotine|bamboo|mantis|sickle|drop|splinter|fan|.64|.26|.83|175|128|108|420
+20|Furnace Ogre|Coal Cathedral|furnace|golem|vent|rise|coal|rain|1.25|.76|1.51|310|125|240|86
+21|Raven Tengu|Feather Requiem|raven|bird|feather|sweep|blade|return|.56|.44|.73|215|98|96|450
+22|Incense Censer|Funeral Spiral|incense|flyer|smoke|spiral|bead|collapse|1.02|.84|.99|180|112|152|220
+23|Thorn Boar|Briar Stampede|tusk|boar|tusk|charge|thorn|rise|.76|.38|1.24|260|28|110|145
+24|Centipede Warrior|Hundred Tooth Saw|segments|crawler|saw|wave|segment|return|.69|.56|.93|285|25|80|350
+25|Fish Axe Samurai|Scale Cleaver|scale|duelist|axe|sweep|scale|fan|.81|.33|1.07|167|88|155|180
+26|Ice Tortoise|Glacier Carapace|iceplate|tortoise|ice|expand|plate|drop|1.18|.71|1.35|175|38|200|83
+27|Cave Ape|Ceiling Knuckle|knuckle|ape|fist|drop|rock|leap|.74|.41|1.10|193|144|136|115
+28|Candle Nun|Extinguished Prayer|candle|caster|wick|rise|wax|rain|.98|.81|1.02|220|110|86|260
+29|Origami Dragon|Folded Horizon|origami|flyer|paper|spiral|fold|straight|.66|.62|.87|275|126|104|420
+30|Thunder Drum Titan|War Drum Measure|drum|golem|beat|expand|bolt|pincer|1.21|.53|1.48|335|104|230|72
+31|Bonewheel|Grave Cartwheel|wheel|wheel|wheel|charge|spoke|fan|.62|.64|1.12|320|32|130|168
+32|Floating Oni|Jaw of Dusk|jaw|flyer|jaw|collapse|fang|drop|.87|.49|.92|195|104|142|135
+33|Iron Millipede|Armored Undertow|millipede|crawler|segment|wave|plate|return|.73|.74|1.03|278|22|96|140
+34|Sickle Bat|Echo Scythe|batwing|flyer|sickle|leap|echo|expand|.47|.39|.72|230|140|95|520
+35|Kettle Crab|Boiling Clamps|kettle|crab|claw|pincer|steam|rise|.92|.51|1.14|130|42|125|230
+36|Spear Deer|Antler Procession|antler|deer|antler|charge|spear|drop|.79|.37|.96|290|90|106|290
+37|Haunted Basket|Wicker Hunger|wicker|mimic|rib|expand|splinter|collapse|.94|.61|1.09|160|64|144|150
+38|Plague Crow|Black Sutra|plaguefeather|bird|feather|fan|miasma|float|.83|.78|.89|250|115|104|345
+39|Eyestalk Slug|Witness Slime|eyestalk|crawler|eye|rise|slime|wave|1.07|.92|1.20|215|33|122|155
+40|Root Witch|Root Gallows|root|tree|root|rise|vine|pincer|1.28|.86|1.44|300|130|240|98
+41|Chain Wolf Skull|Leashed Howl|skullchain|wolf|jaw|leap|chain|return|.65|.48|.88|227|70|112|185
+42|Snow Woman|White Burial|snowveil|caster|veil|wave|ice|collapse|1.01|.79|1.11|270|123|147|480
+43|Scorpion Samurai|Venom Verdict|stinger|scorpion|sting|lob|claw|pincer|.84|.45|1.08|210|94|90|225
+44|Sword Spirit|Ownerless Arc|ghostblade|flyer|blade|orbit|line|straight|.61|.47|.82|260|115|98|580
+45|Iron Antler Horse|Iron Procession|ironhoof|horse|hoof|charge|antler|rise|.86|.34|1.27|315|55|128|105
+46|Eel Sorcerer|Current Stitch|eel|serpent|bolt|wave|coil|collapse|.75|.58|.97|290|80|75|370
+47|Stitched Doll|Unpicked Heart|stitch|doll|needle|fan|thread|pincer|.93|.68|1.01|205|86|98|300
+48|Porcelain Centaur|Ceramic Joust|porcelain|centaur|spear|charge|shard|expand|.82|.32|1.18|295|78|114|210
+49|Boulder Frog|Stone Throat|frog|frog|rock|lob|tongue|return|.97|.83|1.29|245|48|162|95
+50|Threeheaded Hydra|Three Mouth River|hydra|hydra|jet|fan|fang|pincer|1.16|.70|1.42|340|122|224|280
+51|Stagskull Priest|Antler Benediction|stagskull|caster|bone|rise|seal|collapse|1.04|.72|.96|230|120|134|190
+52|Crystal Moth|Prismatic Dust|moth|flyer|dust|spiral|crystal|rain|.69|.82|.91|255|132|128|670
+53|Lava Salamander|Molten Footprint|salamander|crawler|ember|wave|lava|rise|.77|.59|1.04|240|30|115|175
+54|Masked Carp|Scale Comet|carp|flyer|scale|leap|ribbon|return|.52|.43|.78|278|145|92|460
+55|Needle Lantern|Wick Stitcher|lanternleg|spider|needle|drop|wick|expand|.88|.46|1.15|195|152|105|340
+56|Silk Spiderling|Red Thread Ambush|spiderling|spider|thread|pincer|fang|leap|.42|.28|.67|150|44|82|410
+57|Twin Hound|Two Beat Hunt|twinfang|wolf|jaw|charge|claw|return|.58|.35|.86|225|53|112|165
+58|Banner Armor|Torn Standard|banner|heavy|banner|sweep|seal|drop|.95|.56|1.23|245|125|145|135
+59|Paper Heron|Folded Rain|paperheron|bird|fold|drop|feather|fan|.73|.67|.84|268|150|80|540
+60|Shrine Cloudwhale|Falling Sanctuary|whale|whale|cloud|float|shrine|drop|1.35|1.02|1.62|345|168|255|68
+61|Waterwheel Automaton|Mill Race|waterwheel|wheel|wheel|orbit|jet|straight|.91|.63|1.12|240|68|136|230
+62|Stone Monk|Six Palm Sermon|palm|golem|palm|fan|stone|collapse|1.06|.48|1.31|205|104|166|90
+63|Panda Bandit|Bamboo Feint|panda|duelist|staff|sweep|leaf|return|.51|.31|.76|175|72|118|315
+64|Hollow Gourd|Seeds of Hunger|gourd|mimic|seed|lob|vine|rise|.89|.77|1.09|235|90|132|160
+65|Crane Skeleton|Marrow Dive|cranebone|bird|beak|drop|bone|fan|.67|.36|.95|258|155|92|440
+66|Ink Slug|Unwritten River|ink|crawler|ink|wave|brush|rise|1.11|.95|1.18|260|24|136|205
+67|Snow Owl|Silent Talons|owltalons|bird|claw|leap|snow|float|.49|.38|.81|245|138|104|620
+68|Rotten Stump|Hollow Orchard|stump|tree|root|pincer|spore|rise|1.15|.81|1.34|215|66|174|115
+69|Brass Diver|Pressure Coffin|diver|heavy|jet|straight|bubble|collapse|.99|.55|1.24|278|84|128|180
+70|Mirror Serpent|Reflected Wound|mirror|serpent|mirror|return|blade|pincer|1.19|.92|1.45|315|118|200|460
+71|Mud Catfish|Silt Swallow|catfish|fish|mud|lob|whisker|sweep|.88|.70|1.07|225|40|148|125
+72|Blade Fan|Tenfold Breeze|fanblade|flyer|blade|fan|rib|orbit|.72|.51|.93|255|108|126|560
+73|Cursed Swordrack|Arsenal Wake|swordrack|golem|sword|rain|rack|rise|1.07|.74|1.22|275|138|158|240
+74|Goat Wrestler|Cliff Breaker|goathorn|heavy|horn|charge|fist|drop|.93|.42|1.36|210|72|142|105
+75|Lotus Spirit|Petal Prison|lotus|caster|petal|orbit|stem|collapse|1.02|.90|1.10|225|106|160|530
+76|Volcano Snail|Cinder Wake|snail|crawler|lava|wave|shell|lob|1.24|.88|1.42|250|35|184|78
+77|Silk Marionette|Puppet Cross|puppet|doll|thread|drop|blade|pincer|.84|.65|1.08|245|142|118|350
+78|Samurai Minotaur|Horned Execution|minotaur|heavy|axe|sweep|horn|charge|1.13|.40|1.47|265|98|186|95
+79|Raven Executioner|Gallows Feather|executioner|bird|axe|drop|feather|return|.96|.53|1.21|275|135|152|220
+80|Cathedral Crab|Bells Below|cathedral|crab|claw|pincer|bell|expand|1.32|.82|1.60|325|95|248|70
+81|Jellyfish Monk|Luminous Sutra|jellyfish|jelly|ring|expand|tendril|drop|.98|.87|1.14|240|120|150|420
+82|Cicada Warrior|Summer Split|cicada|mantis|wing|sweep|needle|straight|.57|.30|.79|220|95|96|690
+83|Bronze Cauldron|Bitter Feast|cauldron|golem|broth|lob|steam|rise|1.10|.82|1.30|245|73|178|120
+84|Sword Antelope|Steel Migration|swordantler|deer|antler|charge|sword|fan|.78|.34|1.02|305|88|116|310
+85|Koi Dragon|River Crown|koidragon|serpent|wave|sweep|scale|rain|.92|.68|1.15|295|110|172|250
+86|Mimic Chest|Interest Due|mimic|mimic|jaw|collapse|coin|fan|.86|.37|1.25|168|62|154|175
+87|Bone Mantis|Marrow Scissors|bonemantis|mantis|sickle|pincer|bone|return|.65|.33|.90|218|102|108|390
+88|Flute Spirit|Breath of Bamboo|flute|caster|note|wave|bamboo|rise|1.09|.85|1.07|285|98|124|740
+89|Tiger Demon|Imperial Rake|tiger|wolf|claw|charge|seal|leap|.63|.38|1.01|250|66|130|145
+90|Eclipse Phoenix|Black Sun Rebirth|phoenix|bird|sun|collapse|feather|expand|1.38|.96|1.68|350|165|260|290
+91|Plague Mosquito|Blood Tithe|mosquito|flyer|needle|straight|blood|return|.54|.29|.82|278|118|62|610
+92|Stone Elephant|Temple Footfall|elephant|heavy|foot|drop|tusk|sweep|1.22|.58|1.53|245|120|218|65
+93|Scroll Serpent|Sentence Without End|scroll|serpent|script|wave|seal|collapse|1.03|.93|1.17|290|104|146|330
+94|Armored Mole|Buried Ambush|mole|crawler|drill|rise|rock|fan|.91|.44|1.26|205|50|126|150
+95|Fox Bride|Vow of Ash|bride|fox|veil|spiral|petal|pincer|1.08|.86|1.20|270|128|164|550
+96|Clockwork Spider|Eight Brass Seconds|clockspider|spider|gear|orbit|needle|fan|.82|.61|1.06|230|80|132|270
+97|Execution Wheel|Circular Sentence|katana-wheel|wheel|wheel|charge|blade|return|1.01|.72|1.35|335|65|176|190
+98|Jelly Salamander|Glass Current|jellysalamander|crawler|bubble|wave|jelly|expand|.87|.84|1.12|245|42|140|470
+99|Temple Dragon|Last Shrine Breath|templedragon|hydra|breath|sweep|bone|rain|1.27|.79|1.49|340|145|226|155
+100|Bell Emperor|End of the Hundred Names|emperor|golem|bell|expand|sword|spiral|1.45|1.05|1.85|375|170|280|55

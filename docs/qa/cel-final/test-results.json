@@ -1,0 +1,102 @@
+[
+  {
+    "test": "monster_motion_profiles",
+    "result": "pass",
+    "seconds": 1.6
+  },
+  {
+    "test": "monster_cel_animation",
+    "result": "pass",
+    "seconds": 3.7
+  },
+  {
+    "test": "monster_death_support",
+    "result": "pass",
+    "seconds": 3.1
+  },
+  {
+    "test": "monster_attack_clock",
+    "result": "pass",
+    "seconds": 0.6
+  },
+  {
+    "test": "monster_ai_timing",
+    "result": "pass",
+    "seconds": 4.6
+  },
+  {
+    "test": "individual_contracts",
+    "result": "pass",
+    "seconds": 2.3
+  },
+  {
+    "test": "platforming",
+    "result": "pass",
+    "seconds": 1.1
+  },
+  {
+    "test": "aquatic_enemies",
+    "result": "pass",
+    "seconds": 0.6
+  },
+  {
+    "test": "moving_sword_facing",
+    "result": "pass",
+    "seconds": 0.5
+  },
+  {
+    "test": "underwater_integration",
+    "result": "pass",
+    "seconds": 1.6
+  },
+  {
+    "test": "directed_traversal",
+    "result": "pass",
+    "seconds": 25.5
+  },
+  {
+    "test": "route_devices",
+    "result": "pass",
+    "seconds": 3.9
+  },
+  {
+    "test": "migration_runtime",
+    "result": "pass",
+    "seconds": 6.1
+  },
+  {
+    "test": "gate_runtime_audit",
+    "result": "pass",
+    "seconds": 12.4
+  },
+  {
+    "test": "foundation_hud_repair",
+    "result": "pass",
+    "seconds": 0.4
+  },
+  {
+    "test": "campaign_navigation",
+    "result": "pass",
+    "seconds": 0.8
+  },
+  {
+    "test": "skill_inventory",
+    "result": "pass",
+    "seconds": 0.4
+  },
+  {
+    "test": "sequence_machine",
+    "result": "pass",
+    "seconds": 0.8
+  },
+  {
+    "test": "background_coverage",
+    "result": "pass",
+    "seconds": 0.9
+  },
+  {
+    "test": "exit_clearance",
+    "result": "pass",
+    "seconds": 0.4
+  }
+]

@@ -6,26 +6,52 @@ func _ready() -> void:
 	echo_material = ShaderMaterial.new()
 	echo_material.shader = preload("res://systems/dash_echo.gdshader")
 func spawn(kind: String, at: Vector2, direction: float) -> void:
-	if get_child_count() >= 64:
+	# Reserve four slots for the layers of a single impact event.
+	if get_child_count() >= 60:
+		return
+	if kind == "swim_bubbles":
+		var bubbles:=preload("res://systems/swim_bubbles.gd").new()
+		bubbles.position=at
+		bubbles.z_index=10
+		add_child(bubbles)
+		return
+	if kind in ["jump", "air_jump", "land", "aerial_land"]:
+		var strokes := preload("res://systems/jump_calligraphy.gd").new()
+		strokes.kind=kind
+		strokes.direction=direction
+		strokes.position=at
+		strokes.z_index=10
+		strokes.set_meta("family","motion_strokes")
+		strokes.set_meta("event",kind)
+		add_child(strokes)
+	if kind in ["run_wind","slide_wind","fall_wind","kick_wind"]:
+		var wind := preload("res://systems/movement_wind.gd").new()
+		wind.kind=kind
+		wind.position=at
+		wind.direction=direction
+		wind.z_index=1
+		wind.set_meta("family","wind")
+		wind.set_meta("event",kind)
+		add_child(wind)
 		return
 	if kind in ["charge", "power_empty", "plunge_trail", "fire_cast", "fire_impact"]:
 		burst(kind, at, direction)
 		return
-	if kind in ["impact", "finisher_hit", "air_jump", "aerial_land"]:
+	if kind in ["wall_hit", "impact", "finisher_hit", "air_jump", "aerial_land", "sparkle", "shockwave_ring", "critical_hit", "booster", "monster_spawn", "level_transition", "heal", "shield", "explosion", "blade", "attack", "slash_burst"]:
 		var ring := ImpactRing.new()
 		ring.position = at
-		ring.radius = 44.0 if kind in ["finisher_hit", "aerial_land"] else 26.0
+		ring.radius = 60.0 if kind in ["level_transition", "monster_spawn"] else (52.0 if kind in ["critical_hit", "shockwave_ring", "booster"] else (44.0 if kind in ["finisher_hit", "aerial_land"] else 26.0))
 		ring.flatten = 0.32 if kind in ["air_jump", "aerial_land"] else 0.85
-		ring.tint = Color("a4dad3") if kind == "air_jump" else (Color("ff6258") if kind in ["impact", "finisher_hit"] else Color("f3ead1"))
+		ring.tint = Color("5cff9d") if kind == "heal" else (Color("5ca8ff") if kind == "shield" else (Color("ff9a3c") if kind == "explosion" else (Color("7cff6b") if kind == "booster" else (Color("b06cff") if kind == "monster_spawn" else (Color("6cf0ff") if kind == "level_transition" else (Color("ffd166") if kind == "sparkle" else (Color("ff3b3b") if kind == "critical_hit" else (Color("a4dad3") if kind == "air_jump" else (Color("ff6258") if kind in ["impact", "finisher_hit"] else Color("f3ead1"))))))))))
 		ring.set_meta("family", "contact_ring")
 		ring.set_meta("event", kind)
 		ring.z_index = 11
 		add_child(ring)
-	if kind in ["slash", "slash_reverse", "finisher", "charged", "power", "ranged", "energy", "enemy_slash", "kick", "impact", "finisher_hit"]:
+	if kind in ["slash", "slash_reverse", "finisher", "sweep", "charged", "power", "ranged", "energy", "enemy_slash", "kick", "wall_hit", "impact", "finisher_hit"]:
 		_attack_effect(kind,at,direction)
 		return
 	var family: String = "dust" if kind in ["jump", "air_jump", "land", "aerial_land", "dodge", "step"] else ("slash" if kind in ["slash", "slash_reverse", "finisher", "charged", "power", "ranged", "enemy_slash", "kick", "energy"] else "impact")
-	if kind in ["air_jump", "land", "impact", "finisher_hit", "defeat", "finisher"]:
+	if kind in ["air_jump", "land", "impact", "finisher_hit", "defeat", "finisher", "sparkle", "shockwave_ring", "critical_hit", "booster", "monster_spawn", "level_transition", "heal", "shield", "explosion", "blade", "attack", "slash_burst"]:
 		burst(kind, at, direction)
 	if get_child_count() >= 64:
 		return
@@ -86,11 +112,12 @@ func spawn(kind: String, at: Vector2, direction: float) -> void:
 	effect.play("default")
 
 func _attack_effect(kind: String, at: Vector2, direction: float) -> void:
-	if kind in ["slash_reverse","finisher","charged"]:
+	if kind in ["slash_reverse","finisher","sweep","charged"]:
 		var arc := preload("res://systems/combo_sweep.gd").new()
 		arc.position=at
 		arc.direction=direction
-		arc.strength=1.25 if kind in ["finisher","charged"] else 1.0
+		arc.strength=1.45 if kind=="sweep" else (1.25 if kind in ["finisher","charged"] else 1.0)
+		if kind=="sweep": arc.scale.y=0.55
 		arc.z_index=10
 		arc.set_meta("event",kind)
 		arc.set_meta("family","slash")
@@ -101,7 +128,7 @@ func _attack_effect(kind: String, at: Vector2, direction: float) -> void:
 	effect.direction=direction
 	effect.z_index=10
 	effect.set_meta("event",kind)
-	effect.set_meta("family","impact" if kind in ["impact","finisher_hit"] else "slash")
+	effect.set_meta("family","impact" if kind in ["wall_hit","impact","finisher_hit"] else "slash")
 	match kind:
 		"slash_reverse":
 			effect.reverse=true
@@ -127,7 +154,7 @@ func _attack_effect(kind: String, at: Vector2, direction: float) -> void:
 			effect.first=0
 			effect.fps=36
 			effect.size=Vector2(2,1.4)
-		"impact", "finisher_hit":
+		"wall_hit", "impact", "finisher_hit":
 			effect.sheet="critical" if kind=="finisher_hit" else "hit"
 			effect.frames=8 if kind=="finisher_hit" else 6
 			effect.first=0
@@ -146,21 +173,22 @@ func burst(kind: String, at: Vector2, direction: float) -> void:
 	motes.set_meta("family", "motes")
 	motes.set_meta("event", kind)
 	match kind:
-		"land":
+		"land", "wall_hit":
 			motes.tint = Color("ae967d")
 			motes.count = 6
 			motes.spread = 0.7
 		"impact", "finisher_hit":
 			motes.tint = Color("ed484b")
-			motes.count = 38 if kind == "finisher_hit" else 24
+			motes.count = 64 if kind == "finisher_hit" else 40
 			motes.blood = true
 			motes.spread = 1.6 if kind == "finisher_hit" else 1.1
-			motes.lifetime = 0.55
+			motes.lifetime = 0.72
 		"defeat":
 			motes.tint = Color("b82e3e")
-			motes.count = 14
-			motes.lifetime = 0.40
-			motes.spread = 1.4
+			motes.count = 80
+			motes.blood = true
+			motes.lifetime = 0.85
+			motes.spread = 2.4
 		"finisher":
 			motes.count = 5
 			motes.lifetime = 0.16
@@ -188,7 +216,77 @@ func burst(kind: String, at: Vector2, direction: float) -> void:
 			motes.tint = Color("ff823d")
 			motes.count = 14
 			motes.spread = 1.3
+		"sparkle":
+			motes.tint = Color("ffd166")
+			motes.count = 18
+			motes.spread = 1.9
+			motes.lifetime = 0.45
+		"critical_hit":
+			motes.tint = Color("ff3b3b")
+			motes.count = 42
+			motes.blood = true
+			motes.spread = 2.0
+			motes.lifetime = 0.6
+		"shockwave_ring":
+			motes.tint = Color("a3eee4")
+			motes.count = 22
+			motes.spread = 2.4
+			motes.lifetime = 0.35
+		"booster":
+			motes.tint = Color("7cff6b")
+			motes.count = 26
+			motes.spread = 2.0
+			motes.lifetime = 0.4
+		"monster_spawn":
+			motes.tint = Color("b06cff")
+			motes.count = 30
+			motes.spread = 2.2
+			motes.lifetime = 0.5
+		"level_transition":
+			motes.tint = Color("6cf0ff")
+			motes.count = 34
+			motes.spread = 2.6
+			motes.lifetime = 0.55
+		"heal":
+			motes.tint = Color("5cff9d")
+			motes.count = 20
+			motes.spread = 1.6
+			motes.lifetime = 0.45
+		"shield":
+			motes.tint = Color("5ca8ff")
+			motes.count = 16
+			motes.spread = 1.2
+			motes.lifetime = 0.35
+		"explosion":
+			motes.tint = Color("ff9a3c")
+			motes.count = 48
+			motes.spread = 2.8
+			motes.lifetime = 0.6
+		"blade":
+			motes.tint = Color("e6dfc7")
+			motes.count = 12
+			motes.spread = 1.4
+			motes.lifetime = 0.25
+		"attack":
+			motes.tint = Color("ff6258")
+			motes.count = 20
+			motes.spread = 1.8
+			motes.lifetime = 0.3
+		"slash_burst":
+			motes.tint = Color("a3eee4")
+			motes.count = 24
+			motes.spread = 2.0
+			motes.lifetime = 0.35
 	add_child(motes)
+	if motes.blood and get_child_count()<64:
+		var query:=PhysicsRayQueryParameters2D.create(at,at+Vector2(direction*30,280),1)
+		var hit:=get_world_2d().direct_space_state.intersect_ray(query)
+		if not hit.is_empty() and hit.normal.y<-0.5:
+			var stain:=preload("res://systems/blood_stain.gd").new()
+			stain.position=hit.position+Vector2(0,-2)
+			stain.direction=direction
+			stain.z_index=3
+			add_child(stain)
 
 func trail(source: AnimatedSprite2D, at: Vector2, direction: float) -> void:
 	if get_child_count() >= 64:
@@ -247,3 +345,17 @@ func _process(_delta: float) -> void:
 		var actor = effect.get_meta("follow_actor")
 		if is_instance_valid(actor) and not actor.is_queued_for_deletion():
 			effect.global_position = actor.global_position + effect.get_meta("follow_offset")
+
+func shatter(rig: Node2D, at: Vector2, direction: float) -> void:
+	# Drawn collapse already owns the body. Existing defeat blood supplies impact.
+	if is_instance_valid(rig) and rig.has_meta("monster_cel_visual"): return
+	if get_child_count()>=60 or not is_instance_valid(rig): return
+	var fragments := preload("res://systems/death_fragments.gd").new()
+	fragments.texture=rig.sprite.sprite_frames.get_frame_texture(rig.current_clip,rig.current_frame)
+	fragments.art_scale=rig.sprite.scale*rig.get_parent().scale
+	fragments.mirrored=rig.sprite.flip_h
+	fragments.direction=direction
+	fragments.position=at
+	fragments.z_index=8
+	fragments.set_meta("family","fragments")
+	add_child(fragments)

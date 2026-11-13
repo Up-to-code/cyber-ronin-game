@@ -10,6 +10,8 @@ signal ui_clicked
 signal level_selected(index: int)
 const PixelUI = preload("res://ui/pixel_menu_components.gd")
 const TouchControls = preload("res://ui/touch_controls.gd")
+var damage_veil: Control
+var campaign_map: Control
 var health_label: Label
 var state_label: Label
 var progress_label: Label
@@ -22,7 +24,10 @@ var loading_bar: TextureProgressBar
 var loading_label: Label
 var loading_name: String = "CASTLE ROAD"
 var max_unlocked: int = 1
-var campaign_names: Array[String] = ["CASTLE ROAD", "OUTER COURT", "BAMBOO MOAT", "ROOFTOPS", "INNER KEEP", "SUMMIT"]
+var campaign_names: Array[String] = []
+var map_chapter := 0
+var rewards_label: Label
+const Campaign = preload("res://data/campaign.gd")
 var root: Control
 var safe: Control
 var gameplay: Control
@@ -52,8 +57,10 @@ var save_error: Error = OK
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	layer = 10
+	for route in Campaign.levels(): campaign_names.append(route.name.to_upper())
 	settings.load(settings_path)
-	max_unlocked = clampi(settings.get_value("progress", "unlocked", 1), 1, 6)
+	max_unlocked = clampi(settings.get_value("progress", "unlocked", 1), 1, campaign_names.size())
+	map_chapter = (max_unlocked-1)/10
 	sound_enabled = settings.get_value("audio", "enabled", true)
 	touch_enabled = settings.get_value("input", "touch", OS.has_feature("mobile")) or "--touch-preview" in OS.get_cmdline_user_args()
 	control_scale = clampf(float(settings.get_value("input", "scale", 1.0)), 0.8, 1.15)
@@ -110,11 +117,11 @@ func _theme() -> Theme:
 	theme.default_font = font
 	theme.default_font_size = 17
 	theme.set_color("font_color", "Label", Color("f5e8d8"))
-	theme.set_color("font_color", "Button", Color("f3dfb6"))
-	theme.set_color("font_hover_color", "Button", Color("f3dfb6"))
-	theme.set_color("font_focus_color", "Button", Color("fff0ca"))
+	theme.set_color("font_color", "Button", Color("ffe5df"))
+	theme.set_color("font_hover_color", "Button", Color("ffe5df"))
+	theme.set_color("font_focus_color", "Button", Color("fff1ed"))
 	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
-		theme.set_stylebox(state, "Button", PixelUI.button_style(state=="pressed"))
+		theme.set_stylebox(state, "Button", PixelUI.button_style(state in ["pressed","focus","hover"],false,state=="pressed"))
 	for state in ["scroll","grabber","grabber_highlight","grabber_pressed"]:
 		var pixel := StyleBoxFlat.new()
 		pixel.bg_color = Color("211016") if state=="scroll" else (Color("f0d3a0") if state=="grabber_pressed" else Color("9f3642"))
@@ -123,9 +130,16 @@ func _theme() -> Theme:
 		pixel.content_margin_top=12 if state!="scroll" else 0
 		pixel.content_margin_bottom=12 if state!="scroll" else 0
 		theme.set_stylebox(state,"VScrollBar",pixel)
+		var horizontal:=pixel.duplicate()
+		horizontal.content_margin_top=3
+		horizontal.content_margin_bottom=3
+		horizontal.content_margin_left=12 if state!="scroll" else 0
+		horizontal.content_margin_right=12 if state!="scroll" else 0
+		theme.set_stylebox(state,"HScrollBar",horizontal)
 	var empty_arrow := ImageTexture.create_from_image(Image.create(1,1,false,Image.FORMAT_RGBA8))
 	for icon_name in ["increment","increment_highlight","increment_pressed","decrement","decrement_highlight","decrement_pressed"]:
 		theme.set_icon(icon_name,"VScrollBar",empty_arrow)
+		theme.set_icon(icon_name,"HScrollBar",empty_arrow)
 	return theme
 func _fit_menu() -> void:
 	if not is_instance_valid(menu_scroll) or not is_instance_valid(menu_box): return
@@ -150,12 +164,10 @@ func _safe_layout() -> void:
 	if is_instance_valid(menu_box) and not screens.is_empty() and screens.back() == "death":
 		menu_box.custom_minimum_size.x = minf(300,get_viewport().get_visible_rect().size.x-inset.x-inset.z-24)
 	_fit_menu.call_deferred()
-	if is_instance_valid(progress_label):
-		var narrow: bool = get_viewport().get_visible_rect().size.x < 600
-		progress_label.offset_left = -75 if narrow else -130
-		progress_label.offset_right = 75 if narrow else 130
-		progress_label.add_theme_font_size_override("font_size", 10 if narrow else 13)
 func _build_gameplay() -> void:
+	damage_veil=preload("res://ui/damage_veil.gd").new()
+	gameplay.add_child(damage_veil)
+	damage_veil.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var health := VBoxContainer.new()
 	gameplay.add_child(health)
 	health.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
@@ -186,13 +198,16 @@ func _build_gameplay() -> void:
 	power_bar.stretch_margin_right = 3
 	power_bar.custom_minimum_size = Vector2(128, 10)
 	health.add_child(power_bar)
-	progress_label = _label("", 13)
+	rewards_label=_label("COINS 0",10)
+	rewards_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT
+	health.add_child(rewards_label)
+	progress_label = _label("", 10)
 	gameplay.add_child(progress_label)
-	progress_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	progress_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
 	progress_label.offset_left = -130
-	progress_label.offset_right = 130
-	progress_label.offset_top = 14
-	progress_label.offset_bottom = 34
+	progress_label.offset_right = -56
+	progress_label.offset_top = 12
+	progress_label.offset_bottom = 28
 	state_label = _label("", 12)
 	gameplay.add_child(state_label)
 	state_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
@@ -240,7 +255,16 @@ func _label(text: String, font_size: int) -> Label:
 func _button(text: String, callback: Callable) -> Button:
 	var button := Button.new()
 	button.text = text.to_upper()
-	button.custom_minimum_size.y = 44
+	button.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	var icon_path := "res://art/pixel-redesign/sword.png"
+	if "SETTING" in text.to_upper() or "CONTROL" in text.to_upper(): icon_path = "res://art/pixel/ui-kit/icon_settings.png"
+	elif "AUDIO" in text.to_upper() or "MUSIC" in text.to_upper(): icon_path = "res://art/pixel/ui-kit/icon_audio.png"
+	elif text.to_upper() in ["BACK","MAIN MENU","START MENU"]: icon_path = "res://art/pixel/ui-kit/icon_back.png"
+	button.icon = load(icon_path)
+	button.expand_icon = true
+	button.add_theme_constant_override("icon_max_width",22)
+	button.add_theme_constant_override("h_separation",12)
+	button.custom_minimum_size.y = 42
 	button.button_down.connect(func(): _click_feedback(button.get_global_rect()))
 	button.pressed.connect(func(): ui_clicked.emit(); callback.call())
 	return button
@@ -280,7 +304,7 @@ func _render_menu() -> void:
 		"title":
 			first = _build_title_screen()
 		"pause":
-			menu_box.add_child(_label("ROUTE %02d  ·  %s" % [clampi(shown_level,1,6),campaign_names[clampi(shown_level,1,6)-1]],12))
+			menu_box.add_child(_label("ROUTE %02d  ·  %s" % [clampi(shown_level,1,campaign_names.size()),campaign_names[clampi(shown_level,1,campaign_names.size())-1]],12))
 			first = _menu_button("CONTINUE", func(): resume_requested.emit())
 			_menu_button("SETTINGS", func(): _push("settings"))
 			_menu_button("CHAPTER", func(): story_requested.emit())
@@ -328,7 +352,7 @@ func _render_menu() -> void:
 				menu_box.add_child(unavailable)
 			first = _menu_button("Back", _back)
 		"help":
-			var instructions := _label("Defeat guards to open each shrine.\n\nA / D  Move     Space / W  Jump twice\nJ  Tap: sword combo · hold: charged slash\nL  Kick     U  Power     I  Ranged     K  Dash\nX  Energy slash\nAirborne J: sword combo · charged: descending strike\nMobile: UP jumps; tap again for double jump.\nDOWN crouches; double-tap left/right to dash.\n\nPower: charged 30 · power 50 · ranged 25 · energy 35\nE  Enter shrine     Esc  Pause", 14)
+			var instructions := _label("100 routes · major guardian every 10 levels.\nClear patrols, collect seals, or hunt the marked captain.\n\nA / D or arrows  Move     Space / W  Jump twice\nJ  Tap: sword combo · hold: charged slash\nL  Kick     U  Power     I  Ranged     K  Dash\nX / G  Energy slash · becomes piercing beam at level 20\nAirborne J: four-cut combo · DOWN + J: plunge\nMobile: UP jumps; tap again for double jump.\nDOWN: crouch / running slide / shelf drop.\nAir DOWN: fast fall. Double-tap left/right to dash.\n\nPower: charged 30 · power 50 · ranged 25 · energy 35 · beam 45\nCoins bank at each cleared gate; retry restores the bank.\nRed flasks restore health.\nE  Enter shrine     Esc  Pause", 14)
 			menu_box.add_child(instructions)
 			first = _menu_button("Back", _back)
 		"loading":
@@ -344,23 +368,11 @@ func _render_menu() -> void:
 			loading_label = _label("Preparing route…", 16)
 			menu_box.add_child(loading_label)
 		"maps":
-			var grid := GridContainer.new()
-			grid.columns = 2
-			grid.add_theme_constant_override("h_separation", 8)
-			grid.add_theme_constant_override("v_separation", 7)
-			menu_box.add_child(grid)
-			for i in range(6):
-				var index: int = i + 1
-				var button := _button("%02d  %s" % [index, campaign_names[i] if index <= max_unlocked else "LOCKED"], func(): level_selected.emit(index))
-				button.add_theme_font_size_override("font_size", 14)
-				button.custom_minimum_size = Vector2(148, 44)
-				for state in ["normal","hover","focus","pressed"]:
-					button.add_theme_stylebox_override(state,PixelUI.button_style(state=="pressed",true))
-				button.disabled = index > max_unlocked
-				grid.add_child(button)
-				if i == 0:
-					first = button
-			_menu_button("Back", _back)
+			campaign_map=preload("res://ui/campaign_map.gd").new()
+			campaign_map.max_unlocked=max_unlocked
+			campaign_map.level_selected.connect(func(index: int):ui_clicked.emit();level_selected.emit(index))
+			campaign_map.back_requested.connect(_back)
+			menu_box.add_child(campaign_map)
 		"credits":
 			var credit := _label("Music: Free Music : MOMIZizm MUSiC\n\nCharacter art: PavelEKh\nPixel environments and UI: generated for this game\nFont: Pixelify Sans (OFL)\nSamurai SFX: Taira Komori\nTK’S FREE SOUND FX", 15)
 			menu_box.add_child(credit)
@@ -370,7 +382,7 @@ func _render_menu() -> void:
 		"death":
 			first = _build_defeat_card()
 		"complete":
-			menu_box.add_child(_label("All six castle routes are clear.", 16))
+			menu_box.add_child(_label("All 100 routes and ten guardians are clear.", 16))
 			first = _menu_button("Play again", func(): retry_requested.emit())
 			_menu_button("MAIN MENU", func(): menu_requested.emit())
 	if save_error != OK:
@@ -396,7 +408,7 @@ func _build_title_screen() -> Button:
 	var actions := VBoxContainer.new()
 	actions.name = "StartActions"
 	actions.custom_minimum_size.x = 230
-	actions.add_theme_constant_override("separation",9)
+	actions.add_theme_constant_override("separation",6)
 	title_layout.add_child(actions)
 	var first: Button
 	if max_unlocked > 1:
@@ -405,24 +417,7 @@ func _build_title_screen() -> Button:
 	var start := _button("START",func():start_requested.emit())
 	start.name = "StartNewGame"
 	start.set_meta("accessible_description", "Start a new game at the first route")
-	start.custom_minimum_size.y = 58
-	if ResourceLoader.exists("res://art/pixel/ui-kit/start-word.png"):
-		start.text = ""
-		for state in ["normal","hover","pressed"]: start.add_theme_stylebox_override(state,StyleBoxEmpty.new())
-		start.add_theme_stylebox_override("focus",StyleBoxEmpty.new())
-		var word := TextureRect.new()
-		word.texture = load("res://art/pixel/ui-kit/start-word.png")
-		word.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		word.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		word.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		start.focus_entered.connect(func():word.modulate=Color(1.12,1.05,1.0))
-		start.focus_exited.connect(func():word.modulate=Color.WHITE)
-		start.add_child(word)
-		word.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		word.offset_left = 0
-		word.offset_right = 0
-		word.offset_top = 0
-		word.offset_bottom = 0
+	start.custom_minimum_size.y = 44
 	actions.add_child(start)
 	if first == null: first = start
 	for entry in [["MAPS","maps"],["SETTINGS","settings"],["CONTROLS","help"],["CREDITS","credits"]]:
@@ -442,7 +437,8 @@ func _menu_heading(screen: String, title: String) -> VBoxContainer:
 	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	icon.custom_minimum_size = Vector2(22,22)
-	row.add_child(icon)
+	if screen != "maps": row.add_child(icon)
+	else: icon.queue_free()
 	row.add_child(_label(title,27 if screen == "title" else 24))
 	header.add_child(row)
 	return header
@@ -465,8 +461,8 @@ func _build_defeat_card() -> Button:
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation",9)
 	card.add_child(content)
-	var chapter: int = clampi(shown_level,1,6)
-	var route := _label("%02d / 06  ·  %s" % [chapter,campaign_names[chapter-1]],11)
+	var chapter: int = clampi(shown_level,1,campaign_names.size())
+	var route := _label("%03d / %d  ·  %s" % [chapter,campaign_names.size(),Campaign.get_level(chapter).chapter_name],11)
 	route.name = "Route"
 	route.add_theme_color_override("font_color",Color("b69a87"))
 	content.add_child(route)
@@ -492,7 +488,7 @@ Begin this route again.",15)
 	leave.custom_minimum_size.y = 44
 	leave.add_theme_font_size_override("font_size",17)
 	for state in ["normal","hover","pressed","focus"]:
-		leave.add_theme_stylebox_override(state,PixelUI.button_style(state=="pressed"))
+		leave.add_theme_stylebox_override(state,PixelUI.button_style(state in ["pressed","focus","hover"],false,state=="pressed"))
 	leave.add_theme_color_override("font_color",Color("f1d5aa"))
 	content.add_child(leave)
 	retry.focus_neighbor_bottom = retry.get_path_to(leave)
@@ -601,6 +597,7 @@ func show_result(won: bool) -> void:
 	screens.assign(["complete" if won else "death"])
 	_render_menu()
 func close_menu() -> void:
+	damage_veil.clear()
 	screens.clear()
 	overlay.hide()
 	menu_center.hide()
@@ -625,8 +622,12 @@ func set_power(current: float, maximum: float) -> void:
 	touch.set_power(current, maximum)
 func set_charge(fraction: float) -> void:
 	touch.set_charge(fraction)
+func set_rewards(coins: int, seals: int, objective_label: String = "SEALS") -> void:
+	rewards_label.text="COINS %d%s" % [coins," · %s %d" % [objective_label,seals] if seals>0 else ""]
+
 func set_progress(level: int, remaining: int) -> void:
-	progress_label.text = "%s   %02d / 06" % [campaign_names[clampi(level - 1, 0, 5)], level]
+	progress_label.text = "%03d / %d" % [level,campaign_names.size()]
+	progress_label.set_meta("accessible_description",Campaign.get_level(level).name)
 	if shown_level != level or remaining > previous_remaining:
 		state_label.hide()
 		if is_instance_valid(toast_tween):
@@ -668,6 +669,6 @@ func finish_loading() -> void:
 	overlay.color.a = 0.48
 	menu_center.modulate.a = 1
 func unlock_level(index: int) -> void:
-	max_unlocked = maxi(max_unlocked, clampi(index, 1, 6))
+	max_unlocked = maxi(max_unlocked, clampi(index, 1, campaign_names.size()))
 	settings.set_value("progress", "unlocked", max_unlocked)
 	settings.save(settings_path)

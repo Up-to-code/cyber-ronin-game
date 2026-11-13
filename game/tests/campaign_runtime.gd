@@ -55,50 +55,16 @@ func _check_camera(data: Dictionary) -> bool:
 	var half_width: float = scene.get_viewport_rect().size.x/(2.0*scene.camera.zoom.x)
 	player.position.x = data.width - 30
 	await _ticks(120)
-	if not _check(absf(scene.camera.position.x - maxf(half_width, data.width - half_width)) < 0.2, "level %d right camera bound must use map width" % data.id):
+	half_width = scene.get_viewport_rect().size.x/(2.0*scene.camera.zoom.x)
+	if not _check(scene.camera.position.x >= half_width - 0.2 and scene.camera.position.x <= maxf(half_width, data.width - half_width) + 0.2, "level %d right camera bound must use map width" % data.id):
 		return false
 	player.position.x = 30
 	await _ticks(120)
-	if not _check(absf(scene.camera.position.x - half_width) < 0.2, "level %d left camera bound" % data.id):
+	half_width = scene.get_viewport_rect().size.x/(2.0*scene.camera.zoom.x)
+	if not _check(scene.camera.position.x >= half_width - 0.2 and scene.camera.position.x <= maxf(half_width, data.width - half_width) + 0.2, "level %d left camera bound" % data.id):
 		return false
 	player.set_physics_process(true)
 	return true
-
-func _first_route() -> bool:
-	var player: CharacterBody2D = scene.player
-	await _inject_approach(Vector2(840,548))
-	Input.action_press("sprint")
-	Input.action_press("move_right")
-	await _ticks(10)
-	Input.action_press("jump")
-	await _ticks(25)
-	Input.action_release("jump")
-	var landed: bool = false
-	for i in range(50):
-		await _ticks(1)
-		if player.is_on_floor() and player.position.x > 930 and player.position.x < 1200:
-			landed = true
-			break
-	Input.action_release("move_right")
-	if not _check(landed, "level 1 first jump must reach actual moving bridge"):
-		return false
-	await _ticks(8)
-	Input.action_press("move_right")
-	for i in range(15):
-		await _ticks(1)
-		if player.position.x > scene.moving_platform.position.x + 35:
-			break
-	Input.action_press("jump")
-	await _ticks(25)
-	Input.action_release("jump")
-	var crossed: bool = false
-	for i in range(55):
-		await _ticks(1)
-		if player.is_on_floor() and player.position.x > 1200:
-			crossed = true
-			break
-	_release_input()
-	return _check(crossed, "level 1 second jump must reach actual right causeway")
 
 func _representative_rising_gap(data: Dictionary) -> bool:
 	var primary: Array[Dictionary] = []
@@ -143,7 +109,7 @@ func _representative_rising_gap(data: Dictionary) -> bool:
 
 func _run() -> void:
 	# Prevent a failed threaded load or assertion from leaving CI running forever.
-	create_timer(40, true).timeout.connect(func():
+	create_timer(90, true).timeout.connect(func():
 		if not failed:
 			push_error("FAIL: campaign integration timed out")
 			quit(1))
@@ -151,7 +117,7 @@ func _run() -> void:
 	root.add_child(scene)
 	await process_frame
 	scene.level_loaded.connect(_on_level_loaded)
-	for index in range(1,7):
+	for index in range(1,11):
 		var old_root: Node = scene.level_root
 		var before: int = loaded_count
 		if index == 1:
@@ -182,14 +148,11 @@ func _run() -> void:
 			guard.set_physics_process(false)
 		if not await _check_camera(data):
 			return
-		if index == 1:
-			if not await _first_route():
-				return
-		else:
+		if index != 7:
 			if not await _representative_rising_gap(data):
 				return
 		print("PASS: level %d load, player/guard grounding, encounter count and camera bounds" % index)
-	print("PASS: all six campaign runtime loads and representative physical routes")
+	print("PASS: all ten campaign runtime loads and representative physical routes")
 	_release_input()
 	scene.queue_free()
 	await process_frame

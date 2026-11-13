@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "monster_001",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_002",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_003",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_004",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_005",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_006",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_007",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_008",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_009",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_010",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_011",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_012",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_013",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_014",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_015",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_016",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_017",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_018",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_019",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_020",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_021",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_022",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_023",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_024",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_025",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_026",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_027",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_028",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_029",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_030",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_031",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_032",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_033",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_034",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_035",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_036",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_037",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_038",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_039",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_040",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_041",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_042",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_043",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_044",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_045",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_046",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_047",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_048",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_049",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_050",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_051",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_052",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_053",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_054",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_055",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_056",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_057",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_058",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_059",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_060",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_061",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_062",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_063",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_064",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_065",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_066",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_067",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_068",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_069",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_070",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_071",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_072",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_073",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_074",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_075",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_076",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_077",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_078",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_079",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_080",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_081",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_082",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_083",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_084",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_085",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_086",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_087",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_088",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_089",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_090",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_091",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_092",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_093",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_094",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_095",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_096",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_097",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_098",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_099",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  },
+  {
+    "id": "monster_100",
+    "distinct_drawings_per_clip": {
+      "idle": 1,
+      "walk": 1,
+      "float": 1,
+      "windup": 1,
+      "attack": 1,
+      "hurt": 1,
+      "death": 1,
+      "air": 1
+    },
+    "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+  }
+]

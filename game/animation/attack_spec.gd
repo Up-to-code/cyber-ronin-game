@@ -3,8 +3,11 @@ extends RefCounted
 ## One source for the displayed action, active contact phase, and gameplay query.
 ## A profile's contact_frame must be chosen from inspected authored artwork.
 static func resolve(profile: Dictionary, kind: String, combo: int = 1) -> Dictionary:
-	var key: String = "sword%d" % clampi(combo, 1, 3) if kind == "sword" else kind
+	var key: String = "sword%d" % clampi(combo, 1, 4) if kind == "sword" else kind
+	if kind in ["moving_sword","air_sword","drive_sword","turn_sword"] and combo > 1:
+		key = kind + str(clampi(combo,1,4))
 	var specs: Dictionary = profile.get("attacks", {})
+	if not specs.has(key) and kind == "sword": key = "sword1"
 	if not specs.has(key): return {}
 	var result: Dictionary = specs[key].duplicate(true)
 	var clips: Dictionary = profile.get("clips", {})

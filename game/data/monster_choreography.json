@@ -1,0 +1,7947 @@
+[
+  {
+    "id": 1,
+    "name": "Straw Ronin",
+    "move": "Harvest Draw",
+    "motif": "straw",
+    "motif_texture": "res://art/monster-motifs/001.png",
+    "motion": {
+      "stance": "duelist",
+      "windup": 0.62,
+      "commit": 0.23,
+      "recovery": 0.74,
+      "stride": 15.34,
+      "reach": 118.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 210.0,
+      "fall": 84.0,
+      "noise": 0.45,
+      "pulse": 4.3478260869565215,
+      "duration": 0.35
+    },
+    "events": [
+      {
+        "name": "Harvest Draw / release",
+        "at": 0.0,
+        "tell": 0.62,
+        "travel": 0.1058,
+        "hold": 0.16,
+        "shape": "crescent",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -82.0
+        ],
+        "destination": [
+          118.0,
+          -82.0
+        ],
+        "size": [
+          150.0,
+          57.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "straw",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Harvest Draw / afterbeat",
+        "at": 0.7028,
+        "tell": 0.0414,
+        "travel": 0.1058,
+        "hold": 0.2,
+        "shape": "needle",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -25.96,
+          -36.9
+        ],
+        "destination": [
+          76.7,
+          -36.9
+        ],
+        "size": [
+          100.5,
+          49.199999999999996
+        ],
+        "damage_scale": 0.7,
+        "motif": "straw",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the crescent sweep, then leave the needle fan afterbeat; the Harvest Draw direction locks on preparation."
+  },
+  {
+    "id": 2,
+    "name": "Ash Wolf",
+    "move": "Hamstring Pounce",
+    "motif": "claw",
+    "motif_texture": "res://art/monster-motifs/002.png",
+    "motion": {
+      "stance": "wolf",
+      "windup": 0.48,
+      "commit": 0.29,
+      "recovery": 0.85,
+      "stride": 18.85,
+      "reach": 145.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 135.0,
+      "fall": 54.0,
+      "noise": 0.45,
+      "pulse": 3.4482758620689657,
+      "duration": 0.41
+    },
+    "events": [
+      {
+        "name": "Hamstring Pounce / release",
+        "at": 0.0,
+        "tell": 0.48,
+        "travel": 0.1334,
+        "hold": 0.16,
+        "shape": "claw",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          24,
+          -36.0
+        ],
+        "destination": [
+          145.0,
+          -36.0
+        ],
+        "size": [
+          108.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "claw",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Hamstring Pounce / afterbeat",
+        "at": 0.5844,
+        "tell": 0.052199999999999996,
+        "travel": 0.1334,
+        "hold": 0.2,
+        "shape": "fang",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -31.9,
+          -16.2
+        ],
+        "destination": [
+          94.25,
+          -16.2
+        ],
+        "size": [
+          72.36,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "claw",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the claw leap, then leave the fang return afterbeat; the Hamstring Pounce direction locks on preparation."
+  },
+  {
+    "id": 3,
+    "name": "Paper Exorcist",
+    "move": "Three Edicts",
+    "motif": "talisman",
+    "motif_texture": "res://art/monster-motifs/003.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.88,
+      "commit": 0.48,
+      "recovery": 0.64,
+      "stride": 26.650000000000002,
+      "reach": 205.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 310.0,
+      "fall": 124.0,
+      "noise": 0.18,
+      "pulse": 2.0833333333333335,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Three Edicts / release",
+        "at": 0.0,
+        "tell": 0.88,
+        "travel": 0.2208,
+        "hold": 0.16,
+        "shape": "paper",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -108.0
+        ],
+        "destination": [
+          205.0,
+          -108.0
+        ],
+        "size": [
+          92.0,
+          75.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "talisman",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Three Edicts / afterbeat",
+        "at": 1.0528,
+        "tell": 0.08639999999999999,
+        "travel": 0.2208,
+        "hold": 0.2,
+        "shape": "seal",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -45.1,
+          -48.6
+        ],
+        "destination": [
+          133.25,
+          -48.6
+        ],
+        "size": [
+          61.64,
+          64.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "talisman",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the paper wave, then leave the seal drop afterbeat; the Three Edicts direction locks on preparation."
+  },
+  {
+    "id": 4,
+    "name": "Iron Beetle",
+    "move": "Carapace Breaker",
+    "motif": "horn",
+    "motif_texture": "res://art/monster-motifs/004.png",
+    "motion": {
+      "stance": "beetle",
+      "windup": 0.91,
+      "commit": 0.32,
+      "recovery": 1.06,
+      "stride": 17.16,
+      "reach": 132.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 98.0,
+      "fall": 39.2,
+      "noise": 0.45,
+      "pulse": 3.125,
+      "duration": 0.44
+    },
+    "events": [
+      {
+        "name": "Carapace Breaker / release",
+        "at": 0.0,
+        "tell": 0.91,
+        "travel": 0.1472,
+        "hold": 0.16,
+        "shape": "horn",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -60.0
+        ],
+        "destination": [
+          132.0,
+          -60.0
+        ],
+        "size": [
+          120.0,
+          42.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "horn",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Carapace Breaker / afterbeat",
+        "at": 1.0252000000000001,
+        "tell": 0.0576,
+        "travel": 0.1472,
+        "hold": 0.2,
+        "shape": "shard",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -29.04,
+          -27.0
+        ],
+        "destination": [
+          85.8,
+          -27.0
+        ],
+        "size": [
+          80.4,
+          36.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "horn",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the horn rise, then leave the shard fan afterbeat; the Carapace Breaker direction locks on preparation."
+  },
+  {
+    "id": 5,
+    "name": "Lantern Crane",
+    "move": "Wick Spear",
+    "motif": "feather",
+    "motif_texture": "res://art/monster-motifs/005.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.72,
+      "commit": 0.42,
+      "recovery": 0.88,
+      "stride": 30.94,
+      "reach": 238.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 390.0,
+      "fall": 156.0,
+      "noise": 0.45,
+      "pulse": 2.380952380952381,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Wick Spear / release",
+        "at": 0.0,
+        "tell": 0.72,
+        "travel": 0.1932,
+        "hold": 0.16,
+        "shape": "feather",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -135.0
+        ],
+        "destination": [
+          238.0,
+          -135.0
+        ],
+        "size": [
+          74.0,
+          94.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "feather",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Wick Spear / afterbeat",
+        "at": 0.8712,
+        "tell": 0.0756,
+        "travel": 0.1932,
+        "hold": 0.2,
+        "shape": "flame",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -52.36,
+          -60.75
+        ],
+        "destination": [
+          154.70000000000002,
+          -60.75
+        ],
+        "size": [
+          49.580000000000005,
+          81.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "feather",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the feather drop, then leave the flame rise afterbeat; the Wick Spear direction locks on preparation."
+  },
+  {
+    "id": 6,
+    "name": "Crimson Umbrella",
+    "move": "Ribwheel Rain",
+    "motif": "umbrella",
+    "motif_texture": "res://art/monster-motifs/006.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.83,
+      "commit": 0.58,
+      "recovery": 0.94,
+      "stride": 20.8,
+      "reach": 160.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 280.0,
+      "fall": 112.0,
+      "noise": 0.18,
+      "pulse": 1.7241379310344829,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Ribwheel Rain / release",
+        "at": 0.0,
+        "tell": 0.83,
+        "travel": 0.2668,
+        "hold": 0.16,
+        "shape": "rib",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          24,
+          -96.0
+        ],
+        "destination": [
+          160.0,
+          -96.0
+        ],
+        "size": [
+          132.0,
+          67.19999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "umbrella",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Ribwheel Rain / afterbeat",
+        "at": 1.0388,
+        "tell": 0.10439999999999999,
+        "travel": 0.2668,
+        "hold": 0.2,
+        "shape": "drop",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -35.2,
+          -43.2
+        ],
+        "destination": [
+          104.0,
+          -43.2
+        ],
+        "size": [
+          88.44000000000001,
+          57.599999999999994
+        ],
+        "damage_scale": 0.7,
+        "motif": "umbrella",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the rib orbit, then leave the drop rain afterbeat; the Ribwheel Rain direction locks on preparation."
+  },
+  {
+    "id": 7,
+    "name": "Bell Golem",
+    "move": "Mourning Toll",
+    "motif": "bell",
+    "motif_texture": "res://art/monster-motifs/007.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.08,
+      "commit": 0.52,
+      "recovery": 1.22,
+      "stride": 24.7,
+      "reach": 190.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 74.0,
+      "fall": 29.6,
+      "noise": 0.45,
+      "pulse": 1.923076923076923,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Mourning Toll / release",
+        "at": 0.0,
+        "tell": 1.08,
+        "travel": 0.23920000000000002,
+        "hold": 0.16,
+        "shape": "ring",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -76.0
+        ],
+        "destination": [
+          0,
+          -76.0
+        ],
+        "size": [
+          180.0,
+          53.199999999999996
+        ],
+        "damage_scale": 1.0,
+        "motif": "bell",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Mourning Toll / afterbeat",
+        "at": 1.2672,
+        "tell": 0.0936,
+        "travel": 0.23920000000000002,
+        "hold": 0.2,
+        "shape": "shard",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -41.8,
+          -34.2
+        ],
+        "destination": [
+          123.5,
+          -34.2
+        ],
+        "size": [
+          120.60000000000001,
+          45.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "bell",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the ring expand, then leave the shard drop afterbeat; the Mourning Toll direction locks on preparation."
+  },
+  {
+    "id": 8,
+    "name": "Spear Serpent",
+    "move": "Coil and Impale",
+    "motif": "coil",
+    "motif_texture": "res://art/monster-motifs/008.png",
+    "motion": {
+      "stance": "serpent",
+      "windup": 0.68,
+      "commit": 0.31,
+      "recovery": 0.81,
+      "stride": 28.6,
+      "reach": 220.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 195.0,
+      "fall": 78.0,
+      "noise": 0.18,
+      "pulse": 3.2258064516129035,
+      "duration": 0.43
+    },
+    "events": [
+      {
+        "name": "Coil and Impale / release",
+        "at": 0.0,
+        "tell": 0.68,
+        "travel": 0.1426,
+        "hold": 0.16,
+        "shape": "coil",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          24,
+          -50.0
+        ],
+        "destination": [
+          220.0,
+          -50.0
+        ],
+        "size": [
+          64.0,
+          35.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "coil",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Coil and Impale / afterbeat",
+        "at": 0.7916000000000001,
+        "tell": 0.055799999999999995,
+        "travel": 0.1426,
+        "hold": 0.2,
+        "shape": "spear",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          -48.4,
+          -22.5
+        ],
+        "destination": [
+          143.0,
+          -22.5
+        ],
+        "size": [
+          42.88,
+          30.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "coil",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the coil orbit, then leave the spear straight afterbeat; the Coil and Impale direction locks on preparation."
+  },
+  {
+    "id": 9,
+    "name": "Watching Mask",
+    "move": "Fivefold Stare",
+    "motif": "eye",
+    "motif_texture": "res://art/monster-motifs/009.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.96,
+      "commit": 0.66,
+      "recovery": 1.04,
+      "stride": 32.76,
+      "reach": 252.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 166.0,
+      "fall": 66.4,
+      "noise": 0.18,
+      "pulse": 1.5151515151515151,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Fivefold Stare / release",
+        "at": 0.0,
+        "tell": 0.96,
+        "travel": 0.30360000000000004,
+        "hold": 0.16,
+        "shape": "eye",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          24,
+          -116.0
+        ],
+        "destination": [
+          252.0,
+          -116.0
+        ],
+        "size": [
+          80.0,
+          81.19999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "eye",
+        "collision_mode": "arrival",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      },
+      {
+        "name": "Fivefold Stare / afterbeat",
+        "at": 1.1976,
+        "tell": 0.1188,
+        "travel": 0.30360000000000004,
+        "hold": 0.2,
+        "shape": "stone",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -55.44,
+          -52.2
+        ],
+        "destination": [
+          163.8,
+          -52.2
+        ],
+        "size": [
+          53.6,
+          69.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "eye",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the eye fan, then leave the stone collapse afterbeat; the Fivefold Stare direction locks on preparation."
+  },
+  {
+    "id": 10,
+    "name": "Spider Samurai Matriarch",
+    "move": "Silk Execution",
+    "motif": "silk",
+    "motif_texture": "res://art/monster-motifs/010.png",
+    "motion": {
+      "stance": "spider",
+      "windup": 1.14,
+      "commit": 0.65,
+      "recovery": 1.38,
+      "stride": 35.75,
+      "reach": 275.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 125.0,
+      "fall": 50.0,
+      "noise": 0.45,
+      "pulse": 1.5384615384615383,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Silk Execution / release",
+        "at": 0.0,
+        "tell": 1.14,
+        "travel": 0.29900000000000004,
+        "hold": 0.16,
+        "shape": "web",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -90.0
+        ],
+        "destination": [
+          0,
+          -90.0
+        ],
+        "size": [
+          220.0,
+          62.99999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "silk",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Silk Execution / afterbeat",
+        "at": 1.3739999999999999,
+        "tell": 0.11699999999999999,
+        "travel": 0.29900000000000004,
+        "hold": 0.2,
+        "shape": "blade",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -60.5,
+          -40.5
+        ],
+        "destination": [
+          178.75,
+          -40.5
+        ],
+        "size": [
+          147.4,
+          54.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "silk",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Hatching lattice",
+        "at": 1.79,
+        "tell": 0.3864,
+        "travel": 0.49679999999999996,
+        "hold": 0.22,
+        "shape": "web",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -180,
+          -60
+        ],
+        "destination": [
+          180,
+          -60
+        ],
+        "size": [
+          230,
+          85
+        ],
+        "damage_scale": 1.15,
+        "motif": "silk",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the web expand, then leave the blade pincer afterbeat; the Silk Execution direction locks on preparation."
+  },
+  {
+    "id": 11,
+    "name": "Ash Rabbit",
+    "move": "Moon Heel",
+    "motif": "heel",
+    "motif_texture": "res://art/monster-motifs/011.png",
+    "motion": {
+      "stance": "rabbit",
+      "windup": 0.39,
+      "commit": 0.22,
+      "recovery": 0.66,
+      "stride": 19.76,
+      "reach": 152.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 250.0,
+      "fall": 100.0,
+      "noise": 0.45,
+      "pulse": 4.545454545454546,
+      "duration": 0.33999999999999997
+    },
+    "events": [
+      {
+        "name": "Moon Heel / release",
+        "at": 0.0,
+        "tell": 0.39,
+        "travel": 0.1012,
+        "hold": 0.16,
+        "shape": "crescent",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          24,
+          -68.0
+        ],
+        "destination": [
+          152.0,
+          -68.0
+        ],
+        "size": [
+          88.0,
+          47.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "heel",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Moon Heel / afterbeat",
+        "at": 0.4692,
+        "tell": 0.039599999999999996,
+        "travel": 0.1012,
+        "hold": 0.2,
+        "shape": "dust",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -33.44,
+          -30.6
+        ],
+        "destination": [
+          98.8,
+          -30.6
+        ],
+        "size": [
+          58.96,
+          40.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "heel",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the crescent leap, then leave the dust return afterbeat; the Moon Heel direction locks on preparation."
+  },
+  {
+    "id": 12,
+    "name": "Chain Prisoner",
+    "move": "Sentence Reversal",
+    "motif": "chain",
+    "motif_texture": "res://art/monster-motifs/012.png",
+    "motion": {
+      "stance": "heavy",
+      "windup": 0.85,
+      "commit": 0.57,
+      "recovery": 1.12,
+      "stride": 32.5,
+      "reach": 250.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 110.0,
+      "fall": 44.0,
+      "noise": 0.45,
+      "pulse": 1.7543859649122808,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Sentence Reversal / release",
+        "at": 0.0,
+        "tell": 0.85,
+        "travel": 0.2622,
+        "hold": 0.16,
+        "shape": "chain",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -48.0
+        ],
+        "destination": [
+          250.0,
+          -48.0
+        ],
+        "size": [
+          76.0,
+          33.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "chain",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Sentence Reversal / afterbeat",
+        "at": 1.0552,
+        "tell": 0.10259999999999998,
+        "travel": 0.2622,
+        "hold": 0.2,
+        "shape": "hook",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -55.0,
+          -21.6
+        ],
+        "destination": [
+          162.5,
+          -21.6
+        ],
+        "size": [
+          50.92,
+          28.799999999999997
+        ],
+        "damage_scale": 0.7,
+        "motif": "chain",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the chain sweep, then leave the hook return afterbeat; the Sentence Reversal direction locks on preparation."
+  },
+  {
+    "id": 13,
+    "name": "Kiln Spirit",
+    "move": "Shattered Hearth",
+    "motif": "pottery",
+    "motif_texture": "res://art/monster-motifs/013.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 0.78,
+      "commit": 0.69,
+      "recovery": 0.98,
+      "stride": 24.05,
+      "reach": 185.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 92.0,
+      "fall": 36.800000000000004,
+      "noise": 0.45,
+      "pulse": 1.4492753623188408,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Shattered Hearth / release",
+        "at": 0.0,
+        "tell": 0.78,
+        "travel": 0.3174,
+        "hold": 0.16,
+        "shape": "pot",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          24,
+          -108.0
+        ],
+        "destination": [
+          185.0,
+          -108.0
+        ],
+        "size": [
+          146.0,
+          75.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "pottery",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Shattered Hearth / afterbeat",
+        "at": 1.0284,
+        "tell": 0.12419999999999999,
+        "travel": 0.3174,
+        "hold": 0.2,
+        "shape": "ember",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -40.7,
+          -48.6
+        ],
+        "destination": [
+          0,
+          -48.6
+        ],
+        "size": [
+          97.82000000000001,
+          64.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "pottery",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the pot lob, then leave the ember expand afterbeat; the Shattered Hearth direction locks on preparation."
+  },
+  {
+    "id": 14,
+    "name": "Mushroom Monk",
+    "move": "Sleeping Garden",
+    "motif": "spore",
+    "motif_texture": "res://art/monster-motifs/014.png",
+    "motion": {
+      "stance": "caster",
+      "windup": 1.05,
+      "commit": 0.88,
+      "recovery": 0.76,
+      "stride": 27.3,
+      "reach": 210.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 330.0,
+      "fall": 132.0,
+      "noise": 0.18,
+      "pulse": 1.1363636363636365,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Sleeping Garden / release",
+        "at": 0.0,
+        "tell": 1.05,
+        "travel": 0.4048,
+        "hold": 0.16,
+        "shape": "spore",
+        "path": "float",
+        "origin": "actor",
+        "offset": [
+          24,
+          -56.0
+        ],
+        "destination": [
+          210.0,
+          -56.0
+        ],
+        "size": [
+          110.0,
+          39.199999999999996
+        ],
+        "damage_scale": 1.0,
+        "motif": "spore",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Sleeping Garden / afterbeat",
+        "at": 1.3668,
+        "tell": 0.15839999999999999,
+        "travel": 0.4048,
+        "hold": 0.2,
+        "shape": "root",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -46.2,
+          -25.2
+        ],
+        "destination": [
+          136.5,
+          -25.2
+        ],
+        "size": [
+          73.7,
+          33.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "spore",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the spore float, then leave the root rise afterbeat; the Sleeping Garden direction locks on preparation."
+  },
+  {
+    "id": 15,
+    "name": "Bone Archer",
+    "move": "Rib Piercer",
+    "motif": "bone",
+    "motif_texture": "res://art/monster-motifs/015.png",
+    "motion": {
+      "stance": "archer",
+      "windup": 0.71,
+      "commit": 0.27,
+      "recovery": 0.69,
+      "stride": 40.300000000000004,
+      "reach": 310.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 490.0,
+      "fall": 196.0,
+      "noise": 0.45,
+      "pulse": 3.7037037037037033,
+      "duration": 0.39
+    },
+    "events": [
+      {
+        "name": "Rib Piercer / release",
+        "at": 0.0,
+        "tell": 0.71,
+        "travel": 0.12420000000000002,
+        "hold": 0.16,
+        "shape": "arrow",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          24,
+          -70.0
+        ],
+        "destination": [
+          310.0,
+          -70.0
+        ],
+        "size": [
+          44.0,
+          49.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "bone",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Rib Piercer / afterbeat",
+        "at": 0.8071999999999999,
+        "tell": 0.048600000000000004,
+        "travel": 0.12420000000000002,
+        "hold": 0.2,
+        "shape": "bone",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -68.2,
+          -31.5
+        ],
+        "destination": [
+          201.5,
+          -31.5
+        ],
+        "size": [
+          29.48,
+          42.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "bone",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the arrow straight, then leave the bone rain afterbeat; the Rib Piercer direction locks on preparation."
+  },
+  {
+    "id": 16,
+    "name": "Blind Swordmaster",
+    "move": "Soundless Crossing",
+    "motif": "iai",
+    "motif_texture": "res://art/monster-motifs/016.png",
+    "motion": {
+      "stance": "duelist",
+      "windup": 1.12,
+      "commit": 0.13,
+      "recovery": 1.3,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 630.0,
+      "fall": 252.0,
+      "noise": 0.45,
+      "pulse": 7.692307692307692,
+      "duration": 0.25
+    },
+    "events": [
+      {
+        "name": "Soundless Crossing / release",
+        "at": 0.0,
+        "tell": 1.12,
+        "travel": 0.059800000000000006,
+        "hold": 0.16,
+        "shape": "line",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          24,
+          -72.0
+        ],
+        "destination": [
+          245.0,
+          -72.0
+        ],
+        "size": [
+          42.0,
+          50.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "iai",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Soundless Crossing / afterbeat",
+        "at": 1.1668,
+        "tell": 0.0234,
+        "travel": 0.059800000000000006,
+        "hold": 0.2,
+        "shape": "crescent",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -53.9,
+          -32.4
+        ],
+        "destination": [
+          159.25,
+          -32.4
+        ],
+        "size": [
+          28.14,
+          43.199999999999996
+        ],
+        "damage_scale": 0.7,
+        "motif": "iai",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the line straight, then leave the crescent return afterbeat; the Soundless Crossing direction locks on preparation."
+  },
+  {
+    "id": 17,
+    "name": "Nineflame Fox",
+    "move": "False Moon Chase",
+    "motif": "foxtail",
+    "motif_texture": "res://art/monster-motifs/017.png",
+    "motion": {
+      "stance": "fox",
+      "windup": 0.58,
+      "commit": 0.72,
+      "recovery": 0.91,
+      "stride": 31.200000000000003,
+      "reach": 240.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 310.0,
+      "fall": 124.0,
+      "noise": 0.45,
+      "pulse": 1.3888888888888888,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "False Moon Chase / release",
+        "at": 0.0,
+        "tell": 0.58,
+        "travel": 0.3312,
+        "hold": 0.16,
+        "shape": "flame",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -100.0
+        ],
+        "destination": [
+          240.0,
+          -100.0
+        ],
+        "size": [
+          102.0,
+          70.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "foxtail",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "False Moon Chase / afterbeat",
+        "at": 0.8392,
+        "tell": 0.1296,
+        "travel": 0.3312,
+        "hold": 0.2,
+        "shape": "tail",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -52.8,
+          -45.0
+        ],
+        "destination": [
+          156.0,
+          -45.0
+        ],
+        "size": [
+          68.34,
+          60.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "foxtail",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the flame wave, then leave the tail pincer afterbeat; the False Moon Chase direction locks on preparation."
+  },
+  {
+    "id": 18,
+    "name": "Crayfish Knight",
+    "move": "Shell Lock",
+    "motif": "pincer",
+    "motif_texture": "res://art/monster-motifs/018.png",
+    "motion": {
+      "stance": "crab",
+      "windup": 0.9,
+      "commit": 0.35,
+      "recovery": 1.16,
+      "stride": 13.65,
+      "reach": 105.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 125.0,
+      "fall": 50.0,
+      "noise": 0.45,
+      "pulse": 2.857142857142857,
+      "duration": 0.47
+    },
+    "events": [
+      {
+        "name": "Shell Lock / release",
+        "at": 0.0,
+        "tell": 0.9,
+        "travel": 0.161,
+        "hold": 0.16,
+        "shape": "claw",
+        "path": "pincer",
+        "origin": "actor",
+        "offset": [
+          24,
+          -45.0
+        ],
+        "destination": [
+          105.0,
+          -45.0
+        ],
+        "size": [
+          138.0,
+          31.499999999999996
+        ],
+        "damage_scale": 1.0,
+        "motif": "pincer",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Shell Lock / afterbeat",
+        "at": 1.026,
+        "tell": 0.063,
+        "travel": 0.161,
+        "hold": 0.2,
+        "shape": "shell",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -23.1,
+          -20.25
+        ],
+        "destination": [
+          68.25,
+          -20.25
+        ],
+        "size": [
+          92.46000000000001,
+          27.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "pincer",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the claw pincer, then leave the shell rise afterbeat; the Shell Lock direction locks on preparation."
+  },
+  {
+    "id": 19,
+    "name": "Bamboo Mantis",
+    "move": "Green Guillotine",
+    "motif": "bamboo",
+    "motif_texture": "res://art/monster-motifs/019.png",
+    "motion": {
+      "stance": "mantis",
+      "windup": 0.64,
+      "commit": 0.26,
+      "recovery": 0.83,
+      "stride": 22.75,
+      "reach": 175.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 420.0,
+      "fall": 168.0,
+      "noise": 0.45,
+      "pulse": 3.846153846153846,
+      "duration": 0.38
+    },
+    "events": [
+      {
+        "name": "Green Guillotine / release",
+        "at": 0.0,
+        "tell": 0.64,
+        "travel": 0.11960000000000001,
+        "hold": 0.16,
+        "shape": "sickle",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -128.0
+        ],
+        "destination": [
+          175.0,
+          -128.0
+        ],
+        "size": [
+          108.0,
+          89.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "bamboo",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Green Guillotine / afterbeat",
+        "at": 0.7336,
+        "tell": 0.0468,
+        "travel": 0.11960000000000001,
+        "hold": 0.2,
+        "shape": "splinter",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -38.5,
+          -57.6
+        ],
+        "destination": [
+          113.75,
+          -57.6
+        ],
+        "size": [
+          72.36,
+          76.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "bamboo",
+        "collision_mode": "arrival",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the sickle drop, then leave the splinter fan afterbeat; the Green Guillotine direction locks on preparation."
+  },
+  {
+    "id": 20,
+    "name": "Furnace Ogre",
+    "move": "Coal Cathedral",
+    "motif": "furnace",
+    "motif_texture": "res://art/monster-motifs/020.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.25,
+      "commit": 0.76,
+      "recovery": 1.51,
+      "stride": 40.300000000000004,
+      "reach": 310.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 86.0,
+      "fall": 34.4,
+      "noise": 0.45,
+      "pulse": 1.3157894736842106,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Coal Cathedral / release",
+        "at": 0.0,
+        "tell": 1.25,
+        "travel": 0.3496,
+        "hold": 0.16,
+        "shape": "vent",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -125.0
+        ],
+        "destination": [
+          310.0,
+          -125.0
+        ],
+        "size": [
+          240.0,
+          87.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "furnace",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Coal Cathedral / afterbeat",
+        "at": 1.5236,
+        "tell": 0.1368,
+        "travel": 0.3496,
+        "hold": 0.2,
+        "shape": "coal",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -68.2,
+          -56.25
+        ],
+        "destination": [
+          201.5,
+          -56.25
+        ],
+        "size": [
+          160.8,
+          75.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "furnace",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Chimney collapse",
+        "at": 2.01,
+        "tell": 0.42280000000000006,
+        "travel": 0.5436,
+        "hold": 0.22,
+        "shape": "coal",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          0,
+          -210
+        ],
+        "destination": [
+          0,
+          -30
+        ],
+        "size": [
+          190,
+          95
+        ],
+        "damage_scale": 1.15,
+        "motif": "furnace",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the vent rise, then leave the coal rain afterbeat; the Coal Cathedral direction locks on preparation."
+  },
+  {
+    "id": 21,
+    "name": "Raven Tengu",
+    "move": "Feather Requiem",
+    "motif": "raven",
+    "motif_texture": "res://art/monster-motifs/021.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.56,
+      "commit": 0.44,
+      "recovery": 0.73,
+      "stride": 27.95,
+      "reach": 215.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 450.0,
+      "fall": 180.0,
+      "noise": 0.45,
+      "pulse": 2.272727272727273,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Feather Requiem / release",
+        "at": 0.0,
+        "tell": 0.56,
+        "travel": 0.2024,
+        "hold": 0.16,
+        "shape": "feather",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -98.0
+        ],
+        "destination": [
+          215.0,
+          -98.0
+        ],
+        "size": [
+          96.0,
+          68.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "raven",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Feather Requiem / afterbeat",
+        "at": 0.7184,
+        "tell": 0.07919999999999999,
+        "travel": 0.2024,
+        "hold": 0.2,
+        "shape": "blade",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -47.3,
+          -44.1
+        ],
+        "destination": [
+          139.75,
+          -44.1
+        ],
+        "size": [
+          64.32000000000001,
+          58.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "raven",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the feather sweep, then leave the blade return afterbeat; the Feather Requiem direction locks on preparation."
+  },
+  {
+    "id": 22,
+    "name": "Incense Censer",
+    "move": "Funeral Spiral",
+    "motif": "incense",
+    "motif_texture": "res://art/monster-motifs/022.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 1.02,
+      "commit": 0.84,
+      "recovery": 0.99,
+      "stride": 23.400000000000002,
+      "reach": 180.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 220.0,
+      "fall": 88.0,
+      "noise": 0.18,
+      "pulse": 1.1904761904761905,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Funeral Spiral / release",
+        "at": 0.0,
+        "tell": 1.02,
+        "travel": 0.3864,
+        "hold": 0.16,
+        "shape": "smoke",
+        "path": "spiral",
+        "origin": "actor",
+        "offset": [
+          24,
+          -112.0
+        ],
+        "destination": [
+          180.0,
+          -112.0
+        ],
+        "size": [
+          152.0,
+          78.39999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "incense",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Funeral Spiral / afterbeat",
+        "at": 1.3224,
+        "tell": 0.1512,
+        "travel": 0.3864,
+        "hold": 0.2,
+        "shape": "bead",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -39.6,
+          -50.4
+        ],
+        "destination": [
+          117.0,
+          -50.4
+        ],
+        "size": [
+          101.84,
+          67.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "incense",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the smoke spiral, then leave the bead collapse afterbeat; the Funeral Spiral direction locks on preparation."
+  },
+  {
+    "id": 23,
+    "name": "Thorn Boar",
+    "move": "Briar Stampede",
+    "motif": "tusk",
+    "motif_texture": "res://art/monster-motifs/023.png",
+    "motion": {
+      "stance": "boar",
+      "windup": 0.76,
+      "commit": 0.38,
+      "recovery": 1.24,
+      "stride": 33.800000000000004,
+      "reach": 260.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 145.0,
+      "fall": 58.0,
+      "noise": 0.45,
+      "pulse": 2.6315789473684212,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Briar Stampede / release",
+        "at": 0.0,
+        "tell": 0.76,
+        "travel": 0.1748,
+        "hold": 0.16,
+        "shape": "tusk",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -28.0
+        ],
+        "destination": [
+          260.0,
+          -28.0
+        ],
+        "size": [
+          110.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "tusk",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Briar Stampede / afterbeat",
+        "at": 0.8968,
+        "tell": 0.0684,
+        "travel": 0.1748,
+        "hold": 0.2,
+        "shape": "thorn",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -57.2,
+          -12.6
+        ],
+        "destination": [
+          169.0,
+          -12.6
+        ],
+        "size": [
+          73.7,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "tusk",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the tusk charge, then leave the thorn rise afterbeat; the Briar Stampede direction locks on preparation."
+  },
+  {
+    "id": 24,
+    "name": "Centipede Warrior",
+    "move": "Hundred Tooth Saw",
+    "motif": "segments",
+    "motif_texture": "res://art/monster-motifs/024.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 0.69,
+      "commit": 0.56,
+      "recovery": 0.93,
+      "stride": 37.050000000000004,
+      "reach": 285.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 350.0,
+      "fall": 140.0,
+      "noise": 0.45,
+      "pulse": 1.7857142857142856,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Hundred Tooth Saw / release",
+        "at": 0.0,
+        "tell": 0.69,
+        "travel": 0.25760000000000005,
+        "hold": 0.16,
+        "shape": "saw",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -25.0
+        ],
+        "destination": [
+          285.0,
+          -25.0
+        ],
+        "size": [
+          80.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "segments",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Hundred Tooth Saw / afterbeat",
+        "at": 0.8916,
+        "tell": 0.1008,
+        "travel": 0.25760000000000005,
+        "hold": 0.2,
+        "shape": "segment",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -62.7,
+          -11.25
+        ],
+        "destination": [
+          185.25,
+          -11.25
+        ],
+        "size": [
+          53.6,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "segments",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the saw wave, then leave the segment return afterbeat; the Hundred Tooth Saw direction locks on preparation."
+  },
+  {
+    "id": 25,
+    "name": "Fish Axe Samurai",
+    "move": "Scale Cleaver",
+    "motif": "scale",
+    "motif_texture": "res://art/monster-motifs/025.png",
+    "motion": {
+      "stance": "duelist",
+      "windup": 0.81,
+      "commit": 0.33,
+      "recovery": 1.07,
+      "stride": 21.71,
+      "reach": 167.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 180.0,
+      "fall": 72.0,
+      "noise": 0.45,
+      "pulse": 3.0303030303030303,
+      "duration": 0.45
+    },
+    "events": [
+      {
+        "name": "Scale Cleaver / release",
+        "at": 0.0,
+        "tell": 0.81,
+        "travel": 0.15180000000000002,
+        "hold": 0.16,
+        "shape": "axe",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -88.0
+        ],
+        "destination": [
+          167.0,
+          -88.0
+        ],
+        "size": [
+          155.0,
+          61.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "scale",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Scale Cleaver / afterbeat",
+        "at": 0.9288000000000001,
+        "tell": 0.0594,
+        "travel": 0.15180000000000002,
+        "hold": 0.2,
+        "shape": "scale",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -36.74,
+          -39.6
+        ],
+        "destination": [
+          108.55,
+          -39.6
+        ],
+        "size": [
+          103.85000000000001,
+          52.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "scale",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the axe sweep, then leave the scale fan afterbeat; the Scale Cleaver direction locks on preparation."
+  },
+  {
+    "id": 26,
+    "name": "Ice Tortoise",
+    "move": "Glacier Carapace",
+    "motif": "iceplate",
+    "motif_texture": "res://art/monster-motifs/026.png",
+    "motion": {
+      "stance": "tortoise",
+      "windup": 1.18,
+      "commit": 0.71,
+      "recovery": 1.35,
+      "stride": 22.75,
+      "reach": 175.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 83.0,
+      "fall": 33.2,
+      "noise": 0.45,
+      "pulse": 1.4084507042253522,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Glacier Carapace / release",
+        "at": 0.0,
+        "tell": 1.18,
+        "travel": 0.3266,
+        "hold": 0.16,
+        "shape": "ice",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -38.0
+        ],
+        "destination": [
+          0,
+          -38.0
+        ],
+        "size": [
+          200.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "iceplate",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Glacier Carapace / afterbeat",
+        "at": 1.4356,
+        "tell": 0.1278,
+        "travel": 0.3266,
+        "hold": 0.2,
+        "shape": "plate",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -38.5,
+          -17.1
+        ],
+        "destination": [
+          113.75,
+          -17.1
+        ],
+        "size": [
+          134.0,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "iceplate",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the ice expand, then leave the plate drop afterbeat; the Glacier Carapace direction locks on preparation."
+  },
+  {
+    "id": 27,
+    "name": "Cave Ape",
+    "move": "Ceiling Knuckle",
+    "motif": "knuckle",
+    "motif_texture": "res://art/monster-motifs/027.png",
+    "motion": {
+      "stance": "ape",
+      "windup": 0.74,
+      "commit": 0.41,
+      "recovery": 1.1,
+      "stride": 25.09,
+      "reach": 193.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 115.0,
+      "fall": 46.0,
+      "noise": 0.45,
+      "pulse": 2.4390243902439024,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Ceiling Knuckle / release",
+        "at": 0.0,
+        "tell": 0.74,
+        "travel": 0.1886,
+        "hold": 0.16,
+        "shape": "fist",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -144.0
+        ],
+        "destination": [
+          193.0,
+          -144.0
+        ],
+        "size": [
+          136.0,
+          100.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "knuckle",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Ceiling Knuckle / afterbeat",
+        "at": 0.8876,
+        "tell": 0.07379999999999999,
+        "travel": 0.1886,
+        "hold": 0.2,
+        "shape": "rock",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          -42.46,
+          -64.8
+        ],
+        "destination": [
+          125.45,
+          -64.8
+        ],
+        "size": [
+          91.12,
+          86.39999999999999
+        ],
+        "damage_scale": 0.7,
+        "motif": "knuckle",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the fist drop, then leave the rock leap afterbeat; the Ceiling Knuckle direction locks on preparation."
+  },
+  {
+    "id": 28,
+    "name": "Candle Nun",
+    "move": "Extinguished Prayer",
+    "motif": "candle",
+    "motif_texture": "res://art/monster-motifs/028.png",
+    "motion": {
+      "stance": "caster",
+      "windup": 0.98,
+      "commit": 0.81,
+      "recovery": 1.02,
+      "stride": 28.6,
+      "reach": 220.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 260.0,
+      "fall": 104.0,
+      "noise": 0.18,
+      "pulse": 1.2345679012345678,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Extinguished Prayer / release",
+        "at": 0.0,
+        "tell": 0.98,
+        "travel": 0.37260000000000004,
+        "hold": 0.16,
+        "shape": "wick",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -110.0
+        ],
+        "destination": [
+          220.0,
+          -110.0
+        ],
+        "size": [
+          86.0,
+          77.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "candle",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Extinguished Prayer / afterbeat",
+        "at": 1.2716,
+        "tell": 0.1458,
+        "travel": 0.37260000000000004,
+        "hold": 0.2,
+        "shape": "wax",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -48.4,
+          -49.5
+        ],
+        "destination": [
+          143.0,
+          -49.5
+        ],
+        "size": [
+          57.620000000000005,
+          66.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "candle",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the wick rise, then leave the wax rain afterbeat; the Extinguished Prayer direction locks on preparation."
+  },
+  {
+    "id": 29,
+    "name": "Origami Dragon",
+    "move": "Folded Horizon",
+    "motif": "origami",
+    "motif_texture": "res://art/monster-motifs/029.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.66,
+      "commit": 0.62,
+      "recovery": 0.87,
+      "stride": 35.75,
+      "reach": 275.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 420.0,
+      "fall": 168.0,
+      "noise": 0.18,
+      "pulse": 1.6129032258064517,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Folded Horizon / release",
+        "at": 0.0,
+        "tell": 0.66,
+        "travel": 0.2852,
+        "hold": 0.16,
+        "shape": "paper",
+        "path": "spiral",
+        "origin": "actor",
+        "offset": [
+          24,
+          -126.0
+        ],
+        "destination": [
+          275.0,
+          -126.0
+        ],
+        "size": [
+          104.0,
+          88.19999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "origami",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Folded Horizon / afterbeat",
+        "at": 0.8832,
+        "tell": 0.11159999999999999,
+        "travel": 0.2852,
+        "hold": 0.2,
+        "shape": "fold",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          -60.5,
+          -56.7
+        ],
+        "destination": [
+          178.75,
+          -56.7
+        ],
+        "size": [
+          69.68,
+          75.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "origami",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the paper spiral, then leave the fold straight afterbeat; the Folded Horizon direction locks on preparation."
+  },
+  {
+    "id": 30,
+    "name": "Thunder Drum Titan",
+    "move": "War Drum Measure",
+    "motif": "drum",
+    "motif_texture": "res://art/monster-motifs/030.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.21,
+      "commit": 0.53,
+      "recovery": 1.48,
+      "stride": 43.550000000000004,
+      "reach": 335.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 72.0,
+      "fall": 28.8,
+      "noise": 0.45,
+      "pulse": 1.8867924528301885,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "War Drum Measure / release",
+        "at": 0.0,
+        "tell": 1.21,
+        "travel": 0.24380000000000002,
+        "hold": 0.16,
+        "shape": "beat",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -104.0
+        ],
+        "destination": [
+          0,
+          -104.0
+        ],
+        "size": [
+          230.0,
+          72.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "drum",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "War Drum Measure / afterbeat",
+        "at": 1.4008,
+        "tell": 0.0954,
+        "travel": 0.24380000000000002,
+        "hold": 0.2,
+        "shape": "bolt",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -73.7,
+          -46.800000000000004
+        ],
+        "destination": [
+          217.75,
+          -46.800000000000004
+        ],
+        "size": [
+          154.10000000000002,
+          62.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "drum",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Silent beat",
+        "at": 1.74,
+        "tell": 0.41440000000000005,
+        "travel": 0.5327999999999999,
+        "hold": 0.22,
+        "shape": "ring",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -220,
+          -90
+        ],
+        "destination": [
+          0,
+          -90
+        ],
+        "size": [
+          170,
+          150
+        ],
+        "damage_scale": 1.15,
+        "motif": "drum",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the beat expand, then leave the bolt pincer afterbeat; the War Drum Measure direction locks on preparation."
+  },
+  {
+    "id": 31,
+    "name": "Bonewheel",
+    "move": "Grave Cartwheel",
+    "motif": "wheel",
+    "motif_texture": "res://art/monster-motifs/031.png",
+    "motion": {
+      "stance": "wheel",
+      "windup": 0.62,
+      "commit": 0.64,
+      "recovery": 1.12,
+      "stride": 41.6,
+      "reach": 320.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 168.0,
+      "fall": 67.2,
+      "noise": 0.45,
+      "pulse": 1.5625,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Grave Cartwheel / release",
+        "at": 0.0,
+        "tell": 0.62,
+        "travel": 0.2944,
+        "hold": 0.16,
+        "shape": "wheel",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -32.0
+        ],
+        "destination": [
+          320.0,
+          -32.0
+        ],
+        "size": [
+          130.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "wheel",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Grave Cartwheel / afterbeat",
+        "at": 0.8504,
+        "tell": 0.1152,
+        "travel": 0.2944,
+        "hold": 0.2,
+        "shape": "spoke",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -70.4,
+          -14.4
+        ],
+        "destination": [
+          208.0,
+          -14.4
+        ],
+        "size": [
+          87.10000000000001,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "wheel",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the wheel charge, then leave the spoke fan afterbeat; the Grave Cartwheel direction locks on preparation."
+  },
+  {
+    "id": 32,
+    "name": "Floating Oni",
+    "move": "Jaw of Dusk",
+    "motif": "jaw",
+    "motif_texture": "res://art/monster-motifs/032.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.87,
+      "commit": 0.49,
+      "recovery": 0.92,
+      "stride": 25.35,
+      "reach": 195.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 135.0,
+      "fall": 54.0,
+      "noise": 0.18,
+      "pulse": 2.0408163265306123,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Jaw of Dusk / release",
+        "at": 0.0,
+        "tell": 0.87,
+        "travel": 0.22540000000000002,
+        "hold": 0.16,
+        "shape": "jaw",
+        "path": "collapse",
+        "origin": "actor",
+        "offset": [
+          24,
+          -104.0
+        ],
+        "destination": [
+          195.0,
+          -104.0
+        ],
+        "size": [
+          142.0,
+          72.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "jaw",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Jaw of Dusk / afterbeat",
+        "at": 1.0464,
+        "tell": 0.0882,
+        "travel": 0.22540000000000002,
+        "hold": 0.2,
+        "shape": "fang",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -42.9,
+          -46.800000000000004
+        ],
+        "destination": [
+          126.75,
+          -46.800000000000004
+        ],
+        "size": [
+          95.14,
+          62.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "jaw",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the jaw collapse, then leave the fang drop afterbeat; the Jaw of Dusk direction locks on preparation."
+  },
+  {
+    "id": 33,
+    "name": "Iron Millipede",
+    "move": "Armored Undertow",
+    "motif": "millipede",
+    "motif_texture": "res://art/monster-motifs/033.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 0.73,
+      "commit": 0.74,
+      "recovery": 1.03,
+      "stride": 36.14,
+      "reach": 278.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 140.0,
+      "fall": 56.0,
+      "noise": 0.45,
+      "pulse": 1.3513513513513513,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Armored Undertow / release",
+        "at": 0.0,
+        "tell": 0.73,
+        "travel": 0.34040000000000004,
+        "hold": 0.16,
+        "shape": "segment",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -22.0
+        ],
+        "destination": [
+          278.0,
+          -22.0
+        ],
+        "size": [
+          96.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "millipede",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Armored Undertow / afterbeat",
+        "at": 0.9964,
+        "tell": 0.13319999999999999,
+        "travel": 0.34040000000000004,
+        "hold": 0.2,
+        "shape": "plate",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -61.160000000000004,
+          -9.9
+        ],
+        "destination": [
+          180.70000000000002,
+          -9.9
+        ],
+        "size": [
+          64.32000000000001,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "millipede",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the segment wave, then leave the plate return afterbeat; the Armored Undertow direction locks on preparation."
+  },
+  {
+    "id": 34,
+    "name": "Sickle Bat",
+    "move": "Echo Scythe",
+    "motif": "batwing",
+    "motif_texture": "res://art/monster-motifs/034.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.47,
+      "commit": 0.39,
+      "recovery": 0.72,
+      "stride": 29.900000000000002,
+      "reach": 230.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 520.0,
+      "fall": 208.0,
+      "noise": 0.18,
+      "pulse": 2.564102564102564,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Echo Scythe / release",
+        "at": 0.0,
+        "tell": 0.47,
+        "travel": 0.1794,
+        "hold": 0.16,
+        "shape": "sickle",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          24,
+          -140.0
+        ],
+        "destination": [
+          230.0,
+          -140.0
+        ],
+        "size": [
+          95.0,
+          98.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "batwing",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Echo Scythe / afterbeat",
+        "at": 0.6103999999999999,
+        "tell": 0.0702,
+        "travel": 0.1794,
+        "hold": 0.2,
+        "shape": "echo",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -50.6,
+          -63.0
+        ],
+        "destination": [
+          0,
+          -63.0
+        ],
+        "size": [
+          63.650000000000006,
+          84.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "batwing",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the sickle leap, then leave the echo expand afterbeat; the Echo Scythe direction locks on preparation."
+  },
+  {
+    "id": 35,
+    "name": "Kettle Crab",
+    "move": "Boiling Clamps",
+    "motif": "kettle",
+    "motif_texture": "res://art/monster-motifs/035.png",
+    "motion": {
+      "stance": "crab",
+      "windup": 0.92,
+      "commit": 0.51,
+      "recovery": 1.14,
+      "stride": 16.900000000000002,
+      "reach": 130.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 230.0,
+      "fall": 92.0,
+      "noise": 0.45,
+      "pulse": 1.9607843137254901,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Boiling Clamps / release",
+        "at": 0.0,
+        "tell": 0.92,
+        "travel": 0.2346,
+        "hold": 0.16,
+        "shape": "claw",
+        "path": "pincer",
+        "origin": "actor",
+        "offset": [
+          24,
+          -42.0
+        ],
+        "destination": [
+          130.0,
+          -42.0
+        ],
+        "size": [
+          125.0,
+          29.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "kettle",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Boiling Clamps / afterbeat",
+        "at": 1.1036000000000001,
+        "tell": 0.09179999999999999,
+        "travel": 0.2346,
+        "hold": 0.2,
+        "shape": "steam",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -28.6,
+          -18.900000000000002
+        ],
+        "destination": [
+          84.5,
+          -18.900000000000002
+        ],
+        "size": [
+          83.75,
+          25.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "kettle",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the claw pincer, then leave the steam rise afterbeat; the Boiling Clamps direction locks on preparation."
+  },
+  {
+    "id": 36,
+    "name": "Spear Deer",
+    "move": "Antler Procession",
+    "motif": "antler",
+    "motif_texture": "res://art/monster-motifs/036.png",
+    "motion": {
+      "stance": "deer",
+      "windup": 0.79,
+      "commit": 0.37,
+      "recovery": 0.96,
+      "stride": 37.7,
+      "reach": 290.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 290.0,
+      "fall": 116.0,
+      "noise": 0.45,
+      "pulse": 2.7027027027027026,
+      "duration": 0.49
+    },
+    "events": [
+      {
+        "name": "Antler Procession / release",
+        "at": 0.0,
+        "tell": 0.79,
+        "travel": 0.17020000000000002,
+        "hold": 0.16,
+        "shape": "antler",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -90.0
+        ],
+        "destination": [
+          290.0,
+          -90.0
+        ],
+        "size": [
+          106.0,
+          62.99999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "antler",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Antler Procession / afterbeat",
+        "at": 0.9232,
+        "tell": 0.06659999999999999,
+        "travel": 0.17020000000000002,
+        "hold": 0.2,
+        "shape": "spear",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -63.8,
+          -40.5
+        ],
+        "destination": [
+          188.5,
+          -40.5
+        ],
+        "size": [
+          71.02000000000001,
+          54.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "antler",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the antler charge, then leave the spear drop afterbeat; the Antler Procession direction locks on preparation."
+  },
+  {
+    "id": 37,
+    "name": "Haunted Basket",
+    "move": "Wicker Hunger",
+    "motif": "wicker",
+    "motif_texture": "res://art/monster-motifs/037.png",
+    "motion": {
+      "stance": "mimic",
+      "windup": 0.94,
+      "commit": 0.61,
+      "recovery": 1.09,
+      "stride": 20.8,
+      "reach": 160.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 150.0,
+      "fall": 60.0,
+      "noise": 0.45,
+      "pulse": 1.639344262295082,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Wicker Hunger / release",
+        "at": 0.0,
+        "tell": 0.94,
+        "travel": 0.2806,
+        "hold": 0.16,
+        "shape": "rib",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -64.0
+        ],
+        "destination": [
+          0,
+          -64.0
+        ],
+        "size": [
+          144.0,
+          44.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "wicker",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Wicker Hunger / afterbeat",
+        "at": 1.1596,
+        "tell": 0.1098,
+        "travel": 0.2806,
+        "hold": 0.2,
+        "shape": "splinter",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -35.2,
+          -28.8
+        ],
+        "destination": [
+          104.0,
+          -28.8
+        ],
+        "size": [
+          96.48,
+          38.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "wicker",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the rib expand, then leave the splinter collapse afterbeat; the Wicker Hunger direction locks on preparation."
+  },
+  {
+    "id": 38,
+    "name": "Plague Crow",
+    "move": "Black Sutra",
+    "motif": "plaguefeather",
+    "motif_texture": "res://art/monster-motifs/038.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.83,
+      "commit": 0.78,
+      "recovery": 0.89,
+      "stride": 32.5,
+      "reach": 250.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 345.0,
+      "fall": 138.0,
+      "noise": 0.45,
+      "pulse": 1.282051282051282,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Black Sutra / release",
+        "at": 0.0,
+        "tell": 0.83,
+        "travel": 0.3588,
+        "hold": 0.16,
+        "shape": "feather",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          24,
+          -115.0
+        ],
+        "destination": [
+          250.0,
+          -115.0
+        ],
+        "size": [
+          104.0,
+          80.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "plaguefeather",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      },
+      {
+        "name": "Black Sutra / afterbeat",
+        "at": 1.1108,
+        "tell": 0.1404,
+        "travel": 0.3588,
+        "hold": 0.2,
+        "shape": "miasma",
+        "path": "float",
+        "origin": "actor",
+        "offset": [
+          -55.0,
+          -51.75
+        ],
+        "destination": [
+          162.5,
+          -51.75
+        ],
+        "size": [
+          69.68,
+          69.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "plaguefeather",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the feather fan, then leave the miasma float afterbeat; the Black Sutra direction locks on preparation."
+  },
+  {
+    "id": 39,
+    "name": "Eyestalk Slug",
+    "move": "Witness Slime",
+    "motif": "eyestalk",
+    "motif_texture": "res://art/monster-motifs/039.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 1.07,
+      "commit": 0.92,
+      "recovery": 1.2,
+      "stride": 27.95,
+      "reach": 215.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 155.0,
+      "fall": 62.0,
+      "noise": 0.45,
+      "pulse": 1.0869565217391304,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Witness Slime / release",
+        "at": 0.0,
+        "tell": 1.07,
+        "travel": 0.4232,
+        "hold": 0.16,
+        "shape": "eye",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -33.0
+        ],
+        "destination": [
+          215.0,
+          -33.0
+        ],
+        "size": [
+          122.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "eyestalk",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Witness Slime / afterbeat",
+        "at": 1.4012,
+        "tell": 0.1656,
+        "travel": 0.4232,
+        "hold": 0.2,
+        "shape": "slime",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          -47.3,
+          -14.85
+        ],
+        "destination": [
+          139.75,
+          -14.85
+        ],
+        "size": [
+          81.74000000000001,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "eyestalk",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the eye rise, then leave the slime wave afterbeat; the Witness Slime direction locks on preparation."
+  },
+  {
+    "id": 40,
+    "name": "Root Witch",
+    "move": "Root Gallows",
+    "motif": "root",
+    "motif_texture": "res://art/monster-motifs/040.png",
+    "motion": {
+      "stance": "tree",
+      "windup": 1.28,
+      "commit": 0.86,
+      "recovery": 1.44,
+      "stride": 39.0,
+      "reach": 300.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 98.0,
+      "fall": 39.2,
+      "noise": 0.45,
+      "pulse": 1.1627906976744187,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Root Gallows / release",
+        "at": 0.0,
+        "tell": 1.28,
+        "travel": 0.3956,
+        "hold": 0.16,
+        "shape": "root",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -130.0
+        ],
+        "destination": [
+          300.0,
+          -130.0
+        ],
+        "size": [
+          240.0,
+          91.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "root",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Root Gallows / afterbeat",
+        "at": 1.5896,
+        "tell": 0.1548,
+        "travel": 0.3956,
+        "hold": 0.2,
+        "shape": "vine",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -66.0,
+          -58.5
+        ],
+        "destination": [
+          195.0,
+          -58.5
+        ],
+        "size": [
+          160.8,
+          78.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "root",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Hanging orchard",
+        "at": 2.14,
+        "tell": 0.4032,
+        "travel": 0.5184,
+        "hold": 0.22,
+        "shape": "root",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          0,
+          -240
+        ],
+        "destination": [
+          0,
+          -45
+        ],
+        "size": [
+          170,
+          90
+        ],
+        "damage_scale": 1.15,
+        "motif": "root",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the root rise, then leave the vine pincer afterbeat; the Root Gallows direction locks on preparation."
+  },
+  {
+    "id": 41,
+    "name": "Chain Wolf Skull",
+    "move": "Leashed Howl",
+    "motif": "skullchain",
+    "motif_texture": "res://art/monster-motifs/041.png",
+    "motion": {
+      "stance": "wolf",
+      "windup": 0.65,
+      "commit": 0.48,
+      "recovery": 0.88,
+      "stride": 29.51,
+      "reach": 227.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 185.0,
+      "fall": 74.0,
+      "noise": 0.45,
+      "pulse": 2.0833333333333335,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Leashed Howl / release",
+        "at": 0.0,
+        "tell": 0.65,
+        "travel": 0.2208,
+        "hold": 0.16,
+        "shape": "jaw",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          24,
+          -70.0
+        ],
+        "destination": [
+          227.0,
+          -70.0
+        ],
+        "size": [
+          112.0,
+          49.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "skullchain",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Leashed Howl / afterbeat",
+        "at": 0.8228,
+        "tell": 0.08639999999999999,
+        "travel": 0.2208,
+        "hold": 0.2,
+        "shape": "chain",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -49.94,
+          -31.5
+        ],
+        "destination": [
+          147.55,
+          -31.5
+        ],
+        "size": [
+          75.04,
+          42.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "skullchain",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the jaw leap, then leave the chain return afterbeat; the Leashed Howl direction locks on preparation."
+  },
+  {
+    "id": 42,
+    "name": "Snow Woman",
+    "move": "White Burial",
+    "motif": "snowveil",
+    "motif_texture": "res://art/monster-motifs/042.png",
+    "motion": {
+      "stance": "caster",
+      "windup": 1.01,
+      "commit": 0.79,
+      "recovery": 1.11,
+      "stride": 35.1,
+      "reach": 270.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 480.0,
+      "fall": 192.0,
+      "noise": 0.18,
+      "pulse": 1.2658227848101264,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "White Burial / release",
+        "at": 0.0,
+        "tell": 1.01,
+        "travel": 0.36340000000000006,
+        "hold": 0.16,
+        "shape": "veil",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -123.0
+        ],
+        "destination": [
+          270.0,
+          -123.0
+        ],
+        "size": [
+          147.0,
+          86.1
+        ],
+        "damage_scale": 1.0,
+        "motif": "snowveil",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "White Burial / afterbeat",
+        "at": 1.2944,
+        "tell": 0.1422,
+        "travel": 0.36340000000000006,
+        "hold": 0.2,
+        "shape": "ice",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -59.4,
+          -55.35
+        ],
+        "destination": [
+          175.5,
+          -55.35
+        ],
+        "size": [
+          98.49000000000001,
+          73.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "snowveil",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the veil wave, then leave the ice collapse afterbeat; the White Burial direction locks on preparation."
+  },
+  {
+    "id": 43,
+    "name": "Scorpion Samurai",
+    "move": "Venom Verdict",
+    "motif": "stinger",
+    "motif_texture": "res://art/monster-motifs/043.png",
+    "motion": {
+      "stance": "scorpion",
+      "windup": 0.84,
+      "commit": 0.45,
+      "recovery": 1.08,
+      "stride": 27.3,
+      "reach": 210.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 225.0,
+      "fall": 90.0,
+      "noise": 0.45,
+      "pulse": 2.2222222222222223,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Venom Verdict / release",
+        "at": 0.0,
+        "tell": 0.84,
+        "travel": 0.20700000000000002,
+        "hold": 0.16,
+        "shape": "sting",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          24,
+          -94.0
+        ],
+        "destination": [
+          210.0,
+          -94.0
+        ],
+        "size": [
+          90.0,
+          65.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "stinger",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Venom Verdict / afterbeat",
+        "at": 1.002,
+        "tell": 0.081,
+        "travel": 0.20700000000000002,
+        "hold": 0.2,
+        "shape": "claw",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -46.2,
+          -42.300000000000004
+        ],
+        "destination": [
+          136.5,
+          -42.300000000000004
+        ],
+        "size": [
+          60.300000000000004,
+          56.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "stinger",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the sting lob, then leave the claw pincer afterbeat; the Venom Verdict direction locks on preparation."
+  },
+  {
+    "id": 44,
+    "name": "Sword Spirit",
+    "move": "Ownerless Arc",
+    "motif": "ghostblade",
+    "motif_texture": "res://art/monster-motifs/044.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.61,
+      "commit": 0.47,
+      "recovery": 0.82,
+      "stride": 33.800000000000004,
+      "reach": 260.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 580.0,
+      "fall": 232.0,
+      "noise": 0.18,
+      "pulse": 2.127659574468085,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Ownerless Arc / release",
+        "at": 0.0,
+        "tell": 0.61,
+        "travel": 0.2162,
+        "hold": 0.16,
+        "shape": "blade",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          24,
+          -115.0
+        ],
+        "destination": [
+          260.0,
+          -115.0
+        ],
+        "size": [
+          98.0,
+          80.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "ghostblade",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Ownerless Arc / afterbeat",
+        "at": 0.7792,
+        "tell": 0.0846,
+        "travel": 0.2162,
+        "hold": 0.2,
+        "shape": "line",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          -57.2,
+          -51.75
+        ],
+        "destination": [
+          169.0,
+          -51.75
+        ],
+        "size": [
+          65.66000000000001,
+          69.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "ghostblade",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the blade orbit, then leave the line straight afterbeat; the Ownerless Arc direction locks on preparation."
+  },
+  {
+    "id": 45,
+    "name": "Iron Antler Horse",
+    "move": "Iron Procession",
+    "motif": "ironhoof",
+    "motif_texture": "res://art/monster-motifs/045.png",
+    "motion": {
+      "stance": "horse",
+      "windup": 0.86,
+      "commit": 0.34,
+      "recovery": 1.27,
+      "stride": 40.95,
+      "reach": 315.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 105.0,
+      "fall": 42.0,
+      "noise": 0.45,
+      "pulse": 2.941176470588235,
+      "duration": 0.46
+    },
+    "events": [
+      {
+        "name": "Iron Procession / release",
+        "at": 0.0,
+        "tell": 0.86,
+        "travel": 0.1564,
+        "hold": 0.16,
+        "shape": "hoof",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -55.0
+        ],
+        "destination": [
+          315.0,
+          -55.0
+        ],
+        "size": [
+          128.0,
+          38.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "ironhoof",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Iron Procession / afterbeat",
+        "at": 0.9823999999999999,
+        "tell": 0.061200000000000004,
+        "travel": 0.1564,
+        "hold": 0.2,
+        "shape": "antler",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -69.3,
+          -24.75
+        ],
+        "destination": [
+          204.75,
+          -24.75
+        ],
+        "size": [
+          85.76,
+          33.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "ironhoof",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the hoof charge, then leave the antler rise afterbeat; the Iron Procession direction locks on preparation."
+  },
+  {
+    "id": 46,
+    "name": "Eel Sorcerer",
+    "move": "Current Stitch",
+    "motif": "eel",
+    "motif_texture": "res://art/monster-motifs/046.png",
+    "motion": {
+      "stance": "serpent",
+      "windup": 0.75,
+      "commit": 0.58,
+      "recovery": 0.97,
+      "stride": 37.7,
+      "reach": 290.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 370.0,
+      "fall": 148.0,
+      "noise": 0.18,
+      "pulse": 1.7241379310344829,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Current Stitch / release",
+        "at": 0.0,
+        "tell": 0.75,
+        "travel": 0.2668,
+        "hold": 0.16,
+        "shape": "bolt",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -80.0
+        ],
+        "destination": [
+          290.0,
+          -80.0
+        ],
+        "size": [
+          75.0,
+          56.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "eel",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Current Stitch / afterbeat",
+        "at": 0.9588,
+        "tell": 0.10439999999999999,
+        "travel": 0.2668,
+        "hold": 0.2,
+        "shape": "coil",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -63.8,
+          -36.0
+        ],
+        "destination": [
+          188.5,
+          -36.0
+        ],
+        "size": [
+          50.25,
+          48.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "eel",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the bolt wave, then leave the coil collapse afterbeat; the Current Stitch direction locks on preparation."
+  },
+  {
+    "id": 47,
+    "name": "Stitched Doll",
+    "move": "Unpicked Heart",
+    "motif": "stitch",
+    "motif_texture": "res://art/monster-motifs/047.png",
+    "motion": {
+      "stance": "doll",
+      "windup": 0.93,
+      "commit": 0.68,
+      "recovery": 1.01,
+      "stride": 26.650000000000002,
+      "reach": 205.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 300.0,
+      "fall": 120.0,
+      "noise": 0.45,
+      "pulse": 1.4705882352941175,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Unpicked Heart / release",
+        "at": 0.0,
+        "tell": 0.93,
+        "travel": 0.3128,
+        "hold": 0.16,
+        "shape": "needle",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          24,
+          -86.0
+        ],
+        "destination": [
+          205.0,
+          -86.0
+        ],
+        "size": [
+          98.0,
+          60.199999999999996
+        ],
+        "damage_scale": 1.0,
+        "motif": "stitch",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      },
+      {
+        "name": "Unpicked Heart / afterbeat",
+        "at": 1.1748,
+        "tell": 0.12240000000000001,
+        "travel": 0.3128,
+        "hold": 0.2,
+        "shape": "thread",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -45.1,
+          -38.7
+        ],
+        "destination": [
+          133.25,
+          -38.7
+        ],
+        "size": [
+          65.66000000000001,
+          51.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "stitch",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the needle fan, then leave the thread pincer afterbeat; the Unpicked Heart direction locks on preparation."
+  },
+  {
+    "id": 48,
+    "name": "Porcelain Centaur",
+    "move": "Ceramic Joust",
+    "motif": "porcelain",
+    "motif_texture": "res://art/monster-motifs/048.png",
+    "motion": {
+      "stance": "centaur",
+      "windup": 0.82,
+      "commit": 0.32,
+      "recovery": 1.18,
+      "stride": 38.35,
+      "reach": 295.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 210.0,
+      "fall": 84.0,
+      "noise": 0.45,
+      "pulse": 3.125,
+      "duration": 0.44
+    },
+    "events": [
+      {
+        "name": "Ceramic Joust / release",
+        "at": 0.0,
+        "tell": 0.82,
+        "travel": 0.1472,
+        "hold": 0.16,
+        "shape": "spear",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -78.0
+        ],
+        "destination": [
+          295.0,
+          -78.0
+        ],
+        "size": [
+          114.0,
+          54.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "porcelain",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Ceramic Joust / afterbeat",
+        "at": 0.9351999999999999,
+        "tell": 0.0576,
+        "travel": 0.1472,
+        "hold": 0.2,
+        "shape": "shard",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -64.9,
+          -35.1
+        ],
+        "destination": [
+          0,
+          -35.1
+        ],
+        "size": [
+          76.38000000000001,
+          46.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "porcelain",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the spear charge, then leave the shard expand afterbeat; the Ceramic Joust direction locks on preparation."
+  },
+  {
+    "id": 49,
+    "name": "Boulder Frog",
+    "move": "Stone Throat",
+    "motif": "frog",
+    "motif_texture": "res://art/monster-motifs/049.png",
+    "motion": {
+      "stance": "frog",
+      "windup": 0.97,
+      "commit": 0.83,
+      "recovery": 1.29,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 95.0,
+      "fall": 38.0,
+      "noise": 0.45,
+      "pulse": 1.2048192771084338,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Stone Throat / release",
+        "at": 0.0,
+        "tell": 0.97,
+        "travel": 0.3818,
+        "hold": 0.16,
+        "shape": "rock",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          24,
+          -48.0
+        ],
+        "destination": [
+          245.0,
+          -48.0
+        ],
+        "size": [
+          162.0,
+          33.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "frog",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Stone Throat / afterbeat",
+        "at": 1.2688,
+        "tell": 0.14939999999999998,
+        "travel": 0.3818,
+        "hold": 0.2,
+        "shape": "tongue",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -53.9,
+          -21.6
+        ],
+        "destination": [
+          159.25,
+          -21.6
+        ],
+        "size": [
+          108.54,
+          28.799999999999997
+        ],
+        "damage_scale": 0.7,
+        "motif": "frog",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the rock lob, then leave the tongue return afterbeat; the Stone Throat direction locks on preparation."
+  },
+  {
+    "id": 50,
+    "name": "Threeheaded Hydra",
+    "move": "Three Mouth River",
+    "motif": "hydra",
+    "motif_texture": "res://art/monster-motifs/050.png",
+    "motion": {
+      "stance": "hydra",
+      "windup": 1.16,
+      "commit": 0.7,
+      "recovery": 1.42,
+      "stride": 44.2,
+      "reach": 340.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 280.0,
+      "fall": 112.0,
+      "noise": 0.45,
+      "pulse": 1.4285714285714286,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Three Mouth River / release",
+        "at": 0.0,
+        "tell": 1.16,
+        "travel": 0.322,
+        "hold": 0.16,
+        "shape": "jet",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          24,
+          -122.0
+        ],
+        "destination": [
+          340.0,
+          -122.0
+        ],
+        "size": [
+          224.0,
+          85.39999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "hydra",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      },
+      {
+        "name": "Three Mouth River / afterbeat",
+        "at": 1.412,
+        "tell": 0.126,
+        "travel": 0.322,
+        "hold": 0.2,
+        "shape": "fang",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -74.8,
+          -54.9
+        ],
+        "destination": [
+          221.0,
+          -54.9
+        ],
+        "size": [
+          150.08,
+          73.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "hydra",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Third throat",
+        "at": 1.8599999999999999,
+        "tell": 0.3976,
+        "travel": 0.5112,
+        "hold": 0.22,
+        "shape": "jet",
+        "path": "wave",
+        "origin": "target",
+        "offset": [
+          -80,
+          -115
+        ],
+        "destination": [
+          320,
+          -115
+        ],
+        "size": [
+          190,
+          60
+        ],
+        "damage_scale": 1.15,
+        "motif": "hydra",
+        "phase_only": true,
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the jet fan, then leave the fang pincer afterbeat; the Three Mouth River direction locks on preparation."
+  },
+  {
+    "id": 51,
+    "name": "Stagskull Priest",
+    "move": "Antler Benediction",
+    "motif": "stagskull",
+    "motif_texture": "res://art/monster-motifs/051.png",
+    "motion": {
+      "stance": "caster",
+      "windup": 1.04,
+      "commit": 0.72,
+      "recovery": 0.96,
+      "stride": 29.900000000000002,
+      "reach": 230.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 190.0,
+      "fall": 76.0,
+      "noise": 0.18,
+      "pulse": 1.3888888888888888,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Antler Benediction / release",
+        "at": 0.0,
+        "tell": 1.04,
+        "travel": 0.3312,
+        "hold": 0.16,
+        "shape": "bone",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -120.0
+        ],
+        "destination": [
+          230.0,
+          -120.0
+        ],
+        "size": [
+          134.0,
+          84.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "stagskull",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Antler Benediction / afterbeat",
+        "at": 1.2992,
+        "tell": 0.1296,
+        "travel": 0.3312,
+        "hold": 0.2,
+        "shape": "seal",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -50.6,
+          -54.0
+        ],
+        "destination": [
+          149.5,
+          -54.0
+        ],
+        "size": [
+          89.78,
+          72.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "stagskull",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the bone rise, then leave the seal collapse afterbeat; the Antler Benediction direction locks on preparation."
+  },
+  {
+    "id": 52,
+    "name": "Crystal Moth",
+    "move": "Prismatic Dust",
+    "motif": "moth",
+    "motif_texture": "res://art/monster-motifs/052.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.69,
+      "commit": 0.82,
+      "recovery": 0.91,
+      "stride": 33.15,
+      "reach": 255.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 670.0,
+      "fall": 268.0,
+      "noise": 0.18,
+      "pulse": 1.2195121951219512,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Prismatic Dust / release",
+        "at": 0.0,
+        "tell": 0.69,
+        "travel": 0.3772,
+        "hold": 0.16,
+        "shape": "dust",
+        "path": "spiral",
+        "origin": "actor",
+        "offset": [
+          24,
+          -132.0
+        ],
+        "destination": [
+          255.0,
+          -132.0
+        ],
+        "size": [
+          128.0,
+          92.39999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "moth",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Prismatic Dust / afterbeat",
+        "at": 0.9851999999999999,
+        "tell": 0.14759999999999998,
+        "travel": 0.3772,
+        "hold": 0.2,
+        "shape": "crystal",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -56.1,
+          -59.4
+        ],
+        "destination": [
+          165.75,
+          -59.4
+        ],
+        "size": [
+          85.76,
+          79.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "moth",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the dust spiral, then leave the crystal rain afterbeat; the Prismatic Dust direction locks on preparation."
+  },
+  {
+    "id": 53,
+    "name": "Lava Salamander",
+    "move": "Molten Footprint",
+    "motif": "salamander",
+    "motif_texture": "res://art/monster-motifs/053.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 0.77,
+      "commit": 0.59,
+      "recovery": 1.04,
+      "stride": 31.200000000000003,
+      "reach": 240.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 175.0,
+      "fall": 70.0,
+      "noise": 0.45,
+      "pulse": 1.6949152542372883,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Molten Footprint / release",
+        "at": 0.0,
+        "tell": 0.77,
+        "travel": 0.2714,
+        "hold": 0.16,
+        "shape": "ember",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -30.0
+        ],
+        "destination": [
+          240.0,
+          -30.0
+        ],
+        "size": [
+          115.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "salamander",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Molten Footprint / afterbeat",
+        "at": 0.9823999999999999,
+        "tell": 0.10619999999999999,
+        "travel": 0.2714,
+        "hold": 0.2,
+        "shape": "lava",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -52.8,
+          -13.5
+        ],
+        "destination": [
+          156.0,
+          -13.5
+        ],
+        "size": [
+          77.05000000000001,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "salamander",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the ember wave, then leave the lava rise afterbeat; the Molten Footprint direction locks on preparation."
+  },
+  {
+    "id": 54,
+    "name": "Masked Carp",
+    "move": "Scale Comet",
+    "motif": "carp",
+    "motif_texture": "res://art/monster-motifs/054.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.52,
+      "commit": 0.43,
+      "recovery": 0.78,
+      "stride": 36.14,
+      "reach": 278.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 460.0,
+      "fall": 184.0,
+      "noise": 0.18,
+      "pulse": 2.3255813953488373,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Scale Comet / release",
+        "at": 0.0,
+        "tell": 0.52,
+        "travel": 0.1978,
+        "hold": 0.16,
+        "shape": "scale",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          24,
+          -145.0
+        ],
+        "destination": [
+          278.0,
+          -145.0
+        ],
+        "size": [
+          92.0,
+          101.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "carp",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Scale Comet / afterbeat",
+        "at": 0.6748000000000001,
+        "tell": 0.0774,
+        "travel": 0.1978,
+        "hold": 0.2,
+        "shape": "ribbon",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -61.160000000000004,
+          -65.25
+        ],
+        "destination": [
+          180.70000000000002,
+          -65.25
+        ],
+        "size": [
+          61.64,
+          87.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "carp",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the scale leap, then leave the ribbon return afterbeat; the Scale Comet direction locks on preparation."
+  },
+  {
+    "id": 55,
+    "name": "Needle Lantern",
+    "move": "Wick Stitcher",
+    "motif": "lanternleg",
+    "motif_texture": "res://art/monster-motifs/055.png",
+    "motion": {
+      "stance": "spider",
+      "windup": 0.88,
+      "commit": 0.46,
+      "recovery": 1.15,
+      "stride": 25.35,
+      "reach": 195.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 340.0,
+      "fall": 136.0,
+      "noise": 0.45,
+      "pulse": 2.1739130434782608,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Wick Stitcher / release",
+        "at": 0.0,
+        "tell": 0.88,
+        "travel": 0.2116,
+        "hold": 0.16,
+        "shape": "needle",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -152.0
+        ],
+        "destination": [
+          195.0,
+          -152.0
+        ],
+        "size": [
+          105.0,
+          106.39999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "lanternleg",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Wick Stitcher / afterbeat",
+        "at": 1.0456,
+        "tell": 0.0828,
+        "travel": 0.2116,
+        "hold": 0.2,
+        "shape": "wick",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -42.9,
+          -68.4
+        ],
+        "destination": [
+          0,
+          -68.4
+        ],
+        "size": [
+          70.35000000000001,
+          91.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "lanternleg",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the needle drop, then leave the wick expand afterbeat; the Wick Stitcher direction locks on preparation."
+  },
+  {
+    "id": 56,
+    "name": "Silk Spiderling",
+    "move": "Red Thread Ambush",
+    "motif": "spiderling",
+    "motif_texture": "res://art/monster-motifs/056.png",
+    "motion": {
+      "stance": "spider",
+      "windup": 0.42,
+      "commit": 0.28,
+      "recovery": 0.67,
+      "stride": 19.5,
+      "reach": 150.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 410.0,
+      "fall": 164.0,
+      "noise": 0.45,
+      "pulse": 3.571428571428571,
+      "duration": 0.4
+    },
+    "events": [
+      {
+        "name": "Red Thread Ambush / release",
+        "at": 0.0,
+        "tell": 0.42,
+        "travel": 0.12880000000000003,
+        "hold": 0.16,
+        "shape": "thread",
+        "path": "pincer",
+        "origin": "actor",
+        "offset": [
+          24,
+          -44.0
+        ],
+        "destination": [
+          150.0,
+          -44.0
+        ],
+        "size": [
+          82.0,
+          30.799999999999997
+        ],
+        "damage_scale": 1.0,
+        "motif": "spiderling",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Red Thread Ambush / afterbeat",
+        "at": 0.5207999999999999,
+        "tell": 0.0504,
+        "travel": 0.12880000000000003,
+        "hold": 0.2,
+        "shape": "fang",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          -33.0,
+          -19.8
+        ],
+        "destination": [
+          97.5,
+          -19.8
+        ],
+        "size": [
+          54.940000000000005,
+          26.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "spiderling",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the thread pincer, then leave the fang leap afterbeat; the Red Thread Ambush direction locks on preparation."
+  },
+  {
+    "id": 57,
+    "name": "Twin Hound",
+    "move": "Two Beat Hunt",
+    "motif": "twinfang",
+    "motif_texture": "res://art/monster-motifs/057.png",
+    "motion": {
+      "stance": "wolf",
+      "windup": 0.58,
+      "commit": 0.35,
+      "recovery": 0.86,
+      "stride": 29.25,
+      "reach": 225.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 165.0,
+      "fall": 66.0,
+      "noise": 0.45,
+      "pulse": 2.857142857142857,
+      "duration": 0.47
+    },
+    "events": [
+      {
+        "name": "Two Beat Hunt / release",
+        "at": 0.0,
+        "tell": 0.58,
+        "travel": 0.161,
+        "hold": 0.16,
+        "shape": "jaw",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -53.0
+        ],
+        "destination": [
+          225.0,
+          -53.0
+        ],
+        "size": [
+          112.0,
+          37.099999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "twinfang",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Two Beat Hunt / afterbeat",
+        "at": 0.706,
+        "tell": 0.063,
+        "travel": 0.161,
+        "hold": 0.2,
+        "shape": "claw",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -49.5,
+          -23.85
+        ],
+        "destination": [
+          146.25,
+          -23.85
+        ],
+        "size": [
+          75.04,
+          31.799999999999997
+        ],
+        "damage_scale": 0.7,
+        "motif": "twinfang",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the jaw charge, then leave the claw return afterbeat; the Two Beat Hunt direction locks on preparation."
+  },
+  {
+    "id": 58,
+    "name": "Banner Armor",
+    "move": "Torn Standard",
+    "motif": "banner",
+    "motif_texture": "res://art/monster-motifs/058.png",
+    "motion": {
+      "stance": "heavy",
+      "windup": 0.95,
+      "commit": 0.56,
+      "recovery": 1.23,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 135.0,
+      "fall": 54.0,
+      "noise": 0.45,
+      "pulse": 1.7857142857142856,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Torn Standard / release",
+        "at": 0.0,
+        "tell": 0.95,
+        "travel": 0.25760000000000005,
+        "hold": 0.16,
+        "shape": "banner",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -125.0
+        ],
+        "destination": [
+          245.0,
+          -125.0
+        ],
+        "size": [
+          145.0,
+          87.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "banner",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Torn Standard / afterbeat",
+        "at": 1.1516,
+        "tell": 0.1008,
+        "travel": 0.25760000000000005,
+        "hold": 0.2,
+        "shape": "seal",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -53.9,
+          -56.25
+        ],
+        "destination": [
+          159.25,
+          -56.25
+        ],
+        "size": [
+          97.15,
+          75.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "banner",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the banner sweep, then leave the seal drop afterbeat; the Torn Standard direction locks on preparation."
+  },
+  {
+    "id": 59,
+    "name": "Paper Heron",
+    "move": "Folded Rain",
+    "motif": "paperheron",
+    "motif_texture": "res://art/monster-motifs/059.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.73,
+      "commit": 0.67,
+      "recovery": 0.84,
+      "stride": 34.84,
+      "reach": 268.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 540.0,
+      "fall": 216.0,
+      "noise": 0.45,
+      "pulse": 1.4925373134328357,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Folded Rain / release",
+        "at": 0.0,
+        "tell": 0.73,
+        "travel": 0.30820000000000003,
+        "hold": 0.16,
+        "shape": "fold",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -150.0
+        ],
+        "destination": [
+          268.0,
+          -150.0
+        ],
+        "size": [
+          80.0,
+          105.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "paperheron",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Folded Rain / afterbeat",
+        "at": 0.9712,
+        "tell": 0.1206,
+        "travel": 0.30820000000000003,
+        "hold": 0.2,
+        "shape": "feather",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -58.96,
+          -67.5
+        ],
+        "destination": [
+          174.20000000000002,
+          -67.5
+        ],
+        "size": [
+          53.6,
+          90.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "paperheron",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the fold drop, then leave the feather fan afterbeat; the Folded Rain direction locks on preparation."
+  },
+  {
+    "id": 60,
+    "name": "Shrine Cloudwhale",
+    "move": "Falling Sanctuary",
+    "motif": "whale",
+    "motif_texture": "res://art/monster-motifs/060.png",
+    "motion": {
+      "stance": "whale",
+      "windup": 1.35,
+      "commit": 1.02,
+      "recovery": 1.62,
+      "stride": 44.85,
+      "reach": 345.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 68.0,
+      "fall": 27.200000000000003,
+      "noise": 0.45,
+      "pulse": 0.9803921568627451,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Falling Sanctuary / release",
+        "at": 0.0,
+        "tell": 1.35,
+        "travel": 0.4692,
+        "hold": 0.16,
+        "shape": "cloud",
+        "path": "float",
+        "origin": "actor",
+        "offset": [
+          24,
+          -168.0
+        ],
+        "destination": [
+          345.0,
+          -168.0
+        ],
+        "size": [
+          255.0,
+          110
+        ],
+        "damage_scale": 1.0,
+        "motif": "whale",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Falling Sanctuary / afterbeat",
+        "at": 1.7172,
+        "tell": 0.18359999999999999,
+        "travel": 0.4692,
+        "hold": 0.2,
+        "shape": "shrine",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -75.9,
+          -75.60000000000001
+        ],
+        "destination": [
+          224.25,
+          -75.60000000000001
+        ],
+        "size": [
+          170.85000000000002,
+          100
+        ],
+        "damage_scale": 0.7,
+        "motif": "whale",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Shrine bellfall",
+        "at": 2.37,
+        "tell": 0.45360000000000006,
+        "travel": 0.5832,
+        "hold": 0.22,
+        "shape": "shrine",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          0,
+          -260
+        ],
+        "destination": [
+          0,
+          -60
+        ],
+        "size": [
+          210,
+          125
+        ],
+        "damage_scale": 1.15,
+        "motif": "whale",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the cloud float, then leave the shrine drop afterbeat; the Falling Sanctuary direction locks on preparation."
+  },
+  {
+    "id": 61,
+    "name": "Waterwheel Automaton",
+    "move": "Mill Race",
+    "motif": "waterwheel",
+    "motif_texture": "res://art/monster-motifs/061.png",
+    "motion": {
+      "stance": "wheel",
+      "windup": 0.91,
+      "commit": 0.63,
+      "recovery": 1.12,
+      "stride": 31.200000000000003,
+      "reach": 240.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 230.0,
+      "fall": 92.0,
+      "noise": 0.45,
+      "pulse": 1.5873015873015872,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Mill Race / release",
+        "at": 0.0,
+        "tell": 0.91,
+        "travel": 0.2898,
+        "hold": 0.16,
+        "shape": "wheel",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          24,
+          -68.0
+        ],
+        "destination": [
+          240.0,
+          -68.0
+        ],
+        "size": [
+          136.0,
+          47.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "waterwheel",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Mill Race / afterbeat",
+        "at": 1.1368,
+        "tell": 0.1134,
+        "travel": 0.2898,
+        "hold": 0.2,
+        "shape": "jet",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          -52.8,
+          -30.6
+        ],
+        "destination": [
+          156.0,
+          -30.6
+        ],
+        "size": [
+          91.12,
+          40.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "waterwheel",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the wheel orbit, then leave the jet straight afterbeat; the Mill Race direction locks on preparation."
+  },
+  {
+    "id": 62,
+    "name": "Stone Monk",
+    "move": "Six Palm Sermon",
+    "motif": "palm",
+    "motif_texture": "res://art/monster-motifs/062.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.06,
+      "commit": 0.48,
+      "recovery": 1.31,
+      "stride": 26.650000000000002,
+      "reach": 205.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 90.0,
+      "fall": 36.0,
+      "noise": 0.45,
+      "pulse": 2.0833333333333335,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Six Palm Sermon / release",
+        "at": 0.0,
+        "tell": 1.06,
+        "travel": 0.2208,
+        "hold": 0.16,
+        "shape": "palm",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          24,
+          -104.0
+        ],
+        "destination": [
+          205.0,
+          -104.0
+        ],
+        "size": [
+          166.0,
+          72.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "palm",
+        "collision_mode": "arrival",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      },
+      {
+        "name": "Six Palm Sermon / afterbeat",
+        "at": 1.2328000000000001,
+        "tell": 0.08639999999999999,
+        "travel": 0.2208,
+        "hold": 0.2,
+        "shape": "stone",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -45.1,
+          -46.800000000000004
+        ],
+        "destination": [
+          133.25,
+          -46.800000000000004
+        ],
+        "size": [
+          111.22000000000001,
+          62.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "palm",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the palm fan, then leave the stone collapse afterbeat; the Six Palm Sermon direction locks on preparation."
+  },
+  {
+    "id": 63,
+    "name": "Panda Bandit",
+    "move": "Bamboo Feint",
+    "motif": "panda",
+    "motif_texture": "res://art/monster-motifs/063.png",
+    "motion": {
+      "stance": "duelist",
+      "windup": 0.51,
+      "commit": 0.31,
+      "recovery": 0.76,
+      "stride": 22.75,
+      "reach": 175.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 315.0,
+      "fall": 126.0,
+      "noise": 0.45,
+      "pulse": 3.2258064516129035,
+      "duration": 0.43
+    },
+    "events": [
+      {
+        "name": "Bamboo Feint / release",
+        "at": 0.0,
+        "tell": 0.51,
+        "travel": 0.1426,
+        "hold": 0.16,
+        "shape": "staff",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -72.0
+        ],
+        "destination": [
+          175.0,
+          -72.0
+        ],
+        "size": [
+          118.0,
+          50.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "panda",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Bamboo Feint / afterbeat",
+        "at": 0.6216,
+        "tell": 0.055799999999999995,
+        "travel": 0.1426,
+        "hold": 0.2,
+        "shape": "leaf",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -38.5,
+          -32.4
+        ],
+        "destination": [
+          113.75,
+          -32.4
+        ],
+        "size": [
+          79.06,
+          43.199999999999996
+        ],
+        "damage_scale": 0.7,
+        "motif": "panda",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the staff sweep, then leave the leaf return afterbeat; the Bamboo Feint direction locks on preparation."
+  },
+  {
+    "id": 64,
+    "name": "Hollow Gourd",
+    "move": "Seeds of Hunger",
+    "motif": "gourd",
+    "motif_texture": "res://art/monster-motifs/064.png",
+    "motion": {
+      "stance": "mimic",
+      "windup": 0.89,
+      "commit": 0.77,
+      "recovery": 1.09,
+      "stride": 30.55,
+      "reach": 235.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 160.0,
+      "fall": 64.0,
+      "noise": 0.45,
+      "pulse": 1.2987012987012987,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Seeds of Hunger / release",
+        "at": 0.0,
+        "tell": 0.89,
+        "travel": 0.3542,
+        "hold": 0.16,
+        "shape": "seed",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          24,
+          -90.0
+        ],
+        "destination": [
+          235.0,
+          -90.0
+        ],
+        "size": [
+          132.0,
+          62.99999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "gourd",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Seeds of Hunger / afterbeat",
+        "at": 1.1672,
+        "tell": 0.1386,
+        "travel": 0.3542,
+        "hold": 0.2,
+        "shape": "vine",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -51.7,
+          -40.5
+        ],
+        "destination": [
+          152.75,
+          -40.5
+        ],
+        "size": [
+          88.44000000000001,
+          54.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "gourd",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the seed lob, then leave the vine rise afterbeat; the Seeds of Hunger direction locks on preparation."
+  },
+  {
+    "id": 65,
+    "name": "Crane Skeleton",
+    "move": "Marrow Dive",
+    "motif": "cranebone",
+    "motif_texture": "res://art/monster-motifs/065.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.67,
+      "commit": 0.36,
+      "recovery": 0.95,
+      "stride": 33.54,
+      "reach": 258.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 440.0,
+      "fall": 176.0,
+      "noise": 0.45,
+      "pulse": 2.7777777777777777,
+      "duration": 0.48
+    },
+    "events": [
+      {
+        "name": "Marrow Dive / release",
+        "at": 0.0,
+        "tell": 0.67,
+        "travel": 0.1656,
+        "hold": 0.16,
+        "shape": "beak",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -155.0
+        ],
+        "destination": [
+          258.0,
+          -155.0
+        ],
+        "size": [
+          92.0,
+          108.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "cranebone",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Marrow Dive / afterbeat",
+        "at": 0.7996000000000001,
+        "tell": 0.0648,
+        "travel": 0.1656,
+        "hold": 0.2,
+        "shape": "bone",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -56.76,
+          -69.75
+        ],
+        "destination": [
+          167.70000000000002,
+          -69.75
+        ],
+        "size": [
+          61.64,
+          93.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "cranebone",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the beak drop, then leave the bone fan afterbeat; the Marrow Dive direction locks on preparation."
+  },
+  {
+    "id": 66,
+    "name": "Ink Slug",
+    "move": "Unwritten River",
+    "motif": "ink",
+    "motif_texture": "res://art/monster-motifs/066.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 1.11,
+      "commit": 0.95,
+      "recovery": 1.18,
+      "stride": 33.800000000000004,
+      "reach": 260.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 205.0,
+      "fall": 82.0,
+      "noise": 0.45,
+      "pulse": 1.0526315789473684,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Unwritten River / release",
+        "at": 0.0,
+        "tell": 1.11,
+        "travel": 0.437,
+        "hold": 0.16,
+        "shape": "ink",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -24.0
+        ],
+        "destination": [
+          260.0,
+          -24.0
+        ],
+        "size": [
+          136.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "ink",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Unwritten River / afterbeat",
+        "at": 1.452,
+        "tell": 0.17099999999999999,
+        "travel": 0.437,
+        "hold": 0.2,
+        "shape": "brush",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -57.2,
+          -10.8
+        ],
+        "destination": [
+          169.0,
+          -10.8
+        ],
+        "size": [
+          91.12,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "ink",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the ink wave, then leave the brush rise afterbeat; the Unwritten River direction locks on preparation."
+  },
+  {
+    "id": 67,
+    "name": "Snow Owl",
+    "move": "Silent Talons",
+    "motif": "owltalons",
+    "motif_texture": "res://art/monster-motifs/067.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.49,
+      "commit": 0.38,
+      "recovery": 0.81,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 620.0,
+      "fall": 248.0,
+      "noise": 0.45,
+      "pulse": 2.6315789473684212,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Silent Talons / release",
+        "at": 0.0,
+        "tell": 0.49,
+        "travel": 0.1748,
+        "hold": 0.16,
+        "shape": "claw",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          24,
+          -138.0
+        ],
+        "destination": [
+          245.0,
+          -138.0
+        ],
+        "size": [
+          104.0,
+          96.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "owltalons",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Silent Talons / afterbeat",
+        "at": 0.6268,
+        "tell": 0.0684,
+        "travel": 0.1748,
+        "hold": 0.2,
+        "shape": "snow",
+        "path": "float",
+        "origin": "actor",
+        "offset": [
+          -53.9,
+          -62.1
+        ],
+        "destination": [
+          159.25,
+          -62.1
+        ],
+        "size": [
+          69.68,
+          82.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "owltalons",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the claw leap, then leave the snow float afterbeat; the Silent Talons direction locks on preparation."
+  },
+  {
+    "id": 68,
+    "name": "Rotten Stump",
+    "move": "Hollow Orchard",
+    "motif": "stump",
+    "motif_texture": "res://art/monster-motifs/068.png",
+    "motion": {
+      "stance": "tree",
+      "windup": 1.15,
+      "commit": 0.81,
+      "recovery": 1.34,
+      "stride": 27.95,
+      "reach": 215.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 115.0,
+      "fall": 46.0,
+      "noise": 0.45,
+      "pulse": 1.2345679012345678,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Hollow Orchard / release",
+        "at": 0.0,
+        "tell": 1.15,
+        "travel": 0.37260000000000004,
+        "hold": 0.16,
+        "shape": "root",
+        "path": "pincer",
+        "origin": "actor",
+        "offset": [
+          24,
+          -66.0
+        ],
+        "destination": [
+          215.0,
+          -66.0
+        ],
+        "size": [
+          174.0,
+          46.199999999999996
+        ],
+        "damage_scale": 1.0,
+        "motif": "stump",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Hollow Orchard / afterbeat",
+        "at": 1.4416,
+        "tell": 0.1458,
+        "travel": 0.37260000000000004,
+        "hold": 0.2,
+        "shape": "spore",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -47.3,
+          -29.7
+        ],
+        "destination": [
+          139.75,
+          -29.7
+        ],
+        "size": [
+          116.58000000000001,
+          39.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "stump",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the root pincer, then leave the spore rise afterbeat; the Hollow Orchard direction locks on preparation."
+  },
+  {
+    "id": 69,
+    "name": "Brass Diver",
+    "move": "Pressure Coffin",
+    "motif": "diver",
+    "motif_texture": "res://art/monster-motifs/069.png",
+    "motion": {
+      "stance": "heavy",
+      "windup": 0.99,
+      "commit": 0.55,
+      "recovery": 1.24,
+      "stride": 36.14,
+      "reach": 278.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 180.0,
+      "fall": 72.0,
+      "noise": 0.45,
+      "pulse": 1.8181818181818181,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Pressure Coffin / release",
+        "at": 0.0,
+        "tell": 0.99,
+        "travel": 0.25300000000000006,
+        "hold": 0.16,
+        "shape": "jet",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          24,
+          -84.0
+        ],
+        "destination": [
+          278.0,
+          -84.0
+        ],
+        "size": [
+          128.0,
+          58.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "diver",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Pressure Coffin / afterbeat",
+        "at": 1.188,
+        "tell": 0.099,
+        "travel": 0.25300000000000006,
+        "hold": 0.2,
+        "shape": "bubble",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -61.160000000000004,
+          -37.800000000000004
+        ],
+        "destination": [
+          180.70000000000002,
+          -37.800000000000004
+        ],
+        "size": [
+          85.76,
+          50.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "diver",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the jet straight, then leave the bubble collapse afterbeat; the Pressure Coffin direction locks on preparation."
+  },
+  {
+    "id": 70,
+    "name": "Mirror Serpent",
+    "move": "Reflected Wound",
+    "motif": "mirror",
+    "motif_texture": "res://art/monster-motifs/070.png",
+    "motion": {
+      "stance": "serpent",
+      "windup": 1.19,
+      "commit": 0.92,
+      "recovery": 1.45,
+      "stride": 40.95,
+      "reach": 315.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 460.0,
+      "fall": 184.0,
+      "noise": 0.18,
+      "pulse": 1.0869565217391304,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Reflected Wound / release",
+        "at": 0.0,
+        "tell": 1.19,
+        "travel": 0.4232,
+        "hold": 0.16,
+        "shape": "mirror",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          24,
+          -118.0
+        ],
+        "destination": [
+          315.0,
+          -118.0
+        ],
+        "size": [
+          200.0,
+          82.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "mirror",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Reflected Wound / afterbeat",
+        "at": 1.5211999999999999,
+        "tell": 0.1656,
+        "travel": 0.4232,
+        "hold": 0.2,
+        "shape": "blade",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -69.3,
+          -53.1
+        ],
+        "destination": [
+          204.75,
+          -53.1
+        ],
+        "size": [
+          134.0,
+          70.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "mirror",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Borrowed wound",
+        "at": 2.11,
+        "tell": 0.406,
+        "travel": 0.522,
+        "hold": 0.22,
+        "shape": "mirror",
+        "path": "return",
+        "origin": "target",
+        "offset": [
+          210,
+          -80
+        ],
+        "destination": [
+          -130,
+          -80
+        ],
+        "size": [
+          155,
+          110
+        ],
+        "damage_scale": 1.15,
+        "motif": "mirror",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the mirror return, then leave the blade pincer afterbeat; the Reflected Wound direction locks on preparation."
+  },
+  {
+    "id": 71,
+    "name": "Mud Catfish",
+    "move": "Silt Swallow",
+    "motif": "catfish",
+    "motif_texture": "res://art/monster-motifs/071.png",
+    "motion": {
+      "stance": "fish",
+      "windup": 0.88,
+      "commit": 0.7,
+      "recovery": 1.07,
+      "stride": 29.25,
+      "reach": 225.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 125.0,
+      "fall": 50.0,
+      "noise": 0.45,
+      "pulse": 1.4285714285714286,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Silt Swallow / release",
+        "at": 0.0,
+        "tell": 0.88,
+        "travel": 0.322,
+        "hold": 0.16,
+        "shape": "mud",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          24,
+          -40.0
+        ],
+        "destination": [
+          225.0,
+          -40.0
+        ],
+        "size": [
+          148.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "catfish",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Silt Swallow / afterbeat",
+        "at": 1.1320000000000001,
+        "tell": 0.126,
+        "travel": 0.322,
+        "hold": 0.2,
+        "shape": "whisker",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          -49.5,
+          -18.0
+        ],
+        "destination": [
+          146.25,
+          -18.0
+        ],
+        "size": [
+          99.16000000000001,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "catfish",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the mud lob, then leave the whisker sweep afterbeat; the Silt Swallow direction locks on preparation."
+  },
+  {
+    "id": 72,
+    "name": "Blade Fan",
+    "move": "Tenfold Breeze",
+    "motif": "fanblade",
+    "motif_texture": "res://art/monster-motifs/072.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.72,
+      "commit": 0.51,
+      "recovery": 0.93,
+      "stride": 33.15,
+      "reach": 255.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 560.0,
+      "fall": 224.0,
+      "noise": 0.18,
+      "pulse": 1.9607843137254901,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Tenfold Breeze / release",
+        "at": 0.0,
+        "tell": 0.72,
+        "travel": 0.2346,
+        "hold": 0.16,
+        "shape": "blade",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          24,
+          -108.0
+        ],
+        "destination": [
+          255.0,
+          -108.0
+        ],
+        "size": [
+          126.0,
+          75.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "fanblade",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      },
+      {
+        "name": "Tenfold Breeze / afterbeat",
+        "at": 0.9036,
+        "tell": 0.09179999999999999,
+        "travel": 0.2346,
+        "hold": 0.2,
+        "shape": "rib",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          -56.1,
+          -48.6
+        ],
+        "destination": [
+          165.75,
+          -48.6
+        ],
+        "size": [
+          84.42,
+          64.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "fanblade",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the blade fan, then leave the rib orbit afterbeat; the Tenfold Breeze direction locks on preparation."
+  },
+  {
+    "id": 73,
+    "name": "Cursed Swordrack",
+    "move": "Arsenal Wake",
+    "motif": "swordrack",
+    "motif_texture": "res://art/monster-motifs/073.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.07,
+      "commit": 0.74,
+      "recovery": 1.22,
+      "stride": 35.75,
+      "reach": 275.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 240.0,
+      "fall": 96.0,
+      "noise": 0.45,
+      "pulse": 1.3513513513513513,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Arsenal Wake / release",
+        "at": 0.0,
+        "tell": 1.07,
+        "travel": 0.34040000000000004,
+        "hold": 0.16,
+        "shape": "sword",
+        "path": "rain",
+        "origin": "actor",
+        "offset": [
+          24,
+          -138.0
+        ],
+        "destination": [
+          275.0,
+          -138.0
+        ],
+        "size": [
+          158.0,
+          96.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "swordrack",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Arsenal Wake / afterbeat",
+        "at": 1.3364,
+        "tell": 0.13319999999999999,
+        "travel": 0.34040000000000004,
+        "hold": 0.2,
+        "shape": "rack",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -60.5,
+          -62.1
+        ],
+        "destination": [
+          178.75,
+          -62.1
+        ],
+        "size": [
+          105.86,
+          82.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "swordrack",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the sword rain, then leave the rack rise afterbeat; the Arsenal Wake direction locks on preparation."
+  },
+  {
+    "id": 74,
+    "name": "Goat Wrestler",
+    "move": "Cliff Breaker",
+    "motif": "goathorn",
+    "motif_texture": "res://art/monster-motifs/074.png",
+    "motion": {
+      "stance": "heavy",
+      "windup": 0.93,
+      "commit": 0.42,
+      "recovery": 1.36,
+      "stride": 27.3,
+      "reach": 210.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 105.0,
+      "fall": 42.0,
+      "noise": 0.45,
+      "pulse": 2.380952380952381,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Cliff Breaker / release",
+        "at": 0.0,
+        "tell": 0.93,
+        "travel": 0.1932,
+        "hold": 0.16,
+        "shape": "horn",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -72.0
+        ],
+        "destination": [
+          210.0,
+          -72.0
+        ],
+        "size": [
+          142.0,
+          50.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "goathorn",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Cliff Breaker / afterbeat",
+        "at": 1.0812,
+        "tell": 0.0756,
+        "travel": 0.1932,
+        "hold": 0.2,
+        "shape": "fist",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -46.2,
+          -32.4
+        ],
+        "destination": [
+          136.5,
+          -32.4
+        ],
+        "size": [
+          95.14,
+          43.199999999999996
+        ],
+        "damage_scale": 0.7,
+        "motif": "goathorn",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the horn charge, then leave the fist drop afterbeat; the Cliff Breaker direction locks on preparation."
+  },
+  {
+    "id": 75,
+    "name": "Lotus Spirit",
+    "move": "Petal Prison",
+    "motif": "lotus",
+    "motif_texture": "res://art/monster-motifs/075.png",
+    "motion": {
+      "stance": "caster",
+      "windup": 1.02,
+      "commit": 0.9,
+      "recovery": 1.1,
+      "stride": 29.25,
+      "reach": 225.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 530.0,
+      "fall": 212.0,
+      "noise": 0.18,
+      "pulse": 1.1111111111111112,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Petal Prison / release",
+        "at": 0.0,
+        "tell": 1.02,
+        "travel": 0.41400000000000003,
+        "hold": 0.16,
+        "shape": "petal",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          24,
+          -106.0
+        ],
+        "destination": [
+          225.0,
+          -106.0
+        ],
+        "size": [
+          160.0,
+          74.19999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "lotus",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Petal Prison / afterbeat",
+        "at": 1.344,
+        "tell": 0.162,
+        "travel": 0.41400000000000003,
+        "hold": 0.2,
+        "shape": "stem",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -49.5,
+          -47.7
+        ],
+        "destination": [
+          146.25,
+          -47.7
+        ],
+        "size": [
+          107.2,
+          63.599999999999994
+        ],
+        "damage_scale": 0.7,
+        "motif": "lotus",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the petal orbit, then leave the stem collapse afterbeat; the Petal Prison direction locks on preparation."
+  },
+  {
+    "id": 76,
+    "name": "Volcano Snail",
+    "move": "Cinder Wake",
+    "motif": "snail",
+    "motif_texture": "res://art/monster-motifs/076.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 1.24,
+      "commit": 0.88,
+      "recovery": 1.42,
+      "stride": 32.5,
+      "reach": 250.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 78.0,
+      "fall": 31.200000000000003,
+      "noise": 0.45,
+      "pulse": 1.1363636363636365,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Cinder Wake / release",
+        "at": 0.0,
+        "tell": 1.24,
+        "travel": 0.4048,
+        "hold": 0.16,
+        "shape": "lava",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -35.0
+        ],
+        "destination": [
+          250.0,
+          -35.0
+        ],
+        "size": [
+          184.0,
+          28
+        ],
+        "damage_scale": 1.0,
+        "motif": "snail",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Cinder Wake / afterbeat",
+        "at": 1.5568,
+        "tell": 0.15839999999999999,
+        "travel": 0.4048,
+        "hold": 0.2,
+        "shape": "shell",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          -55.0,
+          -15.75
+        ],
+        "destination": [
+          162.5,
+          -15.75
+        ],
+        "size": [
+          123.28,
+          25
+        ],
+        "damage_scale": 0.7,
+        "motif": "snail",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the lava wave, then leave the shell lob afterbeat; the Cinder Wake direction locks on preparation."
+  },
+  {
+    "id": 77,
+    "name": "Silk Marionette",
+    "move": "Puppet Cross",
+    "motif": "puppet",
+    "motif_texture": "res://art/monster-motifs/077.png",
+    "motion": {
+      "stance": "doll",
+      "windup": 0.84,
+      "commit": 0.65,
+      "recovery": 1.08,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 350.0,
+      "fall": 140.0,
+      "noise": 0.45,
+      "pulse": 1.5384615384615383,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Puppet Cross / release",
+        "at": 0.0,
+        "tell": 0.84,
+        "travel": 0.29900000000000004,
+        "hold": 0.16,
+        "shape": "thread",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -142.0
+        ],
+        "destination": [
+          245.0,
+          -142.0
+        ],
+        "size": [
+          118.0,
+          99.39999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "puppet",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Puppet Cross / afterbeat",
+        "at": 1.0739999999999998,
+        "tell": 0.11699999999999999,
+        "travel": 0.29900000000000004,
+        "hold": 0.2,
+        "shape": "blade",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -53.9,
+          -63.9
+        ],
+        "destination": [
+          159.25,
+          -63.9
+        ],
+        "size": [
+          79.06,
+          85.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "puppet",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the thread drop, then leave the blade pincer afterbeat; the Puppet Cross direction locks on preparation."
+  },
+  {
+    "id": 78,
+    "name": "Samurai Minotaur",
+    "move": "Horned Execution",
+    "motif": "minotaur",
+    "motif_texture": "res://art/monster-motifs/078.png",
+    "motion": {
+      "stance": "heavy",
+      "windup": 1.13,
+      "commit": 0.4,
+      "recovery": 1.47,
+      "stride": 34.45,
+      "reach": 265.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 95.0,
+      "fall": 38.0,
+      "noise": 0.45,
+      "pulse": 2.5,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Horned Execution / release",
+        "at": 0.0,
+        "tell": 1.13,
+        "travel": 0.18400000000000002,
+        "hold": 0.16,
+        "shape": "axe",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -98.0
+        ],
+        "destination": [
+          265.0,
+          -98.0
+        ],
+        "size": [
+          186.0,
+          68.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "minotaur",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Horned Execution / afterbeat",
+        "at": 1.2739999999999998,
+        "tell": 0.072,
+        "travel": 0.18400000000000002,
+        "hold": 0.2,
+        "shape": "horn",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          -58.3,
+          -44.1
+        ],
+        "destination": [
+          172.25,
+          -44.1
+        ],
+        "size": [
+          124.62,
+          58.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "minotaur",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the axe sweep, then leave the horn charge afterbeat; the Horned Execution direction locks on preparation."
+  },
+  {
+    "id": 79,
+    "name": "Raven Executioner",
+    "move": "Gallows Feather",
+    "motif": "executioner",
+    "motif_texture": "res://art/monster-motifs/079.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 0.96,
+      "commit": 0.53,
+      "recovery": 1.21,
+      "stride": 35.75,
+      "reach": 275.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 220.0,
+      "fall": 88.0,
+      "noise": 0.45,
+      "pulse": 1.8867924528301885,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Gallows Feather / release",
+        "at": 0.0,
+        "tell": 0.96,
+        "travel": 0.24380000000000002,
+        "hold": 0.16,
+        "shape": "axe",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -135.0
+        ],
+        "destination": [
+          275.0,
+          -135.0
+        ],
+        "size": [
+          152.0,
+          94.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "executioner",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Gallows Feather / afterbeat",
+        "at": 1.1508,
+        "tell": 0.0954,
+        "travel": 0.24380000000000002,
+        "hold": 0.2,
+        "shape": "feather",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -60.5,
+          -60.75
+        ],
+        "destination": [
+          178.75,
+          -60.75
+        ],
+        "size": [
+          101.84,
+          81.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "executioner",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the axe drop, then leave the feather return afterbeat; the Gallows Feather direction locks on preparation."
+  },
+  {
+    "id": 80,
+    "name": "Cathedral Crab",
+    "move": "Bells Below",
+    "motif": "cathedral",
+    "motif_texture": "res://art/monster-motifs/080.png",
+    "motion": {
+      "stance": "crab",
+      "windup": 1.32,
+      "commit": 0.82,
+      "recovery": 1.6,
+      "stride": 42.25,
+      "reach": 325.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 70.0,
+      "fall": 28.0,
+      "noise": 0.45,
+      "pulse": 1.2195121951219512,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Bells Below / release",
+        "at": 0.0,
+        "tell": 1.32,
+        "travel": 0.3772,
+        "hold": 0.16,
+        "shape": "claw",
+        "path": "pincer",
+        "origin": "actor",
+        "offset": [
+          24,
+          -95.0
+        ],
+        "destination": [
+          325.0,
+          -95.0
+        ],
+        "size": [
+          248.0,
+          66.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "cathedral",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Bells Below / afterbeat",
+        "at": 1.6152,
+        "tell": 0.14759999999999998,
+        "travel": 0.3772,
+        "hold": 0.2,
+        "shape": "bell",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -71.5,
+          -42.75
+        ],
+        "destination": [
+          0,
+          -42.75
+        ],
+        "size": [
+          166.16,
+          57.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "cathedral",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Nave collapse",
+        "at": 2.14,
+        "tell": 0.44800000000000006,
+        "travel": 0.576,
+        "hold": 0.22,
+        "shape": "bell",
+        "path": "rise",
+        "origin": "target",
+        "offset": [
+          0,
+          0
+        ],
+        "destination": [
+          0,
+          -170
+        ],
+        "size": [
+          260,
+          150
+        ],
+        "damage_scale": 1.15,
+        "motif": "cathedral",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the claw pincer, then leave the bell expand afterbeat; the Bells Below direction locks on preparation."
+  },
+  {
+    "id": 81,
+    "name": "Jellyfish Monk",
+    "move": "Luminous Sutra",
+    "motif": "jellyfish",
+    "motif_texture": "res://art/monster-motifs/081.png",
+    "motion": {
+      "stance": "jelly",
+      "windup": 0.98,
+      "commit": 0.87,
+      "recovery": 1.14,
+      "stride": 31.200000000000003,
+      "reach": 240.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 420.0,
+      "fall": 168.0,
+      "noise": 0.45,
+      "pulse": 1.1494252873563218,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Luminous Sutra / release",
+        "at": 0.0,
+        "tell": 0.98,
+        "travel": 0.4002,
+        "hold": 0.16,
+        "shape": "ring",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -120.0
+        ],
+        "destination": [
+          0,
+          -120.0
+        ],
+        "size": [
+          150.0,
+          84.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "jellyfish",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Luminous Sutra / afterbeat",
+        "at": 1.2932,
+        "tell": 0.1566,
+        "travel": 0.4002,
+        "hold": 0.2,
+        "shape": "tendril",
+        "path": "drop",
+        "origin": "target",
+        "offset": [
+          -52.8,
+          -54.0
+        ],
+        "destination": [
+          156.0,
+          -54.0
+        ],
+        "size": [
+          100.5,
+          72.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "jellyfish",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the ring expand, then leave the tendril drop afterbeat; the Luminous Sutra direction locks on preparation."
+  },
+  {
+    "id": 82,
+    "name": "Cicada Warrior",
+    "move": "Summer Split",
+    "motif": "cicada",
+    "motif_texture": "res://art/monster-motifs/082.png",
+    "motion": {
+      "stance": "mantis",
+      "windup": 0.57,
+      "commit": 0.3,
+      "recovery": 0.79,
+      "stride": 28.6,
+      "reach": 220.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 690.0,
+      "fall": 276.0,
+      "noise": 0.45,
+      "pulse": 3.3333333333333335,
+      "duration": 0.42
+    },
+    "events": [
+      {
+        "name": "Summer Split / release",
+        "at": 0.0,
+        "tell": 0.57,
+        "travel": 0.138,
+        "hold": 0.16,
+        "shape": "wing",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -95.0
+        ],
+        "destination": [
+          220.0,
+          -95.0
+        ],
+        "size": [
+          96.0,
+          66.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "cicada",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Summer Split / afterbeat",
+        "at": 0.6779999999999999,
+        "tell": 0.054,
+        "travel": 0.138,
+        "hold": 0.2,
+        "shape": "needle",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          -48.4,
+          -42.75
+        ],
+        "destination": [
+          143.0,
+          -42.75
+        ],
+        "size": [
+          64.32000000000001,
+          57.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "cicada",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the wing sweep, then leave the needle straight afterbeat; the Summer Split direction locks on preparation."
+  },
+  {
+    "id": 83,
+    "name": "Bronze Cauldron",
+    "move": "Bitter Feast",
+    "motif": "cauldron",
+    "motif_texture": "res://art/monster-motifs/083.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.1,
+      "commit": 0.82,
+      "recovery": 1.3,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 120.0,
+      "fall": 48.0,
+      "noise": 0.45,
+      "pulse": 1.2195121951219512,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Bitter Feast / release",
+        "at": 0.0,
+        "tell": 1.1,
+        "travel": 0.3772,
+        "hold": 0.16,
+        "shape": "broth",
+        "path": "lob",
+        "origin": "actor",
+        "offset": [
+          24,
+          -73.0
+        ],
+        "destination": [
+          245.0,
+          -73.0
+        ],
+        "size": [
+          178.0,
+          51.099999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "cauldron",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Bitter Feast / afterbeat",
+        "at": 1.3952,
+        "tell": 0.14759999999999998,
+        "travel": 0.3772,
+        "hold": 0.2,
+        "shape": "steam",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -53.9,
+          -32.85
+        ],
+        "destination": [
+          159.25,
+          -32.85
+        ],
+        "size": [
+          119.26,
+          43.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "cauldron",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the broth lob, then leave the steam rise afterbeat; the Bitter Feast direction locks on preparation."
+  },
+  {
+    "id": 84,
+    "name": "Sword Antelope",
+    "move": "Steel Migration",
+    "motif": "swordantler",
+    "motif_texture": "res://art/monster-motifs/084.png",
+    "motion": {
+      "stance": "deer",
+      "windup": 0.78,
+      "commit": 0.34,
+      "recovery": 1.02,
+      "stride": 39.65,
+      "reach": 305.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 310.0,
+      "fall": 124.0,
+      "noise": 0.45,
+      "pulse": 2.941176470588235,
+      "duration": 0.46
+    },
+    "events": [
+      {
+        "name": "Steel Migration / release",
+        "at": 0.0,
+        "tell": 0.78,
+        "travel": 0.1564,
+        "hold": 0.16,
+        "shape": "antler",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -88.0
+        ],
+        "destination": [
+          305.0,
+          -88.0
+        ],
+        "size": [
+          116.0,
+          61.599999999999994
+        ],
+        "damage_scale": 1.0,
+        "motif": "swordantler",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Steel Migration / afterbeat",
+        "at": 0.9024000000000001,
+        "tell": 0.061200000000000004,
+        "travel": 0.1564,
+        "hold": 0.2,
+        "shape": "sword",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -67.1,
+          -39.6
+        ],
+        "destination": [
+          198.25,
+          -39.6
+        ],
+        "size": [
+          77.72,
+          52.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "swordantler",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the antler charge, then leave the sword fan afterbeat; the Steel Migration direction locks on preparation."
+  },
+  {
+    "id": 85,
+    "name": "Koi Dragon",
+    "move": "River Crown",
+    "motif": "koidragon",
+    "motif_texture": "res://art/monster-motifs/085.png",
+    "motion": {
+      "stance": "serpent",
+      "windup": 0.92,
+      "commit": 0.68,
+      "recovery": 1.15,
+      "stride": 38.35,
+      "reach": 295.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 250.0,
+      "fall": 100.0,
+      "noise": 0.18,
+      "pulse": 1.4705882352941175,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "River Crown / release",
+        "at": 0.0,
+        "tell": 0.92,
+        "travel": 0.3128,
+        "hold": 0.16,
+        "shape": "wave",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -110.0
+        ],
+        "destination": [
+          295.0,
+          -110.0
+        ],
+        "size": [
+          172.0,
+          77.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "koidragon",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "River Crown / afterbeat",
+        "at": 1.1648,
+        "tell": 0.12240000000000001,
+        "travel": 0.3128,
+        "hold": 0.2,
+        "shape": "scale",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -64.9,
+          -49.5
+        ],
+        "destination": [
+          191.75,
+          -49.5
+        ],
+        "size": [
+          115.24000000000001,
+          66.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "koidragon",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the wave sweep, then leave the scale rain afterbeat; the River Crown direction locks on preparation."
+  },
+  {
+    "id": 86,
+    "name": "Mimic Chest",
+    "move": "Interest Due",
+    "motif": "mimic",
+    "motif_texture": "res://art/monster-motifs/086.png",
+    "motion": {
+      "stance": "mimic",
+      "windup": 0.86,
+      "commit": 0.37,
+      "recovery": 1.25,
+      "stride": 21.84,
+      "reach": 168.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 175.0,
+      "fall": 70.0,
+      "noise": 0.45,
+      "pulse": 2.7027027027027026,
+      "duration": 0.49
+    },
+    "events": [
+      {
+        "name": "Interest Due / release",
+        "at": 0.0,
+        "tell": 0.86,
+        "travel": 0.17020000000000002,
+        "hold": 0.16,
+        "shape": "jaw",
+        "path": "collapse",
+        "origin": "actor",
+        "offset": [
+          24,
+          -62.0
+        ],
+        "destination": [
+          168.0,
+          -62.0
+        ],
+        "size": [
+          154.0,
+          43.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "mimic",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Interest Due / afterbeat",
+        "at": 0.9932,
+        "tell": 0.06659999999999999,
+        "travel": 0.17020000000000002,
+        "hold": 0.2,
+        "shape": "coin",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -36.96,
+          -27.900000000000002
+        ],
+        "destination": [
+          109.2,
+          -27.900000000000002
+        ],
+        "size": [
+          103.18,
+          37.199999999999996
+        ],
+        "damage_scale": 0.7,
+        "motif": "mimic",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the jaw collapse, then leave the coin fan afterbeat; the Interest Due direction locks on preparation."
+  },
+  {
+    "id": 87,
+    "name": "Bone Mantis",
+    "move": "Marrow Scissors",
+    "motif": "bonemantis",
+    "motif_texture": "res://art/monster-motifs/087.png",
+    "motion": {
+      "stance": "mantis",
+      "windup": 0.65,
+      "commit": 0.33,
+      "recovery": 0.9,
+      "stride": 28.34,
+      "reach": 218.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 390.0,
+      "fall": 156.0,
+      "noise": 0.45,
+      "pulse": 3.0303030303030303,
+      "duration": 0.45
+    },
+    "events": [
+      {
+        "name": "Marrow Scissors / release",
+        "at": 0.0,
+        "tell": 0.65,
+        "travel": 0.15180000000000002,
+        "hold": 0.16,
+        "shape": "sickle",
+        "path": "pincer",
+        "origin": "actor",
+        "offset": [
+          24,
+          -102.0
+        ],
+        "destination": [
+          218.0,
+          -102.0
+        ],
+        "size": [
+          108.0,
+          71.39999999999999
+        ],
+        "damage_scale": 1.0,
+        "motif": "bonemantis",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Marrow Scissors / afterbeat",
+        "at": 0.7688,
+        "tell": 0.0594,
+        "travel": 0.15180000000000002,
+        "hold": 0.2,
+        "shape": "bone",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -47.96,
+          -45.9
+        ],
+        "destination": [
+          141.70000000000002,
+          -45.9
+        ],
+        "size": [
+          72.36,
+          61.199999999999996
+        ],
+        "damage_scale": 0.7,
+        "motif": "bonemantis",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the sickle pincer, then leave the bone return afterbeat; the Marrow Scissors direction locks on preparation."
+  },
+  {
+    "id": 88,
+    "name": "Flute Spirit",
+    "move": "Breath of Bamboo",
+    "motif": "flute",
+    "motif_texture": "res://art/monster-motifs/088.png",
+    "motion": {
+      "stance": "caster",
+      "windup": 1.09,
+      "commit": 0.85,
+      "recovery": 1.07,
+      "stride": 37.050000000000004,
+      "reach": 285.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 740.0,
+      "fall": 296.0,
+      "noise": 0.18,
+      "pulse": 1.1764705882352942,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Breath of Bamboo / release",
+        "at": 0.0,
+        "tell": 1.09,
+        "travel": 0.391,
+        "hold": 0.16,
+        "shape": "note",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -98.0
+        ],
+        "destination": [
+          285.0,
+          -98.0
+        ],
+        "size": [
+          124.0,
+          68.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "flute",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Breath of Bamboo / afterbeat",
+        "at": 1.3960000000000001,
+        "tell": 0.153,
+        "travel": 0.391,
+        "hold": 0.2,
+        "shape": "bamboo",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          -62.7,
+          -44.1
+        ],
+        "destination": [
+          185.25,
+          -44.1
+        ],
+        "size": [
+          83.08,
+          58.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "flute",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the note wave, then leave the bamboo rise afterbeat; the Breath of Bamboo direction locks on preparation."
+  },
+  {
+    "id": 89,
+    "name": "Tiger Demon",
+    "move": "Imperial Rake",
+    "motif": "tiger",
+    "motif_texture": "res://art/monster-motifs/089.png",
+    "motion": {
+      "stance": "wolf",
+      "windup": 0.63,
+      "commit": 0.38,
+      "recovery": 1.01,
+      "stride": 32.5,
+      "reach": 250.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 145.0,
+      "fall": 58.0,
+      "noise": 0.45,
+      "pulse": 2.6315789473684212,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Imperial Rake / release",
+        "at": 0.0,
+        "tell": 0.63,
+        "travel": 0.1748,
+        "hold": 0.16,
+        "shape": "claw",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -66.0
+        ],
+        "destination": [
+          250.0,
+          -66.0
+        ],
+        "size": [
+          130.0,
+          46.199999999999996
+        ],
+        "damage_scale": 1.0,
+        "motif": "tiger",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Imperial Rake / afterbeat",
+        "at": 0.7668,
+        "tell": 0.0684,
+        "travel": 0.1748,
+        "hold": 0.2,
+        "shape": "seal",
+        "path": "leap",
+        "origin": "actor",
+        "offset": [
+          -55.0,
+          -29.7
+        ],
+        "destination": [
+          162.5,
+          -29.7
+        ],
+        "size": [
+          87.10000000000001,
+          39.6
+        ],
+        "damage_scale": 0.7,
+        "motif": "tiger",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the claw charge, then leave the seal leap afterbeat; the Imperial Rake direction locks on preparation."
+  },
+  {
+    "id": 90,
+    "name": "Eclipse Phoenix",
+    "move": "Black Sun Rebirth",
+    "motif": "phoenix",
+    "motif_texture": "res://art/monster-motifs/090.png",
+    "motion": {
+      "stance": "bird",
+      "windup": 1.38,
+      "commit": 0.96,
+      "recovery": 1.68,
+      "stride": 45.5,
+      "reach": 350.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 290.0,
+      "fall": 116.0,
+      "noise": 0.45,
+      "pulse": 1.0416666666666667,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Black Sun Rebirth / release",
+        "at": 0.0,
+        "tell": 1.38,
+        "travel": 0.4416,
+        "hold": 0.16,
+        "shape": "sun",
+        "path": "collapse",
+        "origin": "actor",
+        "offset": [
+          24,
+          -165.0
+        ],
+        "destination": [
+          350.0,
+          -165.0
+        ],
+        "size": [
+          260.0,
+          110
+        ],
+        "damage_scale": 1.0,
+        "motif": "phoenix",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Black Sun Rebirth / afterbeat",
+        "at": 1.7255999999999998,
+        "tell": 0.17279999999999998,
+        "travel": 0.4416,
+        "hold": 0.2,
+        "shape": "feather",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -77.0,
+          -74.25
+        ],
+        "destination": [
+          0,
+          -74.25
+        ],
+        "size": [
+          174.20000000000002,
+          99.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "phoenix",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Eclipse birth",
+        "at": 2.34,
+        "tell": 0.47040000000000004,
+        "travel": 0.6048,
+        "hold": 0.22,
+        "shape": "sun",
+        "path": "expand",
+        "origin": "target",
+        "offset": [
+          0,
+          -140
+        ],
+        "destination": [
+          0,
+          -140
+        ],
+        "size": [
+          280,
+          210
+        ],
+        "damage_scale": 1.15,
+        "motif": "phoenix",
+        "phase_only": true,
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the sun collapse, then leave the feather expand afterbeat; the Black Sun Rebirth direction locks on preparation."
+  },
+  {
+    "id": 91,
+    "name": "Plague Mosquito",
+    "move": "Blood Tithe",
+    "motif": "mosquito",
+    "motif_texture": "res://art/monster-motifs/091.png",
+    "motion": {
+      "stance": "flyer",
+      "windup": 0.54,
+      "commit": 0.29,
+      "recovery": 0.82,
+      "stride": 36.14,
+      "reach": 278.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 610.0,
+      "fall": 244.0,
+      "noise": 0.18,
+      "pulse": 3.4482758620689657,
+      "duration": 0.41
+    },
+    "events": [
+      {
+        "name": "Blood Tithe / release",
+        "at": 0.0,
+        "tell": 0.54,
+        "travel": 0.1334,
+        "hold": 0.16,
+        "shape": "needle",
+        "path": "straight",
+        "origin": "actor",
+        "offset": [
+          24,
+          -118.0
+        ],
+        "destination": [
+          278.0,
+          -118.0
+        ],
+        "size": [
+          62.0,
+          82.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "mosquito",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Blood Tithe / afterbeat",
+        "at": 0.6444000000000001,
+        "tell": 0.052199999999999996,
+        "travel": 0.1334,
+        "hold": 0.2,
+        "shape": "blood",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -61.160000000000004,
+          -53.1
+        ],
+        "destination": [
+          180.70000000000002,
+          -53.1
+        ],
+        "size": [
+          41.54,
+          70.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "mosquito",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the needle straight, then leave the blood return afterbeat; the Blood Tithe direction locks on preparation."
+  },
+  {
+    "id": 92,
+    "name": "Stone Elephant",
+    "move": "Temple Footfall",
+    "motif": "elephant",
+    "motif_texture": "res://art/monster-motifs/092.png",
+    "motion": {
+      "stance": "heavy",
+      "windup": 1.22,
+      "commit": 0.58,
+      "recovery": 1.53,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 65.0,
+      "fall": 26.0,
+      "noise": 0.45,
+      "pulse": 1.7241379310344829,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Temple Footfall / release",
+        "at": 0.0,
+        "tell": 1.22,
+        "travel": 0.2668,
+        "hold": 0.16,
+        "shape": "foot",
+        "path": "drop",
+        "origin": "actor",
+        "offset": [
+          24,
+          -120.0
+        ],
+        "destination": [
+          245.0,
+          -120.0
+        ],
+        "size": [
+          218.0,
+          84.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "elephant",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Temple Footfall / afterbeat",
+        "at": 1.4287999999999998,
+        "tell": 0.10439999999999999,
+        "travel": 0.2668,
+        "hold": 0.2,
+        "shape": "tusk",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          -53.9,
+          -54.0
+        ],
+        "destination": [
+          159.25,
+          -54.0
+        ],
+        "size": [
+          146.06,
+          72.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "elephant",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the foot drop, then leave the tusk sweep afterbeat; the Temple Footfall direction locks on preparation."
+  },
+  {
+    "id": 93,
+    "name": "Scroll Serpent",
+    "move": "Sentence Without End",
+    "motif": "scroll",
+    "motif_texture": "res://art/monster-motifs/093.png",
+    "motion": {
+      "stance": "serpent",
+      "windup": 1.03,
+      "commit": 0.93,
+      "recovery": 1.17,
+      "stride": 37.7,
+      "reach": 290.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 330.0,
+      "fall": 132.0,
+      "noise": 0.18,
+      "pulse": 1.075268817204301,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Sentence Without End / release",
+        "at": 0.0,
+        "tell": 1.03,
+        "travel": 0.4278,
+        "hold": 0.16,
+        "shape": "script",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -104.0
+        ],
+        "destination": [
+          290.0,
+          -104.0
+        ],
+        "size": [
+          146.0,
+          72.8
+        ],
+        "damage_scale": 1.0,
+        "motif": "scroll",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Sentence Without End / afterbeat",
+        "at": 1.3648,
+        "tell": 0.1674,
+        "travel": 0.4278,
+        "hold": 0.2,
+        "shape": "seal",
+        "path": "collapse",
+        "origin": "target",
+        "offset": [
+          -63.8,
+          -46.800000000000004
+        ],
+        "destination": [
+          188.5,
+          -46.800000000000004
+        ],
+        "size": [
+          97.82000000000001,
+          62.4
+        ],
+        "damage_scale": 0.7,
+        "motif": "scroll",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the script wave, then leave the seal collapse afterbeat; the Sentence Without End direction locks on preparation."
+  },
+  {
+    "id": 94,
+    "name": "Armored Mole",
+    "move": "Buried Ambush",
+    "motif": "mole",
+    "motif_texture": "res://art/monster-motifs/094.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 0.91,
+      "commit": 0.44,
+      "recovery": 1.26,
+      "stride": 26.650000000000002,
+      "reach": 205.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 150.0,
+      "fall": 60.0,
+      "noise": 0.45,
+      "pulse": 2.272727272727273,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Buried Ambush / release",
+        "at": 0.0,
+        "tell": 0.91,
+        "travel": 0.2024,
+        "hold": 0.16,
+        "shape": "drill",
+        "path": "rise",
+        "origin": "actor",
+        "offset": [
+          24,
+          -50.0
+        ],
+        "destination": [
+          205.0,
+          -50.0
+        ],
+        "size": [
+          126.0,
+          35.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "mole",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Buried Ambush / afterbeat",
+        "at": 1.0684,
+        "tell": 0.07919999999999999,
+        "travel": 0.2024,
+        "hold": 0.2,
+        "shape": "rock",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -45.1,
+          -22.5
+        ],
+        "destination": [
+          133.25,
+          -22.5
+        ],
+        "size": [
+          84.42,
+          30.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "mole",
+        "collision_mode": "arrival",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the drill rise, then leave the rock fan afterbeat; the Buried Ambush direction locks on preparation."
+  },
+  {
+    "id": 95,
+    "name": "Fox Bride",
+    "move": "Vow of Ash",
+    "motif": "bride",
+    "motif_texture": "res://art/monster-motifs/095.png",
+    "motion": {
+      "stance": "fox",
+      "windup": 1.08,
+      "commit": 0.86,
+      "recovery": 1.2,
+      "stride": 35.1,
+      "reach": 270.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 550.0,
+      "fall": 220.0,
+      "noise": 0.45,
+      "pulse": 1.1627906976744187,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Vow of Ash / release",
+        "at": 0.0,
+        "tell": 1.08,
+        "travel": 0.3956,
+        "hold": 0.16,
+        "shape": "veil",
+        "path": "spiral",
+        "origin": "actor",
+        "offset": [
+          24,
+          -128.0
+        ],
+        "destination": [
+          270.0,
+          -128.0
+        ],
+        "size": [
+          164.0,
+          89.6
+        ],
+        "damage_scale": 1.0,
+        "motif": "bride",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Vow of Ash / afterbeat",
+        "at": 1.3896000000000002,
+        "tell": 0.1548,
+        "travel": 0.3956,
+        "hold": 0.2,
+        "shape": "petal",
+        "path": "pincer",
+        "origin": "target",
+        "offset": [
+          -59.4,
+          -57.6
+        ],
+        "destination": [
+          175.5,
+          -57.6
+        ],
+        "size": [
+          109.88000000000001,
+          76.8
+        ],
+        "damage_scale": 0.7,
+        "motif": "bride",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the veil spiral, then leave the petal pincer afterbeat; the Vow of Ash direction locks on preparation."
+  },
+  {
+    "id": 96,
+    "name": "Clockwork Spider",
+    "move": "Eight Brass Seconds",
+    "motif": "clockspider",
+    "motif_texture": "res://art/monster-motifs/096.png",
+    "motion": {
+      "stance": "spider",
+      "windup": 0.82,
+      "commit": 0.61,
+      "recovery": 1.06,
+      "stride": 29.900000000000002,
+      "reach": 230.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 270.0,
+      "fall": 108.0,
+      "noise": 0.45,
+      "pulse": 1.639344262295082,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Eight Brass Seconds / release",
+        "at": 0.0,
+        "tell": 0.82,
+        "travel": 0.2806,
+        "hold": 0.16,
+        "shape": "gear",
+        "path": "orbit",
+        "origin": "actor",
+        "offset": [
+          24,
+          -80.0
+        ],
+        "destination": [
+          230.0,
+          -80.0
+        ],
+        "size": [
+          132.0,
+          56.0
+        ],
+        "damage_scale": 1.0,
+        "motif": "clockspider",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Eight Brass Seconds / afterbeat",
+        "at": 1.0395999999999999,
+        "tell": 0.1098,
+        "travel": 0.2806,
+        "hold": 0.2,
+        "shape": "needle",
+        "path": "fan",
+        "origin": "actor",
+        "offset": [
+          -50.6,
+          -36.0
+        ],
+        "destination": [
+          149.5,
+          -36.0
+        ],
+        "size": [
+          88.44000000000001,
+          48.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "clockspider",
+        "collision_mode": "sweep",
+        "branches": [
+          -0.28,
+          0,
+          0.28
+        ]
+      }
+    ],
+    "counter": "Read the gear orbit, then leave the needle fan afterbeat; the Eight Brass Seconds direction locks on preparation."
+  },
+  {
+    "id": 97,
+    "name": "Execution Wheel",
+    "move": "Circular Sentence",
+    "motif": "katana-wheel",
+    "motif_texture": "res://art/monster-motifs/097.png",
+    "motion": {
+      "stance": "wheel",
+      "windup": 1.01,
+      "commit": 0.72,
+      "recovery": 1.35,
+      "stride": 43.550000000000004,
+      "reach": 335.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 190.0,
+      "fall": 76.0,
+      "noise": 0.45,
+      "pulse": 1.3888888888888888,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Circular Sentence / release",
+        "at": 0.0,
+        "tell": 1.01,
+        "travel": 0.3312,
+        "hold": 0.16,
+        "shape": "wheel",
+        "path": "charge",
+        "origin": "actor",
+        "offset": [
+          24,
+          -65.0
+        ],
+        "destination": [
+          335.0,
+          -65.0
+        ],
+        "size": [
+          176.0,
+          45.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "katana-wheel",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Circular Sentence / afterbeat",
+        "at": 1.2692,
+        "tell": 0.1296,
+        "travel": 0.3312,
+        "hold": 0.2,
+        "shape": "blade",
+        "path": "return",
+        "origin": "actor",
+        "offset": [
+          -73.7,
+          -29.25
+        ],
+        "destination": [
+          217.75,
+          -29.25
+        ],
+        "size": [
+          117.92,
+          39.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "katana-wheel",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the wheel charge, then leave the blade return afterbeat; the Circular Sentence direction locks on preparation."
+  },
+  {
+    "id": 98,
+    "name": "Jelly Salamander",
+    "move": "Glass Current",
+    "motif": "jellysalamander",
+    "motif_texture": "res://art/monster-motifs/098.png",
+    "motion": {
+      "stance": "crawler",
+      "windup": 0.87,
+      "commit": 0.84,
+      "recovery": 1.12,
+      "stride": 31.85,
+      "reach": 245.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 470.0,
+      "fall": 188.0,
+      "noise": 0.45,
+      "pulse": 1.1904761904761905,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Glass Current / release",
+        "at": 0.0,
+        "tell": 0.87,
+        "travel": 0.3864,
+        "hold": 0.16,
+        "shape": "bubble",
+        "path": "wave",
+        "origin": "actor",
+        "offset": [
+          24,
+          -42.0
+        ],
+        "destination": [
+          245.0,
+          -42.0
+        ],
+        "size": [
+          140.0,
+          29.4
+        ],
+        "damage_scale": 1.0,
+        "motif": "jellysalamander",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Glass Current / afterbeat",
+        "at": 1.1724,
+        "tell": 0.1512,
+        "travel": 0.3864,
+        "hold": 0.2,
+        "shape": "jelly",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          -53.9,
+          -18.900000000000002
+        ],
+        "destination": [
+          0,
+          -18.900000000000002
+        ],
+        "size": [
+          93.80000000000001,
+          25.2
+        ],
+        "damage_scale": 0.7,
+        "motif": "jellysalamander",
+        "collision_mode": "arrival"
+      }
+    ],
+    "counter": "Read the bubble wave, then leave the jelly expand afterbeat; the Glass Current direction locks on preparation."
+  },
+  {
+    "id": 99,
+    "name": "Temple Dragon",
+    "move": "Last Shrine Breath",
+    "motif": "templedragon",
+    "motif_texture": "res://art/monster-motifs/099.png",
+    "motion": {
+      "stance": "hydra",
+      "windup": 1.27,
+      "commit": 0.79,
+      "recovery": 1.49,
+      "stride": 44.2,
+      "reach": 340.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 155.0,
+      "fall": 62.0,
+      "noise": 0.45,
+      "pulse": 1.2658227848101264,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "Last Shrine Breath / release",
+        "at": 0.0,
+        "tell": 1.27,
+        "travel": 0.36340000000000006,
+        "hold": 0.16,
+        "shape": "breath",
+        "path": "sweep",
+        "origin": "actor",
+        "offset": [
+          24,
+          -145.0
+        ],
+        "destination": [
+          340.0,
+          -145.0
+        ],
+        "size": [
+          226.0,
+          101.5
+        ],
+        "damage_scale": 1.0,
+        "motif": "templedragon",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "Last Shrine Breath / afterbeat",
+        "at": 1.5544,
+        "tell": 0.1422,
+        "travel": 0.36340000000000006,
+        "hold": 0.2,
+        "shape": "bone",
+        "path": "rain",
+        "origin": "target",
+        "offset": [
+          -74.8,
+          -65.25
+        ],
+        "destination": [
+          221.0,
+          -65.25
+        ],
+        "size": [
+          151.42000000000002,
+          87.0
+        ],
+        "damage_scale": 0.7,
+        "motif": "templedragon",
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the breath sweep, then leave the bone rain afterbeat; the Last Shrine Breath direction locks on preparation."
+  },
+  {
+    "id": 100,
+    "name": "Bell Emperor",
+    "move": "End of the Hundred Names",
+    "motif": "emperor",
+    "motif_texture": "res://art/monster-motifs/100.png",
+    "motion": {
+      "stance": "golem",
+      "windup": 1.45,
+      "commit": 1.05,
+      "recovery": 1.85,
+      "stride": 48,
+      "reach": 375.0,
+      "lead": "right"
+    },
+    "sound": {
+      "pitch": 55.0,
+      "fall": 22.0,
+      "noise": 0.45,
+      "pulse": 0.9523809523809523,
+      "duration": 0.5
+    },
+    "events": [
+      {
+        "name": "End of the Hundred Names / release",
+        "at": 0.0,
+        "tell": 1.45,
+        "travel": 0.48300000000000004,
+        "hold": 0.16,
+        "shape": "bell",
+        "path": "expand",
+        "origin": "actor",
+        "offset": [
+          24,
+          -170.0
+        ],
+        "destination": [
+          0,
+          -170.0
+        ],
+        "size": [
+          280.0,
+          110
+        ],
+        "damage_scale": 1.0,
+        "motif": "emperor",
+        "collision_mode": "arrival"
+      },
+      {
+        "name": "End of the Hundred Names / afterbeat",
+        "at": 1.8279999999999998,
+        "tell": 0.189,
+        "travel": 0.48300000000000004,
+        "hold": 0.2,
+        "shape": "sword",
+        "path": "spiral",
+        "origin": "actor",
+        "offset": [
+          -82.5,
+          -76.5
+        ],
+        "destination": [
+          243.75,
+          -76.5
+        ],
+        "size": [
+          187.60000000000002,
+          100
+        ],
+        "damage_scale": 0.7,
+        "motif": "emperor",
+        "collision_mode": "sweep"
+      },
+      {
+        "name": "Last name",
+        "at": 2.5,
+        "tell": 0.5180000000000001,
+        "travel": 0.666,
+        "hold": 0.22,
+        "shape": "sword",
+        "path": "spiral",
+        "origin": "target",
+        "offset": [
+          -210,
+          -140
+        ],
+        "destination": [
+          210,
+          -140
+        ],
+        "size": [
+          270,
+          200
+        ],
+        "damage_scale": 1.15,
+        "motif": "emperor",
+        "phase_only": true,
+        "collision_mode": "sweep"
+      }
+    ],
+    "counter": "Read the bell expand, then leave the sword spiral afterbeat; the End of the Hundred Names direction locks on preparation."
+  }
+]

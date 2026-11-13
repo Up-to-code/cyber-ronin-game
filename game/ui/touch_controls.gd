@@ -7,7 +7,7 @@ var actions: Array[String] = ["move_left", "move_right", "jump", "move_down", "k
 var centers: Array[Vector2] = []
 var slots: Array[Control] = []
 var press_amount: Array[float] = []
-const ACTION_NAMES := ["Move left", "Move right", "Jump / double jump", "Crouch", "Kick", "Sword / hold to charge", "Power (50)", "Ranged blade (25)", "Energy slash (35)"]
+const ACTION_NAMES := ["Move left", "Move right", "Jump / double jump", "Crouch / slide / drop through shelf", "Kick", "Sword / hold to charge", "Power (50)", "Ranged blade (25)", "Energy slash (35)"]
 var target_sizes: Array[Vector2] = []
 var power: float = 100
 var charge: float = 0
@@ -20,14 +20,18 @@ var left_handed: bool = false
 var vibration_enabled: bool = true
 var movement: Control
 var action_group: Control
-const PAD_POINTS := [Vector2(22,68), Vector2(114,68), Vector2(68,22), Vector2(68,114), Vector2(42,108), Vector2(112,108), Vector2(112,30), Vector2(48,42), Vector2(182,68)]
+const PAD_POINTS := [Vector2(22,74), Vector2(126,74), Vector2(74,22), Vector2(74,126), Vector2(30,108), Vector2(100,108), Vector2(100,28), Vector2(36,42), Vector2(164,64)]
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for i in range(9):
 		var art := AtlasTexture.new()
-		art.atlas = load("res://art/pixel/controls-red-ivory.png" if i<4 else "res://art/pixel/ashen-combat-buttons.png")
-		var cell: int = [0,2,1,3,1,0,2,3,4][i]
-		art.region = Rect2(cell*64,0,64,64)
+		if i==5 or i==2:
+			art.atlas=load("res://art/pixel-redesign/"+("sword" if i==5 else "jump")+".png")
+			art.region=Rect2(Vector2.ZERO,art.atlas.get_size())
+		else:
+			art.atlas=load("res://art/pixel/controls-red-ivory.png" if i<4 else "res://art/pixel/ashen-combat-buttons.png")
+			var cell: int=[0,2,1,3,1,0,2,3,4][i]
+			art.region=Rect2(cell*64,0,64,64)
 		button_art.append(art)
 	movement = Control.new()
 	movement.name = "DirectionPad"
@@ -77,24 +81,24 @@ func _responsive_layout() -> void:
 	var density: float = maxf(1.0, DisplayServer.screen_get_scale()) if OS.has_feature("mobile") else 1.0
 	var desired_pixels: float = (48.0 if OS.has_feature("mobile") else 52.0) * density
 	layout_scale = desired_pixels / (44.0*pixels_per_unit) * control_scale
-	layout_scale = minf(layout_scale, minf(maxf(0.1,size.x-40)/382.0,maxf(0.1,size.y-64)/146.0))
+	layout_scale = minf(layout_scale, minf(maxf(0.1,size.x-40)/376.0,maxf(0.1,size.y-64)/160.0))
 	var mirrored: bool = left_handed
 	movement.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT if mirrored else Control.PRESET_BOTTOM_LEFT)
 	action_group.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT if mirrored else Control.PRESET_BOTTOM_RIGHT)
 	for group in [movement, action_group]:
-		var group_size: Vector2 = (Vector2(136,136) if group == movement else Vector2(206,146)) * layout_scale
+		var group_size: Vector2 = (Vector2(148,148) if group == movement else Vector2(188,148)) * layout_scale
 		var on_right: bool = (group == movement) == mirrored
-		group.offset_left = -group_size.x - 8 if on_right else 8
-		group.offset_right = -8 if on_right else group_size.x + 8
-		group.offset_top = -group_size.y - 12
-		group.offset_bottom = -12
+		group.offset_left = -group_size.x - 16 if on_right else 16
+		group.offset_right = -16 if on_right else group_size.x + 16
+		group.offset_top = -group_size.y - 18
+		group.offset_bottom = -18
 	for i in range(slots.size()):
 		var target: Vector2 = (Vector2(44,44) if i < 4 else (Vector2(60,60) if i == 5 else TARGET_SIZE)) * layout_scale
 		target_sizes[i] = target
 		face_sizes[i] = target*0.82
 		var point: Vector2 = PAD_POINTS[i] * layout_scale
 		if mirrored and i >= 4:
-			point.x = 206 * layout_scale - point.x
+			point.x = 188 * layout_scale - point.x
 		slots[i].position = point - target * 0.5
 		slots[i].size = target
 		(buttons[i].shape as RectangleShape2D).size = target

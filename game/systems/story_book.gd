@@ -12,9 +12,12 @@ static func data() -> Dictionary:
 	return _data.duplicate(true)
 
 static func chapter_count() -> int:
-	return data().get("chapters", []).size()
+	return preload("res://data/campaign.gd").levels().size()
 
 static func get_chapter(index: int) -> Dictionary:
+	var route: Dictionary = preload("res://data/campaign.gd").get_level(index)
+	if not route.is_empty():
+		return {"id":index,"name":route.name,"title":route.chapter_name,"location":route.chapter_name,"body":route.objective,"objective":route.objective}
 	for chapter in data().get("chapters", []):
 		if int(chapter.get("id", 0)) == index:
 			return chapter.duplicate(true)

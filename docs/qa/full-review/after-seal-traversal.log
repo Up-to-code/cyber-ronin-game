@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS continuous route 4 switchback
+PASS continuous route 14 switchback
+PASS continuous route 24 switchback
+PASS continuous route 34 switchback
+PASS continuous route 44 switchback
+PASS continuous route 54 switchback
+PASS continuous route 64 switchback
+PASS continuous route 74 switchback
+PASS continuous route 84 switchback
+PASS continuous route 94 switchback
+PASS 80 continuous transitions across 10 representative directed routes, no between-jump resets

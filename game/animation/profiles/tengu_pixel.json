@@ -1,0 +1,326 @@
+{
+  "id": "tengu_pixel",
+  "display_name": "Ash Tengu",
+  "status": "Generated four walking cels, windup, strike, hurt and death.",
+  "atlas": "res://art/ash-tengu/tengu.png",
+  "scale": 1.15,
+  "feet_origin": [
+    64,
+    120
+  ],
+  "body_center_height": 58,
+  "max_visual_roll": 0.3,
+  "sockets": {
+    "hand": [
+      84,
+      82
+    ],
+    "foot": [
+      80,
+      108
+    ],
+    "weapon_tip": [
+      109,
+      76
+    ],
+    "chest": [
+      64,
+      73
+    ],
+    "pelvis": [
+      64,
+      87
+    ]
+  },
+  "state_map": {
+    "run": "walk",
+    "walk": "walk",
+    "charged": "windup",
+    "jump": "air",
+    "fall": "air"
+  },
+  "clips": {
+    "idle": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        }
+      ],
+      "loop": true
+    },
+    "walk": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        }
+      ],
+      "loop": true
+    },
+    "float": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        }
+      ],
+      "loop": true
+    },
+    "air": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        },
+        {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "duration_ms": 130
+        }
+      ],
+      "loop": true
+    },
+    "windup": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 200
+        }
+      ],
+      "loop": true,
+      "feet_origin": [
+        64,
+        113
+      ]
+    },
+    "attack": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 100
+        },
+        {
+          "rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 70
+        },
+        {
+          "rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 90
+        },
+        {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "feet_origin": [
+        64,
+        113
+      ]
+    },
+    "hurt": {
+      "frames": [
+        {
+          "rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 420
+        }
+      ],
+      "loop": false,
+      "feet_origin": [
+        64,
+        113
+      ]
+    },
+    "death": {
+      "frames": [
+        {
+          "rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "duration_ms": 1300
+        }
+      ],
+      "loop": false
+    }
+  },
+  "attacks": {
+    "sword1": {
+      "clip": "attack",
+      "contact_frame": 1,
+      "active_end_frame": 2,
+      "duration": 0.36,
+      "damage": 25,
+      "reach": 105,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "kick": {
+      "clip": "attack",
+      "contact_frame": 1,
+      "active_end_frame": 2,
+      "duration": 0.36,
+      "damage": 25,
+      "reach": 105,
+      "cost": 0,
+      "provisional_contact": true
+    }
+  },
+  "movement_status": "Eight source movement drawings, several near repeats; uniform per-character scale, registered head/mask and ground baseline; distance cadence96worldpx."
+}

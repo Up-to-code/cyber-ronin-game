@@ -15,3 +15,11 @@ game/audio/music_source/
 
 # Publisher screenshots are private reference material, not game assets.
 docs/references/*.jpg
+
+# Local playable builds
+dist/
+
+# Local Python caches and retained art backup
+__pycache__/
+*.pyc
+assets/pixel-redesign/original-runtime-art.zip
