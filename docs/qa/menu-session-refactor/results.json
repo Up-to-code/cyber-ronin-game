@@ -1,0 +1,50 @@
+[
+  {
+    "test": "menu_session",
+    "passed": true
+  },
+  {
+    "test": "citadel_menu",
+    "passed": true,
+    "seconds": 1.33
+  },
+  {
+    "test": "armory_grid",
+    "passed": true,
+    "seconds": 0.56
+  },
+  {
+    "test": "armory_integration",
+    "passed": true,
+    "seconds": 1.14
+  },
+  {
+    "test": "campaign_navigation",
+    "passed": true,
+    "seconds": 1.13
+  },
+  {
+    "test": "portal_passage",
+    "passed": true,
+    "seconds": 1.24
+  },
+  {
+    "test": "gate_runtime_audit",
+    "passed": true,
+    "seconds": 13.2
+  },
+  {
+    "test": "sequence_machine",
+    "passed": true,
+    "seconds": 1.05
+  },
+  {
+    "test": "underwater_integration",
+    "passed": true,
+    "seconds": 1.92
+  },
+  {
+    "test": "mobile_ui",
+    "passed": true
+  }
+]

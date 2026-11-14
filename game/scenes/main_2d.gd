@@ -25,6 +25,7 @@ var progression: RefCounted
 var camera_director: RefCounted
 var background_director: RefCounted
 var fx_director: RefCounted
+var menu_session: RefCounted
 var required_devices: Dictionary:
 	get: return progression.required_devices()
 var active_realm := "surface"
@@ -67,7 +68,8 @@ var welcome_art: Sprite2D
 var moving_platform: AnimatableBody2D
 var lifts: Array[AnimatableBody2D] = []
 var fx: Node2D
-var started: bool = false
+var started: bool:
+	get: return menu_session.started if menu_session!=null else false
 var run_token: int:
 	get: return progression.generation
 var shrine: Sprite2D
@@ -77,13 +79,13 @@ var gate_entry_time: float:
 	get: return progression.entry_time
 var level_root: Node2D
 var map: Dictionary = {}
-var transitioning: bool = false
+var transitioning: bool:
+	get: return menu_session.transitioning if menu_session!=null else false
 var threat_hold: float = 0
 var textures: Dictionary = {}
 var platform_surface: int = 8
 var torch_frames: SpriteFrames
 var story_card: CanvasLayer
-var story_ending: bool = false
 var story_seen: Dictionary = {}
 
 func _ready() -> void:
@@ -119,6 +121,7 @@ func _ready() -> void:
 	_build_inventory()
 	story_card = preload("res://ui/story_card.gd").new()
 	add_child(story_card)
+	menu_session = preload("res://systems/run/menu_session.gd").new(player,hud,inventory_screen,story_card,_audio())
 	story_card.continued.connect(_finish_story)
 	player.health_changed.connect(hud.set_health)
 	player.power_changed.connect(hud.set_power)
@@ -140,7 +143,7 @@ func _ready() -> void:
 	for path in _resource_paths(map):
 		textures[path] = load(path)
 	_populate_level(map)
-	get_tree().paused = true
+	menu_session.show_title()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--qa-screenshot="):
 			screenshot_path = arg.trim_prefix("--qa-screenshot=")
@@ -615,12 +618,9 @@ func _choose_level(index: int) -> void:
 		_transition_level(clampi(index, 1, CampaignData.levels().size()))
 
 func _transition_level(index: int) -> void:
-	if is_instance_valid(inventory_screen): inventory_screen.hide()
-	transitioning = true
-	get_tree().paused = true
-	_audio().set_combat(false)
 	var data: Dictionary = CampaignData.get_level(index)
-	hud.show_loading(index, data.name)
+	var ticket: int = menu_session.begin_loading(index,data.name)
+	if ticket<0:return
 	hud.set_loading_progress(0, "Loading")
 	await get_tree().process_frame
 	var paths: Array[String] = _resource_paths(data)
@@ -640,8 +640,7 @@ func _transition_level(index: int) -> void:
 				fraction += float(progress[0]) if not progress.is_empty() else 0.0
 			else:
 				push_error("Failed to load level resource: " + path)
-				transitioning = false
-				hud.show_title()
+				menu_session.fail_loading(ticket)
 				return
 		hud.set_loading_progress(0.75 * fraction / paths.size(), "Loading")
 		await get_tree().process_frame
@@ -652,80 +651,44 @@ func _transition_level(index: int) -> void:
 	_populate_level(data)
 	hud.set_loading_progress(1, "Ready")
 	await get_tree().process_frame
-	await hud.finish_loading()
-	started = true
-	transitioning = false
-	get_tree().paused = false
+	if not await menu_session.finish_loading(ticket):return
 	level_loaded.emit(index)
 	# Chapter text is available on demand; entering a route keeps play in motion.
 	# Route objectives live in the map and chapter screen, leaving combat clear.
 
 func _show_story(index: int, ending: bool) -> void:
-	if transitioning or not started: return
-	player.cancel_pending_input()
-	hud.touch.release_all()
-	hud.touch.hide()
-	get_tree().paused = true
-	story_ending = ending
-	story_card.show_chapter(index, ending)
+	menu_session.show_story(index,ending)
 
 func _finish_story() -> void:
-	await get_tree().process_frame
-	player.cancel_pending_input()
-	hud.touch.release_all()
-	if story_ending:
-		hud.show_result(true)
-	else:
-		hud.close_menu()
-		get_tree().paused = false
-		hud.state_label.hide()
+	await menu_session.finish_story()
 
 func _reset_encounter() -> void:
 	# Synchronous reset remains useful for isolated test setup.
 	_populate_level(map)
 
 func pause_game() -> void:
-	player.cancel_pending_input()
-	if not started or get_tree().paused or transitioning:
-		return
-	get_tree().paused = true
-	_audio().set_combat(false)
-	hud.show_pause()
+	menu_session.pause()
 
 func resume_game() -> void:
-	if transitioning:
-		return
-	hud.close_menu()
-	get_tree().paused = false
+	menu_session.resume()
 
 func retry_game() -> void:
 	_choose_level(level)
 
 func main_menu() -> void:
+	if transitioning:return
 	_audio().set_defeated(false)
-	player.cancel_pending_input()
-	if transitioning:
-		return
 	progression.cancel()
-	started = false
-	get_tree().paused = true
-	_audio().set_combat(false)
-	hud.show_title()
+	menu_session.show_title()
 
 func _player_state(value: String) -> void:
 	if value == "Fire and sun relics cannot ignite underwater": hud.set_state(value)
-	if value == "Defeated":
-		# Remove touch affordances for the whole death beat, not only once the
-		# result card finally covers gameplay.
-		hud.hide_touch_controls()
+	if value == "Defeated": hud.hide_touch_controls()
 	if player.health == 0:
-		var token: int = run_token
-		var duration: float = player.death_duration()
-		await get_tree().create_timer(duration, false).timeout
-		if token == run_token and player.health == 0 and started:
-			get_tree().paused = true
-			_audio().set_combat(false)
-			hud.show_result(false)
+		var ticket: int=menu_session.begin_defeat()
+		if ticket<0:return
+		await get_tree().create_timer(player.death_duration(), false).timeout
+		menu_session.finish_defeat(ticket)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_B:
@@ -789,11 +752,9 @@ func _process(delta: float) -> void:
 				hud.unlock_level(level + 1)
 				_choose_level(level + 1)
 			else:
-				get_tree().paused = true
-				_audio().set_combat(false)
 				if DisplayServer.get_name() != "headless" and not "--qa-gameplay" in OS.get_cmdline_user_args() and not "--qa-capture" in OS.get_cmdline_user_args():
 					_show_story(level, true)
-				else: hud.show_result(true)
+				else: menu_session.show_result(true)
 	if not screenshot_path.is_empty() and elapsed > 1.0 and not capture_started and not transitioning:
 		capture_started = true
 		_capture_qa_frame()
@@ -828,12 +789,8 @@ func _build_inventory() -> void:
 	if is_instance_valid(player.rig): inventory_screen.preview.set_character_profile(player.rig.profile_id)
 	inventory_screen.hide()
 	inventory_screen.closed.connect(_close_inventory)
-	hud.armory_requested.connect(func():
-		inventory_screen.mode="inventory"
-		_open_inventory())
-	hud.skills_requested.connect(func():
-		inventory_screen.mode="skills"
-		_open_inventory())
+	hud.armory_requested.connect(func(): menu_session.open_armory("inventory",coins))
+	hud.skills_requested.connect(func(): menu_session.open_armory("skills",coins))
 	inventory_screen.purchase_requested.connect(_purchase_skill)
 	inventory_button = Button.new()
 	inventory_button.text="B · ARMORY"
@@ -859,24 +816,10 @@ func _build_inventory() -> void:
 	hud.gameplay.add_child(objective_guide)
 
 func _open_inventory() -> void:
-	if transitioning or (started and get_tree().paused) or player.health<=0: return
-	if started: inventory_screen.mode="all"
-	player.cancel_pending_input()
-	hud.touch.release_all()
-	hud.gameplay.hide()
-	get_tree().paused=true
-	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
-	inventory_screen.show()
-	inventory_screen.refresh(coins)
-	inventory_screen.close_button.grab_focus()
+	menu_session.open_armory("all",coins)
 
 func _close_inventory() -> void:
-	inventory_screen.hide()
-	hud.gameplay.visible = started
-	if not started and is_instance_valid(hud.title_view): hud.title_view.primary.grab_focus()
-	get_tree().paused=not started
-	player.cancel_pending_input()
-	_refresh_guide()
+	if menu_session.close_armory():_refresh_guide()
 
 func _save_skill_progress() -> Error:
 	return armory_transactions.save_progress(banked_coins, hud.settings_path)

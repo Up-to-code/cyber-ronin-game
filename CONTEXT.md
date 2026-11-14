@@ -20,3 +20,4 @@
 
 **Body phase**: The windup, strike or recovery portion of an authored action. A travelling effect can make contact after the body has finished its strike.
 
+**Menu session**: The player's current interaction with the title, route, armory, pause menu, chapter or result screen. Returning from an overlay restores the appropriate paused or playing state and input focus.
