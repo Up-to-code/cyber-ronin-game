@@ -4,7 +4,7 @@
 
 ## Evidence and limits
 
-- Inspected both `assets/rig/ronin-parts.raw.png` (1448×1086) and `game/rig/parts.png` (384×288), the original Last Ronin sheet, selected original frames, and the processed `game/art/pixel/last-ronin_sheet.png`.
+- Inspected both `assets/characters/rig/ronin-parts.raw.png` (1448×1086) and `game/rig/parts.png` (384×288), the original Last Ronin sheet, selected original frames, and the processed `game/art/pixel/last-ronin_sheet.png`.
 - `docs/qa/skeleton-body-rebuild.mp4`: 1152×648, 30 fps, 14.2 seconds. Extracted 28 frames at 0.5-second spacing, then eight kick frames from 0.3–1.0 seconds at 0.1-second spacing. Inspected those in sequence and enlarged crops. This is frame-sequence inspection, not a live input test or continuous audiovisual playback. Exact compression/frame-boundary uncertainty is up to a recording frame; no claim of subframe contact accuracy.
 - [Full capture overview](independent-art-overview.jpg), [selected original source frames](independent-art-source-selected.png), [raw/runtime sword comparison](independent-art-sword-compare.png). Enlargements expose structure; final decisions must also use the native gameplay size.
 - Scripted capture provenance is explicit in `game/tests/capture_body_rebuild.gd:11–15,35–47`: invulnerability, a 500-health guard, scene changes, and injected approach positions. It is useful pose evidence, not normal campaign coverage.

@@ -17,7 +17,7 @@
       "archive": "assets/source/spearmen.zip",
       "bytes": 595561,
       "sha256": "7c9f96b6f01defaffa18c7c91f6b1ed7154657eb02346459116a83ae8e57d166",
-      "extracted_to": "assets/equipment/spearmen"
+      "extracted_to": "assets/enemies/spearmen"
     }
   ],
   "other_candidates": "See ASSETS.md; not downloaded or auditioned."

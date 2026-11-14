@@ -13,7 +13,7 @@ var combat_active: bool = false
 var battle_mix: float = 0.0
 var impact_duck: float = 0.0
 var music_fade: float = 0.0
-const CONTACT_CUES := ["impact", "impact_armor", "impact_spirit", "kick_hit", "hurt", "aerial_land", "push"]
+const CONTACT_CUES := ["impact", "impact_armor", "impact_spirit", "kick_hit", "hurt", "aerial_land", "push", "explosion"]
 var cue_last_played: Dictionary = {}
 var stream_variants: Dictionary = {}
 var cue_variant_index: Dictionary = {}
@@ -23,7 +23,8 @@ const CUE_VOLUME_DB := {
 	"swing": -12.0, "impact_armor": -13.0, "impact_spirit": -17.0, "impact": -10.0, "jump": -18.0, "land": -18.0,
 	"step": -23.0, "dodge": -19.0, "hurt": -10.0, "bell": -15.0, "ui": -24.0, "air_jump": -20.0,
 	"kick": -14.0, "charge": -22.0, "charged_swing": -12.0, "power": -12.0,
-	"aerial_land": -12.0, "power_empty": -24.0, "kick_hit": -10.0, "push": -15.0, "enemy_swing": -16.0, "enemy_heavy": -17.0, "enemy_thrust": -17.0, "enemy_cast": -17.0
+	"aerial_land": -12.0, "power_empty": -24.0, "kick_hit": -10.0, "push": -15.0, "enemy_swing": -16.0, "enemy_heavy": -17.0, "enemy_thrust": -17.0, "enemy_cast": -17.0,
+	"explosion": -9.0
 }
 const QUIET_DB: float = -80.0
 
@@ -68,7 +69,8 @@ func _ready() -> void:
 		"power_empty": preload("res://audio/power_empty.wav"),
 		"push": preload("res://audio/ground-v3/stone.wav"),
 		"enemy_swing": preload("res://audio/combat-v5/enemy.wav"),
-		"enemy_cast": preload("res://audio/combat-v2/enemy_fire.wav")
+		"enemy_cast": preload("res://audio/combat-v2/enemy_fire.wav"),
+		"explosion": preload("res://audio/ground-v3/slam.wav")
 	}
 	streams["enemy_thrust"] = preload("res://audio/combat-v2/enemy_thrust.wav")
 	streams["enemy_heavy"] = streams["enemy_swing"]
@@ -203,6 +205,8 @@ func play(cue: String) -> void:
 		available.pitch_scale = 0.78
 	elif cue == "push":
 		available.pitch_scale = 0.85
+	elif cue == "explosion":
+		available.pitch_scale = 0.62
 	if cue == "air_jump":
 		available.pitch_scale = 1.06
 	available.play()

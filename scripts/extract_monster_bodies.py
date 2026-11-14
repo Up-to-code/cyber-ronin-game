@@ -4,7 +4,7 @@ import numpy as np
 from scipy.ndimage import label,binary_dilation,find_objects
 from pathlib import Path
 for n in range(1,5):
- im=Image.open(f'assets/monster-migration/source/{n}.png').convert('RGBA');a=np.array(im)
+ im=Image.open(f'assets/enemies/monster-migration/source/{n}.png').convert('RGBA');a=np.array(im)
  lab,num=label(binary_dilation(a[:,:,3]>40,iterations=2));objs=find_objects(lab)
  ranked=sorted([(int((lab[s]==i+1).sum()),i+1,s) for i,s in enumerate(objs)],reverse=True)[:25]
  ranked.sort(key=lambda v:(v[2][0].start+v[2][0].stop)/2)

@@ -14,7 +14,7 @@ func _run() -> void:
 	for state in ["charged","sword","hurt","death"]:
 		actor.update_pose(0.01,state,1,Vector2.ZERO,false,0.5,0.5)
 		assert(actor.current_clip != "float", "Combat reaction must override hover")
-	var before = JSON.parse_string(FileAccess.get_file_as_string("res://../assets/crimson-wraith/previous-profile.json"))
+	var before = JSON.parse_string(FileAccess.get_file_as_string("res://../assets/enemies/crimson-wraith/previous-profile.json"))
 	for clip in ["hurt","death"]:
 		assert(actor.profile.clips[clip] == before.clips[clip], "Existing combat clip must be preserved")
 	var spec = actor.get_attack_spec("sword",1)

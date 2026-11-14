@@ -1,7 +1,7 @@
 """Deterministically split generated sheets; retain originals and alpha."""
 from PIL import Image
 from pathlib import Path
-src=Path('assets/crimson-gold/source');out=Path('game/art/crimson-gold')
+src=Path('assets/archive/crimson-gold/source');out=Path('game/art/crimson-gold')
 def split(source, boxes):
  im=Image.open(src/(source+'.png')).convert('RGBA')
  for name,box,size in boxes:

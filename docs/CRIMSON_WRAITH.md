@@ -1,6 +1,6 @@
 # Crimson wraith hover pass
 
-Built-in image generation produced nine sequential hover drawings: ivory horned mask, crimson cloth, burgundy shadow. Source and exact prompt are in `assets/crimson-wraith/`; engine exports and animated WebP are in `game/art/crimson-wraith/`.
+Built-in image generation produced nine sequential hover drawings: ivory horned mask, crimson cloth, burgundy shadow. Source and exact prompt are in `assets/enemies/crimson-wraith/`; engine exports and animated WebP are in `game/art/crimson-wraith/`.
 
 `tools/build_crimson_wraith.py` removes the magenta extraction background, applies one shared scale, and registers each ivory mask to (64,68) in a 128-square cell. This prevents cloth length changes from moving the head. All nine frames are distinct, alpha bounds stay inside each cell, and the loop runs at 90ms per cel (810ms total). Simulation remains independent of art cadence.
 

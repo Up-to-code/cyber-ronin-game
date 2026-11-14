@@ -2,7 +2,7 @@
 from PIL import Image
 from pathlib import Path
 import json,sys,shutil,statistics
-raw=Path('assets/crimson-wraith');out=Path('game/art/crimson-wraith');shutil.copy2(sys.argv[1],raw/'attack-source.png')
+raw=Path('assets/enemies/crimson-wraith');out=Path('game/art/crimson-wraith');shutil.copy2(sys.argv[1],raw/'attack-source.png')
 im=Image.open(sys.argv[1]).convert('RGBA');frames=[]
 def mask_points(im):
  return [(x,y) for y in range(im.height) for x in range(im.width) if im.getpixel((x,y))[3]>128 and min(im.getpixel((x,y))[:3])>125 and im.getpixel((x,y))[0]>im.getpixel((x,y))[2]]

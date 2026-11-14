@@ -2,7 +2,7 @@ from PIL import Image
 from pathlib import Path
 import shutil
 src=Path('/Users/ahmedmansour/.codex/generated_images/01a1c895-624e-7573-b11a-af481a70fdba')
-raw=Path('assets/crimson-gate'); out=Path('game/art/crimson-gate')
+raw=Path('assets/environments/crimson-gate'); out=Path('game/art/crimson-gate')
 files={'reference':'exec-05c0a886-d22e-4149-a96c-d74a442518a7.png','vortex':'exec-9840f482-a397-4af7-8ca8-b4632239b3d4.png','gate':'exec-dcc1589e-2d8c-4348-8ae1-280d4ac3fb09.png'}
 for name,file in files.items(): shutil.copy2(src/file,raw/(name+'.png'))
 def clean(im):

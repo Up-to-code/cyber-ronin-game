@@ -4,7 +4,7 @@
 
 The campaign now uses100 distinct route geometries across10 directional traversal structures and four world materials: surface marsh, underground crystal cistern, cloud realm, and historical citadel. Each tenth route has a finale boss. Required interaction devices include a renewable one-charge sun relic and physical beam seal, a cloud seed and grown bridge, portal visits to an underground pocket, and timed fire vents. Existing level11 sentinel sequence remains.
 
-The three new640x360 world backgrounds and three realm terrain strips are original generated raster art, retained with source images and prompts in `assets/world-migration`. Walkable artwork is aligned to collision tops. Vertical shelves no longer create invisible full-height foundation walls. Citadel decks have suspension details. Realm particles differ in color; backgrounds are subdued for character readability.
+The three new640x360 world backgrounds and three realm terrain strips are original generated raster art, retained with source images and prompts in `assets/environments/world-migration`. Walkable artwork is aligned to collision tops. Vertical shelves no longer create invisible full-height foundation walls. Citadel decks have suspension details. Realm particles differ in color; backgrounds are subdued for character readability.
 
 ## Evidence and limits
 

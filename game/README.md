@@ -12,7 +12,7 @@ Rams quick_review was attempted with via=rules, but could not run because the wo
 
 ## Pixel rebuild
 
-640×360 reference canvas, nearest-neighbor pixel textures and pixel font. Character frames retain the kit's animation data but are exported onto registered 96×96 cells. Generated pixel-art skies, transparent temple layer, stone ledges, torii exit, menu textures, health, pause/touch icons and VFX are in art/pixel. Raw generated art and prompts remain in ../assets/pixel/source.
+640×360 reference canvas, nearest-neighbor pixel textures and pixel font. Character frames retain the kit's animation data but are exported onto registered 96×96 cells. Generated pixel-art skies, transparent temple layer, stone ledges, torii exit, menu textures, health, pause/touch icons and VFX are in art/pixel. Raw generated art and prompts remain in ../assets/art/pixel/source.
 
 The moving platform bridges the gap between x920 and x1200. It carries a standing player; jump buffering, coyote time, variable jump release and accelerated movement are implemented. The integration test traverses both gap jumps and verifies enemies remain grounded. Death animation now completes before the retry menu.
 

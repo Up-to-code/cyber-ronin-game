@@ -1,7 +1,7 @@
 """Crop, quantize and split generated sources; no procedural raw artwork."""
 from PIL import Image,ImageEnhance
 from pathlib import Path
-src=Path('assets/pixel/refinement');out=Path('game/art/pixel')
+src=Path('assets/art/pixel/refinement');out=Path('game/art/pixel')
 def px(im,size,colors=24):
  im=im.convert('RGBA').resize(size,Image.Resampling.NEAREST)
  a=im.getchannel('A').point(lambda v:255 if v>=110 else 0)

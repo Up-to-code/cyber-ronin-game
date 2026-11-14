@@ -1,4 +1,5 @@
 extends CanvasLayer
+signal armory_requested
 signal start_requested
 signal pause_requested
 signal resume_requested
@@ -35,6 +36,7 @@ var overlay: ColorRect
 var menu_center: CenterContainer
 var menu_box: VBoxContainer
 var menu_scroll: ScrollContainer
+var citadel: Control
 var title_layout: BoxContainer
 var touch: Control
 var exit_button: Button
@@ -74,6 +76,8 @@ func _ready() -> void:
 	add_child(root)
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	citadel = preload("res://ui/citadel_backdrop.gd").new()
+	root.add_child(citadel)
 	root.theme = _theme()
 	root.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	safe = Control.new()
@@ -291,12 +295,13 @@ func _render_menu() -> void:
 		child.queue_free()
 	menu_scroll.scroll_vertical = 0
 	var screen: String = screens.back()
+	citadel.visible = screen == "title"
 	gameplay.hide()
 	touch.release_all()
 	overlay.show()
 	menu_center.show()
 	var heading: String = {"title":"ASHEN\nVEIL", "pause":"PAUSED", "settings":"SETTINGS", "help":"HOW TO PLAY", "death":"FALLEN RONIN", "complete":"CASTLE CLEARED", "loading":"ENTERING", "maps":"CAMPAIGN", "credits":"CREDITS", "touch_settings":"TOUCH LAYOUT", "audio_settings":"AUDIO", "privacy":"PRIVACY"}[screen]
-	overlay.color = Color(0.025,0.015,0.025,0.76 if screen == "death" else 0.48)
+	overlay.color = Color(0.025,0.015,0.025,0.76 if screen == "death" else (0.08 if screen == "title" else 0.48))
 	menu_box.custom_minimum_size.x = minf(300,get_viewport().get_visible_rect().size.x-48) if screen == "death" else (270 if screen in ["settings","audio_settings","touch_settings"] else 250)
 	if screen not in ["death","title"]: menu_box.add_child(_menu_heading(screen, heading))
 	var first: Button
@@ -420,9 +425,25 @@ func _build_title_screen() -> Button:
 	start.custom_minimum_size.y = 44
 	actions.add_child(start)
 	if first == null: first = start
-	for entry in [["MAPS","maps"],["SETTINGS","settings"],["CONTROLS","help"],["CREDITS","credits"]]:
+	actions.add_child(_button("ARMORY & SKILLS",func():armory_requested.emit()))
+	for entry in [["MAPS","maps"]]:
 		var screen_name: String = entry[1]
 		actions.add_child(_button(entry[0],func():_push(screen_name)))
+	for child in actions.get_children():
+		if child is Button:
+			child.custom_minimum_size.y = 40
+			for state in ["normal", "hover", "pressed", "focus"]:
+				child.add_theme_stylebox_override(state, PixelUI.citadel_button(state))
+	var utilities := HBoxContainer.new()
+	utilities.alignment = BoxContainer.ALIGNMENT_CENTER
+	actions.add_child(utilities)
+	for entry in [["SETTINGS","settings"],["HELP","help"],["CREDITS","credits"]]:
+		var target: String = entry[1]
+		var utility := _button(entry[0],func():_push(target))
+		utility.icon = null
+		utility.add_theme_font_size_override("font_size",10)
+		utility.custom_minimum_size = Vector2(68,30)
+		utilities.add_child(utility)
 	return first
 
 func _menu_heading(screen: String, title: String) -> VBoxContainer:
@@ -597,6 +618,7 @@ func show_result(won: bool) -> void:
 	screens.assign(["complete" if won else "death"])
 	_render_menu()
 func close_menu() -> void:
+	citadel.hide()
 	damage_veil.clear()
 	screens.clear()
 	overlay.hide()

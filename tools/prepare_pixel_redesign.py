@@ -4,7 +4,7 @@ from PIL import Image
 import shutil,zipfile
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'game/art/pixel-redesign'
-SRC=ROOT/'assets/pixel-redesign'
+SRC=ROOT/'assets/archive/pixel-redesign'
 PALETTE=['0b101d','151d30','253349','3e526b','697d8b','a8b5b1','f3e4bb','cdb68b','712a3d','a83d40','d45d40','f39b46','37645d','5c8e76','332337','504052','872b36','da5247','1c1827','eeeacb','8d7180','9c6247','57342f','283f4c']
 pal=Image.new('P',(1,1));pal.putpalette([v for h in PALETTE for v in bytes.fromhex(h)]+[0]*(768-len(PALETTE)*3))
 def pixel(im, factor=2):

@@ -19,7 +19,7 @@ for name,source,duration,filters in [
 subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(O/'body.wav'),'-i',str(O/'steel.wav'),'-filter_complex','[0:a][1:a]amix=inputs=2:normalize=0,alimiter=limit=0.8:level=false','-ar','24000','-ac','1',str(O/'armor.wav')],check=True)
 subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(O/'swing_finisher.wav'),'-i',str(O/'energy.wav'),'-filter_complex','[1:a]volume=0.35[e];[0:a][e]amix=inputs=2:normalize=0,alimiter=limit=0.8:level=false','-ar','24000','-ac','1',str(O/'power.wav')],check=True)
 # Preserve originals; deterministic hue remapping only, no new drawing.
-A=R/'game/art/pixel/combat-v2';raw=R/'assets/pixel/combat-v2';raw.mkdir(exist_ok=True)
+A=R/'game/art/pixel/combat-v2';raw=R/'assets/art/pixel/combat-v2';raw.mkdir(exist_ok=True)
 for p in A.glob('*.png'):
  original=raw/p.name
  if not original.exists():shutil.copyfile(p,original)

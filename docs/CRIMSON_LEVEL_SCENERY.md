@@ -1,6 +1,6 @@
 # Crimson level scenery pass
 
-Generated with the built-in image tool; full prompts are beside sources in `assets/crimson-levels/`.
+Generated with the built-in image tool; full prompts are beside sources in `assets/levels/crimson-levels/`.
 
 ## Implemented
 
@@ -10,7 +10,7 @@ Six generated compact props replace the old scenery atlas across the existing si
 
 ## Concepts only
 
-`assets/crimson-levels/concepts.png` illustrates six distinct areas: causeway, courtyard, bamboo rampart, rooftop ascent, shrine garden, bell arena. These are visual references, not six new implemented maps. The large stairs, bell structure, background banners and new architecture shown on this board still require separate assets and gameplay work.
+`assets/levels/crimson-levels/concepts.png` illustrates six distinct areas: causeway, courtyard, bamboo rampart, rooftop ascent, shrine garden, bell arena. These are visual references, not six new implemented maps. The large stairs, bell structure, background banners and new architecture shown on this board still require separate assets and gameplay work.
 
 ## Verification
 

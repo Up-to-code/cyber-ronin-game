@@ -398,6 +398,18 @@ func _physics_process(delta: float) -> void:
 					if enemy.has_method("receive_hit"):
 						enemy.receive_hit(roundi(damage*sword_damage_multiplier) if attack_kind in ["sword","charged"] else damage, kind, facing, attack_socket)
 					else: enemy.take_damage(roundi(damage*sword_damage_multiplier) if attack_kind in ["sword","charged"] else damage)
+			# Barrels are separate hazards, never part of the enemy roster.
+			for barrel in get_tree().get_nodes_in_group("fire_barrels") if attack_kind not in ["ranged", "energy"] else []:
+				var offset: Vector2 = barrel.global_position - global_position
+				var in_plane: bool = absf(offset.y) < 80.0
+				if attack_kind == "kick":
+					in_plane = attack_socket.y >= barrel.global_position.y - 96 and attack_socket.y <= barrel.global_position.y + 16
+				var touching: bool = absf(offset.x) < reach and in_plane and offset.x * facing > -10.0
+				if absf(attack_aim.y) > 0.1 and attack_kind != "power":
+					var aim_delta: Vector2 = barrel.global_position + Vector2(0, -30) - (global_position + Vector2(0, -48))
+					touching = aim_delta.dot(attack_aim) > -10 and aim_delta.dot(attack_aim) < reach and absf(aim_delta.cross(attack_aim)) < 65
+				if touching and wall_contact.is_empty():
+					barrel.receive_hit(damage, attack_kind, facing, attack_socket)
 	else:
 		var acceleration: float = ground_acceleration if grounded else air_acceleration
 		var friction: float = ground_friction if grounded else 350.0
@@ -442,6 +454,9 @@ func _physics_process(delta: float) -> void:
 		for enemy in get_tree().get_nodes_in_group("enemies"):
 			if absf(enemy.global_position.x - global_position.x) < 145 and absf(enemy.global_position.y - global_position.y) < 75:
 				enemy.receive_hit(55, "plunge", facing, global_position)
+		for barrel in get_tree().get_nodes_in_group("fire_barrels"):
+			if absf(barrel.global_position.x - global_position.x) < 145 and absf(barrel.global_position.y - global_position.y) < 75:
+				barrel.receive_hit(55, "plunge", facing, global_position)
 	if dodge_time > 0 and is_on_wall():
 		dodge_time = 0
 		velocity.y = clampf(dash_vertical_speed, -300, 400)

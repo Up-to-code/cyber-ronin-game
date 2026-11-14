@@ -18,7 +18,7 @@ Kuro returns to a silent monastery. Captain Ren stole the shrine bell and bound 
 
 ## Reusable production tools
 
-- `tools/pack_ronin_redraw.py`: alpha cleanup, common-scale packing, support-foot registration and palette mapping. It does not synthesize poses. Raw generated candidates and prompts are retained under `assets/pixel/ronin-redraw`.
+- `tools/pack_ronin_redraw.py`: alpha cleanup, common-scale packing, support-foot registration and palette mapping. It does not synthesize poses. Raw generated candidates and prompts are retained under `assets/art/pixel/ronin-redraw`.
 - `tools/build_character_library.py`: normalizes source atlases and creates compatibility profiles. Read its overwrite behavior before rerunning; profiles have subsequent authored edits.
 - `game/animation/cel_actor_visual.gd`: replaceable atlas/profile interface, mirrored sockets, event markers, snapshots and per-clip registration. See ANIMATION_LIBRARY.md for a custom character.
 - [Aseprite command line](https://www.aseprite.org/docs/cli/) can export PNG/JSON tags and slices for an artist-authored pipeline.

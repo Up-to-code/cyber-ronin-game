@@ -8,7 +8,7 @@ func _ready() -> void:
   label.text=line[0]
   label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
   label.add_theme_font_size_override("font_size",line[1])
-  label.add_theme_color_override("font_color",Color("f16a71"))
+  label.add_theme_color_override("font_color",Color("f7dfae"))
   label.add_theme_color_override("font_shadow_color",Color("0b101d"))
   label.add_theme_constant_override("shadow_offset_x",2)
   label.add_theme_constant_override("shadow_offset_y",3)

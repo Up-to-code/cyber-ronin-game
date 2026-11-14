@@ -12,7 +12,7 @@ Reviewed the user's HUD crop, current runtime, and publisher screenshots from Ka
 
 HUD findings derive from the user's crop: four centered lines plus a large ornamental meter crowd the upper combat view. Repair: left-aligned compact HP with a narrow generated-art meter; center stage on one line; no duplicate current/max row; gate status only a brief toast and nearby interaction button. Publisher screenshots selected here do not establish a matching HUD layout; this is an authored adaptation to the user's feedback.
 
-Generated raw art and prompts: assets/pixel/refinement. Processor: tools/process_refined_art.py. Audio source: tools/audio_dash_revision.py. Existing music and license credits remain intact. The new raw graphics were generated with the built-in image tool; scripts only split, crop, resize and quantize.
+Generated raw art and prompts: assets/art/pixel/refinement. Processor: tools/process_refined_art.py. Audio source: tools/audio_dash_revision.py. Existing music and license credits remain intact. The new raw graphics were generated with the built-in image tool; scripts only split, crop, resize and quantize.
 
 Dash contract: 0.16s locked horizontal burst, pose held during the burst, short fading character snapshots, wall stop, short invulnerability, buffered input, gravity resumes afterward. It cancels an active attack. Dash may cross a short gap; it is not restricted to the ground. Confirmed hits receive a small spark; misses receive blade air and a slash only. New VFX are smaller and shorter, with no flame-like hit cloud.
 

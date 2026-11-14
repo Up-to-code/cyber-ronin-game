@@ -21,4 +21,4 @@ Research and application:
 
 Validation: power_actions, combo_air_jump, mobile_ui, locomotion, platforming, campaign_runtime and native audio_combat checks. Separate meters, affordability/charge states, 2×2 alignment, independent fingers, pause cancellation, once-per-strike damage, charge interruption, floor impact and transient cleanup are tested. Native output peaks near -9.92dB in the isolated sound test. Scripted native recording uses stationary high-health guards to demonstrate each attack; it is not a campaign playthrough or human preference test. Rams via=rules was requested for UI changes; exhausted workspace credits prevented the review.
 
-New generated raw art/prompts: assets/pixel/refinement/combat-buttons.* and kick-motion.*. Exported icons and kick frames use nearest-neighbor scaling, palette reduction, alpha cleanup and foot registration. No purchased sound library was added.
+New generated raw art/prompts: assets/art/pixel/refinement/combat-buttons.* and kick-motion.*. Exported icons and kick frames use nearest-neighbor scaling, palette reduction, alpha cleanup and foot registration. No purchased sound library was added.

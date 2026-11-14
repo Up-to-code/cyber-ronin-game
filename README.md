@@ -9,6 +9,10 @@ Godot4.7 landscape samurai action prototype: 100 modular monastery/castle routes
 
 Open `game/project.godot`, or run `/Applications/Godot.app/Contents/MacOS/Godot --path game -- --touch-preview`.
 
+## Assets
+
+[Asset catalog](assets/README.md) lists character poses, enemies, VFX, environments, audio, and archived art passes.
+
 ## Current build
 
 [Vertical routes, comparable games, new architecture and Ash Tengu](docs/research/VERTICAL_LEVEL_REBUILD.md) describes the latest layout/art pass and supersedes the earlier flat campaign layouts.
