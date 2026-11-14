@@ -6,6 +6,7 @@ const Hud = preload("res://ui/hud.gd")
 const ObjectiveTracker = preload("res://systems/objective_tracker.gd")
 const SkillInventory = preload("res://systems/skill_inventory.gd")
 var skill_inventory: RefCounted
+var armory_transactions: RefCounted
 var inventory_screen: Control
 var inventory_layer: CanvasLayer
 var inventory_button: Button
@@ -813,6 +814,7 @@ func _layout_background(extent: Vector2, camera_shift: Vector2) -> void:
 func _build_inventory() -> void:
 	skill_inventory = SkillInventory.new()
 	skill_inventory.load_state(save_store.skill_state())
+	armory_transactions = preload("res://systems/run/armory_transactions.gd").new(skill_inventory, save_store)
 	player.apply_skill_inventory(skill_inventory)
 	player.inventory_consumed.connect(func(_id: String):
 		_save_skill_progress()
@@ -877,25 +879,15 @@ func _close_inventory() -> void:
 	_refresh_guide()
 
 func _save_skill_progress() -> Error:
-	save_store.set_coins(banked_coins)
-	save_store.set_skill_state(skill_inventory.export_state())
-	return save_store.save(hud.settings_path)
+	return armory_transactions.save_progress(banked_coins, hud.settings_path)
 
 func _purchase_skill(id: String) -> void:
-	var before: Dictionary=skill_inventory.export_state()
-	var old_coins: int=coins
-	var old_bank: int=banked_coins
-	var result: Dictionary=skill_inventory.purchase(id,coins)
+	var result: Dictionary = armory_transactions.purchase(id, coins, hud.settings_path)
 	if result.ok:
-		coins=int(result.wallet)
-		banked_coins=coins
-		if _save_skill_progress()!=OK:
-			skill_inventory.load_state(before)
-			coins=old_coins;banked_coins=old_bank
-			result.message="Could not save. Purchase was cancelled."
-		else:
-			player.apply_skill_inventory(skill_inventory)
-			hud.set_health(player.health,player.max_health)
-			_audio().play("bell")
-	inventory_screen.refresh(coins,result.message)
+		coins = int(result.wallet)
+		banked_coins = coins
+		player.apply_skill_inventory(skill_inventory)
+		hud.set_health(player.health, player.max_health)
+		_audio().play("bell")
+	inventory_screen.refresh(coins, result.message)
 	_update_mission()
