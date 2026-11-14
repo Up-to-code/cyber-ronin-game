@@ -824,9 +824,15 @@ func _build_inventory() -> void:
 	inventory_screen = preload("res://ui/character_inventory.gd").new()
 	inventory_screen.setup(skill_inventory,coins)
 	inventory_layer.add_child(inventory_screen)
+	if is_instance_valid(player.rig): inventory_screen.preview.set_character_profile(player.rig.profile_id)
 	inventory_screen.hide()
 	inventory_screen.closed.connect(_close_inventory)
-	hud.armory_requested.connect(_open_inventory)
+	hud.armory_requested.connect(func():
+		inventory_screen.mode="inventory"
+		_open_inventory())
+	hud.skills_requested.connect(func():
+		inventory_screen.mode="skills"
+		_open_inventory())
 	inventory_screen.purchase_requested.connect(_purchase_skill)
 	inventory_button = Button.new()
 	inventory_button.text="B · ARMORY"
@@ -852,7 +858,8 @@ func _build_inventory() -> void:
 	hud.gameplay.add_child(objective_guide)
 
 func _open_inventory() -> void:
-	if transitioning or get_tree().paused or player.health<=0: return
+	if transitioning or (started and get_tree().paused) or player.health<=0: return
+	if started: inventory_screen.mode="all"
 	player.cancel_pending_input()
 	hud.touch.release_all()
 	hud.gameplay.hide()
@@ -865,7 +872,8 @@ func _open_inventory() -> void:
 func _close_inventory() -> void:
 	inventory_screen.hide()
 	hud.gameplay.visible = started
-	get_tree().paused=false
+	if not started and is_instance_valid(hud.title_view): hud.title_view.primary.grab_focus()
+	get_tree().paused=not started
 	player.cancel_pending_input()
 	_refresh_guide()
 
