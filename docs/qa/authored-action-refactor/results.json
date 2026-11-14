@@ -1,0 +1,47 @@
+[
+  {
+    "test": "authored_body_state",
+    "passed": true,
+    "seconds": 2.5
+  },
+  {
+    "test": "monster_attack_clock",
+    "passed": true,
+    "seconds": 0.56
+  },
+  {
+    "test": "monster_ai_timing",
+    "passed": true,
+    "seconds": 4.73
+  },
+  {
+    "test": "monster_cel_animation",
+    "passed": true,
+    "seconds": 2.87
+  },
+  {
+    "test": "monster_death_support",
+    "passed": true,
+    "seconds": 3.07
+  },
+  {
+    "test": "individual_contracts",
+    "passed": true,
+    "seconds": 2.21
+  },
+  {
+    "test": "aquatic_enemies",
+    "passed": true,
+    "seconds": 0.55
+  },
+  {
+    "test": "signature_encounters",
+    "passed": true,
+    "seconds": 0.46
+  },
+  {
+    "test": "underwater_integration",
+    "passed": true,
+    "seconds": 1.92
+  }
+]

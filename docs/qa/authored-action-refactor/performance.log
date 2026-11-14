@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M4
+
+FRAME SAMPLE level2 median 6.06ms p95 12.79ms drawcalls44 nodes297
+FRAME SAMPLE level3 median 10.18ms p95 12.77ms drawcalls52 nodes296
+FRAME SAMPLE level10 median 8.77ms p95 11.12ms drawcalls49 nodes345
+FRAME SAMPLE level50 median 9.14ms p95 11.59ms drawcalls53 nodes324
+FRAME SAMPLE level100 median 8.34ms p95 11.03ms drawcalls44 nodes324
