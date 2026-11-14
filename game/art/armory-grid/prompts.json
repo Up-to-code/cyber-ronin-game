@@ -32,5 +32,10 @@
       true,
       "Create ONE matching attack-pose character layer based on the samurai in this approved image. Same exact character identity, crimson ornate cape, armor, fine pixel rendering and scale. Full 16:9 transparent canvas. Character remains at source position left half with FEET anchored at approximately x460 y615. Change pose to a grounded powerful horizontal katana cut toward right, sword extended, cape trailing to left. Full character head to toe. No VFX, no water, no ground/scenery, no interface/text/frame, all other pixels fully transparent. Match original hero proportions and registration so this can replace its idle cutout without size jumps."
     ]
-  ]
+  ],
+  "training_dummy": {
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Single isolated pixel-art straw training dummy prop for a dark samurai platform game. Strict low resolution sprite aesthetic, design as if on a 32x56 pixel grid with crisp square clusters, no smoothing, no painterly detail. Upright straw torso on wooden post, two short crossarms, red circular cloth target, stable wooden T foot base. Muted ochre straw, dark walnut, burgundy cloth, ivory highlights. Transparent full-object sprite, no scene, text, character or interface."
+  }
 }
