@@ -1,0 +1,56 @@
+[
+  {
+    "test": "run_progression",
+    "passed": true,
+    "seconds": 0.47
+  },
+  {
+    "test": "objective_tracker",
+    "passed": true,
+    "seconds": 0.37
+  },
+  {
+    "test": "brood_gate",
+    "passed": true,
+    "seconds": 1.14
+  },
+  {
+    "test": "gate_runtime_audit",
+    "passed": true,
+    "seconds": 12.55
+  },
+  {
+    "test": "route_devices",
+    "passed": true,
+    "seconds": 4.13
+  },
+  {
+    "test": "sequence_machine",
+    "passed": true,
+    "seconds": 0.95
+  },
+  {
+    "test": "underwater_integration",
+    "passed": true,
+    "seconds": 1.83
+  },
+  {
+    "test": "exit_clearance",
+    "passed": true,
+    "seconds": 0.36
+  },
+  {
+    "test": "portal_passage",
+    "passed": true,
+    "seconds": 1.05
+  },
+  {
+    "test": "rewards_missions",
+    "passed": true
+  },
+  {
+    "test": "migration_runtime",
+    "passed": true,
+    "seconds": 6.36
+  }
+]

@@ -9,9 +9,15 @@ func run():
  root.add_child(scene)
  await process_frame
  scene.hud.settings_path="user://rewards-test.cfg"
- scene._choose_level(3)
+ var seal_route: int = 0
+ for number in range(1,101):
+  var route: Dictionary = preload("res://data/campaign.gd").get_level(number)
+  if route.get("mission","")=="seals" and route.get("devices",[]).is_empty() and not route.has("water_bounds") and seal_route==0: seal_route=number
+ assert(seal_route>0,"Campaign must supply a seal fixture")
+ scene._choose_level(seal_route)
  await scene.level_loaded
  scene.player.set_physics_process(false)
+ scene.player.invulnerable=999
  for enemy in get_nodes_in_group("enemies"): enemy.set_physics_process(false)
  var seals: Array=[]
  var coin: Node
@@ -32,16 +38,19 @@ func run():
  var at: Vector2=scene.player.position+Vector2(0,-45)
  scene._spawn_pickup("health",20,at)
  for tick in range(3):await physics_frame
- assert(scene.player.health==100)
- scene.player.health=90
+ assert(scene.player.health==scene.player.max_health)
+ scene.player.health=scene.player.max_health-10
  for tick in range(3):await physics_frame
- assert(scene.player.health==100,"Healing must clamp and remain available at full health")
+ assert(scene.player.health==scene.player.max_health,"Healing must clamp and remain available at full health")
  scene._bank_rewards()
  var saved:=ConfigFile.new()
  assert(saved.load(scene.hud.settings_path)==OK)
  assert(saved.get_value("progress","coins")==scene.coins)
- scene._choose_level(9)
- await scene.level_loaded
+ # Hunt remains a supported rule even when no authored route uses it.
+ var hunt_fixture: Dictionary = preload("res://data/campaign.gd").get_level(1).duplicate(true)
+ hunt_fixture.mission="hunt"
+ hunt_fixture.enemies[0]["captain"]=true
+ scene._populate_level(hunt_fixture)
  scene.player.set_physics_process(false)
  for enemy in get_nodes_in_group("enemies"):
   enemy.set_physics_process(false)
