@@ -12,3 +12,7 @@
 
 **Gate passage**: Leaving a route through its open exit gate while eligible to exit. Swimming routes require the player to be above water even if the gate is already visibly open.
 
+**Armory purchase**: Spending coins on permanent training or a consumable pack. A purchase is granted only when its coin deduction and skill state have been saved successfully.
+
+**Consumed charge**: A stocked skill use already spent during gameplay. A failed save does not refund its effect or restore its charge in the current session.
+

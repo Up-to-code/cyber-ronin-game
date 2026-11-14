@@ -8,6 +8,16 @@ func run():
  scene._choose_level(4);await scene.level_loaded
  var key=InputEventKey.new();key.keycode=KEY_B;key.physical_keycode=KEY_B;key.pressed=true;Input.parse_input_event(key);await process_frame
  assert(paused and scene.inventory_screen.visible)
+ assert(scene._save_skill_progress()==OK)
+ var good_path: String=scene.hud.settings_path
+ scene.hud.settings_path="user://missing-armory-integration-folder/save.cfg"
+ scene._purchase_skill("sword")
+ assert(scene.coins==1000 and scene.banked_coins==1000 and scene.skill_inventory.ranks.sword==0)
+ assert(scene.save_store.skill_state().ranks.sword==0,"Rejected purchase cannot survive in HUD settings")
+ scene.hud.settings_path=good_path
+ assert(scene.hud.settings.save(good_path)==OK)
+ var unchanged:=ConfigFile.new();assert(unchanged.load(good_path)==OK)
+ assert(unchanged.get_value("skills","state").ranks.sword==0)
  scene._purchase_skill("sword");assert(scene.coins==820 and scene.player.sword_damage_multiplier==1.15)
  scene._purchase_skill("vitality");assert(scene.coins==600 and scene.player.max_health==120)
  scene._purchase_skill("tide");assert(scene.coins==440 and scene.skill_inventory.charges.tide==3)

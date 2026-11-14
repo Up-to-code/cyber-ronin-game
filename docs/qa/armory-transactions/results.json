@@ -1,0 +1,30 @@
+[
+  {
+    "test": "run_progression",
+    "passed": true
+  },
+  {
+    "test": "rewards_missions",
+    "passed": true
+  },
+  {
+    "test": "armory_integration",
+    "passed": true
+  },
+  {
+    "test": "skill_inventory",
+    "passed": true
+  },
+  {
+    "test": "save_store",
+    "passed": true
+  },
+  {
+    "test": "citadel_menu",
+    "passed": true
+  },
+  {
+    "test": "armory_transactions",
+    "passed": true
+  }
+]
