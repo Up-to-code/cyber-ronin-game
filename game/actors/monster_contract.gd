@@ -9,7 +9,10 @@ var contacts:=0
 var action_active:=false
 var current_action_time:=0.0
 var current_action_duration:=0.0
-var current_action_phase:="idle"
+var current_action_phase: String:
+	get:
+		var phase: String = body_state().phase
+		return {"windup":"tell", "strike":"commit"}.get(phase, phase)
 var sound_cooldown:=0.0
 var locked_facing:=1.0
 var locked_origin:=Vector2.ZERO
@@ -35,10 +38,31 @@ func get_choreography() -> Dictionary:
 			for record in parsed:library[int(record.id)]=record
 	return library.get(actor.monster_id,{}) if is_instance_valid(actor) else {}
 
+# Body interpretation belongs to the same clock as the event timeline. Event
+# travel may outlast body commit; it must never be clamped to this body phase.
+func body_state() -> Dictionary:
+	var state := {"phase":"idle", "progress":0.0, "windup_left":0.0, "strike_left":0.0, "recovery_left":0.0, "strike_duration":0.0}
+	if not action_active or choreography.is_empty(): return state
+	var windup: float = choreography.motion.windup
+	var commit: float = choreography.motion.commit
+	state.strike_duration = commit
+	state.windup_left = maxf(0, windup - current_action_time)
+	if current_action_time < windup:
+		state.phase = "windup"
+		state.progress = 1 - state.windup_left / maxf(.01, windup)
+	elif current_action_time < windup + commit:
+		state.phase = "strike"
+		state.strike_left = windup + commit - current_action_time
+		state.progress = 1 - state.strike_left / maxf(.01, commit)
+	else:
+		state.phase = "recovery"
+		state.recovery_left = maxf(0, current_action_duration - current_action_time)
+		state.progress = clampf(1 - state.recovery_left / maxf(.01, float(choreography.motion.recovery)), 0, 1)
+	return state
+
 func cancel_action() -> void:
 	marks.clear()
 	action_active=false
-	current_action_phase="idle"
 	current_action_time=0
 	queue_redraw()
 
@@ -52,7 +76,6 @@ func cast() -> void:
 	locked_target=actor.target.global_position
 	current_action_duration=float(choreography.motion.windup)+float(choreography.motion.commit)+float(choreography.motion.recovery)
 	action_active=true
-	current_action_phase="tell"
 	if ResourceLoader.exists(choreography.motif_texture):motif_texture=load(choreography.motif_texture)
 	action_started.emit(actor.monster_id,choreography.move)
 	_sound("cast",locked_origin)
@@ -89,9 +112,6 @@ func _physics_process(delta: float) -> void:
 		cancel_action();return
 	if not action_active:return
 	current_action_time+=delta
-	var windup:float=choreography.motion.windup
-	var commit:float=choreography.motion.commit
-	current_action_phase="tell" if current_action_time<windup else ("commit" if current_action_time<windup+commit else "recovery")
 	for mark in marks:
 		var event:Dictionary=mark.event
 		var emitted_at:=float(event.at)+float(event.tell)
@@ -121,7 +141,6 @@ func _physics_process(delta: float) -> void:
 	marks=marks.filter(func(m):return m.left > -m.life)
 	if current_action_time>=current_action_duration:
 		action_active=false
-		current_action_phase="idle"
 		marks.clear()
 		action_ended.emit(actor.monster_id)
 	queue_redraw()

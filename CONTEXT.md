@@ -16,3 +16,7 @@
 
 **Consumed charge**: A stocked skill use already spent during gameplay. A failed save does not refund its effect or restore its charge in the current session.
 
+**Authored action**: A monster move whose body movement and travelling effects follow one authored clock.
+
+**Body phase**: The windup, strike or recovery portion of an authored action. A travelling effect can make contact after the body has finished its strike.
+
