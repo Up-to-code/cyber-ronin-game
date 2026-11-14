@@ -42,18 +42,19 @@ func tick(delta: float) -> void:
  var flying: bool=actor.swimming or actor._is_hovering()
  var cycle_distance: float=clampf(float(signature.get("stride",30)),28,80)
  gait+=delta*(clampf(speed/cycle_distance,1.8,3.5) if flying else speed/cycle_distance)
+ var body: Dictionary=actor.action_body_state()
  if actor.health<=0:
   begin_death();phase="death";progress=clampf(actor.death_elapsed/.55,0,1)
   frame_index=_choose_frame(_clip("death",[10,11]),progress)
   modulate.a=1-clampf((actor.death_elapsed-.9)/.35,0,1)
  elif actor.hurt_left>0:
   phase="hurt";progress=1-actor.hit_reaction;frame_index=_choose_frame(_clip("hurt",[8,9]),progress)
- elif actor.windup>0:
-  phase="windup";progress=1-actor.windup/maxf(.01,actor.windup_duration);frame_index=int(_clip("attack",[4,5,6,7])[0])
- elif actor.strike_left>0:
-  phase="strike";progress=1-actor.strike_left/maxf(.01,actor.strike_duration)
+ elif body.phase=="windup":
+  phase="windup";progress=body.progress;frame_index=int(_clip("attack",[4,5,6,7])[0])
+ elif body.phase=="strike":
+  phase="strike";progress=body.progress
   var attack: Array=_clip("attack",[4,5,6,7]);frame_index=int(attack[1 if progress<.6 else 2])
- elif actor.recovery>0:
+ elif body.phase=="recovery":
   phase="recovery";progress=0;frame_index=int(_clip("attack",[4,5,6,7]).back())
  elif moving or flying:
   phase="travel";progress=fposmod(gait,1);frame_index=_choose_frame(_clip("walk",[0,1,2,3]),progress)

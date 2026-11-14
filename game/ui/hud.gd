@@ -1,4 +1,5 @@
 extends CanvasLayer
+signal skills_requested
 signal armory_requested
 signal start_requested
 signal pause_requested
@@ -37,6 +38,7 @@ var menu_center: CenterContainer
 var menu_box: VBoxContainer
 var menu_scroll: ScrollContainer
 var citadel: Control
+var title_view: Control
 var title_layout: BoxContainer
 var touch: Control
 var exit_button: Button
@@ -290,6 +292,9 @@ func _menu_button(text: String, callback: Callable) -> Button:
 	menu_box.add_child(button)
 	return button
 func _render_menu() -> void:
+	if is_instance_valid(title_view):
+		title_view.hide()
+		title_view.queue_free()
 	for child in menu_box.get_children():
 		menu_box.remove_child(child)
 		child.queue_free()
@@ -320,6 +325,10 @@ func _render_menu() -> void:
 			_menu_toggle("Touch controls",touch_enabled,_toggle_touch)
 			_menu_button("Touch layout", func(): _push("touch_settings"))
 			_menu_button("Privacy", func(): _push("privacy"))
+			_menu_button("Campaign map",func():_push("maps"))
+			_menu_button("New adventure",func():start_requested.emit())
+			_menu_button("How to play",func():_push("help"))
+			_menu_button("Credits",func():_push("credits"))
 			_menu_button("START MENU",func(): menu_requested.emit())
 			_menu_button("Back", _back)
 		"audio_settings":
@@ -396,55 +405,22 @@ func _render_menu() -> void:
 	if first:
 		_focus_button.call_deferred(first)
 func _build_title_screen() -> Button:
-	title_layout = BoxContainer.new()
-	title_layout.name = "StartScreen"
-	title_layout.vertical = safe.size.x < 550
-	title_layout.add_theme_constant_override("separation",28)
-	menu_box.add_child(title_layout)
-	var identity := VBoxContainer.new()
-	identity.custom_minimum_size.x = 220
-	identity.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	identity.add_theme_constant_override("separation",10)
-	title_layout.add_child(identity)
-	var title_art := preload("res://ui/floating_wordmark.gd").new()
-	title_art.custom_minimum_size = Vector2(220,150)
-	identity.add_child(title_art)
-	identity.add_child(_label("THE STOLEN BELL",12))
-	var actions := VBoxContainer.new()
-	actions.name = "StartActions"
-	actions.custom_minimum_size.x = 230
-	actions.add_theme_constant_override("separation",6)
-	title_layout.add_child(actions)
-	var first: Button
-	if max_unlocked > 1:
-		first = _button("CONTINUE",func():level_selected.emit(max_unlocked))
-		actions.add_child(first)
-	var start := _button("START",func():start_requested.emit())
-	start.name = "StartNewGame"
-	start.set_meta("accessible_description", "Start a new game at the first route")
-	start.custom_minimum_size.y = 44
-	actions.add_child(start)
-	if first == null: first = start
-	actions.add_child(_button("ARMORY & SKILLS",func():armory_requested.emit()))
-	for entry in [["MAPS","maps"]]:
-		var screen_name: String = entry[1]
-		actions.add_child(_button(entry[0],func():_push(screen_name)))
-	for child in actions.get_children():
-		if child is Button:
-			child.custom_minimum_size.y = 40
-			for state in ["normal", "hover", "pressed", "focus"]:
-				child.add_theme_stylebox_override(state, PixelUI.citadel_button(state))
-	var utilities := HBoxContainer.new()
-	utilities.alignment = BoxContainer.ALIGNMENT_CENTER
-	actions.add_child(utilities)
-	for entry in [["SETTINGS","settings"],["HELP","help"],["CREDITS","credits"]]:
-		var target: String = entry[1]
-		var utility := _button(entry[0],func():_push(target))
-		utility.icon = null
-		utility.add_theme_font_size_override("font_size",10)
-		utility.custom_minimum_size = Vector2(68,30)
-		utilities.add_child(utility)
-	return first
+	menu_center.hide()
+	title_view = preload("res://ui/approved_title.gd").new()
+	title_view.resume_available = max_unlocked > 1
+	root.add_child(title_view)
+	title_view.action_requested.connect(_title_action)
+	return title_view.primary
+
+func _title_action(action: String) -> void:
+	ui_clicked.emit()
+	match action:
+		"play":
+			if max_unlocked > 1: level_selected.emit(max_unlocked)
+			else: start_requested.emit()
+		"inventory": armory_requested.emit()
+		"skills": skills_requested.emit()
+		"settings": _push("settings")
 
 func _menu_heading(screen: String, title: String) -> VBoxContainer:
 	var header := VBoxContainer.new()
@@ -618,6 +594,7 @@ func show_result(won: bool) -> void:
 	screens.assign(["complete" if won else "death"])
 	_render_menu()
 func close_menu() -> void:
+	if is_instance_valid(title_view): title_view.hide()
 	citadel.hide()
 	damage_veil.clear()
 	screens.clear()

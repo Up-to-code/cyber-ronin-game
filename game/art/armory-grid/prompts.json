@@ -1,0 +1,36 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "docs/references/armory-concepts/b-grid.png",
+  "prompts": [
+    [
+      "stage",
+      false,
+      "Create the clean BACKGROUND layer of this exact approved inventory screen. Preserve source composition, rendering, scale and colors: moonlit Japanese shrine courtyard on LEFT HALF, distant castle/moon/trees, stone ground, lanterns; RIGHT HALF is quiet dark navy repeating Japanese wave pattern. Preserve vertical division x50%. Remove all interface, all text, all icons, all frames including perimeter, tabs, coin counter, replay, buy, details. Remove the samurai character and all blue water VFX, reconstruct empty courtyard behind him. Full 16:9 opaque scene plate, same viewpoint and architecture, faithful reference edit, no new design."
+    ],
+    [
+      "chrome",
+      true,
+      "Extract interface CHROME only from this exact approved screen on full-size transparent 16:9 canvas with EXACT registration. Keep thin outer stone/gold border, vertical center divider x50%, top two tab plaques, upper-left back button, upper-right coin plaque, right bottom selected detail panel frame/crimson fill, bottom BUY crimson plaque, left REPLAY plaque, and bottom-left four small equipment medallions with their item drawings. Keep their exact proportions/location. Remove ALL text including INVENTORY SKILLS coin number, BUY price and REPLAY; erase text leaving blank fills. Remove the six large grid icons completely and their frames (will be separate assets). Detail panel: remove its blue wave icon and text, keep blank crimson backdrop/frame. Remove scene, hero and water to true transparency. Faithful extraction no redesign, retain gold coin glyphs and back arrow."
+    ],
+    [
+      "icons",
+      true,
+      "Extract ONLY the six large square skill icons and their carved gold frames from this approved screen onto full-size transparent 16:9 canvas, retain EXACT source positions: sword x900..1105 y130..320, blue wave x1135..1355 y130..320, heart x1380..1598 y130..320; dash x900..1105 y340..525, flask x1135..1355 y340..525, locked rune x1380..1598 y340..525. Preserve fine pixel art and gold crimson style. Remove selected-wave glow and sword check badge: every normal tile has matching unselected frame (selection/owned drawn live later). Keep lock glyph on rune. All other pixels fully transparent: no scene, character, outer frame, other UI or text."
+    ],
+    [
+      "hero",
+      true,
+      "Extract ONLY the crimson-cloaked samurai character, his sword and flowing cape from this exact approved screen onto full-size transparent 16:9 canvas. Preserve pose, scale, exact source position x220..600 y220..625, ornate cloak patterns, silhouette and source colors. Remove everything else to transparent, especially all water rings/VFX, all scenery/ground, all interface/text, frames. Keep feet clean, character head to toe, no water attached. Faithful extraction no new design. Same character registration for layered animation."
+    ],
+    [
+      "water",
+      true,
+      "Extract ONLY the luminous blue-white water ring, wave splashes, blue particles and faint wet reflections circling the character's feet from this approved screen. Keep EXACT position and scale on full-size transparent 16:9 canvas: effect roughly x35..825 y435..650. Remove character, all ground/scenery, all UI, frames and text to transparent alpha. Reconstruct portions hidden by the character as a complete ellipse. Preserve finely detailed blue wave crests, transparent dark gaps, white glowing highlights. This isolated water-ring VFX will animate independently with scaling and opacity in the game."
+    ],
+    [
+      "hero-slash",
+      true,
+      "Create ONE matching attack-pose character layer based on the samurai in this approved image. Same exact character identity, crimson ornate cape, armor, fine pixel rendering and scale. Full 16:9 transparent canvas. Character remains at source position left half with FEET anchored at approximately x460 y615. Change pose to a grounded powerful horizontal katana cut toward right, sword extended, cape trailing to left. Full character head to toe. No VFX, no water, no ground/scenery, no interface/text/frame, all other pixels fully transparent. Match original hero proportions and registration so this can replace its idle cutout without size jumps."
+    ]
+  ]
+}

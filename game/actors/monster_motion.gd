@@ -86,8 +86,9 @@ func tick(delta: float) -> void:
  clock+=delta
  var speed: float=absf(actor.velocity.x)
  gait+=delta*speed/maxf(30,float(signature.get("stride",15))*5)*TAU
- phase="hurt" if actor.hurt_left>0 else ("windup" if actor.windup>0 else ("strike" if actor.strike_left>0 else ("recovery" if actor.recovery>0 else ("travel" if speed>12 and (actor.is_on_floor() or actor.swimming or actor._is_hovering()) else "idle"))))
- progress=1-actor.windup/maxf(.01,actor.windup_duration) if phase=="windup" else (1-actor.strike_left/maxf(.01,actor.strike_duration) if phase=="strike" else (1-actor.recovery/maxf(.01,float(signature.get("recovery",.55))) if phase=="recovery" else 0))
+ var body: Dictionary=actor.action_body_state()
+ phase="hurt" if actor.hurt_left>0 else (body.phase if body.phase!="idle" else ("travel" if speed>12 and (actor.is_on_floor() or actor.swimming or actor._is_hovering()) else "idle"))
+ progress=body.progress if phase in ["windup","strike","recovery"] else 0.0
  progress=clampf(progress,0,1)
  lunge=-sin(progress*PI*.5)*.45 if phase=="windup" else (sin(progress*PI) if phase=="strike" else (-.2*(1-progress) if phase=="recovery" else 0))
  if phase=="hurt":lunge=-actor.hit_reaction*.4

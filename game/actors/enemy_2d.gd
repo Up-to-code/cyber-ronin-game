@@ -464,17 +464,18 @@ func receive_hit(amount: int, kind: String, direction: float, point: Vector2) ->
 
 func _update_rig(delta: float) -> void:
 	if not is_instance_valid(rig): return
-	rig.modulate = roster_tint if health<=0 else (Color(1.12,.92,.82) if windup>0 else (Color(1.3,.7,.65) if hurt_left>0 and hit_reaction>.8 else roster_tint))
+	var body: Dictionary = action_body_state()
+	rig.modulate = roster_tint if health<=0 else (Color(1.12,.92,.82) if body.phase == "windup" else (Color(1.3,.7,.65) if hurt_left>0 and hit_reaction>.8 else roster_tint))
 	if not is_on_floor() and absf(angular_velocity) > 0:
 		tumble += angular_velocity * delta
 	else:
 		tumble = lerp_angle(tumble, 0, 1 - exp(-14 * delta))
 		angular_velocity = move_toward(angular_velocity, 0, delta * 15)
 	rig.external_roll = tumble
-	var state: String = "death" if health <= 0 else ("hurt" if hurt_left > 0 else ("kick" if strike_left > 0 and enemy_kind == "fire" else ("sword" if strike_left > 0 else ("charged" if windup > 0 else ("run" if absf(velocity.x) > 20 else "idle")))))
-	if (swimming or _is_hovering()) and hurt_left <= 0 and health > 0 and windup <= 0 and strike_left <= 0: state = "float"
-	elif health > 0 and hurt_left <= 0 and windup <= 0 and strike_left <= 0 and not is_on_floor(): state = "jump" if velocity.y < 0 else "fall"
-	var progress: float = death_elapsed / 1.3 if health <= 0 else (1.0 - strike_left / strike_duration if strike_left > 0 else 0)
+	var state: String = "death" if health <= 0 else ("hurt" if hurt_left > 0 else ("kick" if body.phase == "strike" and enemy_kind == "fire" else ("sword" if body.phase == "strike" else ("charged" if body.phase == "windup" else ("run" if absf(velocity.x) > 20 else "idle")))))
+	if (swimming or _is_hovering()) and hurt_left <= 0 and health > 0 and body.phase not in ["windup","strike"]: state = "float"
+	elif health > 0 and hurt_left <= 0 and body.phase not in ["windup","strike"] and not is_on_floor(): state = "jump" if velocity.y < 0 else "fall"
+	var progress: float = death_elapsed / 1.3 if health <= 0 else (float(body.progress) if body.phase == "strike" else 0)
 	rig.update_pose(delta, state, facing, velocity, is_on_floor(), progress, hit_reaction)
 	if is_instance_valid(motion_visual):
 		motion_visual.tick(delta)
@@ -583,18 +584,26 @@ func _setup_monster_motion() -> void:
 func _authored_action_active() -> bool:
 	return is_instance_valid(contract) and contract.has_method("get_choreography") and bool(contract.get("action_active"))
 
+# Native/signature attacks retain their timer implementation. Presentation uses
+# this same seam, while authored attacks are interpreted only by the contract.
+func action_body_state() -> Dictionary:
+	if _authored_action_active() or (authored_action_was_active and signature_mode.is_empty()): return contract.body_state()
+	var phase := "windup" if windup > 0 else ("strike" if strike_left > 0 else ("recovery" if recovery > 0 else "idle"))
+	var progress := 1 - windup / maxf(.01, windup_duration) if phase == "windup" else (1 - strike_left / maxf(.01, strike_duration) if phase == "strike" else (1 - recovery / maxf(.01, float(motion_profile.get("recovery", .55))) if phase == "recovery" else 0.0))
+	return {"phase":phase, "progress":clampf(progress,0,1), "windup_left":windup, "strike_left":strike_left, "recovery_left":recovery, "strike_duration":strike_duration}
+
 func _sync_authored_action() -> void:
-	var time: float=float(contract.current_action_time)
-	var anticipation: float=float(motion_profile.get("windup",.4))
-	var commit: float=float(motion_profile.get("commit",.32))
-	windup=maxf(0,anticipation-time)
-	strike_duration=commit
-	strike_left=maxf(0,anticipation+commit-time) if time>=anticipation and time<anticipation+commit else 0
-	recovery=maxf(0,float(contract.current_action_duration)-time) if time>=anticipation+commit else 0
+	authored_action_was_active = true
+	var body: Dictionary = contract.body_state()
+	# Compatibility timers still support native AI gates; they do not interpret time.
+	windup = body.windup_left
+	strike_duration = body.strike_duration
+	strike_left = body.strike_left
+	recovery = body.recovery_left
 	var stance: String=str(motion_profile.get("stance","duelist"))
 	velocity.x=0 # Anticipation has a planted support instead of sliding windup.
-	if strike_left>0:
-		var phase:=1-strike_left/maxf(.01,commit)
+	if body.phase == "strike":
+		var phase: float = body.progress
 		var drive:=sin(phase*PI)
 		var strength: float=200 if stance in ["wolf","beast","quadruped","pouncer"] else (120 if stance in ["flyer","bird","winged"] else 48)
 		if swimming:
@@ -606,7 +615,7 @@ func _sync_authored_action() -> void:
 			velocity.x=facing*strength*drive
 			if _is_hovering() and is_instance_valid(target):
 				velocity.y=clampf(target.global_position.y-35-global_position.y,-160,160)*drive
-	elif recovery>0 and stance in ["duelist","ronin","samurai"] and is_on_floor() and _floor_ahead(-facing):
+	elif body.phase == "recovery" and stance in ["duelist","ronin","samurai"] and is_on_floor() and _floor_ahead(-facing):
 		velocity.x=-facing*30
 
 func attack_origin(offset: Vector2 = Vector2.ZERO) -> Vector2:

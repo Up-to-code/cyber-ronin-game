@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Layout (1280, 720): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+Layout (1600, 720): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+Layout (960, 540): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+Layout (1920, 1080): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+Layout (1024, 768): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+Layout (2532, 1170): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+Layout (2266, 1488): sword hit 70.9 px, sword face 58.1 px, skill hit 52.0 px
+PASS: left directional cross, central sword with surrounding skills and energy slash, separate meters, independent touches/pause release, nonoverlapping safe-area targets, saved customization, privacy routes, menu back and mute

@@ -6,6 +6,7 @@ const Hud = preload("res://ui/hud.gd")
 const ObjectiveTracker = preload("res://systems/objective_tracker.gd")
 const SkillInventory = preload("res://systems/skill_inventory.gd")
 var skill_inventory: RefCounted
+var armory_transactions: RefCounted
 var inventory_screen: Control
 var inventory_layer: CanvasLayer
 var inventory_button: Button
@@ -24,21 +25,31 @@ var progression: RefCounted
 var camera_director: RefCounted
 var background_director: RefCounted
 var fx_director: RefCounted
-var required_devices: Dictionary = {}
+var menu_session: RefCounted
+var required_devices: Dictionary:
+	get: return progression.required_devices()
 var active_realm := "surface"
 var tidal_water: Node2D
 var sequence_machine: Node2D
 var player: CharacterBody2D
 var hud: CanvasLayer
 var camera: Camera2D
-var remaining: int = 0
+# Compatibility for existing scene fixtures; gameplay mutates progression through events.
+var remaining: int:
+	get: return progression.remaining
+	set(value): progression.remaining = value
 var coins: int = 0
 var banked_coins: int = 0
-var seals_left: int = 0
-var marked_left: int = 0
+# Compatibility for existing scene fixtures; gameplay mutates progression through events.
+var seals_left: int:
+	get: return progression.seals_left
+	set(value): progression.seals_left = value
+# Compatibility for existing scene fixtures; gameplay mutates progression through events.
+var marked_left: int:
+	get: return progression.marked_left
+	set(value): progression.marked_left = value
 var gate_opening: bool:
 	get: return progression.gate_opening
-	set(value): progression.gate_opening = value
 var level: int = 1
 var elapsed: float = 0
 var screenshot_path: String = ""
@@ -57,22 +68,24 @@ var welcome_art: Sprite2D
 var moving_platform: AnimatableBody2D
 var lifts: Array[AnimatableBody2D] = []
 var fx: Node2D
-var started: bool = false
-var run_token: int = 0
+var started: bool:
+	get: return menu_session.started if menu_session!=null else false
+var run_token: int:
+	get: return progression.generation
 var shrine: Sprite2D
 var gate_open: bool:
 	get: return progression.gate_open
-	set(value): progression.gate_open = value
-var gate_entry_time: float = 0.0
+var gate_entry_time: float:
+	get: return progression.entry_time
 var level_root: Node2D
 var map: Dictionary = {}
-var transitioning: bool = false
+var transitioning: bool:
+	get: return menu_session.transitioning if menu_session!=null else false
 var threat_hold: float = 0
 var textures: Dictionary = {}
 var platform_surface: int = 8
 var torch_frames: SpriteFrames
 var story_card: CanvasLayer
-var story_ending: bool = false
 var story_seen: Dictionary = {}
 
 func _ready() -> void:
@@ -108,6 +121,7 @@ func _ready() -> void:
 	_build_inventory()
 	story_card = preload("res://ui/story_card.gd").new()
 	add_child(story_card)
+	menu_session = preload("res://systems/run/menu_session.gd").new(player,hud,inventory_screen,story_card,_audio())
 	story_card.continued.connect(_finish_story)
 	player.health_changed.connect(hud.set_health)
 	player.power_changed.connect(hud.set_power)
@@ -129,7 +143,7 @@ func _ready() -> void:
 	for path in _resource_paths(map):
 		textures[path] = load(path)
 	_populate_level(map)
-	get_tree().paused = true
+	menu_session.show_title()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--qa-screenshot="):
 			screenshot_path = arg.trim_prefix("--qa-screenshot=")
@@ -282,7 +296,7 @@ func _torch(at: Vector2, phase: int) -> void:
 
 func _populate_level(data: Dictionary) -> void:
 	_audio().set_defeated(false)
-	run_token += 1
+	progression.reset(data)
 	for projectile in get_tree().get_nodes_in_group("combat_projectiles"):
 		projectile.free()
 	threat_hold = 0
@@ -298,7 +312,6 @@ func _populate_level(data: Dictionary) -> void:
 	player.set_submerged(false)
 	player.set_physics_process(true)
 	map = data
-	required_devices.clear()
 	active_realm = "surface"
 	level = data.id
 	platform_surface = 0
@@ -349,8 +362,6 @@ func _populate_level(data: Dictionary) -> void:
 	shrine = Sprite2D.new()
 	shrine.texture = preload("res://art/crimson-gate/gate.png")
 	shrine.hframes = 4
-	progression.reset()
-	gate_entry_time = 0.0
 	shrine.position = data.exit
 	shrine.offset = Vector2(0, -88)
 	var gate_scale: Array = data.get("gate_visual",{}).get("scale",[0.65,1.0])
@@ -383,23 +394,16 @@ func _populate_level(data: Dictionary) -> void:
 	hud.set_health(player.health, player.max_health)
 	hud.set_exit_available(false)
 	coins=banked_coins
-	seals_left=0
-	marked_left=0
 	for item in data.get("pickups",[]):
 		_spawn_pickup(item.kind,item.amount,item.position)
-		if item.kind=="seal": seals_left+=1
-	for record in data.enemies:
-		if record.get("boss",false) or record.get("captain",false): marked_left+=1
-	remaining = data.enemies.size()
 	var token: int = run_token
 	for guard in data.enemies:
 		_spawn_campaign_enemy(guard,token)
 	for record in data.get("devices",[]):
 		var device := preload("res://systems/realm_device.gd").new()
 		device.setup(player,record)
-		if record.get("required",false): required_devices[str(record.id)] = true
 		device.completed.connect(func(id: String):
-			required_devices.erase(id)
+			progression.device_completed(id)
 			_update_mission()
 			_check_gate())
 		device.realm_requested.connect(_enter_realm)
@@ -452,8 +456,7 @@ func _spawn_campaign_enemy(guard: Dictionary, token: int) -> void:
 			if token != run_token: return
 			for spec in specs.slice(0,6):
 				spec["captain"] = true
-				remaining += 1
-				marked_left += 1
+				progression.enemy_spawned(true)
 				_spawn_campaign_enemy(spec,token))
 	enemy.defeated.connect(func():
 		if token == run_token:
@@ -530,7 +533,7 @@ func _pickup_collected(kind: String, amount: int, at: Vector2) -> void:
 		"health":
 			player.health=mini(player.max_health,player.health+amount)
 			player.health_changed.emit(player.health,player.max_health)
-		"seal": seals_left=maxi(0,seals_left-1)
+		"seal": progression.seal_collected()
 	fx.spawn("heal" if kind=="health" else "sparkle",at,1)
 	_audio().play("ui" if kind=="coin" else "bell")
 	_update_mission()
@@ -538,10 +541,12 @@ func _pickup_collected(kind: String, amount: int, at: Vector2) -> void:
 
 func _objective_state() -> Dictionary:
 	var phase: String = sequence_machine.phase if is_instance_valid(sequence_machine) else "idle"
-	return ObjectiveTracker.describe(map,remaining,seals_left,marked_left,required_devices,phase,player.submerged)
+	progression.observe(phase, player.submerged)
+	return progression.objective_state()
 
 func _objectives_met() -> bool:
-	return bool(_objective_state().complete)
+	_objective_state()
+	return progression.objectives_met()
 
 func _refresh_guide() -> void:
 	if not is_instance_valid(objective_guide) or map.is_empty(): return
@@ -571,7 +576,6 @@ func _bank_rewards() -> void:
 	save_store.save(hud.settings_path)
 
 func _enemy_defeated(enemy: Node2D = null, marked: bool = false) -> void:
-	if marked: marked_left=maxi(0,marked_left-1)
 	if is_instance_valid(enemy):
 		var point: Vector2=enemy.position
 		var best: Vector2=map.spawn
@@ -583,12 +587,13 @@ func _enemy_defeated(enemy: Node2D = null, marked: bool = false) -> void:
 				best=candidate
 		_spawn_pickup("coin",20 if marked else 5,best)
 		if remaining%3==0 or marked: _spawn_pickup("health",25,best+Vector2(32,-4))
-	remaining=maxi(0,remaining-1)
+	progression.enemy_defeated(marked)
 	_update_mission()
 	_check_gate()
 
 func _check_gate() -> void:
-	if not progression.begin_open(_objectives_met()): return
+	_objective_state()
+	if not progression.begin_open(): return
 	shrine.modulate=Color(1.4,1.25,1.05)
 	_audio().play("bell")
 	var field:=preload("res://systems/gate_field.gd").new()
@@ -600,8 +605,7 @@ func _check_gate() -> void:
 	gate_tween.tween_method(func(value: float):
 		if is_instance_valid(shrine): shrine.frame=mini(3,int(value)),0.0,3.99,0.8)
 	gate_tween.tween_callback(func():
-		if token!=run_token: return
-		progression.complete()
+		if not progression.complete(token): return
 		hud.set_state("Gate open")
 		fx.burst("charge",shrine.position+Vector2(0,-90),1)
 		_audio().play("power"))
@@ -614,12 +618,9 @@ func _choose_level(index: int) -> void:
 		_transition_level(clampi(index, 1, CampaignData.levels().size()))
 
 func _transition_level(index: int) -> void:
-	if is_instance_valid(inventory_screen): inventory_screen.hide()
-	transitioning = true
-	get_tree().paused = true
-	_audio().set_combat(false)
 	var data: Dictionary = CampaignData.get_level(index)
-	hud.show_loading(index, data.name)
+	var ticket: int = menu_session.begin_loading(index,data.name)
+	if ticket<0:return
 	hud.set_loading_progress(0, "Loading")
 	await get_tree().process_frame
 	var paths: Array[String] = _resource_paths(data)
@@ -639,8 +640,7 @@ func _transition_level(index: int) -> void:
 				fraction += float(progress[0]) if not progress.is_empty() else 0.0
 			else:
 				push_error("Failed to load level resource: " + path)
-				transitioning = false
-				hud.show_title()
+				menu_session.fail_loading(ticket)
 				return
 		hud.set_loading_progress(0.75 * fraction / paths.size(), "Loading")
 		await get_tree().process_frame
@@ -651,80 +651,44 @@ func _transition_level(index: int) -> void:
 	_populate_level(data)
 	hud.set_loading_progress(1, "Ready")
 	await get_tree().process_frame
-	await hud.finish_loading()
-	started = true
-	transitioning = false
-	get_tree().paused = false
+	if not await menu_session.finish_loading(ticket):return
 	level_loaded.emit(index)
 	# Chapter text is available on demand; entering a route keeps play in motion.
 	# Route objectives live in the map and chapter screen, leaving combat clear.
 
 func _show_story(index: int, ending: bool) -> void:
-	if transitioning or not started: return
-	player.cancel_pending_input()
-	hud.touch.release_all()
-	hud.touch.hide()
-	get_tree().paused = true
-	story_ending = ending
-	story_card.show_chapter(index, ending)
+	menu_session.show_story(index,ending)
 
 func _finish_story() -> void:
-	await get_tree().process_frame
-	player.cancel_pending_input()
-	hud.touch.release_all()
-	if story_ending:
-		hud.show_result(true)
-	else:
-		hud.close_menu()
-		get_tree().paused = false
-		hud.state_label.hide()
+	await menu_session.finish_story()
 
 func _reset_encounter() -> void:
 	# Synchronous reset remains useful for isolated test setup.
 	_populate_level(map)
 
 func pause_game() -> void:
-	player.cancel_pending_input()
-	if not started or get_tree().paused or transitioning:
-		return
-	get_tree().paused = true
-	_audio().set_combat(false)
-	hud.show_pause()
+	menu_session.pause()
 
 func resume_game() -> void:
-	if transitioning:
-		return
-	hud.close_menu()
-	get_tree().paused = false
+	menu_session.resume()
 
 func retry_game() -> void:
 	_choose_level(level)
 
 func main_menu() -> void:
+	if transitioning:return
 	_audio().set_defeated(false)
-	player.cancel_pending_input()
-	if transitioning:
-		return
-	run_token += 1
-	started = false
-	get_tree().paused = true
-	_audio().set_combat(false)
-	hud.show_title()
+	progression.cancel()
+	menu_session.show_title()
 
 func _player_state(value: String) -> void:
 	if value == "Fire and sun relics cannot ignite underwater": hud.set_state(value)
-	if value == "Defeated":
-		# Remove touch affordances for the whole death beat, not only once the
-		# result card finally covers gameplay.
-		hud.hide_touch_controls()
+	if value == "Defeated": hud.hide_touch_controls()
 	if player.health == 0:
-		var token: int = run_token
-		var duration: float = player.death_duration()
-		await get_tree().create_timer(duration, false).timeout
-		if token == run_token and player.health == 0 and started:
-			get_tree().paused = true
-			_audio().set_combat(false)
-			hud.show_result(false)
+		var ticket: int=menu_session.begin_defeat()
+		if ticket<0:return
+		await get_tree().create_timer(player.death_duration(), false).timeout
+		menu_session.finish_defeat(ticket)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_B:
@@ -765,7 +729,8 @@ func _process(delta: float) -> void:
 	_layout_background(get_viewport_rect().size,Vector2(camera.position.x-half_width,camera.position.y-360))
 	if started and not get_tree().paused and not transitioning:
 		var at_exit: bool = player.position.distance_to(map.exit) < 120
-		hud.set_exit_available(_objectives_met() and gate_open and at_exit)
+		_objective_state()
+		hud.set_exit_available(progression.exit_available(player.position))
 		var near_threat: bool = false
 		for guard in get_tree().get_nodes_in_group("enemies"):
 			if guard.health > 0 and guard.position.distance_to(player.position) < 470:
@@ -776,24 +741,20 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("restart"):
 			retry_game()
 		# Walking into the aperture charges passage; leaving it cancels the charge.
-		var inside_gate: bool = absf(player.position.x - map.exit.x) < 34 and absf(player.position.y - map.exit.y) < 24
 		if Input.is_action_just_pressed("interact") and at_exit and not _objectives_met(): hud.set_state(_objective_state().text)
-		var can_enter: bool = _objectives_met() and gate_open and player.health > 0
-		gate_entry_time = minf(0.45, gate_entry_time + delta) if can_enter and inside_gate else 0.0
+		var enter_gate: bool = progression.advance_entry(delta, player.position, player.health > 0, Input.is_action_just_pressed("interact"))
 		var gate_field := shrine.get_node_or_null("GateField")
 		if gate_field != null:
 			gate_field.entry_charge = gate_entry_time / 0.45
-		if (Input.is_action_just_pressed("interact") or gate_entry_time >= 0.45) and can_enter and at_exit:
+		if enter_gate:
 			_bank_rewards()
 			if level < CampaignData.levels().size():
 				hud.unlock_level(level + 1)
 				_choose_level(level + 1)
 			else:
-				get_tree().paused = true
-				_audio().set_combat(false)
 				if DisplayServer.get_name() != "headless" and not "--qa-gameplay" in OS.get_cmdline_user_args() and not "--qa-capture" in OS.get_cmdline_user_args():
 					_show_story(level, true)
-				else: hud.show_result(true)
+				else: menu_session.show_result(true)
 	if not screenshot_path.is_empty() and elapsed > 1.0 and not capture_started and not transitioning:
 		capture_started = true
 		_capture_qa_frame()
@@ -814,6 +775,7 @@ func _layout_background(extent: Vector2, camera_shift: Vector2) -> void:
 func _build_inventory() -> void:
 	skill_inventory = SkillInventory.new()
 	skill_inventory.load_state(save_store.skill_state())
+	armory_transactions = preload("res://systems/run/armory_transactions.gd").new(skill_inventory, save_store)
 	player.apply_skill_inventory(skill_inventory)
 	player.inventory_consumed.connect(func(_id: String):
 		_save_skill_progress()
@@ -824,9 +786,11 @@ func _build_inventory() -> void:
 	inventory_screen = preload("res://ui/character_inventory.gd").new()
 	inventory_screen.setup(skill_inventory,coins)
 	inventory_layer.add_child(inventory_screen)
+	if is_instance_valid(player.rig): inventory_screen.preview.set_character_profile(player.rig.profile_id)
 	inventory_screen.hide()
 	inventory_screen.closed.connect(_close_inventory)
-	hud.armory_requested.connect(_open_inventory)
+	hud.armory_requested.connect(func(): menu_session.open_armory("inventory",coins))
+	hud.skills_requested.connect(func(): menu_session.open_armory("skills",coins))
 	inventory_screen.purchase_requested.connect(_purchase_skill)
 	inventory_button = Button.new()
 	inventory_button.text="B · ARMORY"
@@ -852,43 +816,21 @@ func _build_inventory() -> void:
 	hud.gameplay.add_child(objective_guide)
 
 func _open_inventory() -> void:
-	if transitioning or get_tree().paused or player.health<=0: return
-	player.cancel_pending_input()
-	hud.touch.release_all()
-	hud.gameplay.hide()
-	get_tree().paused=true
-	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
-	inventory_screen.show()
-	inventory_screen.refresh(coins)
-	inventory_screen.close_button.grab_focus()
+	menu_session.open_armory("all",coins)
 
 func _close_inventory() -> void:
-	inventory_screen.hide()
-	hud.gameplay.visible = started
-	get_tree().paused=false
-	player.cancel_pending_input()
-	_refresh_guide()
+	if menu_session.close_armory():_refresh_guide()
 
 func _save_skill_progress() -> Error:
-	save_store.set_coins(banked_coins)
-	save_store.set_skill_state(skill_inventory.export_state())
-	return save_store.save(hud.settings_path)
+	return armory_transactions.save_progress(banked_coins, hud.settings_path)
 
 func _purchase_skill(id: String) -> void:
-	var before: Dictionary=skill_inventory.export_state()
-	var old_coins: int=coins
-	var old_bank: int=banked_coins
-	var result: Dictionary=skill_inventory.purchase(id,coins)
+	var result: Dictionary = armory_transactions.purchase(id, coins, hud.settings_path)
 	if result.ok:
-		coins=int(result.wallet)
-		banked_coins=coins
-		if _save_skill_progress()!=OK:
-			skill_inventory.load_state(before)
-			coins=old_coins;banked_coins=old_bank
-			result.message="Could not save. Purchase was cancelled."
-		else:
-			player.apply_skill_inventory(skill_inventory)
-			hud.set_health(player.health,player.max_health)
-			_audio().play("bell")
-	inventory_screen.refresh(coins,result.message)
+		coins = int(result.wallet)
+		banked_coins = coins
+		player.apply_skill_inventory(skill_inventory)
+		hud.set_health(player.health, player.max_health)
+		_audio().play("bell")
+	inventory_screen.refresh(coins, result.message)
 	_update_mission()
