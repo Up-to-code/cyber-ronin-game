@@ -24,21 +24,30 @@ var progression: RefCounted
 var camera_director: RefCounted
 var background_director: RefCounted
 var fx_director: RefCounted
-var required_devices: Dictionary = {}
+var required_devices: Dictionary:
+	get: return progression.required_devices()
 var active_realm := "surface"
 var tidal_water: Node2D
 var sequence_machine: Node2D
 var player: CharacterBody2D
 var hud: CanvasLayer
 var camera: Camera2D
-var remaining: int = 0
+# Compatibility for existing scene fixtures; gameplay mutates progression through events.
+var remaining: int:
+	get: return progression.remaining
+	set(value): progression.remaining = value
 var coins: int = 0
 var banked_coins: int = 0
-var seals_left: int = 0
-var marked_left: int = 0
+# Compatibility for existing scene fixtures; gameplay mutates progression through events.
+var seals_left: int:
+	get: return progression.seals_left
+	set(value): progression.seals_left = value
+# Compatibility for existing scene fixtures; gameplay mutates progression through events.
+var marked_left: int:
+	get: return progression.marked_left
+	set(value): progression.marked_left = value
 var gate_opening: bool:
 	get: return progression.gate_opening
-	set(value): progression.gate_opening = value
 var level: int = 1
 var elapsed: float = 0
 var screenshot_path: String = ""
@@ -58,12 +67,13 @@ var moving_platform: AnimatableBody2D
 var lifts: Array[AnimatableBody2D] = []
 var fx: Node2D
 var started: bool = false
-var run_token: int = 0
+var run_token: int:
+	get: return progression.generation
 var shrine: Sprite2D
 var gate_open: bool:
 	get: return progression.gate_open
-	set(value): progression.gate_open = value
-var gate_entry_time: float = 0.0
+var gate_entry_time: float:
+	get: return progression.entry_time
 var level_root: Node2D
 var map: Dictionary = {}
 var transitioning: bool = false
@@ -282,7 +292,7 @@ func _torch(at: Vector2, phase: int) -> void:
 
 func _populate_level(data: Dictionary) -> void:
 	_audio().set_defeated(false)
-	run_token += 1
+	progression.reset(data)
 	for projectile in get_tree().get_nodes_in_group("combat_projectiles"):
 		projectile.free()
 	threat_hold = 0
@@ -298,7 +308,6 @@ func _populate_level(data: Dictionary) -> void:
 	player.set_submerged(false)
 	player.set_physics_process(true)
 	map = data
-	required_devices.clear()
 	active_realm = "surface"
 	level = data.id
 	platform_surface = 0
@@ -349,8 +358,6 @@ func _populate_level(data: Dictionary) -> void:
 	shrine = Sprite2D.new()
 	shrine.texture = preload("res://art/crimson-gate/gate.png")
 	shrine.hframes = 4
-	progression.reset()
-	gate_entry_time = 0.0
 	shrine.position = data.exit
 	shrine.offset = Vector2(0, -88)
 	var gate_scale: Array = data.get("gate_visual",{}).get("scale",[0.65,1.0])
@@ -383,23 +390,16 @@ func _populate_level(data: Dictionary) -> void:
 	hud.set_health(player.health, player.max_health)
 	hud.set_exit_available(false)
 	coins=banked_coins
-	seals_left=0
-	marked_left=0
 	for item in data.get("pickups",[]):
 		_spawn_pickup(item.kind,item.amount,item.position)
-		if item.kind=="seal": seals_left+=1
-	for record in data.enemies:
-		if record.get("boss",false) or record.get("captain",false): marked_left+=1
-	remaining = data.enemies.size()
 	var token: int = run_token
 	for guard in data.enemies:
 		_spawn_campaign_enemy(guard,token)
 	for record in data.get("devices",[]):
 		var device := preload("res://systems/realm_device.gd").new()
 		device.setup(player,record)
-		if record.get("required",false): required_devices[str(record.id)] = true
 		device.completed.connect(func(id: String):
-			required_devices.erase(id)
+			progression.device_completed(id)
 			_update_mission()
 			_check_gate())
 		device.realm_requested.connect(_enter_realm)
@@ -452,8 +452,7 @@ func _spawn_campaign_enemy(guard: Dictionary, token: int) -> void:
 			if token != run_token: return
 			for spec in specs.slice(0,6):
 				spec["captain"] = true
-				remaining += 1
-				marked_left += 1
+				progression.enemy_spawned(true)
 				_spawn_campaign_enemy(spec,token))
 	enemy.defeated.connect(func():
 		if token == run_token:
@@ -530,7 +529,7 @@ func _pickup_collected(kind: String, amount: int, at: Vector2) -> void:
 		"health":
 			player.health=mini(player.max_health,player.health+amount)
 			player.health_changed.emit(player.health,player.max_health)
-		"seal": seals_left=maxi(0,seals_left-1)
+		"seal": progression.seal_collected()
 	fx.spawn("heal" if kind=="health" else "sparkle",at,1)
 	_audio().play("ui" if kind=="coin" else "bell")
 	_update_mission()
@@ -538,10 +537,12 @@ func _pickup_collected(kind: String, amount: int, at: Vector2) -> void:
 
 func _objective_state() -> Dictionary:
 	var phase: String = sequence_machine.phase if is_instance_valid(sequence_machine) else "idle"
-	return ObjectiveTracker.describe(map,remaining,seals_left,marked_left,required_devices,phase,player.submerged)
+	progression.observe(phase, player.submerged)
+	return progression.objective_state()
 
 func _objectives_met() -> bool:
-	return bool(_objective_state().complete)
+	_objective_state()
+	return progression.objectives_met()
 
 func _refresh_guide() -> void:
 	if not is_instance_valid(objective_guide) or map.is_empty(): return
@@ -571,7 +572,6 @@ func _bank_rewards() -> void:
 	save_store.save(hud.settings_path)
 
 func _enemy_defeated(enemy: Node2D = null, marked: bool = false) -> void:
-	if marked: marked_left=maxi(0,marked_left-1)
 	if is_instance_valid(enemy):
 		var point: Vector2=enemy.position
 		var best: Vector2=map.spawn
@@ -583,12 +583,13 @@ func _enemy_defeated(enemy: Node2D = null, marked: bool = false) -> void:
 				best=candidate
 		_spawn_pickup("coin",20 if marked else 5,best)
 		if remaining%3==0 or marked: _spawn_pickup("health",25,best+Vector2(32,-4))
-	remaining=maxi(0,remaining-1)
+	progression.enemy_defeated(marked)
 	_update_mission()
 	_check_gate()
 
 func _check_gate() -> void:
-	if not progression.begin_open(_objectives_met()): return
+	_objective_state()
+	if not progression.begin_open(): return
 	shrine.modulate=Color(1.4,1.25,1.05)
 	_audio().play("bell")
 	var field:=preload("res://systems/gate_field.gd").new()
@@ -600,8 +601,7 @@ func _check_gate() -> void:
 	gate_tween.tween_method(func(value: float):
 		if is_instance_valid(shrine): shrine.frame=mini(3,int(value)),0.0,3.99,0.8)
 	gate_tween.tween_callback(func():
-		if token!=run_token: return
-		progression.complete()
+		if not progression.complete(token): return
 		hud.set_state("Gate open")
 		fx.burst("charge",shrine.position+Vector2(0,-90),1)
 		_audio().play("power"))
@@ -705,7 +705,7 @@ func main_menu() -> void:
 	player.cancel_pending_input()
 	if transitioning:
 		return
-	run_token += 1
+	progression.cancel()
 	started = false
 	get_tree().paused = true
 	_audio().set_combat(false)
@@ -765,7 +765,8 @@ func _process(delta: float) -> void:
 	_layout_background(get_viewport_rect().size,Vector2(camera.position.x-half_width,camera.position.y-360))
 	if started and not get_tree().paused and not transitioning:
 		var at_exit: bool = player.position.distance_to(map.exit) < 120
-		hud.set_exit_available(_objectives_met() and gate_open and at_exit)
+		_objective_state()
+		hud.set_exit_available(progression.exit_available(player.position))
 		var near_threat: bool = false
 		for guard in get_tree().get_nodes_in_group("enemies"):
 			if guard.health > 0 and guard.position.distance_to(player.position) < 470:
@@ -776,14 +777,12 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("restart"):
 			retry_game()
 		# Walking into the aperture charges passage; leaving it cancels the charge.
-		var inside_gate: bool = absf(player.position.x - map.exit.x) < 34 and absf(player.position.y - map.exit.y) < 24
 		if Input.is_action_just_pressed("interact") and at_exit and not _objectives_met(): hud.set_state(_objective_state().text)
-		var can_enter: bool = _objectives_met() and gate_open and player.health > 0
-		gate_entry_time = minf(0.45, gate_entry_time + delta) if can_enter and inside_gate else 0.0
+		var enter_gate: bool = progression.advance_entry(delta, player.position, player.health > 0, Input.is_action_just_pressed("interact"))
 		var gate_field := shrine.get_node_or_null("GateField")
 		if gate_field != null:
 			gate_field.entry_charge = gate_entry_time / 0.45
-		if (Input.is_action_just_pressed("interact") or gate_entry_time >= 0.45) and can_enter and at_exit:
+		if enter_gate:
 			_bank_rewards()
 			if level < CampaignData.levels().size():
 				hud.unlock_level(level + 1)
