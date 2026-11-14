@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS swim waypoint0 (617.2603, 436.6191)
+PASS swim waypoint1 (848.2466, 634.0068)
+PASS swim waypoint2 (684.879, 645.3926)
+PASS swim waypoint3 (637.8721, 916.4833)
+PASS swim waypoint4 (1017.502, 1005.263)
+PASS swim waypoint5 (1415.864, 1263.769)
+PASS swim waypoint6 (1643.014, 885.5964)
+PASS swim waypoint7 (2066.908, 742.1704)
+PASS swim waypoint8 (2466.667, 945.4933)
+PASS swim waypoint9 (2782.516, 485.0447)
+PASS swim waypoint10 (2852.639, 350.0398)
+PASS swim waypoint11 (2998.555, 293.2934)
+PASS underwater entry,3 pearls,whirlpool navigation,dry escape,retry,fire quench,water pulse,land reset
