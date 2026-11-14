@@ -4,6 +4,14 @@ var age := 0.0
 func _draw() -> void:
  var bounds := Rect2(Vector2(9,9), size - Vector2(18,18))
  if bounds.size.x <= 0 or bounds.size.y <= 0: return
+ # Thin red channels hug the frame; intensity travels slowly without flashing.
+ for side in [0,1]:
+  var x := 5.0 if side == 0 else size.x-5.0
+  var direction := 1.0 if side == 0 else -1.0
+  var points := PackedVector2Array([Vector2(x,size.y*.18),Vector2(x,size.y*.35),Vector2(x+direction*3,size.y*.38),Vector2(x+direction*3,size.y*.62),Vector2(x,size.y*.65),Vector2(x,size.y*.9)])
+  var intensity := .45+.15*sin(age*.8+side*2)
+  draw_polyline(points,Color(1,.04,.08,intensity*.2),5.0,true)
+  draw_polyline(points,Color(1,.1,.15,intensity),1.0,true)
  var perimeter := 2.0 * (bounds.size.x + bounds.size.y)
  for beam in range(3):
   for trail in range(18):
