@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "texture": "game/art/monster-motifs/001.png",
+    "sha256": "0affa3a57f33b5765773484a114b83779eba5adeeb20ec105e6f885d30ac740f"
+  },
+  {
+    "id": 2,
+    "texture": "game/art/monster-motifs/002.png",
+    "sha256": "b5862115e12d93ef79b99deb99703e6877cab84aae1122ff1599670f5a1366e0"
+  },
+  {
+    "id": 3,
+    "texture": "game/art/monster-motifs/003.png",
+    "sha256": "6e43fdd402c43e0eef5d0ebc4239ffd6dbb824311a79edb7039638df37b72509"
+  },
+  {
+    "id": 4,
+    "texture": "game/art/monster-motifs/004.png",
+    "sha256": "aad82e296860173450cb2f55fd30370cb413b30a693580a76f9567006efc8ede"
+  },
+  {
+    "id": 5,
+    "texture": "game/art/monster-motifs/005.png",
+    "sha256": "e7e916d63b479fcbb0706543ab8e258f980c108e35bf6b6f55c8c48d0fcc1e51"
+  },
+  {
+    "id": 6,
+    "texture": "game/art/monster-motifs/006.png",
+    "sha256": "2098725ffa7d7b32cd308eff39cc044d9a7a6c3d3e89ad3b9d9f86ec922e4730"
+  },
+  {
+    "id": 7,
+    "texture": "game/art/monster-motifs/007.png",
+    "sha256": "9c4a110f0077fa13bfbf1ad3c3451f41c36dbd4fb09390fc1585b80f1d34afbe"
+  },
+  {
+    "id": 8,
+    "texture": "game/art/monster-motifs/008.png",
+    "sha256": "ed2a1336b551d9cedf255ea5a64887c9dd1d4808c14b40fdd643065fee9d0c66"
+  },
+  {
+    "id": 9,
+    "texture": "game/art/monster-motifs/009.png",
+    "sha256": "6f6ce31bc0112621da47194738f4d179546e57d36318b34782c5392a2f203bec"
+  },
+  {
+    "id": 10,
+    "texture": "game/art/monster-motifs/010.png",
+    "sha256": "3ec9cdbad02817e5016e219c6ec1ad749aa089dbf0b0994a353d32302f4d0774"
+  },
+  {
+    "id": 11,
+    "texture": "game/art/monster-motifs/011.png",
+    "sha256": "5dfbd0d389c45029fd3e345a143284952190ced6b6a20b8702159029bf62ae7f"
+  },
+  {
+    "id": 12,
+    "texture": "game/art/monster-motifs/012.png",
+    "sha256": "9e654c1e1aa95b59e20d8c7ac867e6ff6f37230989d7d6e3f3ada510b03c2246"
+  },
+  {
+    "id": 13,
+    "texture": "game/art/monster-motifs/013.png",
+    "sha256": "f5ceacf43b5c008f664bddfa9a2631425513e8b482cd5377e52fe690dfd44830"
+  },
+  {
+    "id": 14,
+    "texture": "game/art/monster-motifs/014.png",
+    "sha256": "dafa2b230485782aa3bcc3581a179611e073b387618079421b5cd08c91230796"
+  },
+  {
+    "id": 15,
+    "texture": "game/art/monster-motifs/015.png",
+    "sha256": "69c74c70f70bf18331cba9c78e0f8316b82c83a6c0adeacffa1eda383e3c16b0"
+  },
+  {
+    "id": 16,
+    "texture": "game/art/monster-motifs/016.png",
+    "sha256": "ab5aa56583e130608ae7a0843350fcc60086189af68f00650146e15eadfb63c9"
+  },
+  {
+    "id": 17,
+    "texture": "game/art/monster-motifs/017.png",
+    "sha256": "738a5cc35461b536485da9dad6e684e90822c5012be5a70cec8af6e46f6dddc6"
+  },
+  {
+    "id": 18,
+    "texture": "game/art/monster-motifs/018.png",
+    "sha256": "a461e302316a8320e4a7923b5c84a44ed626b603b192babb8d1cc39511c11062"
+  },
+  {
+    "id": 19,
+    "texture": "game/art/monster-motifs/019.png",
+    "sha256": "e7a5650d510b4b372269137770ab219a1f5496566f02c29189e605e3f7770edd"
+  },
+  {
+    "id": 20,
+    "texture": "game/art/monster-motifs/020.png",
+    "sha256": "ef09504badc4c87e568b1c010813eb8b210c558e2cfaf637c804be801ec7e747"
+  },
+  {
+    "id": 21,
+    "texture": "game/art/monster-motifs/021.png",
+    "sha256": "fa32e048301c72c8056e4203fe21652b401e38f47b6e3556beff388644bdf328"
+  },
+  {
+    "id": 22,
+    "texture": "game/art/monster-motifs/022.png",
+    "sha256": "b01b6a4d1c9868ee587ebe2894d138c35a4908de89cf038d86c6fe0d526128df"
+  },
+  {
+    "id": 23,
+    "texture": "game/art/monster-motifs/023.png",
+    "sha256": "ada3f63017e4d57d05ecb30896351aa31ad2b36828f60e148bdc54f2b1f840ec"
+  },
+  {
+    "id": 24,
+    "texture": "game/art/monster-motifs/024.png",
+    "sha256": "88dc1e1761b4ac3b2b3d3f05ea47363eedaec48db388478898a619c5dc6d6e08"
+  },
+  {
+    "id": 25,
+    "texture": "game/art/monster-motifs/025.png",
+    "sha256": "1f0e7c95531c4f918e02392d1ffd5e4232ae7b5d944d49dc64376c7abca05922"
+  },
+  {
+    "id": 26,
+    "texture": "game/art/monster-motifs/026.png",
+    "sha256": "3509d2a3cd37eb0abf31561ee12f76a765ac721857b97856d56b3e9d502ccd09"
+  },
+  {
+    "id": 27,
+    "texture": "game/art/monster-motifs/027.png",
+    "sha256": "c352eaa518046506a2bfe9504a94ce3abae68554d93f1e2f496cd185c0bec112"
+  },
+  {
+    "id": 28,
+    "texture": "game/art/monster-motifs/028.png",
+    "sha256": "72f128a4765e0766ffe09f1b97cb4528441cd0c6f20df2d82535af0cae6abbf3"
+  },
+  {
+    "id": 29,
+    "texture": "game/art/monster-motifs/029.png",
+    "sha256": "72516efe29ed4b185cb06b82d662a92f34efc5931c5c8a6948ec00f3c1ab33aa"
+  },
+  {
+    "id": 30,
+    "texture": "game/art/monster-motifs/030.png",
+    "sha256": "7cc8c72639e0fe7efc6f5b22595848493b08392e6bd3453b2b17f444bbdea99b"
+  },
+  {
+    "id": 31,
+    "texture": "game/art/monster-motifs/031.png",
+    "sha256": "3a420363b765a0ded9982fff24c682c4157705a742ca7eac6a6a8d0df70ab19e"
+  },
+  {
+    "id": 32,
+    "texture": "game/art/monster-motifs/032.png",
+    "sha256": "f7cd8836f8e12b62f4a91b9bda52f0d54b7fe8504b2eee3b9aa44eab3fdda31e"
+  },
+  {
+    "id": 33,
+    "texture": "game/art/monster-motifs/033.png",
+    "sha256": "116f9b3b0ef3b7323507a41daef7221a2441392fa9265a8e56b0886087f685f6"
+  },
+  {
+    "id": 34,
+    "texture": "game/art/monster-motifs/034.png",
+    "sha256": "1d961a6933d8daf4dfd246236798143459865a6056d6f9a2d3fea65051fa838b"
+  },
+  {
+    "id": 35,
+    "texture": "game/art/monster-motifs/035.png",
+    "sha256": "79c209f29e4b7c057a889d4b0894ae429a55195e53fca671954458d0fb115861"
+  },
+  {
+    "id": 36,
+    "texture": "game/art/monster-motifs/036.png",
+    "sha256": "9c05b678dd25bfc6c7418d327c89279981bae59e8abca277d27e769b9daa2ac3"
+  },
+  {
+    "id": 37,
+    "texture": "game/art/monster-motifs/037.png",
+    "sha256": "6eb9c04267f4ae6bd8cb803d0d90d53b0d9a59b06dc9ba18c0f315878034f45e"
+  },
+  {
+    "id": 38,
+    "texture": "game/art/monster-motifs/038.png",
+    "sha256": "4cae15630bd84170e0a7abadb39e7533c8836196e792a74466fac1fb025ce918"
+  },
+  {
+    "id": 39,
+    "texture": "game/art/monster-motifs/039.png",
+    "sha256": "93088be3f1a77dd85f711a051cf912afd5407bdf6566cf104dabb3415b38b31d"
+  },
+  {
+    "id": 40,
+    "texture": "game/art/monster-motifs/040.png",
+    "sha256": "0d13fa68667f6dba9e68701491dc8a18555b98612bddd98cc4d69fb2587d3e27"
+  },
+  {
+    "id": 41,
+    "texture": "game/art/monster-motifs/041.png",
+    "sha256": "1836e419e36ce62cabebe900f0e32d29ab4b838530a1c15a76e56374b6722953"
+  },
+  {
+    "id": 42,
+    "texture": "game/art/monster-motifs/042.png",
+    "sha256": "5d58ecaf67620cc9a1716025e2d8bbf1fecaa812871998c4b74127d4613c75be"
+  },
+  {
+    "id": 43,
+    "texture": "game/art/monster-motifs/043.png",
+    "sha256": "cc38cc149e9cb1877e51ec2c2d6432816a546118b05773bedca66fdec225412b"
+  },
+  {
+    "id": 44,
+    "texture": "game/art/monster-motifs/044.png",
+    "sha256": "e1450c26c7ac85ec57558ab4bc13e6198e88976fdf471e24efaf0731f8d7dfd5"
+  },
+  {
+    "id": 45,
+    "texture": "game/art/monster-motifs/045.png",
+    "sha256": "b11dc4658a2b44d2bd477ebf732be80dceeacec54d948b8538f723a17ab52b35"
+  },
+  {
+    "id": 46,
+    "texture": "game/art/monster-motifs/046.png",
+    "sha256": "0c8764fccd2236504a3dd1560fcbce65e9e4618bed85413691ead7da85fd97a2"
+  },
+  {
+    "id": 47,
+    "texture": "game/art/monster-motifs/047.png",
+    "sha256": "731dae6b34c675a4c4945120cb50d72ff6d25a6ebb029aab1bba998fc3c288bf"
+  },
+  {
+    "id": 48,
+    "texture": "game/art/monster-motifs/048.png",
+    "sha256": "5484075851336492aa2a562727ee535bde4248e9ebbeb8b28afd9e2d4bceae01"
+  },
+  {
+    "id": 49,
+    "texture": "game/art/monster-motifs/049.png",
+    "sha256": "0b3bd819514280d1f9c280c11da1025d688130efc3554065b1b27f4082df2674"
+  },
+  {
+    "id": 50,
+    "texture": "game/art/monster-motifs/050.png",
+    "sha256": "fd898397349fec92fea1de733f57033881c3475ab495dbce3a1ea488cb389d8a"
+  },
+  {
+    "id": 51,
+    "texture": "game/art/monster-motifs/051.png",
+    "sha256": "dceb432cc6228d27809aabd250b6012e8dd55a3175fb3b76d9bcff0fbb3174eb"
+  },
+  {
+    "id": 52,
+    "texture": "game/art/monster-motifs/052.png",
+    "sha256": "aeee50c6b1578c3d3b042f467d02235b7ad99dc971405a1a15d8a18f4b37a425"
+  },
+  {
+    "id": 53,
+    "texture": "game/art/monster-motifs/053.png",
+    "sha256": "7ac29a941246a6580d192426f7589d02b673b7173192657d9d352081864591bc"
+  },
+  {
+    "id": 54,
+    "texture": "game/art/monster-motifs/054.png",
+    "sha256": "bafb7826cdf751e7a183a20dad101e1e8825f755892e218902e31ca40d1220e9"
+  },
+  {
+    "id": 55,
+    "texture": "game/art/monster-motifs/055.png",
+    "sha256": "dc694f37a710b17c321e47caeb91460499aa6a0bd780e76f55bb28d53001565f"
+  },
+  {
+    "id": 56,
+    "texture": "game/art/monster-motifs/056.png",
+    "sha256": "71f6f423a03426c586e63059a188d1f9343e29c5fddd95d7d8d2bfe560f0abf4"
+  },
+  {
+    "id": 57,
+    "texture": "game/art/monster-motifs/057.png",
+    "sha256": "1c5e13d5991d5fb1c0be1b487eb24a0935b2c81a863cb2ff939bb0f96166611f"
+  },
+  {
+    "id": 58,
+    "texture": "game/art/monster-motifs/058.png",
+    "sha256": "da0baa088f2d68be60521965efe96e30031b4c54937ec819425a08b1b24d6f92"
+  },
+  {
+    "id": 59,
+    "texture": "game/art/monster-motifs/059.png",
+    "sha256": "6702cc9491c87b7486d94c8f3abf7f4db8e51028ad4bf3aeaa39f435feb3ae94"
+  },
+  {
+    "id": 60,
+    "texture": "game/art/monster-motifs/060.png",
+    "sha256": "8ae25ca15fc1ad13bbb58446f4a8b3a47f697754ef027f1e8d829048cdbef7b4"
+  },
+  {
+    "id": 61,
+    "texture": "game/art/monster-motifs/061.png",
+    "sha256": "846b3efaff3cf86efd818df8c0bdc5d11ce61a42857035f6c3d136a906edcc91"
+  },
+  {
+    "id": 62,
+    "texture": "game/art/monster-motifs/062.png",
+    "sha256": "2c8f9e724b7c0561a5cf5fe9fb4f9d2225c9370b6e9ccded1f9fc6af1c2d90ce"
+  },
+  {
+    "id": 63,
+    "texture": "game/art/monster-motifs/063.png",
+    "sha256": "0b0806db88e72afca8f734bda7a5f2af97ed757a051d8d7425689765f1e45837"
+  },
+  {
+    "id": 64,
+    "texture": "game/art/monster-motifs/064.png",
+    "sha256": "a1411f5ccad2349988a03877f955f23c915f6c1d27e52ab4ebd4ef86df18b5c2"
+  },
+  {
+    "id": 65,
+    "texture": "game/art/monster-motifs/065.png",
+    "sha256": "bc8e2f22713a3aca13783b80185e9b9b3fde7e2cab21638575f65f39297edeb2"
+  },
+  {
+    "id": 66,
+    "texture": "game/art/monster-motifs/066.png",
+    "sha256": "58d6236870b0067276fa039bbf4ae774b69d143cdd8a0728f4b2f7eeaf81c45a"
+  },
+  {
+    "id": 67,
+    "texture": "game/art/monster-motifs/067.png",
+    "sha256": "6b80518d9da72ad30839d4dccfe1c305440bf90d49a8ff9baadb3ae5b2f97a2f"
+  },
+  {
+    "id": 68,
+    "texture": "game/art/monster-motifs/068.png",
+    "sha256": "c6c8af386c6b2f37514977debe4b84caafb644e0506c4c4748273f5933529e04"
+  },
+  {
+    "id": 69,
+    "texture": "game/art/monster-motifs/069.png",
+    "sha256": "e5a881134d50d095a02200899628e676c461d8505063dc99531d4108560e48ce"
+  },
+  {
+    "id": 70,
+    "texture": "game/art/monster-motifs/070.png",
+    "sha256": "7fff289095ffbd0abe3a6362ed8301b9784dca36e8ff88ae3f70a3a465e44963"
+  },
+  {
+    "id": 71,
+    "texture": "game/art/monster-motifs/071.png",
+    "sha256": "6d4668fbb0ad7b40550906c688fdeccc28df35c2d3318bd0e85c25e490a45067"
+  },
+  {
+    "id": 72,
+    "texture": "game/art/monster-motifs/072.png",
+    "sha256": "b9ed2980e333eacfd2f9e4bd10fc14fa2d9c40b8b5932d86e4221a9678470ba2"
+  },
+  {
+    "id": 73,
+    "texture": "game/art/monster-motifs/073.png",
+    "sha256": "8dd62155eea3de8122b39356d776ca6dcc68dbcd8cb605913a230954d0354164"
+  },
+  {
+    "id": 74,
+    "texture": "game/art/monster-motifs/074.png",
+    "sha256": "d548329d7657d345803293f70a45452e028f1624e0f01be4c26f4c515c6d9990"
+  },
+  {
+    "id": 75,
+    "texture": "game/art/monster-motifs/075.png",
+    "sha256": "19962b4351bcb79ec870b65db74a2f5eea3303389c7b85c39ec3697ee138933d"
+  },
+  {
+    "id": 76,
+    "texture": "game/art/monster-motifs/076.png",
+    "sha256": "d435d5e897888af0390ec9a180e8329b6dc61e2debadcc28c93c7092d0c2cc2e"
+  },
+  {
+    "id": 77,
+    "texture": "game/art/monster-motifs/077.png",
+    "sha256": "8cfb0ffb9b5421965f3add7a1a8e0c96324bc441aaa0d0711d2533d536f9d1f9"
+  },
+  {
+    "id": 78,
+    "texture": "game/art/monster-motifs/078.png",
+    "sha256": "d32bde6f29bb50b23932c3bfadcb9a4edbb522a572472ff641f4ea22f1dd64aa"
+  },
+  {
+    "id": 79,
+    "texture": "game/art/monster-motifs/079.png",
+    "sha256": "f6144901f583addf1d3151554a7a9ddccda88577d41468c4852c971fae2a9924"
+  },
+  {
+    "id": 80,
+    "texture": "game/art/monster-motifs/080.png",
+    "sha256": "3597c9e55434ebe37f01292709e89c8eebc4b4cf138cf33b31743a221ce19229"
+  },
+  {
+    "id": 81,
+    "texture": "game/art/monster-motifs/081.png",
+    "sha256": "9e4551d487b5070474cfcec2ea5e44a786c25312a7e253adba7cac8dd2f8680c"
+  },
+  {
+    "id": 82,
+    "texture": "game/art/monster-motifs/082.png",
+    "sha256": "fe52b560645a7a9f2f5e2aeac65d9270f98f450a940a6db5e93696cd7fe0043f"
+  },
+  {
+    "id": 83,
+    "texture": "game/art/monster-motifs/083.png",
+    "sha256": "c1b5b223485334483c6806c485743ceea4823c7d4a6fadc4259dd5318a3e73c4"
+  },
+  {
+    "id": 84,
+    "texture": "game/art/monster-motifs/084.png",
+    "sha256": "f6799b69b4db3641ff9bb11b1da05ab65de204d9691fdaf0ce772aed54e63e02"
+  },
+  {
+    "id": 85,
+    "texture": "game/art/monster-motifs/085.png",
+    "sha256": "40d6f68558aa8285c6f1cf41d397d9ba517b86799fbd25f852e777e5a110f868"
+  },
+  {
+    "id": 86,
+    "texture": "game/art/monster-motifs/086.png",
+    "sha256": "fe12b3998ee4a0e8f2c0e2195af31467e0ca48dda80215f0efb8d8b2a305271a"
+  },
+  {
+    "id": 87,
+    "texture": "game/art/monster-motifs/087.png",
+    "sha256": "df9c100695b860a3b924e5efac19d0db350b18b188f605f1a2469a575fffbfae"
+  },
+  {
+    "id": 88,
+    "texture": "game/art/monster-motifs/088.png",
+    "sha256": "210f80cda318348d137f01ee02821dab3da49c9610802425eac34908632e4980"
+  },
+  {
+    "id": 89,
+    "texture": "game/art/monster-motifs/089.png",
+    "sha256": "6d18dd5194517af597ce2941e374470389f9643a4092bdd0336e8432aa0d64b4"
+  },
+  {
+    "id": 90,
+    "texture": "game/art/monster-motifs/090.png",
+    "sha256": "a829bce228ff9fee1597790764bf8201b6cedac9bead142d7d028058ca83d23a"
+  },
+  {
+    "id": 91,
+    "texture": "game/art/monster-motifs/091.png",
+    "sha256": "f1665a14798e0695d3a9bb64f34bf9decf0fde4c53388cd6b2d9d3e094d217a2"
+  },
+  {
+    "id": 92,
+    "texture": "game/art/monster-motifs/092.png",
+    "sha256": "77924d98fd48becaf5b4e84bfc0f9dfe674b53a21c1eb2f35e5047cc972f618d"
+  },
+  {
+    "id": 93,
+    "texture": "game/art/monster-motifs/093.png",
+    "sha256": "7f0777cd26c67b403711254814f72cd86e2d919450f48b23ad7a5305872ab3c3"
+  },
+  {
+    "id": 94,
+    "texture": "game/art/monster-motifs/094.png",
+    "sha256": "a91722c6d16cc45f4a73c61a7d74cc685ad63d90c67ef9153742036c3dfa47c5"
+  },
+  {
+    "id": 95,
+    "texture": "game/art/monster-motifs/095.png",
+    "sha256": "b637c08d1503fff6cc0d7cee390e0c15c42ad9dade5fa283acf7f262f69b5c86"
+  },
+  {
+    "id": 96,
+    "texture": "game/art/monster-motifs/096.png",
+    "sha256": "1cbeb883d3a6cc4661bf6f608a219ab013349248d79ba918028a5022c6e197a5"
+  },
+  {
+    "id": 97,
+    "texture": "game/art/monster-motifs/097.png",
+    "sha256": "7b0b664127d0cb7e9a255b44336b7bbf7a85cecd7f98b6845fb1fc3e367fff49"
+  },
+  {
+    "id": 98,
+    "texture": "game/art/monster-motifs/098.png",
+    "sha256": "318b5447529a56414abd80ca8571bc5c7596a52cb74152a1e25a8ea91d3bc6a6"
+  },
+  {
+    "id": 99,
+    "texture": "game/art/monster-motifs/099.png",
+    "sha256": "52aa05460fa58360c9af9f0f75f8e8f3173beb6785a39912519e8e02d740c34d"
+  },
+  {
+    "id": 100,
+    "texture": "game/art/monster-motifs/100.png",
+    "sha256": "69de6a1d29f1015fe935bd0391226f61ea39a6e9f11efd6be8ffaa87540806ce"
+  }
+]

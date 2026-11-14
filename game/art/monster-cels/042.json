@@ -1,0 +1,90 @@
+{
+  "id": 42,
+  "texture": "res://art/monster-cels/042.png",
+  "cell_size": 128,
+  "columns": 4,
+  "feet_origin": [
+    64,
+    112
+  ],
+  "origins": [
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      108
+    ],
+    [
+      64,
+      108
+    ]
+  ],
+  "clips": {
+    "walk": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "attack": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "hurt": [
+      8,
+      9
+    ],
+    "death": [
+      10,
+      11
+    ],
+    "idle": [
+      7
+    ]
+  },
+  "status": "12 model-generated whole-character key poses: four locomotion, four attack phases, two hurt, two collapse. Not a full 14-frame sequence per action.",
+  "generation": "built-in image_gen with exact identity reference",
+  "postprocessing": "equal cell extraction; one common nearest-neighbor scale; per-row baseline registration; near-invisible alpha cleanup. No synthetic motion.",
+  "coordinateSpace": "screen-space",
+  "locomotion": "fly"
+}

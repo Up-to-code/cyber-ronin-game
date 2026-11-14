@@ -177,8 +177,10 @@ func frame_at_progress(clip_name: String, progress: float) -> int:
 		if position_ms < accumulated: return i
 	return records.size() - 1
 func _clip_for(state: String, variant: int) -> String:
+	if state in ["air_sword","moving_sword","drive_sword","turn_sword"]:
+		return str(get_attack_spec(state,variant).get("clip","sword1"))
 	if state in ["sword","attack"]:
-		return str(get_attack_spec("sword",variant).get("clip","sword%d" % clampi(variant,1,3)))
+		return str(get_attack_spec("sword",variant).get("clip","sword%d" % clampi(variant,1,4)))
 	if profile.get("attacks",{}).has(state): return str(get_attack_spec(state).get("clip",state))
 	var mapping: Dictionary = profile.get("state_map", {})
 	return str(mapping.get(state, state))
@@ -233,6 +235,8 @@ func set_debug(value: bool) -> void:
 	debug_enabled = value
 	queue_redraw()
 func create_snapshot() -> Node2D:
+	var monster_visual = get_meta("monster_cel_visual") if has_meta("monster_cel_visual") else null
+	if is_instance_valid(monster_visual): return monster_visual.create_snapshot()
 	var copy := Node2D.new()
 	if not _configured: return copy
 	var image := Sprite2D.new()

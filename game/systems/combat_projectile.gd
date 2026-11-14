@@ -8,6 +8,7 @@ var from_player: bool = true
 var owner_body: CollisionObject2D
 var age: float = 0
 var life: float = 0.85
+static var frame_cache: Dictionary = {}
 var visual: AnimatedSprite2D
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -16,17 +17,27 @@ func _ready() -> void:
 		speed = 1100
 		damage = 65
 		life = 0.8
+	if kind == "water":
+		speed = 560 if from_player else 250
+		life = 1.3
+		z_index = 5
+		return
 	visual = AnimatedSprite2D.new()
-	var frames := SpriteFrames.new()
-	frames.set_animation_speed("default", 16)
-	var path: String = "res://art/pixel/fire_bolt.png" if kind == "fire" else ("res://art/crimson-magic/spirit-flight.png" if kind=="energy" else "res://art/pixel/combat-v2/sword.png")
-	var texture: Texture2D = load(path) if ResourceLoader.exists(path) else load("res://art/pixel/impact_fx.png")
-	var count: int = 4 if kind=="fire" else (9 if kind=="energy" else 7)
-	for i in range(count):
-		var frame := AtlasTexture.new()
-		frame.atlas = texture
-		frame.region = Rect2(i * texture.get_width() / count, 0, texture.get_width() / count, texture.get_height())
-		frames.add_frame("default", frame)
+	var frames: SpriteFrames
+	if frame_cache.has(kind):
+		frames=frame_cache[kind]
+	else:
+		frames = SpriteFrames.new()
+		frames.set_animation_speed("default", 16)
+		var path: String = "res://art/pixel/fire_bolt.png" if kind == "fire" else ("res://art/crimson-magic/spirit-flight.png" if kind=="energy" else "res://art/pixel/combat-v2/sword.png")
+		var texture: Texture2D = load(path) if ResourceLoader.exists(path) else load("res://art/pixel/impact_fx.png")
+		var count: int = 4 if kind=="fire" else (9 if kind=="energy" else 7)
+		for i in range(count):
+			var frame := AtlasTexture.new()
+			frame.atlas = texture
+			frame.region = Rect2(i * texture.get_width() / count, 0, texture.get_width() / count, texture.get_height())
+			frames.add_frame("default", frame)
+		frame_cache[kind]=frames
 	visual.sprite_frames = frames
 	visual.scale = Vector2(1.3, 1.3) if kind == "fire" else Vector2(2.6, 2.1)
 	visual.modulate = Color.WHITE if kind == "fire" else Color.WHITE
@@ -43,6 +54,7 @@ func _ready() -> void:
 	z_index = 5
 func _physics_process(delta: float) -> void:
 	age += delta
+	if kind == "water": queue_redraw()
 	if age >= life:
 		queue_free()
 		return
@@ -81,3 +93,15 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 	else:
 		global_position = next
+
+func _draw() -> void:
+	if kind != "water": return
+	var normal:=Vector2(-direction.y,direction.x)
+	for i in range(8):
+		var at:=(-direction*i*6+normal*sin(age*18+i*.8)*5).floor()
+		draw_rect(Rect2(at-Vector2(3,3),Vector2(6,6)),Color(.25,.85,1,1-float(i)/10))
+	var points:=PackedVector2Array()
+	for i in range(9):
+		var angle: float=i*TAU/8
+		points.append((direction*cos(angle)*15+normal*sin(angle)*9).floor())
+	draw_polyline(points,Color(.8,1,1),3,false)

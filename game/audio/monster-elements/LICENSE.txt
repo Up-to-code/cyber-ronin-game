@@ -1,0 +1,1 @@
+Original synthesized waveforms authored for Ashen Veil. No sampled third-party audio. Deterministic oscillator/noise synthesis, 22050 Hz mono.

@@ -255,6 +255,11 @@ func set_enabled(value: bool) -> void:
 			voice.stop()
 
 func shutdown() -> void:
+	if is_inside_tree():
+		for voice in get_tree().get_nodes_in_group("monster_sfx"):
+			voice.stop()
+			voice.stream = null
+			voice.queue_free()
 	for player in [music, battle_music]:
 		if is_instance_valid(player):
 			player.stop()
@@ -262,6 +267,8 @@ func shutdown() -> void:
 	for voice in voices:
 		voice.stop()
 		voice.stream = null
+	var contract_script = load("res://actors/monster_contract.gd")
+	if contract_script: contract_script.sound_cache.clear()
 	streams.clear()
 	stream_variants.clear()
 

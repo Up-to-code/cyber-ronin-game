@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS continuous route 1 traverse
+PASS continuous route 2 descent
+PASS continuous route 3 ascent
+ERROR: Sequential level4 transition3 (1250.0, 858.0) -> (1580.0, 788.0) failed player(1287.468, 726.7505)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/directed_traversal.gd:52)
+       [1] ticks (res://tests/directed_traversal.gd:4)

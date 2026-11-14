@@ -1,0 +1,3 @@
+# Citadel corbel platform
+
+One isolated wide side-view platform sprite for a premium Japanese samurai pixel art platform game. Flat straight amber stone walking surface on top, weathered dark vermilion timber fascia below with carefully carved golden bronze corner brackets and short triangular corbels attached beneath. Wall-mounted historical castle balcony ledge. No ropes no suspension cables no long poles no background no characters no text. Entire art inside transparent background, long horizontal aspect5:1. Coarse crisp pixel clusters true16-bit look, restrained charcoal crimson gold palette, scratched aged wood highlights, handcrafted silhouette. Top perfectly level and collision-readable. No glow.

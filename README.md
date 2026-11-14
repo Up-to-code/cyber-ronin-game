@@ -1,14 +1,21 @@
 <p align="center">
   <img src="game/art/pixel/game-icon-1024.png" alt="Ashen Veil logo" width="160" />
+Latest combat/UI pass: [four-cut combo, slide/drop, blood feedback, enemy health and campaign atlas](docs/COMBAT_MAP_PASS.md).
 </p>
 
 # Ashen Veil
 
-Godot4.7 landscape samurai action prototype: six monastery/castle routes, pixel-art environments and cel characters, moving platforms, separate health/power, and keyboard/touch controls.
+Godot4.7 landscape samurai action prototype: 100 modular monastery/castle routes, pixel-art environments and cel characters, moving platforms, separate health/power, and keyboard/touch controls.
 
 Open `game/project.godot`, or run `/Applications/Godot.app/Contents/MacOS/Godot --path game -- --touch-preview`.
 
 ## Current build
+
+[Vertical routes, comparable games, new architecture and Ash Tengu](docs/research/VERTICAL_LEVEL_REBUILD.md) describes the latest layout/art pass and supersedes the earlier flat campaign layouts.
+
+[100-level campaign, rewards, boss skills and validation](docs/CAMPAIGN_100.md) is the current progression specification: ten chapters, major bosses every ten levels, physical pickups and a level20 beam upgrade. Earlier ten-level notes below are historical.
+
+[Current level redesign and primary references](docs/research/LEVEL_REDESIGN.md): ten authored routes with climbs, staged descents, recovery decks and bosses on routes 5 and 10. Route data lives in `game/data/routes.json`.
 
 Red-and-ivory image-generated menu components and controls, stateful toggle artwork, a real persisted volume meter, nested settings with icons, and distinct start/pause/defeat context. Touch settings support size, handedness, opacity and vibration; privacy links are configured in `game/config/privacy.cfg`.
 

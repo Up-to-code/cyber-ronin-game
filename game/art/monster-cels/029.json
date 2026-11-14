@@ -1,0 +1,98 @@
+{
+  "id": 29,
+  "texture": "res://art/monster-cels/029.png",
+  "cell_size": 128,
+  "columns": 4,
+  "feet_origin": [
+    64,
+    112
+  ],
+  "clips": {
+    "walk": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "attack": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "hurt": [
+      8,
+      9
+    ],
+    "death": [
+      10,
+      11
+    ],
+    "idle": [
+      7
+    ]
+  },
+  "status": "12 model-generated whole-character key poses; four-frame flight cycle, four attack phases, two recoil and two collapse poses. Not a 14-frame action set.",
+  "generation": "built-in image_gen; reference monster-migration/029.png",
+  "postprocessing": "equal-cell extraction, one common nearest-neighbor scale, row baseline registration, invisible alpha cleanup; no synthetic motion",
+  "coordinateSpace": "screen-space",
+  "activeFeature": "paired folded-paper wings and beak",
+  "anchorSurface": "body center",
+  "body_bounds": [
+    22,
+    35,
+    89,
+    76
+  ],
+  "origins": [
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      113
+    ],
+    [
+      64,
+      113
+    ]
+  ],
+  "locomotion": "fly"
+}

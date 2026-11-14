@@ -1,0 +1,357 @@
+{
+  "id": "monster_024",
+  "display_name": "Centipede Warrior",
+  "status": "12 model-generated whole-character key poses; four locomotion, four attack, two hurt, two death. Limited keyframe animation, not full in-betweens.",
+  "atlas": "res://art/monster-cels/024.png",
+  "scale": 2,
+  "feet_origin": [
+    160,
+    304
+  ],
+  "body_center_height": 58,
+  "max_visual_roll": 0.3,
+  "sockets": {
+    "hand": [
+      84,
+      82
+    ],
+    "foot": [
+      80,
+      108
+    ],
+    "weapon_tip": [
+      109,
+      76
+    ],
+    "chest": [
+      64,
+      73
+    ],
+    "pelvis": [
+      64,
+      87
+    ]
+  },
+  "state_map": {
+    "run": "walk",
+    "walk": "walk",
+    "charged": "windup",
+    "jump": "air",
+    "fall": "air"
+  },
+  "clips": {
+    "idle": {
+      "frames": [
+        {
+          "rect": [
+            960,
+            320,
+            320,
+            320
+          ],
+          "duration_ms": 600,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ],
+      "loop": true
+    },
+    "walk": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            640,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            960,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ],
+      "loop": true,
+      "stride_world": 60
+    },
+    "float": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            640,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            960,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 125,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ],
+      "loop": true
+    },
+    "windup": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            320,
+            320,
+            320
+          ],
+          "duration_ms": 320,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ]
+    },
+    "attack": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            320,
+            320,
+            320
+          ],
+          "duration_ms": 90,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            320,
+            320
+          ],
+          "duration_ms": 60,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            640,
+            320,
+            320,
+            320
+          ],
+          "duration_ms": 80,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            960,
+            320,
+            320,
+            320
+          ],
+          "duration_ms": 90,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ]
+    },
+    "hurt": {
+      "frames": [
+        {
+          "rect": [
+            0,
+            640,
+            320,
+            320
+          ],
+          "duration_ms": 100,
+          "feet_origin": [
+            160,
+            304
+          ]
+        },
+        {
+          "rect": [
+            320,
+            640,
+            320,
+            320
+          ],
+          "duration_ms": 180,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ]
+    },
+    "death": {
+      "frames": [
+        {
+          "rect": [
+            640,
+            640,
+            320,
+            320
+          ],
+          "duration_ms": 275,
+          "feet_origin": [
+            160,
+            303
+          ]
+        },
+        {
+          "rect": [
+            960,
+            640,
+            320,
+            320
+          ],
+          "duration_ms": 1025,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ]
+    },
+    "air": {
+      "frames": [
+        {
+          "rect": [
+            320,
+            0,
+            320,
+            320
+          ],
+          "duration_ms": 100,
+          "feet_origin": [
+            160,
+            304
+          ]
+        }
+      ]
+    }
+  },
+  "attacks": {
+    "sword1": {
+      "clip": "attack",
+      "contact_frame": 1,
+      "active_end_frame": 1,
+      "duration": 0.32,
+      "damage": 15,
+      "reach": 90,
+      "cost": 0,
+      "provisional_contact": true
+    },
+    "kick": {
+      "clip": "attack",
+      "contact_frame": 1,
+      "active_end_frame": 1,
+      "duration": 0.32,
+      "damage": 15,
+      "reach": 90,
+      "cost": 0,
+      "provisional_contact": true
+    }
+  },
+  "movement_status": "Four distinct replacement locomotion poses selected by distance/flight cadence; gameplay owns action phase.",
+  "body_bounds": [
+    59,
+    162,
+    213,
+    142
+  ],
+  "source_reference": "res://art/monster-migration/024.png"
+}

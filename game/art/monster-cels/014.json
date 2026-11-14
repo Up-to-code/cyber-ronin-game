@@ -1,0 +1,90 @@
+{
+  "id": 14,
+  "texture": "res://art/monster-cels/014.png",
+  "cell_size": 192,
+  "columns": 4,
+  "feet_origin": [
+    96,
+    176
+  ],
+  "origins": [
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      176
+    ],
+    [
+      96,
+      175
+    ]
+  ],
+  "clips": {
+    "walk": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "attack": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "hurt": [
+      8,
+      9
+    ],
+    "death": [
+      10,
+      11
+    ],
+    "idle": [
+      7
+    ]
+  },
+  "source": "/Users/ahmedmansour/.codex/generated_images/01a1d4ae-305a-71d3-a7fe-8e8f9ec0313c/exec-144cfff0-30cf-4288-a5d0-e22c1d40d130.png",
+  "authorship": "Model-generated whole-character poses; local alpha cleanup or cyan matting, uniform sheet scaling, cell packing and baseline registration only.",
+  "status": "12 generated key poses: 4 locomotion, 4 attack, 2 hurt, 2 death. Not a full 14-frame-per-action animation.",
+  "uniform_scale": 0.48951048951048953,
+  "locomotion": "walk"
+}

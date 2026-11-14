@@ -2,7 +2,8 @@ extends RefCounted
 ## Shared pixel-art controls. Atlas regions can be replaced without changing HUD code.
 const KIT := "res://art/pixel/ui-kit/components.json"
 static func art(key: String, fallback: String) -> Texture2D:
-	var direct := "res://art/pixel/ui-kit/" + key + ".png"
+	var replacements := {"button_primary":"button_selected","button_secondary":"button","panel":"panel"}
+	var direct: String = "res://art/crimson-gold/" + str(replacements.get(key,key)) + ".png"
 	if ResourceLoader.exists(direct): return load(direct)
 	if FileAccess.file_exists(KIT):
 		var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(KIT))
@@ -13,35 +14,22 @@ static func art(key: String, fallback: String) -> Texture2D:
 			texture.region = Rect2(record[0],record[1],record[2],record[3])
 			return texture
 	return load(fallback)
-static func frame(key: String = "panel") -> StyleBoxTexture:
+static func frame(_key: String = "panel") -> StyleBoxTexture:
 	var style := StyleBoxTexture.new()
-	style.texture = art(key,"res://art/pixel/button_selected.png")
-	if key == "panel":
-		var cropped := AtlasTexture.new()
-		cropped.atlas = style.texture
-		cropped.region = Rect2(4,12,120,116)
-		style.texture = cropped
-	style.texture_margin_left = 24
-	style.texture_margin_right = 24
-	style.texture_margin_top = 24
-	style.texture_margin_bottom = 24
-	style.content_margin_left = 18
-	style.content_margin_right = 18
-	style.content_margin_top = 26
-	style.content_margin_bottom = 20
+	style.texture = preload("res://art/crimson-gold/panel.png")
+	for side in [SIDE_LEFT,SIDE_RIGHT,SIDE_TOP,SIDE_BOTTOM]:
+		style.set_texture_margin(side,16)
+		style.set_content_margin(side,18)
 	return style
-static func button_style(pressed: bool = false, compact: bool = false) -> StyleBoxTexture:
-	# Navigation buttons have their own box metrics; panel padding never belongs here.
+static func button_style(pressed: bool = false, compact: bool = false, depressed: bool = false) -> StyleBoxTexture:
 	var style := StyleBoxTexture.new()
-	style.texture=art("button_primary" if pressed else "button_secondary","res://art/pixel/button.png")
-	style.texture_margin_left=30
-	style.texture_margin_right=30
-	style.texture_margin_top=18
-	style.texture_margin_bottom=18
-	style.content_margin_left=16 if compact else 28
-	style.content_margin_right=16 if compact else 28
-	style.content_margin_top=9
-	style.content_margin_bottom=9
+	style.texture = load("res://art/crimson-gold/button_pressed.png" if depressed else ("res://art/crimson-gold/button_selected.png" if pressed else "res://art/crimson-gold/button.png"))
+	for side in [SIDE_LEFT,SIDE_RIGHT,SIDE_TOP,SIDE_BOTTOM]:
+		style.set_texture_margin(side,16)
+	style.content_margin_left = 16 if compact else 24
+	style.content_margin_right = 16 if compact else 24
+	style.content_margin_top = 10
+	style.content_margin_bottom = 10
 	return style
 
 static func toggle(title: String, value: bool, callback: Callable) -> Button:

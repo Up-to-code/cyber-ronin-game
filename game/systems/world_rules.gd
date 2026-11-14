@@ -69,3 +69,7 @@ static func angular_impulse(contact_from_center: Vector2, impulse_ns: Vector2, m
 	return (contact_from_center / scale).cross(impulse_ns) / inertia
 static func spring(current: float, target: float, damping: float, delta: float) -> float:
 	return lerpf(current, target, 1.0 - exp(-damping * delta))
+
+# Impact speed is derived from gravity; normal/double jumps stay below safe speed.
+static func landing_damage(speed: float) -> int:
+	return clampi(int(ceil((speed - 850.0) / 25.0)), 0, 10)

@@ -1,0 +1,87 @@
+{
+  "texture": "res://art/monster-cels/001.png",
+  "cell_size": 128,
+  "columns": 4,
+  "feet_origin": [
+    64,
+    112
+  ],
+  "clips": {
+    "idle": [
+      7
+    ],
+    "walk": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "attack": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "hurt": [
+      8,
+      9
+    ],
+    "death": [
+      10,
+      11
+    ]
+  },
+  "status": "Model-generated 12 whole-character key poses; four-step walk and held attack/death poses, not a full in-between animation set.",
+  "source": "01a1d419-ace7-79d3-996d-9f2a0333500c/exec-05052370-b3a7-4d45-9768-d48a282b185a.png",
+  "origins": [
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      112
+    ],
+    [
+      64,
+      111
+    ]
+  ],
+  "locomotion": "walk"
+}

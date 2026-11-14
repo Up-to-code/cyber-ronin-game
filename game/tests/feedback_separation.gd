@@ -11,8 +11,12 @@ func _run() -> void:
 	for child in fx.get_children():
 		if child.get_meta("family", "") == "contact_ring": rings += 1
 	assert(rings == 1, "Confirmed impact has one contour")
-	await create_timer(0.6).timeout
+	await create_timer(1.0).timeout
 	assert(fx.get_child_count() == 0, "Feedback must expire completely")
+	fx.spawn("wall_hit",Vector2.ZERO,1)
+	for effect in fx.get_children():
+		if effect.get_meta("family","")=="motes":assert(not effect.blood,"Scenery impacts must not spray blood")
+	await create_timer(0.5).timeout
 	var audio: Node = root.get_node("Audio")
 	assert(audio.music.bus == "Music" and audio.voices[0].bus == "Combat")
 	audio.shutdown()

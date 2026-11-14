@@ -46,6 +46,34 @@
       "location": "Crimson Castle Keep",
       "body": "Ren stands between Kuro and the bell.\nDefeat the captain and break his binding.\nGive the keepers back their silence.",
       "objective": "Defeat Ren and free the keepers."
+    },
+    {
+      "id": 7,
+      "title": "Sunken Cistern",
+      "location": "Sunken Cistern",
+      "body": "The binding runs beneath the keep.\nKuro descends from shelf to shelf.\nA missed landing wakes the depths.",
+      "objective": "Descend the shelves and cross the sunken cistern."
+    },
+    {
+      "id": 8,
+      "title": "Bell Shaft",
+      "location": "Bell Shaft",
+      "body": "The final echo rises from the shaft.\nClimb the broken wall and face its keeper.\nOnly then can the bell rest.",
+      "objective": "Climb the shaft and silence the final keeper."
+    },
+    {
+      "id": 9,
+      "title": "Storm Aqueduct",
+      "location": "Storm Aqueduct",
+      "body": "Cross the broken piers and storm terraces.",
+      "objective": "Cross the broken piers and storm terraces."
+    },
+    {
+      "id": 10,
+      "title": "Oni Throne",
+      "location": "Oni Throne",
+      "body": "Defeat the Bell Tyrant and free the keepers.",
+      "objective": "Defeat the Bell Tyrant and free the keepers."
     }
   ],
   "ending": {

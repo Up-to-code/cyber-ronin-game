@@ -1,0 +1,2320 @@
+[
+  {
+    "id": 1,
+    "name": "Monastery Approach",
+    "theme": "approach",
+    "difficulty": "normal",
+    "width": 3880,
+    "spawn": [
+      150,
+      620
+    ],
+    "exit": [
+      3760,
+      410
+    ],
+    "description": "single guard \u2022 two spaced duels",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          620
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          550
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          480
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          550
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          620
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          550
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          480
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          410
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          410
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          540
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          460
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          530,
+          710
+        ],
+        "width": 280,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "rock",
+        "depth": 24,
+        "beat": "lower recovery ledge"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          480
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          480
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          620
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          620
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          480
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          480
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Ember Courtyard",
+    "theme": "courtyard",
+    "difficulty": "normal",
+    "width": 3880,
+    "spawn": [
+      150,
+      420
+    ],
+    "exit": [
+      3760,
+      350
+    ],
+    "description": "introduce fire \u2022 fire and blade",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          420
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          490
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          560
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          630
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          630
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          560
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          490
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          420
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          350
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          550
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          470
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          560
+        ],
+        "kind": "fire",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          560
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          630
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          630
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          490
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          490
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bamboo Ramparts",
+    "theme": "bamboo",
+    "difficulty": "normal",
+    "width": 3880,
+    "spawn": [
+      150,
+      650
+    ],
+    "exit": [
+      3760,
+      440
+    ],
+    "description": "lancer lesson \u2022 floating threat \u2022 combine reach and movement",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          650
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "rock",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          580
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          510
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "rock",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          440
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          440
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "rock",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          510
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          580
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "rock",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          510
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          440
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "rock",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          360
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          280
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          530,
+          740
+        ],
+        "width": 280,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "rock",
+        "depth": 24,
+        "beat": "lower recovery ledge"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          510
+        ],
+        "kind": "lancer",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          510
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          440
+        ],
+        "kind": "lantern",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          440
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          580
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          580
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Castle Rooftops",
+    "theme": "rooftops",
+    "difficulty": "normal",
+    "width": 3880,
+    "spawn": [
+      150,
+      700
+    ],
+    "exit": [
+      3760,
+      420
+    ],
+    "description": "roof duel \u2022 ranged roof",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          700
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          630
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          560
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          490
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          420
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          350
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          420
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          490
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          420
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          340
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          260
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          530,
+          790
+        ],
+        "width": 280,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "rock",
+        "depth": 24,
+        "beat": "lower recovery ledge"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          560
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          560
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          420
+        ],
+        "kind": "fire",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          420
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          420
+        ],
+        "kind": "lancer",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          420
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Broken Sanctuary",
+    "theme": "sanctuary",
+    "difficulty": "boss",
+    "width": 3880,
+    "spawn": [
+      150,
+      520
+    ],
+    "exit": [
+      3760,
+      380
+    ],
+    "description": "sentinel lesson \u2022 spirit landing \u2022 False Keeper arena",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          520
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          450
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          380
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          450
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          520
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          590
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          520
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          450
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          380
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          440
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          360
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          530,
+          610
+        ],
+        "width": 280,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "rock",
+        "depth": 24,
+        "beat": "lower recovery ledge"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          380
+        ],
+        "kind": "obsidian",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          380
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          520
+        ],
+        "kind": "wraith",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          520
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          520
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          520
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Crimson Castle Keep",
+    "theme": "summit",
+    "difficulty": "hard",
+    "width": 3880,
+    "spawn": [
+      150,
+      650
+    ],
+    "exit": [
+      3760,
+      370
+    ],
+    "description": "caster terrace \u2022 heavy plus blade \u2022 spirit gate",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          650
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          580
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          510
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          580
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          650
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          580
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          510
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          440
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          370
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          570
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          490
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          530,
+          740
+        ],
+        "width": 280,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "rock",
+        "depth": 24,
+        "beat": "lower recovery ledge"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          510
+        ],
+        "kind": "fire",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          510
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          650
+        ],
+        "kind": "obsidian",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          650
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          510
+        ],
+        "kind": "lantern",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          510
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sunken Cistern",
+    "theme": "sanctuary",
+    "difficulty": "hard",
+    "width": 1800,
+    "height": 1900,
+    "shaft": true,
+    "spawn": [
+      450,
+      300
+    ],
+    "exit": [
+      1500,
+      1510
+    ],
+    "description": "Read the next shelf, descend, settle, then cross to the opposite side.",
+    "platforms": [
+      {
+        "center": [
+          350,
+          300
+        ],
+        "width": 700,
+        "optional": false,
+        "one_way": false,
+        "beat": "arrival",
+        "route": true,
+        "construction": "arch",
+        "depth": 40
+      },
+      {
+        "center": [
+          680,
+          440
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "controlled descent",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          930,
+          580
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "controlled descent",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          680,
+          720
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "controlled descent",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          930,
+          860
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "spirit shelf",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          680,
+          1000
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "controlled descent",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          930,
+          1140
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "controlled descent",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          680,
+          1280
+        ],
+        "width": 300,
+        "optional": true,
+        "one_way": true,
+        "beat": "controlled descent",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          1060,
+          1400
+        ],
+        "width": 320,
+        "optional": true,
+        "one_way": true,
+        "beat": "final crossing",
+        "route": true,
+        "construction": "rock",
+        "depth": 40
+      },
+      {
+        "center": [
+          1350,
+          1510
+        ],
+        "width": 600,
+        "optional": false,
+        "one_way": false,
+        "beat": "exit arena",
+        "route": true,
+        "construction": "arch",
+        "depth": 40
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          930,
+          860
+        ],
+        "kind": "wraith",
+        "elite": false,
+        "health_bonus": 36
+      },
+      {
+        "position": [
+          1350,
+          1510
+        ],
+        "kind": "impostor",
+        "elite": false,
+        "health_bonus": 36
+      },
+      {
+        "position": [
+          1550,
+          1510
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 36
+      },
+      {
+        "position": [
+          680,
+          1280
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 30
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Bell Shaft",
+    "theme": "summit",
+    "difficulty": "hard",
+    "width": 3880,
+    "spawn": [
+      150,
+      350
+    ],
+    "exit": [
+      3760,
+      350
+    ],
+    "description": "basin encounter \u2022 upper spirit",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          350
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          420
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          490
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          560
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          630
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          560
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          490
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          420
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          350
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          550
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          470
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          490
+        ],
+        "kind": "obsidian",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          490
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          630
+        ],
+        "kind": "lantern",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          630
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          490
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          490
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Storm Aqueduct",
+    "theme": "rooftops",
+    "difficulty": "hard",
+    "width": 3880,
+    "spawn": [
+      150,
+      600
+    ],
+    "exit": [
+      3760,
+      320
+    ],
+    "description": "lancer pier \u2022 fire crossing \u2022 impostor pier",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          600
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          530
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1010.0,
+          460
+        ],
+        "width": 500,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          1440.0,
+          390
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1900.0,
+          460
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2360.0,
+          530
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2820.0,
+          460
+        ],
+        "width": 560,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          3280.0,
+          390
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          3670.0,
+          320
+        ],
+        "width": 420,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1920.0,
+          380
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2090.0,
+          300
+        ],
+        "width": 160,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          530,
+          690
+        ],
+        "width": 280,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "rock",
+        "depth": 24,
+        "beat": "lower recovery ledge"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          910.0,
+          460
+        ],
+        "kind": "lancer",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1130.0,
+          460
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          1800.0,
+          460
+        ],
+        "kind": "impostor",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2020.0,
+          460
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2720.0,
+          460
+        ],
+        "kind": "tengu",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2940.0,
+          460
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        4,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Oni Throne",
+    "theme": "summit",
+    "difficulty": "boss",
+    "width": 2930,
+    "spawn": [
+      150,
+      650
+    ],
+    "exit": [
+      2810,
+      580
+    ],
+    "description": "last guardians \u2022 Bell Tyrant arena",
+    "platforms": [
+      {
+        "center": [
+          200.0,
+          650
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "arrival"
+      },
+      {
+        "center": [
+          580.0,
+          580
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          890.0,
+          510
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1270.0,
+          440
+        ],
+        "width": 400,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          1650.0,
+          510
+        ],
+        "width": 260,
+        "optional": false,
+        "one_way": true,
+        "route": true,
+        "construction": "balcony",
+        "depth": 40,
+        "beat": "recover ledge"
+      },
+      {
+        "center": [
+          2380.0,
+          580
+        ],
+        "width": 1100,
+        "optional": false,
+        "one_way": false,
+        "route": true,
+        "construction": "arch",
+        "depth": 40,
+        "beat": "combat terrace"
+      },
+      {
+        "center": [
+          2080.0,
+          500
+        ],
+        "width": 220,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2380.0,
+          420
+        ],
+        "width": 240,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      },
+      {
+        "center": [
+          2680.0,
+          500
+        ],
+        "width": 220,
+        "optional": true,
+        "one_way": true,
+        "route": false,
+        "construction": "balcony",
+        "depth": 24,
+        "beat": "upper reward route"
+      }
+    ],
+    "lifts": [],
+    "enemies": [
+      {
+        "position": [
+          2280.0,
+          580
+        ],
+        "kind": "guard",
+        "elite": false,
+        "health_bonus": 0
+      },
+      {
+        "position": [
+          2500.0,
+          580
+        ],
+        "kind": "obsidian",
+        "elite": false,
+        "health_bonus": 0
+      }
+    ],
+    "height": 1100,
+    "branch_links": [
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ]
+    ]
+  }
+]
