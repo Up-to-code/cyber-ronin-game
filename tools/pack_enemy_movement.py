@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 import statistics, json
 ROOT=Path(__file__).resolve().parents[1]
-source=Image.open(ROOT/'assets/pixel/enemy-movement/raw.png').convert('RGBA')
+source=Image.open(ROOT/'assets/art/pixel/enemy-movement/raw.png').convert('RGBA')
 source.putalpha(source.getchannel('A').point(lambda a:255 if a>=210 else 0))
 assert source.size==(2048,768),source.size
 atlas=Image.new('RGBA',(1024,384)); records=[]
@@ -36,12 +36,12 @@ for col in range(8):
     registered.alpha_composite(cell,(round(64-statistics.mean(x for x,y in pts)),round(68-statistics.mean(y for x,y in pts))))
     atlas.paste(registered,(col*128,256))
 atlas.save(ROOT/'game/art/pixel/enemy-movement.png')
-atlas.resize((2048,768),Image.Resampling.NEAREST).save(ROOT/'assets/pixel/enemy-movement/contact-sheet.png')
+atlas.resize((2048,768),Image.Resampling.NEAREST).save(ROOT/'assets/art/pixel/enemy-movement/contact-sheet.png')
 for record in records:
     cell=atlas.crop((record['column']*128,record['row']*128,(record['column']+1)*128,(record['row']+1)*128))
     record['head']=anchor(cell,record['row'])
     record['bottom']=cell.getbbox()[3]
-(ROOT/'assets/pixel/enemy-movement/registration.json').write_text(json.dumps(records,indent=2)+'\n')
+(ROOT/'assets/art/pixel/enemy-movement/registration.json').write_text(json.dumps(records,indent=2)+'\n')
 for row,kind in enumerate(('guard','fire','wraith')):
     path=ROOT/'game/animation/profiles'/f'{kind}_pixel.json';profile=json.loads(path.read_text())
     def frame(i,contact=False):

@@ -2,7 +2,7 @@
 from PIL import Image
 from pathlib import Path
 import json
-src=Path('assets/pixel/castle-source');out=Path('game/art/pixel')
+src=Path('assets/art/pixel/castle-source');out=Path('game/art/pixel')
 def px(im,size,colors=32):
  im=im.convert('RGBA').resize(size,Image.Resampling.NEAREST)
  a=im.getchannel('A').point(lambda v:255 if v>=96 else 0)

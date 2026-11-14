@@ -1,6 +1,6 @@
 from PIL import Image
 from pathlib import Path
-source=Image.open('assets/monster-motion/source/ash-wolf-poses.png').convert('RGBA')
+source=Image.open('assets/enemies/monster-motion/source/ash-wolf-poses.png').convert('RGBA')
 for index,(left,right) in enumerate([(0,640),(640,1510),(1510,source.width)]):
     crop=source.crop((left,0,right,source.height))
     crop=crop.crop(crop.getbbox())

@@ -3,7 +3,7 @@ from pathlib import Path
 import shutil
 base=Path('/Users/ahmedmansour/.codex/generated_images/01a1d419-ace7-79d3-996d-9f2a0333500c')
 sources={'background':'exec-05d52c3d-d905-41a8-97b3-69bc2f8656f8.png','fire':'exec-4948e04d-64ab-4c01-8547-9078a2985fb3.png'}
-for key,path in sources.items():shutil.copy2(base/path,Path('assets/living-marsh/source')/(key+'.png'))
+for key,path in sources.items():shutil.copy2(base/path,Path('assets/environments/living-marsh/source')/(key+'.png'))
 Image.open(base/sources['background']).resize((640,360),Image.Resampling.NEAREST).save('game/art/living-marsh/background.png')
 im=Image.open(base/sources['fire']).convert('RGBA');w,h=im.size
 for i in range(4):

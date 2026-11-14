@@ -1,7 +1,7 @@
 from PIL import Image
 from pathlib import Path
 import shutil,json
-B=Path('/Users/ahmedmansour/.codex/generated_images/01a1c895-624e-7573-b11a-af481a70fdba');O=Path('game/art/concept-pass');O.mkdir(exist_ok=True);S=Path('assets/concept-pass');S.mkdir(exist_ok=True)
+B=Path('/Users/ahmedmansour/.codex/generated_images/01a1c895-624e-7573-b11a-af481a70fdba');O=Path('game/art/concept-pass');O.mkdir(exist_ok=True);S=Path('assets/concept-art/concept-pass');S.mkdir(exist_ok=True)
 ids={'terrain':'a5ee694f-e748-4715-a610-8c93f5106760','skyline':'9eb181a7-ca1c-4c31-a98c-072f6708e490','gate':'167a815f-8f09-4f31-851a-3d11e8f07ab9','wraith':'485bc28b-3bdc-4768-9c31-bd9f19230126','walk':'d13df6a7-edcd-4694-894b-996aba3bf746'}
 def raw(name):
  p=B/('exec-'+ids[name]+'.png');shutil.copyfile(p,S/(name+'.png'));im=Image.open(p).convert('RGBA');im.putalpha(im.getchannel('A').point(lambda a:255 if a>210 else 0));return im

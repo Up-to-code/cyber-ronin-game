@@ -3,7 +3,7 @@
 Implemented generated nine-frame flight animation for the existing energy attack (X/G). Built-in imagegen produced the raw 3×3 sheet; deterministic Pillow processing removed magenta, split shared cells, nearest-resized to 96×64, and packed the engine strip. No creative shapes were drawn in processing.
 
 - Runtime: `game/systems/combat_projectile.gd`, `game/art/crimson-magic/spirit-flight.png`
-- Raw/prompt: `assets/crimson-magic/spirit-flight-source.png`, `spirit-flight.prompt.txt`
+- Raw/prompt: `assets/vfx/crimson-magic/spirit-flight-source.png`, `spirit-flight.prompt.txt`
 - Preview: `game/art/crimson-magic/spirit-flight.webp`
 - Rebuild: `.pixel-tools/bin/python tools/build_crimson_magic.py`
 - Frame metadata: `game/art/crimson-magic/manifest.json`

@@ -2,7 +2,7 @@
 from pathlib import Path
 from PIL import Image
 
-SOURCE = Path('assets/pixel/jungle')
+SOURCE = Path('assets/art/pixel/jungle')
 OUTPUT = Path('game/art/pixel')
 
 def clean(im: Image.Image, colors: int = 12) -> Image.Image:

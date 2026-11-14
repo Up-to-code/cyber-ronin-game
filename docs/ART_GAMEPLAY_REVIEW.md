@@ -1,7 +1,7 @@
 # Game-art and movement review
 
 ## Changes implemented
-Six generated airborne second-jump drawings now play over 0.30 seconds, interrupted immediately by attacks, hurt, dash or landing. Normal takeoff remains its own sequence. No artificial input delay added. Source: assets/ronin-v2/air-jump-source.png; game atlas: game/art/ronin-v2/air-jump.png. Generated with built-in imagegen using the new ronin reference: six ordered tuck/coil/extension/rise/apex/descent poses, same hat/scarf/weapon hand, transparent background. Local processing only splits, scales and packs cells.
+Six generated airborne second-jump drawings now play over 0.30 seconds, interrupted immediately by attacks, hurt, dash or landing. Normal takeoff remains its own sequence. No artificial input delay added. Source: assets/characters/ronin-v2/air-jump-source.png; game atlas: game/art/ronin-v2/air-jump.png. Generated with built-in imagegen using the new ronin reference: six ordered tuck/coil/extension/rise/apex/descent poses, same hat/scarf/weapon hand, transparent background. Local processing only splits, scales and packs cells.
 
 Sword sequence durations changed from 0.47/0.38/0.48 to 0.36/0.32/0.40 seconds. Uneven frame durations separate anticipation, fast strike, contact hold and recovery. Damage, sockets, VFX and sound still follow the displayed contact frame. Other attack clips gain uneven frame timing without damage changes.
 

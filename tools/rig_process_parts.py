@@ -1,6 +1,6 @@
 from pathlib import Path
 from PIL import Image
-source=Path('assets/rig/ronin-parts.raw.png')
+source=Path('assets/characters/rig/ronin-parts.raw.png')
 im=Image.open(source).convert('RGBA');out=Image.new('RGBA',(384,288))
 for i in range(12):
  x,y=i%4,i//4

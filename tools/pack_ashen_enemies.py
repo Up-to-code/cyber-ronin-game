@@ -2,7 +2,7 @@ from pathlib import Path
 from PIL import Image,ImageOps
 import json,statistics
 root=Path(__file__).resolve().parents[1]
-im=Image.open(root/'assets/pixel/ashen-enemies/raw.png').convert('RGBA')
+im=Image.open(root/'assets/art/pixel/ashen-enemies/raw.png').convert('RGBA')
 im.putalpha(im.getchannel('A').point(lambda a:255 if a>=210 else 0))
 cw,ch=im.width//8,im.height//2
 out=Image.new('RGBA',(1024,256))

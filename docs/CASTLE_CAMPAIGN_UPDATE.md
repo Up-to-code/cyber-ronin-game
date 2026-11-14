@@ -2,7 +2,7 @@
 
 The previous two-room prototype is now a six-map campaign. Runtime geometry is authoritative in game/data/campaign.gd. Each map has its own terraces/gaps/lifts, supported guard spawns, exit and camera width. The final captain has an elite health pool. The design remains a prototype rather than a finished boss system.
 
-Generated additions: castle skyline, castle rooftops, bamboo moat parallax layers, castle rampart platform, and eight-frame torch loop. Raw sources and prompts: assets/pixel/castle-source. Exporter: tools/process_castle_assets.py. Runtime art: game/art/pixel. The existing generated torii gate remains the real exit object; the former line-drawn outline is not in current code.
+Generated additions: castle skyline, castle rooftops, bamboo moat parallax layers, castle rampart platform, and eight-frame torch loop. Raw sources and prompts: assets/art/pixel/castle-source. Exporter: tools/process_castle_assets.py. Runtime art: game/art/pixel. The existing generated torii gate remains the real exit object; the former line-drawn outline is not in current code.
 
 Movement: A/D walks at180; Shift runs at300. Mobile RUN toggles sprint and accepts a separate finger while movement/attack are held. Walk/run clips advance separately, footsteps follow animation cycle markers, and takeoff/landing deformation keeps feet registered. See docs/LOCOMOTION.md.
 

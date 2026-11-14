@@ -29,7 +29,7 @@ The platforming agent implemented the controller, enemy ledge safety and moving-
 
 ## Asset production
 
-Built-in image generation created six raw assets: sky, transparent monastery, platform, UI atlas, FX sheet and shrine. Each prompt is beside its `.raw.png` in `assets/pixel/source`. `tools/process_pixel_assets.py` handles resizing, chroma removal, palette reduction, cell splitting and character registration; it does not draw the raw assets. The shrine is separately trimmed, reduced to 24 colors, fitted and padded to 128×144. Runtime art is under `game/art/pixel`.
+Built-in image generation created six raw assets: sky, transparent monastery, platform, UI atlas, FX sheet and shrine. Each prompt is beside its `.raw.png` in `assets/art/pixel/source`. `tools/process_pixel_assets.py` handles resizing, chroma removal, palette reduction, cell splitting and character registration; it does not draw the raw assets. The shrine is separately trimmed, reduced to 24 colors, fitted and padded to 128×144. Runtime art is under `game/art/pixel`.
 
 Character art derives from the licensed Cyber Ronin kit; original files remain unchanged under `assets/characters`. Processed character atlases stay excluded from Git. Pixelify Sans is bundled with its OFL license. Recorded sword source and CC0 notice: [StarNinjas](https://opengameart.org/comment/92361).
 

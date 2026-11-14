@@ -16,6 +16,6 @@ Ten behavior doctrines combine with the families:
 
 Runtime hook: call apply_monster_profile(monster_id) after adding an enemy and applying campaign/boss stats. Boss health is not scaled by roster health multipliers. Route kind must match the roster kind so the base controller and visual profile agree.
 
-Generated art: assets/monster-roster/roles-source.png, prompt in roles.prompt.txt, exported game/art/monster-roster/role0.png through role9.png. Built-in image_gen generated the atlas; deterministic processing only cropped/resized the individual icons and preserved alpha.
+Generated art: assets/enemies/monster-roster/roles-source.png, prompt in roles.prompt.txt, exported game/art/monster-roster/role0.png through role9.png. Built-in image_gen generated the atlas; deterministic processing only cropped/resized the individual icons and preserved alpha.
 
 Validation: tests/monster_roster.gd loads all 100 profiles, checks 100 distinct identities, 10 behaviors, valid animation resources, armor bypass, one-shot enrage, healing and unchanged boss health. tests/capture_monster_roster.gd renders ten representatives in docs/qa/monster-roster-gallery.png.

@@ -6,6 +6,6 @@ The earlier vertically repeating brick panels are replaced by a generated shallo
 
 The visual's jagged underside does not alter collision; the top stays flat. Large static spans remain one dark connected mass, and optional ledges stay thin. Existing red sky/castle cloud parallax remains separate and unchanged. No decorative foliage is baked into collision or above the walking line.
 
-Raw generated images and hand-written prompts are in `assets/pixel/jungle/`. `tools/process_jungle_assets.py` only cleans alpha, quantizes, crops, resizes and assembles atlas exports. Output: `game/art/pixel/jungle_surface.png` (256×12), `jungle_roots.png` (128×128, four 64×64 cells).
+Raw generated images and hand-written prompts are in `assets/art/pixel/jungle/`. `tools/process_jungle_assets.py` only cleans alpha, quantizes, crops, resizes and assembles atlas exports. Output: `game/art/pixel/jungle_surface.png` (256×12), `jungle_roots.png` (128×128, four 64×64 cells).
 
 Validation: `game/tests/jungle_terrain.gd` exercises 256/600-width static terrain, a moving platform and a one-way ledge; checks cap/top alignment, exact width and 144/56/24 depth. Native screenshot `/tmp/jungle-terrain-qa.png` was inspected at 1280×720: ground cap is distinct from the near-black subsurface and no tall repeated masonry remains. This verifies the isolated terrain component, not an integrated full level or physical phone.

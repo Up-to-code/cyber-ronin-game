@@ -1,6 +1,6 @@
 # Concept-to-game iteration 1
 
-Target: approved opening courtyard and gate concepts in docs/concepts/six-levels. Built-in imagegen created five asset sheets/panoramas. Full-resolution sources retained in assets/concept-pass; engine exports in game/art/concept-pass. Scripts only crop, remove background, align, resize nearest-neighbor and pack.
+Target: approved opening courtyard and gate concepts in docs/concepts/six-levels. Built-in imagegen created five asset sheets/panoramas. Full-resolution sources retained in assets/concept-art/concept-pass; engine exports in game/art/concept-pass. Scripts only crop, remove background, align, resize nearest-neighbor and pack.
 
 ## Generation prompts
 - Terrain: 2×2 transparent side-view pieces: flat charcoal masonry with amber walkable edge, alternate cracked rock, five shallow stairs, supported bridge arch; no characters/sky.

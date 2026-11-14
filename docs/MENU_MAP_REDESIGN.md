@@ -4,7 +4,7 @@ Scope corrected after user clarification: redesign the campaign map in the main 
 
 The campaign atlas uses one generated pixel-art world with ten regions. WORLD shows an overview; each region opens its level route. All 100 level nodes preserve progression locks, 44-unit targets, keyboard focus and explicit ENTER action. Generated pixel button faces and panels are shared across title, pause, settings, story and defeat flows. The title uses pixel-font lettering; main-menu screens have a plain navy backdrop.
 
-Assets generated with the built-in image-generation tool. Originals and source backup: assets/pixel-redesign. Runtime files: game/art/pixel-redesign. Prompts: assets/pixel-redesign/prompts.json. Deterministic cleanup uses palette reduction and nearest-neighbor sizing, with no drawn replacement artwork.
+Assets generated with the built-in image-generation tool. Originals and source backup: assets/archive/pixel-redesign. Runtime files: game/art/pixel-redesign. Prompts: assets/archive/pixel-redesign/prompts.json. Deterministic cleanup uses palette reduction and nearest-neighbor sizing, with no drawn replacement artwork.
 
 Trailer: actual Godot scenes and audio, directed by scripted input through the real player physics and combat controller. Four maps: Monastery Approach, Bamboo Ramparts, Sunken Cistern, Oni Throne. Opponents are staged for filming; this is not footage of a human playtest. Capture is repeatable with game/tests/record_trailer.gd and Godot --write-movie at 60fps. Native music and sound effects are recorded together.
 

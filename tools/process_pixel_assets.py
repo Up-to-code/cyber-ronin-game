@@ -2,7 +2,7 @@
 from pathlib import Path
 from PIL import Image
 import json,math
-SRC=Path('assets/pixel/source');OUT=Path('game/art/pixel');OUT.mkdir(parents=True,exist_ok=True)
+SRC=Path('assets/art/pixel/source');OUT=Path('game/art/pixel');OUT.mkdir(parents=True,exist_ok=True)
 def pixel(im,size,colors=32):
     im=im.convert('RGBA').resize(size,Image.Resampling.NEAREST)
     a=im.getchannel('A').point(lambda v:255 if v>=96 else 0)

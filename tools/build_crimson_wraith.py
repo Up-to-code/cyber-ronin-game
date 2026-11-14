@@ -2,7 +2,7 @@
 from PIL import Image
 from pathlib import Path
 import json, sys, shutil
-source=Path(sys.argv[1]); raw=Path('assets/crimson-wraith'); out=Path('game/art/crimson-wraith')
+source=Path(sys.argv[1]); raw=Path('assets/enemies/crimson-wraith'); out=Path('game/art/crimson-wraith')
 shutil.copy2(source,raw/'hover-source.png')
 im=Image.open(source).convert('RGBA'); frames=[]; measurements=[]
 for row in range(3):

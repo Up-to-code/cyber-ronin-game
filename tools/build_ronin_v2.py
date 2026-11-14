@@ -3,7 +3,7 @@ from PIL import Image
 import json,shutil
 R=Path(__file__).resolve().parents[1];O=R/'game/art/ronin-v2';O.mkdir(exist_ok=True)
 src=Path('/Users/ahmedmansour/.codex/generated_images/01a1c895-624e-7573-b11a-af481a70fdba/exec-f9dc6e0f-82c0-4b8c-a870-2879813d9df9.png')
-raw=R/'assets/ronin-v2';raw.mkdir(exist_ok=True);shutil.copyfile(src,raw/'generated-sheet.png')
+raw=R/'assets/characters/ronin-v2';raw.mkdir(exist_ok=True);shutil.copyfile(src,raw/'generated-sheet.png')
 im=Image.open(src).convert('RGBA');print(im.size)
 atlas=Image.new('RGBA',(1024,1024));frames=[]
 for row in range(8):

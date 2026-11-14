@@ -10,6 +10,6 @@ Repair contract: textured capped ledges with top surfaces matched to collision; 
 
 Player feedback: ivory/copper hero edge, orange danger telegraph, ivory slash, red damage, warm stone dust. Keep the playable foreground higher-contrast than distant red layers. Frame transient effects so enemies remain visible. Motion acceptance includes jump buffer, coyote time, variable jump release, grounded feet and moving-platform carry.
 
-Source-art provenance and generated prompts live under assets/pixel/source; processed runtime sprites under game/art/pixel. Original smooth sources remain private and unchanged. Skill installation sources recorded in docs/PIXEL_REBUILD.md.
+Source-art provenance and generated prompts live under assets/art/pixel/source; processed runtime sprites under game/art/pixel. Original smooth sources remain private and unchanged. Skill installation sources recorded in docs/PIXEL_REBUILD.md.
 
 Castle expansion: three additional generated parallax layers (castle, rooftops, bamboo), a castle rampart ledge, and an eight-frame torch loop. Maps use distinct terrain layouts and palettes; progress/loader/menu retain the existing generated pixel frames. Runtime loading reports actual resource/route build stages. Walk/run use separate gait cycles with animation-linked grounded steps. Exploration and combat use separate licensed musical loops with threat-driven 1.2-second crossfade. Rejected audio source is removed from runtime.

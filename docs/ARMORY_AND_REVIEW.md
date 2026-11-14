@@ -12,7 +12,7 @@ Monster visual sizing now uses measured alpha bounds and full transform scale, i
 
 The artist pass adds20 attack-specific warning glyphs, an original generated15-frame impact atlas across five elements, boss phase announcements, and12 original synthesized cast/contact sounds. Sounds respect mute and EnemyCombat volume, distance and eight-voice limits. These cover100 combined contracts with shared elemental art/sound families; they are not100 bespoke animation and audio sets.
 
-World presentation: panoramic backgrounds use one unmirrored image with bounded parallax, removing center seams and duplicated castles/trees. Generated citadel balconies now use short attached corbels rather than suspension ropes ending in empty space. Source art and prompt are in assets/armory-review.
+World presentation: panoramic backgrounds use one unmirrored image with bounded parallax, removing center seams and duplicated castles/trees. Generated citadel balconies now use short attached corbels rather than suspension ropes ending in empty space. Source art and prompt are in assets/archive/armory-review.
 
 Validated: armory purchase/save/consumption/retry, real level4 puzzle-to-open-gate,100 native gate lifecycles,100 monster size/audio cases,100 attack contacts, aquatic tests, background coverage, and native screenshots. The UI guide was reduced after visual inspection to avoid covering combat. Full campaign difficulty and handcrafted animation refinement remain playtest/production work.
 

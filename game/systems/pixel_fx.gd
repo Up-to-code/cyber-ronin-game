@@ -9,6 +9,20 @@ func spawn(kind: String, at: Vector2, direction: float) -> void:
 	# Reserve four slots for the layers of a single impact event.
 	if get_child_count() >= 60:
 		return
+	if kind == "barrel_blast":
+		var blast: Node2D = preload("res://systems/fire_barrel_blast.gd").new()
+		blast.position = at
+		blast.direction = direction
+		blast.set_meta("family", "fire_barrel")
+		add_child(blast)
+		return
+	if kind == "barrel_scorch":
+		var scorch: Node2D = preload("res://systems/fire_barrel_scorch.gd").new()
+		scorch.position = at
+		scorch.direction = direction
+		scorch.set_meta("family", "fire_barrel")
+		add_child(scorch)
+		return
 	if kind == "swim_bubbles":
 		var bubbles:=preload("res://systems/swim_bubbles.gd").new()
 		bubbles.position=at

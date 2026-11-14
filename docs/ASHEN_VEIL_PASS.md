@@ -14,7 +14,7 @@ Two additional enemies have authored pixel-art key poses: lancer (155worldpixel 
 
 Device inventory found an iOS27.1 simulator on this Mac; Android SDK is unavailable. This workspace has no iOS exportpreset or matching installed exporttemplates. Thus no native iOS app was built/launched/tested. [Godot iOS exporting documentation](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_ios.html) describes required macOS/Xcode/template setup; [the engine simulator-slice issue](https://github.com/godotengine/godot/issues/118161) is an additional build consideration. Input/layout validation at iPhone/iPad aspect ratios is preparatory evidence, not a claim of compatibility with every mobile version.
 
-Image-generated raw files and nearest-neighbor derivatives are retained in assets/pixel/ashen-veil and assets/pixel/ashen-enemies. The icon PNG is exported at1024/256/64; only256is assigned to the Godot project. No mobile-store upload/signing is implied. Physical-device frame pacing, haptics, phone audio and subjective play feel remain unverified.
+Image-generated raw files and nearest-neighbor derivatives are retained in assets/art/pixel/ashen-veil and assets/art/pixel/ashen-enemies. The icon PNG is exported at1024/256/64; only256is assigned to the Godot project. No mobile-store upload/signing is implied. Physical-device frame pacing, haptics, phone audio and subjective play feel remain unverified.
 
 ## Applied interaction and feedback details
 

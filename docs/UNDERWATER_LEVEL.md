@@ -8,7 +8,7 @@ Swimming has acceleration, drag, mild buoyancy and bounded currents. The current
 
 Aquatic encounters use floorless movement and water attacks: jellyfish radial pulses, committed eel charges, and crab claw sequences. Their art comes from existing distinct monster bodies. Water projectiles use swept collision. Fire spawned inside water is suppressed; fire crossing the boundary extinguishes.
 
-New original generated background and props are retained in assets/tidal-castle/source with prompts. The underwater background, coral, kelp, pearl shell and masonry are integrated into the native game. Bubbles and whirlpool strokes have fixed budgets. HUD objective wording changes to PEARLS.
+New original generated background and props are retained in assets/environments/tidal-castle/source with prompts. The underwater background, coral, kelp, pearl shell and masonry are integrated into the native game. Bubbles and whirlpool strokes have fixed budgets. HUD objective wording changes to PEARLS.
 
 Validation:
 - Underwater data test validates chamber geometry and swept body clearance.

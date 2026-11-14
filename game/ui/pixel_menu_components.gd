@@ -86,3 +86,19 @@ static func volume(value: float, callback: Callable) -> VBoxContainer:
 		callback.call(next))
 	box.add_child(slider)
 	return box
+
+static func citadel_button(state: String = "normal") -> StyleBoxTexture:
+	var style := StyleBoxTexture.new()
+	style.texture = preload("res://art/menu-citadel/button.png")
+	style.region_rect = Rect2(Vector2.ZERO,style.texture.get_size())
+	style.draw_center = true
+	for side in [SIDE_LEFT,SIDE_RIGHT]:
+		style.set_texture_margin(side,0)
+	for side in [SIDE_TOP,SIDE_BOTTOM]:
+		style.set_texture_margin(side,0)
+	style.content_margin_left = 28
+	style.content_margin_right = 28
+	style.content_margin_top = 10
+	style.content_margin_bottom = 10
+	style.modulate_color = Color(1.3,1.18,1.05) if state in ["hover","focus"] else (Color(0.7,0.65,0.6) if state == "pressed" else Color.WHITE)
+	return style

@@ -14,6 +14,16 @@ var heal_button: Button
 var objective_guide: Control
 var guide_refresh_left := 0.0
 const CampaignData = preload("res://data/campaign.gd")
+const SaveStore = preload("res://systems/run/save_store.gd")
+const RunProgression = preload("res://systems/run/run_progression.gd")
+const CameraDirector = preload("res://systems/run/camera_director.gd")
+const BackgroundDirector = preload("res://systems/run/background_director.gd")
+const FxDirector = preload("res://systems/run/fx_director.gd")
+var save_store: RefCounted
+var progression: RefCounted
+var camera_director: RefCounted
+var background_director: RefCounted
+var fx_director: RefCounted
 var required_devices: Dictionary = {}
 var active_realm := "surface"
 var tidal_water: Node2D
@@ -26,16 +36,22 @@ var coins: int = 0
 var banked_coins: int = 0
 var seals_left: int = 0
 var marked_left: int = 0
-var gate_opening := false
+var gate_opening: bool:
+	get: return progression.gate_opening
+	set(value): progression.gate_opening = value
 var level: int = 1
 var elapsed: float = 0
 var screenshot_path: String = ""
 var capture_started: bool = false
-var background_layers: Array[Dictionary] = []
+var background_layers: Array[Dictionary]:
+	get: return background_director.layers
 var snow_field: Node2D
-var camera_trauma: float = 0
-var camera_initialized: bool = false
-var camera_ground_y: float = 550
+var camera_trauma: float:
+	get: return camera_director.trauma
+	set(value): camera_director.trauma = value
+var camera_initialized: bool:
+	get: return camera_director.initialized
+	set(value): camera_director.initialized = value
 var welcome_layer: CanvasLayer
 var welcome_art: Sprite2D
 var moving_platform: AnimatableBody2D
@@ -44,7 +60,9 @@ var fx: Node2D
 var started: bool = false
 var run_token: int = 0
 var shrine: Sprite2D
-var gate_open: bool = false
+var gate_open: bool:
+	get: return progression.gate_open
+	set(value): progression.gate_open = value
 var gate_entry_time: float = 0.0
 var level_root: Node2D
 var map: Dictionary = {}
@@ -58,6 +76,10 @@ var story_ending: bool = false
 var story_seen: Dictionary = {}
 
 func _ready() -> void:
+	progression = RunProgression.new()
+	camera_director = CameraDirector.new()
+	background_director = BackgroundDirector.new()
+	fx_director = FxDirector.new()
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_window().title = "Ashen Veil — The Bell That Would Not Rest"
 	get_tree().auto_accept_quit = false
@@ -79,8 +101,10 @@ func _ready() -> void:
 	add_child(camera)
 	hud = Hud.new()
 	add_child(hud)
-	banked_coins = int(hud.settings.get_value("progress","coins",0))
+	save_store = SaveStore.new(hud.settings, hud.settings_path)
+	banked_coins = save_store.coins()
 	coins = banked_coins
+	fx_director.bind(fx, player, camera_director, hud.damage_veil, level_root)
 	_build_inventory()
 	story_card = preload("res://ui/story_card.gd").new()
 	add_child(story_card)
@@ -117,117 +141,28 @@ func _ready() -> void:
 		_choose_level(qa_level)
 
 func _enemy_fx(kind: String, at: Vector2, direction: float) -> void:
-	if kind == "water":
-		if is_instance_valid(tidal_water): tidal_water.splash(at,8)
-		return
-	fx.spawn("enemy_slash" if kind == "slash" else kind, at, direction)
-	if kind=="defeat" and player.global_position.distance_to(at)<260:
-		hud.damage_veil.splash(0.55)
-		camera_trauma=minf(0.7,camera_trauma+0.20)
-	if kind in ["impact", "finisher_hit"]:
-		camera_trauma = minf(0.65, camera_trauma + (0.52 if kind == "finisher_hit" else 0.30))
+	fx_director.enemy(kind, at, direction)
 
 func _player_fx(kind: String, at: Vector2, direction: float) -> void:
-	if kind.begins_with("swim") or kind == "water":
-		if is_instance_valid(tidal_water): tidal_water.splash(at,8)
-		return
-	if kind in ["impact","finisher_hit"]:
-		camera_trauma = minf(0.65,camera_trauma+0.36)
-		hud.damage_veil.splash(1.0)
-	if kind in ["slash_reverse","finisher","sweep","charged"] and is_instance_valid(player): at=player.global_position+Vector2(0,-62)
-	if kind == "sweep": at=player.global_position+Vector2(0,-36)
-	if kind in ["sweep","slash_reverse"] and is_instance_valid(player) and player.sword_motion != "sword":
-		fx.rig_trail(player.rig)
-	if kind == "kick": fx.spawn("kick_wind",at,direction)
-	if kind == "power" and is_instance_valid(player): at = player.global_position + Vector2(0,-6)
-	if kind in ["land", "aerial_land"]: camera_trauma = minf(0.60,camera_trauma+(0.48 if kind == "aerial_land" else 0.32))
-	if kind in ["step", "land", "jump", "aerial_land"] and fx.get_child_count()<60:
-		var snow := preload("res://systems/pixel_burst.gd").new()
-		snow.position = at
-		snow.tint = Color("d7e5ed")
-		snow.count = 5 if kind == "step" else 12
-		snow.spread = 0.45 if kind == "step" else 0.85
-		snow.lifetime = 0.35
-		snow.direction = direction
-		fx.add_child(snow)
-	if kind in ["dodge", "dash_trail"]:
-		if is_instance_valid(player.rig): fx.rig_trail(player.rig)
-		else: fx.trail(player.sprite, at, direction)
-		if kind == "dodge":
-			fx.burst("dash_start", at + Vector2(0, -32), direction)
-		if kind == "dodge" and player.is_on_floor():
-			fx.spawn("step", at, direction)
-	else:
-		var previous := fx.get_children()
-		fx.spawn(kind, at, direction)
-		if kind in ["slash", "slash_reverse", "finisher", "sweep", "charged", "kick", "ranged", "energy"]:
-			var angle: float = Vector2(direction,0).angle_to(player.attack_aim)
-			for effect in fx.get_children():
-				if effect in previous: continue
-				effect.rotation += angle
-				effect.set_meta("follow_actor", player)
-				effect.set_meta("follow_offset", effect.global_position - player.global_position)
-		if kind in ["impact", "finisher_hit"] and player.velocity.length() > 80:
-			if is_instance_valid(player.rig): fx.rig_trail(player.rig)
+	fx_director.player_effect(kind, at, direction)
 
 func _spawn_projectile(kind: String, at: Vector2, direction: Vector2, source: Node) -> void:
-	if kind == "fire" and is_instance_valid(tidal_water) and tidal_water.contains(at):
-		tidal_water.splash(at,6)
-		return
-	if get_tree().get_nodes_in_group("combat_projectiles").size() >= 48: return
-	if kind == "laser":
-		var beam := preload("res://systems/telegraph_beam.gd").new()
-		beam.position=at+(direction*28 if source==player else Vector2.ZERO)
-		beam.direction=direction
-		beam.owner_body=source
-		beam.from_player=source==player
-		beam.damage=60 if source==player else source.projectile_damage
-		beam.impact.connect(func(point: Vector2, _family: String): fx.spawn("fire_impact",point,direction.x))
-		level_root.add_child(beam)
-		return
-	var projectile := preload("res://systems/combat_projectile.gd").new()
-	projectile.kind = kind
-	projectile.position = at
-	projectile.direction = direction.normalized()
-	projectile.from_player = source == player
-	projectile.owner_body = source
-	projectile.speed = 760 if source == player else 360
-	projectile.damage = 40 if source == player else source.projectile_damage
-	projectile.life = 0.85 if source == player else 1.8
-	projectile.impact.connect(func(point: Vector2, family: String):
-		_water_impact(point) if family == "water" else fx.spawn("fire_impact" if family == "fire" else "wall_hit", point, direction.x))
-	level_root.add_child(projectile)
+	fx_director.projectile(kind, at, direction, source)
 
 func _water_impact(at: Vector2) -> void:
-	if is_instance_valid(tidal_water): tidal_water.splash(at,12)
+	fx_director.water_impact(at)
 
 func _audio() -> Node:
 	return get_node("/root/Audio")
 
 func _backdrop_for(theme: String) -> String:
-	match theme:
-		"bamboo": return "bamboo"
-		"rooftops", "sanctuary": return "roofs"
-		_: return "castle"
+	return BackgroundDirector.backdrop_for(theme)
+
+func _build_background() -> void:
+	background_director.build(self)
 
 func _resource_paths(data: Dictionary) -> Array[String]:
 	return ["res://art/pixel/sky.png", "res://art/pixel/" + _backdrop_for(data.theme) + ".png", "res://art/pixel/" + ("platform" if data.theme in ["approach", "bamboo"] else "rampart") + ".png", "res://art/pixel/torch.png", "res://art/pixel/shrine.png"]
-
-func _build_background() -> void:
-	var backdrop := CanvasLayer.new()
-	backdrop.layer = -10
-	add_child(backdrop)
-	for spec in [[true, 0.035, 0.8, false], [false, 0.10, 0.0, false], [false, 0.18, 3.5, true], [false, 0.26, 0.0, false]]:
-		var sprites: Array[Sprite2D] = []
-		for i in range(4):
-			var visual := Sprite2D.new()
-			visual.centered = false
-			visual.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-			visual.flip_h = i % 2 == 1
-			visual.z_index = background_layers.size()
-			backdrop.add_child(visual)
-			sprites.append(visual)
-		background_layers.append({"sprites":sprites, "ratio":spec[1], "speed":spec[2], "sky":spec[0], "mist":spec[3]})
 
 func _build_welcome() -> void:
 	welcome_layer=CanvasLayer.new()
@@ -250,31 +185,7 @@ func _build_weather() -> void:
 	weather.add_child(snow_field)
 
 func _set_background(data: Dictionary) -> void:
-	var biome: String = data.get("biome","surface")
-	if is_instance_valid(snow_field): snow_field.biome = biome
-	if biome in ["underground","sky","citadel","underwater"]:
-		for layer in background_layers:
-			for visual in layer.sprites:
-				visual.texture = load("res://art/world-migration/%s.png" % biome) if layer.sky else preload("res://art/living-marsh/mist.png")
-				visual.modulate = ({"sky":Color(0.72,0.78,0.88),"underground":Color(0.68,0.70,0.82),"citadel":Color(0.65,0.60,0.60),"underwater":Color(.65,.8,.88)}[biome] if layer.sky else Color(0.5,0.7,0.9,0.10 if layer.mist else 0.0))
-		return
-	var sky_texture: Texture2D = preload("res://art/living-marsh/background.png")
-	var near_texture: Texture2D = textures["res://art/pixel/" + _backdrop_for(data.theme) + ".png"]
-	var tint: Color = {"approach":Color(1,0.9,0.88), "courtyard":Color(1.1,0.86,0.8), "bamboo":Color(0.8,0.78,0.88), "rooftops":Color(0.88,0.85,1.0), "sanctuary":Color(1.0,0.8,0.85), "summit":Color(1.18,0.76,0.76)}[data.theme]
-	for layer in background_layers:
-		for visual in layer.sprites:
-			if layer.mist:
-				visual.texture = preload("res://art/living-marsh/mist.png")
-				visual.modulate = Color(0.65,0.48,0.60,0.18)
-				continue
-			visual.texture = sky_texture if layer.sky else near_texture
-			if not layer.sky and layer.ratio < 0.2:
-				visual.texture = load("res://art/concept-pass/skyline.png")
-			elif not layer.sky and data.theme in ["approach", "courtyard"]:
-				visual.texture = load("res://art/pixel/castle-separated.png")
-			visual.modulate = tint
-			if not layer.sky:
-				visual.modulate *= Color(0.55,0.48,0.60,0.40) if layer.ratio < 0.2 else Color(0.48,0.40,0.50,0.68)
+	background_director.set_theme(data, textures, snow_field)
 
 func _decorate_platform(body: PhysicsBody2D, width: float, one_way: bool = false) -> void:
 	body.z_index = -1
@@ -301,6 +212,55 @@ func _decorate_scenery(segment: Dictionary) -> void:
 		prop.scale=Vector2(1.35,1.35)
 		prop.phase=float(i+level)
 		level_root.add_child(prop)
+
+func _place_fire_barrels() -> void:
+	# A small deterministic set of hazards per route. Water routes and shafts
+	# keep their authored traversal clean.
+	if map.has("water_bounds") or map.get("shaft",false): return
+	var candidates: Array = []
+	for segment in map.platforms:
+		if segment.get("optional",false) or float(segment.width) < 360.0: continue
+		if _biome_at(segment.center) in ["sky","underwater"]: continue
+		candidates.append(segment)
+	if candidates.is_empty(): return
+	var rng := RandomNumberGenerator.new()
+	rng.seed = level * 7919 + 41
+	var count: int = mini(2 + level % 2, candidates.size())
+	for i in range(count):
+		var pick: int = rng.randi_range(0, candidates.size() - 1)
+		var segment: Dictionary = candidates[pick]
+		candidates.remove_at(pick)
+		var half: float = float(segment.width) * 0.5
+		var x: float = float(segment.center.x) + rng.randf_range(-half * 0.55, half * 0.55)
+		x = _clear_fire_barrel_space(x, segment)
+		var barrel = preload("res://systems/fire_barrel.gd").new()
+		barrel.position = Vector2(roundf(x), segment.center.y)
+		barrel.direction = 1.0 if x < segment.center.x else -1.0
+		barrel.fused.connect(_fire_barrel_fused)
+		barrel.detonated.connect(_fire_barrel_detonated)
+		level_root.add_child(barrel)
+		if candidates.is_empty(): break
+
+func _clear_fire_barrel_space(x: float, segment: Dictionary) -> float:
+	var landmarks: Array = [map.spawn, map.exit]
+	for item in map.get("pickups",[]): landmarks.append(item.position)
+	for record in map.get("devices",[]): landmarks.append(record.position)
+	for point in landmarks:
+		if absf(x - point.x) < 130.0 and absf(float(segment.center.y) - point.y) < 150.0:
+			x = point.x + (170.0 if x >= point.x else -170.0)
+	return clampf(x, float(segment.center.x) - float(segment.width) * 0.5 + 70.0, float(segment.center.x) + float(segment.width) * 0.5 - 70.0)
+
+func _fire_barrel_fused(at: Vector2) -> void:
+	_audio().play("charge")
+	fx.burst("fire_cast", at + Vector2(0, -42), 1)
+
+func _fire_barrel_detonated(at: Vector2, direction: float) -> void:
+	fx.spawn("barrel_blast", at + Vector2(0, -30), direction)
+	fx.spawn("barrel_scorch", at, direction)
+	camera_director.add_trauma(0.90, 0.65)
+	_audio().play("explosion")
+	if player.global_position.distance_to(at) < 190.0:
+		hud.damage_veil.splash(0.55)
 
 func _make_torch_frames() -> SpriteFrames:
 	var frames := SpriteFrames.new()
@@ -330,9 +290,11 @@ func _populate_level(data: Dictionary) -> void:
 		level_root.free()
 	level_root = Node2D.new()
 	level_root.process_mode = Node.PROCESS_MODE_PAUSABLE
+	fx_director.root = level_root
 	add_child(level_root)
 	sequence_machine = null
 	tidal_water = null
+	fx_director.water = null
 	player.set_submerged(false)
 	player.set_physics_process(true)
 	map = data
@@ -373,6 +335,7 @@ func _populate_level(data: Dictionary) -> void:
 		if not segment.get("optional", false) and segment.width >= 400 and _biome_at(segment.center) in ["surface","citadel"]:
 			_torch(segment.center + Vector2(-segment.width / 2 + 65, 0), int(segment.center.x) / 50)
 		_decorate_scenery(segment)
+	_place_fire_barrels()
 	for lift in data.lifts:
 		var body: AnimatableBody2D = preload("res://systems/moving_platform.gd").new()
 		body.position = lift.center
@@ -386,8 +349,7 @@ func _populate_level(data: Dictionary) -> void:
 	shrine = Sprite2D.new()
 	shrine.texture = preload("res://art/crimson-gate/gate.png")
 	shrine.hframes = 4
-	gate_open = false
-	gate_opening = false
+	progression.reset()
 	gate_entry_time = 0.0
 	shrine.position = data.exit
 	shrine.offset = Vector2(0, -88)
@@ -396,8 +358,7 @@ func _populate_level(data: Dictionary) -> void:
 	shrine.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	shrine.modulate = Color(0.65, 0.58, 0.6)
 	level_root.add_child(shrine)
-	camera_initialized = false
-	camera_trauma = 0
+	camera_director.reset()
 	player.position = data.spawn
 	player.reset_physics_interpolation()
 	player.map_width = data.width
@@ -450,11 +411,12 @@ func _populate_level(data: Dictionary) -> void:
 		level_root.add_child(sequence_machine)
 		sequence_machine.completed.connect(func():
 			fx.burst("charge",sequence_machine.position,1)
-			camera_trauma = 0.6
+			camera_director.add_trauma(0.6)
 			_update_mission()
 			_check_gate())
 	if data.has("water_bounds"):
 		tidal_water = preload("res://systems/tidal_water.gd").new()
+		fx_director.water = tidal_water
 		tidal_water.player = player
 		tidal_water.bounds = data.water_bounds
 		tidal_water.currents = data.get("water_currents",[])
@@ -540,7 +502,7 @@ func _enter_realm(destination: String) -> void:
 		player.position = region.spawn
 		player.velocity = Vector2.ZERO
 		player.reset_physics_interpolation()
-		camera_initialized = false
+		camera_director.initialized = false
 		var view := map.duplicate()
 		view.biome = region.biome
 		_set_background(view)
@@ -605,8 +567,8 @@ func _update_mission() -> void:
 
 func _bank_rewards() -> void:
 	banked_coins=coins
-	hud.settings.set_value("progress","coins",banked_coins)
-	hud.settings.save(hud.settings_path)
+	save_store.set_coins(banked_coins)
+	save_store.save(hud.settings_path)
 
 func _enemy_defeated(enemy: Node2D = null, marked: bool = false) -> void:
 	if marked: marked_left=maxi(0,marked_left-1)
@@ -626,8 +588,7 @@ func _enemy_defeated(enemy: Node2D = null, marked: bool = false) -> void:
 	_check_gate()
 
 func _check_gate() -> void:
-	if not _objectives_met() or gate_open or gate_opening: return
-	gate_opening=true
+	if not progression.begin_open(_objectives_met()): return
 	shrine.modulate=Color(1.4,1.25,1.05)
 	_audio().play("bell")
 	var field:=preload("res://systems/gate_field.gd").new()
@@ -640,7 +601,7 @@ func _check_gate() -> void:
 		if is_instance_valid(shrine): shrine.frame=mini(3,int(value)),0.0,3.99,0.8)
 	gate_tween.tween_callback(func():
 		if token!=run_token: return
-		gate_open=true
+		progression.complete()
 		hud.set_state("Gate open")
 		fx.burst("charge",shrine.position+Vector2(0,-90),1)
 		_audio().play("power"))
@@ -798,21 +759,8 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(player) or map.is_empty():
 		return
 	# Mild contact push-in; ease back without changing gameplay or UI scale.
-	var shot_zoom: float = (0.56 if map.get("shaft",false) else 0.69) + camera_trauma * 0.025
-	camera.zoom = camera.zoom.lerp(Vector2.ONE*shot_zoom,1.0-exp(-delta*5.0))
+	camera_director.update(delta, camera, map, player, get_viewport_rect().size, get_tree().paused)
 	var half_width: float = get_viewport_rect().size.x / (2.0*camera.zoom.x)
-	if not camera_initialized or player.is_on_floor(): camera_ground_y = player.position.y
-	var rise_follow: float = clampf((camera_ground_y-player.position.y)*0.9,0,130)
-	var framing: Vector2 = preload("res://systems/route_camera.gd").focus(map,player.position,player.velocity)
-	var camera_target := Vector2(clampf(framing.x, half_width, maxf(half_width,map.width-half_width)),clampf(framing.y,180,map.get("height",950.0)-300))
-	if not camera_initialized:
-		camera.position = camera_target
-		camera_initialized = true
-	elif not get_tree().paused:
-		camera.position.x = lerpf(camera.position.x,camera_target.x,1.0-exp(-delta*8.0))
-		camera.position.y = lerpf(camera.position.y,camera_target.y,1.0-exp(-delta*12.0))
-	camera_trauma = maxf(0,camera_trauma-delta*1.8)
-	camera.offset = Vector2(sin(elapsed*43),cos(elapsed*51))*camera_trauma*camera_trauma*12
 	if is_instance_valid(snow_field): snow_field.camera_x = camera.position.x - half_width
 	_layout_background(get_viewport_rect().size,Vector2(camera.position.x-half_width,camera.position.y-360))
 	if started and not get_tree().paused and not transitioning:
@@ -861,49 +809,11 @@ func quit_game() -> void:
 	get_tree().quit()
 
 func _layout_background(extent: Vector2, camera_shift: Vector2) -> void:
-	for layer in background_layers:
-		var texture: Texture2D = layer.sprites[0].texture
-		if texture == null: continue
-		var native: Vector2 = texture.get_size()
-		var factor: float
-		var y: float
-		if layer.sky:
-			factor = maxf(extent.x/native.x,extent.y/native.y)*1.18
-			var excess := native*factor-extent
-			var drift := Vector2(clampf(camera_shift.x*.025,-excess.x*.45,excess.x*.45),clampf(camera_shift.y*.015,-excess.y*.45,excess.y*.45))
-			for i in range(layer.sprites.size()):
-				var background: Sprite2D=layer.sprites[i]
-				background.visible=i==0
-				background.flip_h=false
-				background.scale=Vector2.ONE*factor
-				background.position=(-excess*.5-drift).floor()
-			continue
-		elif layer.mist:
-			factor = maxf(1,extent.y/360.0)
-			y = extent.y*0.36+sin(elapsed*0.2)*4
-		else:
-			# Keep both cut texture edges outside the viewport at every camera height.
-			factor = (extent.y+128.0)/native.y
-			y = -64.0-clampf(camera_shift.y*layer.ratio*0.25,-28,28)
-		var tile_width: float = ceilf(native.x*factor)
-		factor = tile_width/native.x
-		var offset: float = fposmod(camera_shift.x*0.5*layer.ratio+elapsed*layer.speed,tile_width*2)
-		var required: int = maxi(4,ceili(extent.x/tile_width)+3)
-		while layer.sprites.size()<required:
-			var copy: Sprite2D = layer.sprites[0].duplicate()
-			layer.sprites[0].get_parent().add_child(copy)
-			layer.sprites.append(copy)
-		for i in range(layer.sprites.size()):
-			var visual: Sprite2D = layer.sprites[i]
-			visual.visible = i<required
-			visual.flip_h = i%2==1
-			visual.scale = Vector2.ONE*factor
-			# One shared Y and integer tile pitch: no per-tile bob or width assumption.
-			visual.position = Vector2(floorf(i*tile_width-offset),floorf(y))
+	background_director.layout(extent, camera_shift, elapsed)
 
 func _build_inventory() -> void:
 	skill_inventory = SkillInventory.new()
-	skill_inventory.load_state(hud.settings.get_value("skills","state",{}))
+	skill_inventory.load_state(save_store.skill_state())
 	player.apply_skill_inventory(skill_inventory)
 	player.inventory_consumed.connect(func(_id: String):
 		_save_skill_progress()
@@ -916,6 +826,7 @@ func _build_inventory() -> void:
 	inventory_layer.add_child(inventory_screen)
 	inventory_screen.hide()
 	inventory_screen.closed.connect(_close_inventory)
+	hud.armory_requested.connect(_open_inventory)
 	inventory_screen.purchase_requested.connect(_purchase_skill)
 	inventory_button = Button.new()
 	inventory_button.text="B · ARMORY"
@@ -941,7 +852,7 @@ func _build_inventory() -> void:
 	hud.gameplay.add_child(objective_guide)
 
 func _open_inventory() -> void:
-	if not started or transitioning or get_tree().paused or player.health<=0: return
+	if transitioning or get_tree().paused or player.health<=0: return
 	player.cancel_pending_input()
 	hud.touch.release_all()
 	hud.gameplay.hide()
@@ -953,18 +864,15 @@ func _open_inventory() -> void:
 
 func _close_inventory() -> void:
 	inventory_screen.hide()
-	hud.gameplay.show()
+	hud.gameplay.visible = started
 	get_tree().paused=false
 	player.cancel_pending_input()
 	_refresh_guide()
 
 func _save_skill_progress() -> Error:
-	hud.settings.set_value("progress","coins",banked_coins)
-	hud.settings.set_value("skills","state",skill_inventory.export_state())
-	var temporary: String=hud.settings_path+".tmp"
-	var error: Error=hud.settings.save(temporary)
-	if error != OK: return error
-	return DirAccess.rename_absolute(ProjectSettings.globalize_path(temporary),ProjectSettings.globalize_path(hud.settings_path))
+	save_store.set_coins(banked_coins)
+	save_store.set_skill_state(skill_inventory.export_state())
+	return save_store.save(hud.settings_path)
 
 func _purchase_skill(id: String) -> void:
 	var before: Dictionary=skill_inventory.export_state()

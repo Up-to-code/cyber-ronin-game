@@ -2,7 +2,7 @@
 from pathlib import Path
 from PIL import Image,ImageDraw
 import json
-ROOT=Path(__file__).resolve().parents[1];SRC=ROOT/'assets/pixel/ronin-redraw';OUT=ROOT/'game/art/ronin-redraw'
+ROOT=Path(__file__).resolve().parents[1];SRC=ROOT/'assets/art/pixel/ronin-redraw';OUT=ROOT/'game/art/ronin-redraw'
 def clean(im):
  im=im.convert('RGBA');w,h=im.size;pix=im.load()
  # Remove a white matte only when connected to the canvas exterior. Interior

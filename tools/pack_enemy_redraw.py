@@ -3,7 +3,7 @@ from PIL import Image, ImageOps
 from pathlib import Path
 import statistics
 ROOT = Path(__file__).resolve().parents[1]
-source = Image.open(ROOT / 'assets/pixel/enemies-redraw/raw.png').convert('RGBA')
+source = Image.open(ROOT / 'assets/art/pixel/enemies-redraw/raw.png').convert('RGBA')
 source.putalpha(source.getchannel('A').point(lambda a: 255 if a >= 210 else 0))
 atlas = Image.new('RGBA', (1024,384))
 # Original art faces left. Registration is a per-character support/mask anchor,
@@ -44,4 +44,4 @@ for col in range(7):
     atlas.paste(registered,(col*128,256))
 atlas.save(ROOT / 'game/art/pixel/enemies-redraw.png')
 # Native-size board for checking identity and pose registration, not a motion claim.
-atlas.resize((2048,768),Image.Resampling.NEAREST).save(ROOT/'assets/pixel/enemies-redraw/contact-sheet.png')
+atlas.resize((2048,768),Image.Resampling.NEAREST).save(ROOT/'assets/art/pixel/enemies-redraw/contact-sheet.png')

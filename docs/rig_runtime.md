@@ -31,7 +31,7 @@ State changes use a 0.09-second smoothstep blend of hip, hand, foot and angle ta
 
 Copy `game/data/characters/ronin.json`. Profiles override lengths, widths, tint, atlas path and optional part records. `configure` merges missing values from the default profile. Every part has an atlas rectangle in texture pixels, a displayed size in world pixels and a normalized pivot. Parts are head, torso, pelvis, coat, upper_arm, forearm, hand, weapon, thigh, shin, boot and wraith_head. Arms/legs reuse the same texture role for front/rear bones, with a defined z order. Keep overlap at joints. Changing the image alone cannot infer anatomical joints: supply the same 12-part contract or update the atlas rects/pivots. Movement, kick, gravity, hit effects and sockets can then remain shared.
 
-Raw generated source and hand-written prompt are in `assets/rig/ronin-parts.*`. `tools/rig_process_parts.py` only alpha-cleans, tight-crops, resizes, palette-reduces and packs generated parts; it does not draw the artwork. Runtime `parts.png` is 384×288 RGBA, twelve 96×96 atlas cells. The base reference is the existing ronin art direction; additional fire and ghost appearances are configured skins, not new animation sheets.
+Raw generated source and hand-written prompt are in `assets/characters/rig/ronin-parts.*`. `tools/rig_process_parts.py` only alpha-cleans, tight-crops, resizes, palette-reduces and packs generated parts; it does not draw the artwork. Runtime `parts.png` is 384×288 RGBA, twelve 96×96 atlas cells. The base reference is the existing ronin art direction; additional fire and ghost appearances are configured skins, not new animation sheets.
 
 ## Validation
 

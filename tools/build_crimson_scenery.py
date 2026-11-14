@@ -2,7 +2,7 @@
 from PIL import Image
 from pathlib import Path
 import json
-source=Path('assets/crimson-levels/props.png')
+source=Path('assets/levels/crimson-levels/props.png')
 out=Path('game/art/crimson-levels'); out.mkdir(parents=True,exist_ok=True)
 im=Image.open(source).convert('RGBA')
 for y in range(im.height):

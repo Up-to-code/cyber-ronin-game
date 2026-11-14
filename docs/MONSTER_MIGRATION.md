@@ -1,6 +1,6 @@
 # Hundred-body monster migration
 
-The campaign now loads 100 distinct generated body illustrations, one per introduced monster ID. Four original transparent source sheets are preserved under assets/monster-migration/source. Runtime images are 128x128 with a shared feet anchor, extracted by connected silhouette rather than equal grid crops (which cut off several large creatures). `scripts/extract_monster_bodies.py` reproduces extraction. `game/tests/monster_gallery.gd` renders the native Godot contact sheet to docs/qa/monster-gallery-native.png.
+The campaign now loads 100 distinct generated body illustrations, one per introduced monster ID. Four original transparent source sheets are preserved under assets/enemies/monster-migration/source. Runtime images are 128x128 with a shared feet anchor, extracted by connected silhouette rather than equal grid crops (which cut off several large creatures). `scripts/extract_monster_bodies.py` reproduces extraction. `game/tests/monster_gallery.gd` renders the native Godot contact sheet to docs/qa/monster-gallery-native.png.
 
 This is **100 distinct body drawings, not 100 independently drawn animation sets**. Existing cel timing and procedural motion remain shared. Several archetypes have similar themes, but none is just a tint of another runtime image.
 

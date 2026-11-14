@@ -15,5 +15,5 @@ https://creativecommons.org/publicdomain/zero/1.0/
 Used: sword slash, hit spark, critical hit, shockwave, laser bolt PNG strips;
 kick, punch, sword clash, laser shot, fireball WAVs. Artwork palette remapped;
 audio trimmed, filtered, resampled; armor mixes body and steel, power mixes air and energy.
-Original PNGs: assets/pixel/combat-v2. Original WAVs: assets/audio/attack-candidates.
+Original PNGs: assets/art/pixel/combat-v2. Original WAVs: assets/audio/attack-candidates.
 No credit required by CC0; creator/source records retained for provenance.

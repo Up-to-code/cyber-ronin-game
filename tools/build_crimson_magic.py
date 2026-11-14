@@ -1,7 +1,7 @@
 from PIL import Image
 from pathlib import Path
 import json
-raw=Path('assets/crimson-magic'); out=Path('game/art/crimson-magic')
+raw=Path('assets/vfx/crimson-magic'); out=Path('game/art/crimson-magic')
 im=Image.open(raw/'spirit-flight-source.png').convert('RGBA')
 px=im.load()
 for y in range(im.height):
@@ -18,4 +18,4 @@ atlas=Image.new('RGBA',(96*9,64))
 for i,f in enumerate(frames):atlas.paste(f,(i*96,0))
 atlas.save(out/'spirit-flight.png')
 frames[0].save(out/'spirit-flight.webp',save_all=True,append_images=frames[1:],duration=62,loop=0,lossless=True)
-(out/'manifest.json').write_text(json.dumps({'frames':9,'frame_size':[96,64],'fps':16,'anchor':'leading tip at approximately x=88,y=32','raw':'assets/crimson-magic/spirit-flight-source.png','generated_with':'built-in imagegen'},indent=2))
+(out/'manifest.json').write_text(json.dumps({'frames':9,'frame_size':[96,64],'fps':16,'anchor':'leading tip at approximately x=88,y=32','raw':'assets/vfx/crimson-magic/spirit-flight-source.png','generated_with':'built-in imagegen'},indent=2))
